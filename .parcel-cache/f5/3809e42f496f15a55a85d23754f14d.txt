@@ -34,7 +34,7 @@
 97C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\LICENSE121436361000000000 0
 123C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\@nodelib\fs.scandir\out\types\index.d.ts121436361000000000 0
 105C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\loose-envify\custom.js121436361000000000 0
-74C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\dist132702591298892309 1
+74C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\dist132702672946855958 1
 100C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\readdirp\index.js121436361000000000 0
 101C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\.package-lock.json132701779795066821 0
 107C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\_memoizeCapped.js121436361000000000 0
@@ -46,7 +46,7 @@
 97C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\once.js121436361000000000 0
 112C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\@nodelib\fs.stat\out\index.js121436361000000000 0
 101C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\isNumber.js121436361000000000 0
-83C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\src\index.jsx132702385659362364 0
+83C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\src\index.jsx132702666439234747 0
 79C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\README.md132701799423116123 0
 101C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\fp\keyBy.js121436361000000000 0
 84C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\src\components132702400787310412 1
@@ -61,7 +61,7 @@
 101C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\_baseXor.js121436361000000000 0
 84C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\src\index.html132701786966410341 0
 97C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\is-binary-path132701779785962032 1
-84C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\src\index.scss132701654917652665 0
+84C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\src\index.scss132702658072791580 0
 101C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\isFinite.js121436361000000000 0
 88C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\fastq132701779786781561 1
 94C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\src\components\main-view132702260470220098 1
@@ -77,14 +77,14 @@
 91C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\chokidar132701779788770427 1
 106C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\_createHybrid.js121436361000000000 0
 103C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\fp\convert.js121436361000000000 0
-110C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\src\components\movie-view\movie-view.jsx132702580908422468 0
+110C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\src\components\movie-view\movie-view.jsx132702649763485154 0
 105C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\_lazyReverse.js121436361000000000 0
 110C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\src\components\movie-card\movie-card.jsx132702546857585723 0
 106C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\fp\lowerFirst.js121436361000000000 0
 89C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\globby132701779785372379 1
 106C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\_listCacheSet.js121436361000000000 0
 103C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\stubString.js121436361000000000 0
-108C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\src\components\main-view\main-view.jsx132702591289351987 0
+108C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\src\components\main-view\main-view.jsx132702665984725780 0
 103C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\path-type\index.d.ts121436361000000000 0
 106C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\_deburrLetter.js121436361000000000 0
 91C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\@nodelib132701779778473700 1
@@ -445,7 +445,7 @@
 109C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\_initCloneObject.js121436361000000000 0
 101C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\fp\chain.js121436361000000000 0
 105C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\picomatch\lib\utils.js121436361000000000 0
-85C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\dist\index.html132702591296817090 0
+85C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\dist\index.html132702672944997020 0
 100C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\path-type\license121436361000000000 0
 105C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\path-type\package.json121436361000000000 0
 107C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\glob-parent\CHANGELOG.md121436361000000000 0
@@ -1126,7 +1126,7 @@
 104C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\_Uint8Array.js121436361000000000 0
 110C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\_unescapeHtmlChar.js121436361000000000 0
 105C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\_unicodeSize.js121436361000000000 0
-97C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\dist\index.d7582807.css.map132702591296996963 0
+97C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\dist\index.d7582807.css.map132702672945216899 0
 111C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\_updateWrapDetails.js121436361000000000 0
 106C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\_wrapperClone.js121436361000000000 0
 99C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\lodash\fp\add.js121436361000000000 0
@@ -1600,6 +1600,6 @@
 104C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\.bin\loose-envify.cmd132701467979234824 0
 92C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\.bin\sass132701779793757580 0
 96C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\node_modules\.bin\sass.ps1132701779793757580 0
-92C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\dist\index.b1ff5c55.js132702591297166885 0
-96C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\dist\index.b1ff5c55.js.map132702591297892884 0
-93C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\dist\index.d7582807.css132702591296827067 0
+92C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\dist\index.b1ff5c55.js132702672945406794 0
+96C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\dist\index.b1ff5c55.js.map132702672946006444 0
+93C:\Users\Nick_B\Documents\careerfoundry\Github_Achiev_3\myFlix-client\dist\index.d7582807.css132702672945037002 0
