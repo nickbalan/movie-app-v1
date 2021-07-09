@@ -1,0 +1,7 @@
+.my-flix {
+  color: steelblue;
+}
+
+#ImagePath {
+  width: 10%;
+}
