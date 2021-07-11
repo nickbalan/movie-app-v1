@@ -1,8 +1,0 @@
-.my-flix {
-  color: steelblue;
-}
-
-.movie-poster {
-  display: block;
-  width: 10%;
-}
