@@ -38616,7 +38616,7 @@ function LoginView(props) {
     _s();
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
-    const handleSubmit = ()=>{
+    const handleSubmit = (e)=>{
         e.preventDefault(); // prevents the default refresh/change of the page from the handleSubmit() method
         console.log(username, password);
         // Sends a request to the server for authentication
