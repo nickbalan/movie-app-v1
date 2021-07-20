@@ -36178,7 +36178,7 @@ class MainView extends _reactDefault.default.Component {
             __self: this
         }));
         if (!user && !isRegistered) return(/*#__PURE__*/ _reactDefault.default.createElement(_registrationView.RegistrationView, {
-            sendReg: (rStatus)=>this.regStatus(rStatus)
+            sendReg: (rStatus)=>this.registerStatus(rStatus)
             ,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
@@ -37634,13 +37634,12 @@ MovieCard.propTypes = {
     movie: _propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
-        Genre: _propTypesDefault.default.shape({
-            Name: _propTypesDefault.default.string
-        }),
-        Director: _propTypesDefault.default.shape({
-            Name: _propTypesDefault.default.string
-        }),
-        Featured: _propTypesDefault.default.bool.isRequired,
+        /* Genre: PropTypes.shape({
+      Name: PropTypes.string
+    }),
+    Director: PropTypes.shape({
+      Name: PropTypes.string
+    }), */ Featured: _propTypesDefault.default.bool.isRequired,
         imgUrl: _propTypesDefault.default.string.isRequired
     }).isRequired,
     onMovieClick: _propTypesDefault.default.func.isRequired
@@ -38575,17 +38574,16 @@ class MovieView extends _reactDefault.default.Component {
         }, "Back")));
     }
 }
-MovieView.PropTypes = {
+MovieView.propTypes = {
     movieV: _propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
-        Genre: _propTypesDefault.default.shape({
-            Name: _propTypesDefault.default.string
-        }),
-        Director: _propTypesDefault.default.shape({
-            Name: _propTypesDefault.default.string
-        }),
-        Featured: _propTypesDefault.default.bool.isRequired,
+        /* Genre: PropTypes.shape({
+      Name: PropTypes.string
+    }),
+    Director: PropTypes.shape({
+      Name: PropTypes.string
+    }), */ Featured: _propTypesDefault.default.bool.isRequired,
         imgUrl: _propTypesDefault.default.string.isRequired
     }).isRequired,
     onBackClick: _propTypesDefault.default.func.isRequired
@@ -38795,7 +38793,7 @@ function RegistrationView() {
     }, "Submit")));
 }
 _c = RegistrationView;
-RegistrationView.PropTypes = {
+RegistrationView.propTypes = {
     sendReg: _propTypesDefault.default.func.isRequired
 };
 var _c;
