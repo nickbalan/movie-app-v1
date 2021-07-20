@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './registration-view.scss';
 
 export function RegistrationView() {
   const username = '';

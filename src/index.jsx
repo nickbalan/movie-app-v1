@@ -1,10 +1,9 @@
 import { extend } from 'lodash';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MainView from './components/main-view/main-view';
-
-//This file need to bundle ./index.scss
 import './index.scss';
+
+import MainView from './components/main-view/main-view';
 
 //Main component
 class MyFlixApplication extends React.Component {
