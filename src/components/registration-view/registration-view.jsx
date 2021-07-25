@@ -1,12 +1,15 @@
 import React from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import './registration-view.scss';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 export function RegistrationView() {
-  const username = '';
-  const password = '';
-  const email = '';
-  const birthday = '';
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [birthday, setBirthday] = useState('');
 
   function sendRegister() {
     alert('Thank you for signing up.')
@@ -16,26 +19,26 @@ export function RegistrationView() {
 
   return (
     <>
-      <form>
-        <h1>Registration</h1>
-        <label>
-          Username:
-          <input type='text' />
-        </label>
-        <label>
-          Password:
-          <input type='password' />
-        </label>
-        <label>
-          Email:
-          <input type='email' />
-        </label>
-        <label>
-          Birthday:
-          <input type='date' />
-        </label>
-      </form>
-      <button type='submit' onClick={sendRegister}>Submit</button>
+      <h1>Registration</h1>
+      <Form>
+        <Form.Group controlId='formUsername'>
+          <Form.Label>Username:</Form.Label>
+          <Form.Control type='text' onChange={e => setUsername(e.target.value)} />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Password:</Form.Label>
+          <Form.Control type='password' onChange={e => setPassword(e.target.value)} />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Email:</Form.Label>
+          <FormControl type='email' onChange={e => setEmail(e.target.value)} />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Birthday:</Form.Label>
+          <FormControl type='date' onChange={e => setBirthday(e.target.value)} />
+        </Form.Group>
+      </Form>
+      <Button variant='primary' type='submit' onClick={sendRegister}>Submit</Button>
     </>
   );
 }

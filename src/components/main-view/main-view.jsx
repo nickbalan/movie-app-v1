@@ -6,6 +6,8 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
+import { Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 class MainView extends React.Component {
 
@@ -59,14 +61,20 @@ class MainView extends React.Component {
     if (movies.length === 0) return <div className='main-view' />;
 
     return (
-      <div className='main-view'>
+      <Row className='main-view jutify-content-md-center'>
         {selectedMovie
-          ? <MovieView movieV={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+          ? (
+            <Col xs={6}>
+              <MovieView movieV={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+            </Col>
+          )
           : movies.map(movie => (
-            <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie); }} />
+            <Col>
+              <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie); }} />
+            </Col>
           ))
         }
-      </div>
+      </Row>
     );
   }
 }
