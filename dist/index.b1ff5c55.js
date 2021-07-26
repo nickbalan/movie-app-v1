@@ -51191,7 +51191,7 @@ function RegistrationView() {
             lineNumber: 33
         },
         __self: this
-    }, "Email:"), /*#__PURE__*/ _reactDefault.default.createElement(FormControl, {
+    }, "Email:"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
         type: "email",
         onChange: (e)=>setEmail(e.target.value)
         ,
@@ -51212,7 +51212,7 @@ function RegistrationView() {
             lineNumber: 37
         },
         __self: this
-    }, "Birthday:"), /*#__PURE__*/ _reactDefault.default.createElement(FormControl, {
+    }, "Birthday:"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
         type: "date",
         onChange: (e)=>setBirthday(e.target.value)
         ,
@@ -51245,6 +51245,6 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J","./registration-view.scss":"4PoSO","react-bootstrap/Button":"1ru0l","react-bootstrap/Form":"6A5ko"}],"4PoSO":[function() {},{}],"fuuFa":[function() {},{}],"4rwvu":[function() {},{}]},["1j6wU","5rWAv","5tknY"], "5tknY", "parcelRequire279c")
+},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J","./registration-view.scss":"4PoSO","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l"}],"4PoSO":[function() {},{}],"fuuFa":[function() {},{}],"4rwvu":[function() {},{}]},["1j6wU","5rWAv","5tknY"], "5tknY", "parcelRequire279c")
 
 //# sourceMappingURL=index.b1ff5c55.js.map

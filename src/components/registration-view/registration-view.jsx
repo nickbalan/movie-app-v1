@@ -31,11 +31,11 @@ export function RegistrationView() {
         </Form.Group>
         <Form.Group>
           <Form.Label>Email:</Form.Label>
-          <FormControl type='email' onChange={e => setEmail(e.target.value)} />
+          <Form.Control type='email' onChange={e => setEmail(e.target.value)} />
         </Form.Group>
         <Form.Group>
           <Form.Label>Birthday:</Form.Label>
-          <FormControl type='date' onChange={e => setBirthday(e.target.value)} />
+          <Form.Control type='date' onChange={e => setBirthday(e.target.value)} />
         </Form.Group>
       </Form>
       <Button variant='primary' type='submit' onClick={sendRegister}>Submit</Button>
