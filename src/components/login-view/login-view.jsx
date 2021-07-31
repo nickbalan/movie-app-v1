@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './login-view.scss';
 import { Button, Form } from 'react-bootstrap';
+import axios from 'axios';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -9,9 +10,18 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault(); // prevents the default refresh/change of the page from the handleSubmit() method
-    console.log(username, password);
     // Sends a request to the server for authentication
-    props.onLoggedIn(username); // allows a user to be automatically logged in
+    axios.post('https://movies-api-21.herokuapp.com/users', {
+      Username: username,
+      Password: password
+    })
+      .then(response => {
+        const data = response.data;
+        props.onLoggedIn(data); // allows a user to be automatically logged in
+      })
+      .catch(e => {
+        console.log('No such user')
+      });
   };
 
   const handleRegister = () => {

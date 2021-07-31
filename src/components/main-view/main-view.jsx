@@ -23,7 +23,37 @@ class MainView extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://movies-api-21.herokuapp.com/movies')
+
+  }
+
+  setSelectedMovie(newSelectedMovie) {
+    this.setState({
+      selectedMovie: newSelectedMovie
+    });
+  }
+
+  //Updates the `user` property in state
+  onLoggedIn(authData) {
+    console.log(authData);
+    this.setState({
+      user: authData.user.Username
+    });
+
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.Username);
+    this.getMovies(authData.token);
+  }
+
+  registerStatus(regStatus) {
+    this.setState({
+      isRegistered: regStatus
+    });
+  }
+
+  getMovies(token) {
+    axios.get('https://movies-api-21.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}` }
+    })
       .then(response => {
         this.setState({
           movies: response.data,
@@ -34,25 +64,6 @@ class MainView extends React.Component {
       });
   }
 
-  setSelectedMovie(newSelectedMovie) {
-    this.setState({
-      selectedMovie: newSelectedMovie
-    });
-  }
-
-  //Updates the `user` property in state
-  onLoggedIn(user) {
-    this.setState({
-      user
-    });
-  }
-
-  registerStatus(regStatus) {
-    this.setState({
-      isRegistered: regStatus
-    });
-  }
-
   render() {
     const { movies, selectedMovie, user, isRegistered } = this.state;
     /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
@@ -61,20 +72,26 @@ class MainView extends React.Component {
     if (movies.length === 0) return <div className='main-view' />;
 
     return (
-      <Row className='main-view jutify-content-md-center'>
+      <div className='main-view'>
         {selectedMovie
           ? (
-            <Col xs={6}>
-              <MovieView movieV={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
-            </Col>
+            <Row className='main-view jutify-content-md-center'>
+              <Col xs={6}>
+                <MovieView movieV={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+              </Col>
+            </Row>
           )
-          : movies.map(movie => (
-            <Col>
-              <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie); }} />
-            </Col>
-          ))
+          : (
+            <Row className='main-view jutify-content-md-center'>
+              {movies.map(movie => (
+                <Col>
+                  <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie); }} />
+                </Col>
+              ))}
+            </Row>
+          )
         }
-      </Row>
+      </div >
     );
   }
 }
