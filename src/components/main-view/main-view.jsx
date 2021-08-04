@@ -23,7 +23,13 @@ class MainView extends React.Component {
   }
 
   componentDidMount() {
-
+    let accessToken = localStorage.getItem('token');
+    if (accessToken != null) {
+      this.setState({
+        user: localStorage.getItem('user')
+      });
+      this.getMovies(accessToken);
+    }
   }
 
   setSelectedMovie(newSelectedMovie) {
@@ -42,6 +48,14 @@ class MainView extends React.Component {
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
+  }
+
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null
+    });
   }
 
   registerStatus(regStatus) {

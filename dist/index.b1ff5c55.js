@@ -36148,6 +36148,13 @@ class MainView extends _reactDefault.default.Component {
         };
     }
     componentDidMount() {
+        let accessToken = localStorage.getItem('token');
+        if (accessToken != null) {
+            this.setState({
+                user: localStorage.getItem('user')
+            });
+            this.getMovies(accessToken);
+        }
     }
     setSelectedMovie(newSelectedMovie) {
         this.setState({
@@ -36163,6 +36170,13 @@ class MainView extends _reactDefault.default.Component {
         localStorage.setItem('token', authData.token);
         localStorage.setItem('user', authData.user.Username);
         this.getMovies(authData.token);
+    }
+    onLoggedOut() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        this.setState({
+            user: null
+        });
     }
     registerStatus(regStatus) {
         this.setState({
@@ -36191,7 +36205,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 70
+                lineNumber: 84
             },
             __self: this
         }));
@@ -36200,7 +36214,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 71
+                lineNumber: 85
             },
             __self: this
         }));
@@ -36208,7 +36222,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 72
+                lineNumber: 86
             },
             __self: this
         }));
@@ -36216,21 +36230,21 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 75
+                lineNumber: 89
             },
             __self: this
         }, selectedMovie ? /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
             className: "main-view jutify-content-md-center",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 78
+                lineNumber: 92
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
             xs: 6,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 79
+                lineNumber: 93
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_movieView.MovieView, {
@@ -36240,20 +36254,20 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 80
+                lineNumber: 94
             },
             __self: this
         }))) : /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
             className: "main-view jutify-content-md-center",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 85
+                lineNumber: 99
             },
             __self: this
         }, movies.map((movie)=>/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
                 __source: {
                     fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                    lineNumber: 87
+                    lineNumber: 101
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
@@ -36264,7 +36278,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                    lineNumber: 88
+                    lineNumber: 102
                 },
                 __self: this
             }))
