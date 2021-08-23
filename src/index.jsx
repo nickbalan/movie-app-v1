@@ -1,10 +1,12 @@
+//imports SCSS styles 
+import './index.scss';
+
 import { extend } from 'lodash';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
 
 import MainView from './components/main-view/main-view';
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 
 //Main component
 class MyFlixApplication extends React.Component {
