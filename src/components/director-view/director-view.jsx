@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 
 export class DirectorView extends React.Component {
   render() {
-    const { DirectorView, onBackClick } = this.props;
+    const { director, onBackClick } = this.props;
 
     return (
       <Row className='director-view'>

@@ -30,7 +30,7 @@ export function RegistrationView() {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    const isValidated = formValidation();
+    const isValidated = validationForm();
     if (isValidated) {
       axios.post('https://movies-api-21.herokuapp.com/users', {
         Username: username,
