@@ -41794,7 +41794,7 @@ MovieView.propTypes = {
         }),
         Director: _propTypesDefault.default.shape({
             Name: _propTypesDefault.default.string.isRequired,
-            Bio: PropType.string.isRequired,
+            Bio: _propTypesDefault.default.string.isRequired,
             Birth: _propTypesDefault.default.string.isRequired,
             Death: _propTypesDefault.default.string.isRequired
         })
@@ -54338,8 +54338,7 @@ class GenreView extends _reactDefault.default.Component {
 GenreView.propTypes = {
     genre: _propTypesDefault.default.shape({
         Name: _propTypesDefault.default.string.isRequired,
-        Description: _propTypesDefault.default.string,
-        isRequired
+        Description: _propTypesDefault.default.string.isRequired
     }).isRequired
 };
 exports.default = GenreView;
@@ -54446,16 +54445,10 @@ class ProfileView extends _reactDefault.default.Component {
     }
     validationForm() {
         let UsernameError = {
-        };
-        let EmailError = {
-        };
-        let PasswordError = {
-        };
-        let BirthdayError = {
-        };
-        let isValidated = {
-        };
-        let isValidated = true;
+        }, EmailError = {
+        }, PasswordError = {
+        }, BirthdayError = {
+        }, isValidated = true;
         if (!(this.state.Username && this.Username.lenght > 6)) {
             UsernameError.notValidatedUsername = 'Username must be at least 4 characters.';
             isValidated = false;
@@ -54531,45 +54524,45 @@ class ProfileView extends _reactDefault.default.Component {
             className: "profile-view",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 175
+                lineNumber: 174
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 176
+                lineNumber: 175
             },
             __self: this
         }, "Hi, ", this.state.Username), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
             className: "profile=view",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 178
+                lineNumber: 177
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 179
+                lineNumber: 178
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             sm: "3",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 180
+                lineNumber: 179
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 181
+                lineNumber: 180
             },
             __self: this
         }, "Email")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 185
+                lineNumber: 184
             },
             __self: this
         }, Object.keys(EmailError).map((key)=>{
@@ -54577,7 +54570,7 @@ class ProfileView extends _reactDefault.default.Component {
                 key: key,
                 __source: {
                     fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 188
+                    lineNumber: 187
                 },
                 __self: this
             }, EmailError[key]));
@@ -54588,33 +54581,33 @@ class ProfileView extends _reactDefault.default.Component {
             onChange: this.onEmailChange,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 193
+                lineNumber: 192
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 196
+                lineNumber: 195
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             sm: "3",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 197
+                lineNumber: 196
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 198
+                lineNumber: 197
             },
             __self: this
         }, "Username")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             sm: "9",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 202
+                lineNumber: 201
             },
             __self: this
         }, Object.key(UsernameError).map((key)=>{
@@ -54622,7 +54615,7 @@ class ProfileView extends _reactDefault.default.Component {
                 key: key,
                 __source: {
                     fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 205
+                    lineNumber: 204
                 },
                 __self: this
             }, UsernameError[key]));
@@ -54633,33 +54626,33 @@ class ProfileView extends _reactDefault.default.Component {
             onChange: this.onUsernameChange,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 210
+                lineNumber: 209
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 213
+                lineNumber: 212
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             sm: "3",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 214
+                lineNumber: 213
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 215
+                lineNumber: 214
             },
             __self: this
         }, "Password")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             sm: "9",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 219
+                lineNumber: 218
             },
             __self: this
         }, Object.key(PasswordError).map((key)=>{
@@ -54667,7 +54660,7 @@ class ProfileView extends _reactDefault.default.Component {
                 key: key,
                 __source: {
                     fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 222
+                    lineNumber: 221
                 },
                 __self: this
             }, PasswordError[key]));
@@ -54678,33 +54671,33 @@ class ProfileView extends _reactDefault.default.Component {
             onChange: this.onPasswordChange,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 227
+                lineNumber: 226
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 230
+                lineNumber: 229
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             sm: "3",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 231
+                lineNumber: 230
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 232
+                lineNumber: 231
             },
             __self: this
         }, "Birthday")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             sm: "9",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 236
+                lineNumber: 235
             },
             __self: this
         }, Object.key(BirthdayError).map((key)=>{
@@ -54712,7 +54705,7 @@ class ProfileView extends _reactDefault.default.Component {
                 key: key,
                 __source: {
                     fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 239
+                    lineNumber: 238
                 },
                 __self: this
             }, BirthdayError[key]));
@@ -54723,19 +54716,19 @@ class ProfileView extends _reactDefault.default.Component {
             onChange: this.onBirthdayChange,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 244
+                lineNumber: 243
             },
             __self: this
         }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 247
+                lineNumber: 246
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 248
+                lineNumber: 247
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -54744,7 +54737,7 @@ class ProfileView extends _reactDefault.default.Component {
             onClick: this.handleUpdateUser,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 249
+                lineNumber: 248
             },
             __self: this
         }, "Update the Information"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -54753,19 +54746,19 @@ class ProfileView extends _reactDefault.default.Component {
             onClick: this.handleUserDeletion,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 252
+                lineNumber: 251
             },
             __self: this
         }, "Delete Account")))), /*#__PURE__*/ _reactDefault.default.createElement("h3", {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 258
+                lineNumber: 257
             },
             __self: this
         }, "Favorite Movies"), favoriteMovies.length === 0 && /*#__PURE__*/ _reactDefault.default.createElement("p", {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 259
+                lineNumber: 258
             },
             __self: this
         }, "You have no movies yet in your list of favorites!"), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
@@ -54775,7 +54768,7 @@ class ProfileView extends _reactDefault.default.Component {
             className: "g-4",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 260
+                lineNumber: 259
             },
             __self: this
         }, favoriteMovies.length > 0 && movies.map((movie)=>{
@@ -54784,14 +54777,14 @@ class ProfileView extends _reactDefault.default.Component {
                 key: movie._id,
                 __source: {
                     fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 264
+                    lineNumber: 263
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
                 to: '/movies/${movie._id}',
                 __source: {
                     fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 265
+                    lineNumber: 264
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default, {
@@ -54799,7 +54792,7 @@ class ProfileView extends _reactDefault.default.Component {
                 variant: "light",
                 __source: {
                     fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 266
+                    lineNumber: 265
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Img, {
@@ -54807,25 +54800,25 @@ class ProfileView extends _reactDefault.default.Component {
                 scr: movie.imgUrl,
                 __source: {
                     fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 267
+                    lineNumber: 266
                 },
                 __self: this
             }), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
                 __source: {
                     fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 268
+                    lineNumber: 267
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Title, {
                 __source: {
                     fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 269
+                    lineNumber: 268
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
                 __source: {
                     fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 270
+                    lineNumber: 269
                 },
                 __self: this
             }, movie.Name)))))));
@@ -54834,7 +54827,7 @@ class ProfileView extends _reactDefault.default.Component {
 }
 ProfileView.PropTypes = {
     user: _propTypesDefault.default.shape({
-        favoriteMovies: propTypes.arrayOf(_propTypesDefault.default.shape({
+        favoriteMovies: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
             _id: _propTypesDefault.default.string.isRequired,
             Name: _propTypesDefault.default.string.isRequired
         })),

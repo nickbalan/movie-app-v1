@@ -87,12 +87,11 @@ export class ProfileView extends React.Component {
   }
 
   validationForm() {
-    let UsernameError = {};
-    let EmailError = {};
-    let PasswordError = {};
-    let BirthdayError = {};
-    let isValidated = {};
-    let isValidated = true;
+    let UsernameError = {},
+      EmailError = {},
+      PasswordError = {},
+      BirthdayError = {},
+      isValidated = true;
     if (!(this.state.Username && this.Username.lenght > 6)) {
       UsernameError.notValidatedUsername = 'Username must be at least 4 characters.';
       isValidated = false;
@@ -284,7 +283,7 @@ export class ProfileView extends React.Component {
 
 ProfileView.PropTypes = {
   user: PropTypes.shape({
-    favoriteMovies: propTypes.arrayOf(
+    favoriteMovies: PropTypes.arrayOf(
       PropTypes.shape({
         _id: PropTypes.string.isRequired,
         Name: PropTypes.string.isRequired,
