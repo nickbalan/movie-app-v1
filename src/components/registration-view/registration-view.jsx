@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import { FloatingLabel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FormGroup } from 'react-bootstrap';
 
@@ -144,7 +144,7 @@ export function RegistrationView() {
         </Button>
         <Link to={'/'}>
           <Button type='button' variant='secondary'>
-          Back
+            Back
           </Button>
         </Link>
       </Form>
