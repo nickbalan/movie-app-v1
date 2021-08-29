@@ -12,7 +12,6 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { render } from 'react-dom';
 
 
 export class ProfileView extends React.Component {
@@ -200,9 +199,101 @@ export class ProfileView extends React.Component {
                 Username
               </Form.Label>
             </Col>
+            <Col sm='9'>
+              {Object.key(UsernameError).map((key) => {
+                return (
+                  <div key={key}>
+                    {UsernameError[key]}
+                  </div>
+                );
+              })}
+              <Form.Control required type='text' placeholder={this.state.Username} onChange={this.onUsernameChange} />
+            </Col>
+          </Row>
+          <Row>
+            <Col sm='3'>
+              <Form.Label>
+                Password
+              </Form.Label>
+            </Col>
+            <Col sm='9'>
+              {Object.key(PasswordError).map((key) => {
+                return (
+                  <div key={key}>
+                    {PasswordError[key]}
+                  </div>
+                );
+              })}
+              <Form.Control required type='password' placeholder='' onChange={this.onPasswordChange} />
+            </Col>
+          </Row>
+          <Row>
+            <Col sm='3'>
+              <Form.Label>
+                Birthday
+              </Form.Label>
+            </Col>
+            <Col sm='9'>
+              {Object.key(BirthdayError).map((key) => {
+                return (
+                  <div key={key}>
+                    {BirthdayError[key]}
+                  </div>
+                );
+              })}
+              <Form.Control required type='data' defaultValue={this.state.Birthday} onChange={this.onBirthdayChange} />
+            </Col>
+          </Row>
+          <Row>
+            <Form.Group>
+              <Button type='button' varriant='secondary' onClick={this.handleUpdateUser}>
+                Update the Information
+              </Button>
+              <Button type='button' variant='danger' onClick={this.handleUserDeletion}>
+                Delete Account
+              </Button>
+            </Form.Group>
           </Row>
         </Form>
+        <h3>Favorite Movies</h3>
+        {favoriteMovies.length === 0 && <p>You have no movies yet in your list of favorites!</p>}
+        <Row xs={1} sm={2} md={3} className='g-4'>
+          {favoriteMovies.length > 0 && movies.map((movie) => {
+            if (movies._id === favoriteMovies.find((findFavoriteMovies) => findFavoriteMovies === movie._id)) {
+              return (
+                <Col key={movie._id}>
+                  <Link to={'/movies/${movie._id}'}>
+                    <Card key={movie._id} variant='light'>
+                      <Card.Img variant='top' scr={movie.imgUrl} />
+                      <Card.Body>
+                        <Card.Title>
+                          <h5>{movie.Name}</h5>
+                        </Card.Title>
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </Col>
+              );
+            }
+          })}
+        </Row>
       </div>
     )
   }
 }
+
+ProfileView.PropTypes = {
+  user: PropTypes.shape({
+    favoriteMovies: propTypes.arrayOf(
+      PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        Name: PropTypes.string.isRequired,
+      })
+    ),
+    Username: PropTypes.string.isRequired,
+    Email: PropTypes.string.isRequired,
+    Birthday: PropTypes.string.isRequired
+  })
+}
+
+export default ProfileView
