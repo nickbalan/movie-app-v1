@@ -9,8 +9,6 @@ import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
-import { Card } from 'react-bootstrap';
-//import { FloatingLabel } from 'react-bootstrap';
 
 
 export function RegistrationView() {
@@ -24,11 +22,6 @@ export function RegistrationView() {
   const [emailError, registerEmailError] = useState('');
   const [birthdateError, registerBirthdateErorr] = useState('');
 
-  /* function sendRegister() {
-    alert('Thank you for signing up.')
-    let register = true
-    props.sendReg(register);
-  } */
 
   const handleRegister = (e) => {
     e.preventDefault();

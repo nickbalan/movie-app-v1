@@ -17,7 +17,7 @@ export function LoginView(props) {
   const handleSubmit = (e) => {
     e.preventDefault(); // prevents the default refresh/change of the page from the handleSubmit() method
     // Sends a request to the server for authentication
-    axios.post('https://movies-api-21.herokuapp.com/users', {
+    axios.post('https://movies-api-21.herokuapp.com/login', {
       Username: username,
       Password: password
     })
