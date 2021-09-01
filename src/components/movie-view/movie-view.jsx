@@ -5,31 +5,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
 
 
 export class MovieView extends React.Component {
 
-  /* keypressCallback(event) {
-    console.log(event.key);
-  } */
+  /*  constructor() {
+   super();
+   //Sets initial state to null
+   this.state = {
+     favoriteMovies: [],
+   }
+ } */
 
-  constructor() {
-    super();
-    //Sets initial state to null
-    this.state = {
-      favoriteMovies: [],
-    }
+  keypressCallback(event) {
+    console.log(event.key);
   }
 
   componentDidMount() {
-    const accessToken = localStorage.getItem('token');
-    this.getFavorites(accessToken);
+    document.addEventListener('keypress', this.keypressCallback);
   }
 
-  getFavorites(token) {
+  componentWillUnmount() {
+    document.removeEventListener('keypress', this.keypressCallback);
+  }
+
+  /* getFavorites(token) {
     const username = localStorage.getItem('user');
     const favoriteMovies = this.state;
 
@@ -44,13 +47,13 @@ export class MovieView extends React.Component {
       .catch(function (error) {
         console.log(error);
       });
-  }
+  } */
 
   addFavorites() {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
 
-    axios.post('https://movies-api-21.herokuapp.com/users/:Username/add-movies/${this.props.movie._id}', {
+    axios.post('https://movies-api-21.herokuapp.com/users/${username}/add-movies/${this.props.movie._id}', {}, {
       headers: { Authorization: 'Bearer ${token}' }
     })
       .then(response => {
@@ -78,51 +81,40 @@ export class MovieView extends React.Component {
 
   render() {
     const { movie, onBackClick } = this.props;
-    const { favoriteMovies } = this.state;
 
     return (
-      <Row>
-        <Col>
-          <img className='movie-img' src={movie.imgUrl} />
-        </Col>
-        <Col>
-          <div className='movie-view'>
-            <h2>{movie.Name}</h2>
-            <div>
-              <p>
-                <span className='label'>Title: </span>
-                <span className='value'>{movie.Title}</span>
-              </p>
-              <p>
-                <span className='label'>Description: </span>
-                <span className='value'>{movie.Description}</span>
-              </p>
-              <p>
-                <span className='label'>Director: </span>
-                <span className='value'>{movie.Director.Name}</span>
-                <Link to={'/genres/${movieV.Director.Name}'}>
-                  <span>{movie.Director.Name}</span>
-                </Link>
-              </p>
-              <p>
-                <span className='label'>Genre: </span>
-                <Link to={'/genres/${movie.Genre.Name}'}>
-                  <span>{movie.Genre.Name}</span>
-                </Link>
-              </p>
-            </div>
-            <div className='view-buttons'>
-              <button onClick={() => { onBackClick(null); }}>Back</button>
-              {(favoriteMovies.indexOf(movie._id) === -1) &&
-                <button value={movie.id} onClick={e => this.addFavorites(e, movie)}>Add to Favorites</button>
-              }
-              {(favoriteMovies.includes(movie._id)) &&
-                <button value={movie.id} onClick={e => this.removeFavorites(e, movie)}>Remove from Favorites</button>
-              };
-            </div>
-          </div>
-        </Col>
-      </Row>
+      <div className='movie-view'>
+        <div className='movie-poster'>
+          <img src={movie.imgUrl} />
+        </div>
+        <div className='movie-title'>
+          <h1>
+            <Badge bg='primary'>
+              <span className='value'>{movie.Title}</span>
+            </Badge>
+          </h1>
+        </div>
+        <div className='movie-description'>
+          <span className='label'>Description: </span>
+          <span className='value'>{movie.Description}</span>
+        </div>
+        <div className='movie-director'>
+          <Link to={'/directors/${{movie.Director.Name}'}>
+            <Button variant='link'>Director: </Button>
+          </Link>
+          <span className='value'>{movie.Director.Name}</span>
+        </div>
+        <div className='movie-genre'>
+          <Link to={'/genres/${movie.Genre.Name}'}>
+            <Button variant='link'>Genre: </Button>
+          </Link>
+          <span className='value'>{movie.Genre.Name}</span>
+        </div>
+        <Button variant='danger' className='fav-button' value={movie._id} onClick={(e) => this.addFavorites(e, movie)}>
+          Add to Favorites
+        </Button>
+        <Button variant='primary' onClick={() => { onBackClick(null); }}>Back</Button>
+      </div>
     );
   }
 }
@@ -131,7 +123,7 @@ MovieView.propTypes = {
   movie: PropTypes.shape({
     Title: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
-    Featured: PropTypes.bool.isRequired,
+    Featured: PropTypes.bool,
     imgUrl: PropTypes.string.isRequired,
     Genre: PropTypes.shape({
       Name: PropTypes.string.isRequired,
@@ -144,12 +136,4 @@ MovieView.propTypes = {
       Death: PropTypes.string.isRequired
     })
   }).isRequired,
-  user: PropTypes.shape({
-    favoriteMovies: PropTypes.arrayOf(
-      PropTypes.shape({
-        _id: PropTypes.string.isRequired,
-        Name: PropTypes.string.isRequired
-      })
-    )
-  })
-}
+};

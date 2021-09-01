@@ -4,8 +4,10 @@ import './movie-card.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+
 
 
 export class MovieCard extends React.Component {
@@ -14,16 +16,20 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Link to={'/movie/${movie._id}'}>
-        <Card key={movie._id} variant='light'>
+      <Card bg='secondary' text='white'>
+        <Link to={'/movie/${movie._id}'}>
           <Card.Img variant='top' src={movie.imgUrl} />
-          <Card.Body>
-            <Card.Title>
-              <h3>{movie.Name}</h3>
-            </Card.Title>
-          </Card.Body>
-        </Card>
-      </Link>
+        </Link>
+        <Card.Body>
+          <Card.Title>
+            <h3>{movie.Title}</h3>
+          </Card.Title>
+          <Card.Text>{movie.Description}</Card.Text>
+          <Link to={'/movie/${movie._id}'}>
+            <Button variant='primary'>Open</Button>
+          </Link>
+        </Card.Body>
+      </Card>
     );
   }
 }

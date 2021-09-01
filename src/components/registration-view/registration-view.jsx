@@ -5,22 +5,24 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { FloatingLabel } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { FormGroup } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
+import { Card } from 'react-bootstrap';
+//import { FloatingLabel } from 'react-bootstrap';
+
 
 export function RegistrationView() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
-  const [birthday, setBirthday] = useState('');
+  const [username, registerUsername] = useState('');
+  const [password, registerPassword] = useState('');
+  const [email, registerEmail] = useState('');
+  const [birthdate, registerBirthdate] = useState('');
 
   const [usernameError, registerUsernameError] = useState('');
   const [passwordError, registerPasswordError] = useState('');
   const [emailError, registerEmailError] = useState('');
-  const [birthdayError, registerBirthdayErorr] = useState('');
+  const [birthdateError, registerBirthdateErorr] = useState('');
 
   /* function sendRegister() {
     alert('Thank you for signing up.')
@@ -30,17 +32,18 @@ export function RegistrationView() {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    const isValidated = validationForm();
+    let isValidated = validationForm();
     if (isValidated) {
       axios.post('https://movies-api-21.herokuapp.com/users', {
         Username: username,
         Password: password,
         Email: email,
-        Birthday: birthday
+        Birthdate: birthdate
       })
         .then(response => {
           const data = response.data;
           console.log(data);
+          windows.open('/', '_self'); //the '_self' argument opens the page in the current tab.
         })
         .catch(function (error) {
           console.log(error);
@@ -49,114 +52,109 @@ export function RegistrationView() {
   }
 
   const validationForm = () => {
-    const usernameError = {};
-    const passwordError = {};
-    const emailError = {};
-    const birthdayError = {};
-    let isValidated = true;
+    let usernameError = {};
+    let passwordError = {};
+    let emailError = {};
+    let birthdateError = {};
+    let isValid = true;
 
-    if (username.length < 4 || username === '') {
-      usernameError.notValidUsername = 'Username must be at least 4 characters.'
-      isValidated = false;
+    if (username.trim().length < 6) {
+      usernameError.notValidUsername = 'Username must be at least 6 characters.'
+      isValid = false;
     }
-    if (password.length < 8 || password === '') {
-      passwordError.notValidPassword = 'Password must be at least 6 characters.'
-      isValidated = false;
+    if (password.trim().length < 12 || password === '') {
+      passwordError.notValidPassword = 'Password must be at least 12 characters.'
+      isValid = false;
     }
-    if (!email || email.indexOf('@') === -1) {
+    if (!(email && email.includes('.') && email.indexOf('@'))) {
       emailError.notValidEmail = 'Please enter a valid email address';
-      isValidated = false;
+      isValid = false;
     }
-    if (!birthday) {
-      birthdayError.notValidBirthday = 'Please enter your date of birth.'
-      isValidated = false;
+    if (birthdate === '') {
+      birthdateError.notValidBirthdate = 'Please enter your date of birth.'
+      isValid = false;
     }
 
     registerUsernameError(usernameError);
     registerPasswordError(passwordError);
     registerEmailError(emailError);
-    registerBirthdayErorr(birthdayError);
-    return isValidated;
+    registerBirthdateErorr(birthdateError);
+    return isValid;
   };
 
   return (
-    <div className='registration-view'>
-      <Form className='registration-form'>
-        <Form.Group className='mb2'>
-          <Form.Text>
-            Enter your information
-          </Form.Text>
+    <Form className="register justify-content-md-center">
+      <Row>
+        <Form.Group controlId='formUsername'>
+          <Form.Label>Username: </Form.Label>
+          <Form.Control type='text' value={username} onChange={e => registerUsername(e.target.value)} />
+          {Object.keys(usernameError).map((key) => {
+            return (
+              <div key={key}>
+                {usernameError[key]}
+              </div>
+            );
+          })}
         </Form.Group>
-        <Form.Group className='mb-3' controlId='emailForm'>
+      </Row>
+
+      <Row>
+        <Form.Group controlId='formPassword'>
+          <Form.Label>Password: </Form.Label>
+          <Form.Control type='password' value={password} onChange={e => registerPassword(e.target.value)} />
+          {Object.keys(passwordError).map((key) => {
+            return (
+              <div key={key}>
+                {passwordError[key]}
+              </div>
+            );
+          })}
+        </Form.Group>
+      </Row>
+
+      <Row>
+        <Form.Group controlId='formEmail'>
+          <Form.Label>Email: </Form.Label>
+          <Form.Control type='email' value={email} onChange={e => registerEmail(e.target.value)} />
           {Object.keys(emailError).map((key) => {
             return (
-              <div className='form-validation' key={key}>
+              <div key={key}>
                 {emailError[key]}
               </div>
             );
           })}
-          <FloatingLabel label='Email' className='mb-3' type='email'>
-            <Form.Control required type="email" placeholder='Email address' value={email} onChange={e => registerEmail(e.target.value)} />
-          </FloatingLabel>
         </Form.Group>
+      </Row>
 
-        <FormGroup className='mb-3' contralId='usernameForm'>
-          {Object.keys(usernameError).map((key) => {
+      <Row>
+        <Form.Group controlId='formBirthdate'>
+          <Form.Label>Birthdate: </Form.Label>
+          <Form.Control type='date' value={birthdate} onChange={e => registerBirthdate(e.target.value)} />
+          {Object.keys(birthdateError).map((key) => {
             return (
-              <div className='form-validation' key={key}>
-                {usernameError[key]}
+              <div key={key}>
+                {birthdateError[key]}
               </div>
             );
           })}
-          <FloatingLabel label='Username' className='mb-3'>
-            <Form.Control required type='text' placeholder='Username' value={username} onChange={e => registerUsername(e.target.value)} />
-          </FloatingLabel>
-        </FormGroup>
+        </Form.Group>
+      </Row>
 
-        <FormGroup className='mb-3' contralId='passwordForm'>
-          {Object.keys(passwordError).map((key) => {
-            return (
-              <div className='form-validation' key={key}>
-                {usernameError[key]}
-              </div>
-            );
-          })}
-          <FloatingLabel label='Password' className='mb-3'>
-            <Form.Control required type='password' placeholder='Password' value={password} onChange={e => registerPassword(e.target.value)} />
-          </FloatingLabel>
-        </FormGroup>
-
-        <FormGroup className='mb-3' contralId='birthdayForm'>
-          {Object.keys(birthdayError).map((key) => {
-            return (
-              <div className='form-validation' key={key}>
-                {birthdayError[key]}
-              </div>
-            );
-          })}
-          <FloatingLabel label='Birthday' className='mb-3'>
-            <Form.Control required type='date' placeholder='Birthday' value={birthday} onChange={e => registerBirthday(e.target.value)} />
-          </FloatingLabel>
-        </FormGroup>
-
-        <Button type='button' variant='primary' onClick={handleRegister}>
-          Submit
-        </Button>
-        <Link to={'/'}>
-          <Button type='button' variant='secondary'>
-            Back
-          </Button>
+      <span>
+        <Button type='submit' onClick={handleRegister}>Sign Up</Button>
+        <Link to='/'>
+          <Button variant='secondary'>Back</Button>
         </Link>
-      </Form>
-    </div>
+      </span>
+    </Form>
   );
 }
 
 RegistrationView.propTypes = {
-  user: PropTypes.shape({
+  register: PropTypes.shape({
     Email: PropTypes.string.isRequired,
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
-    Birthday: PropTypes.string.isRequired
+    Birthdate: PropTypes.string.isRequired
   })
 }

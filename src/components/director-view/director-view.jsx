@@ -3,6 +3,7 @@ import './director-view.scss';
 
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
@@ -13,22 +14,21 @@ export class DirectorView extends React.Component {
     return (
       <Row className='director-view'>
         <Col className='d-flex' md={12}>
-          <div>
-            <h2>{director.Name}</h2>
-            <p>
-              Bio:
-              <span>{director.Bio}</span>
-            </p>
-            <div className='d-flex align-items-center'>
-              <button onClick={() => {
-                onBackClick(null);
-              }}>
-                Back
-              </button>
-            </div>
+          <div className='director-name'>
+            <h2>
+              <span className='value'>{director.Name}</span>
+            </h2>
           </div>
+          <div className='director-bio'>
+            <span className='value'>{director.Bio}</span>
+          </div>
+          <div className='director-birthdate'>
+            <span className='value'>{director.Birth}</span>
+          </div>
+          <div className='button-space' />
+          <Button variant='primary' onClick={() => { onBackClick(null); }}>Back</Button>
         </Col>
-      </Row>
+      </Row >
     );
   }
 }

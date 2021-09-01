@@ -36134,6 +36134,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactRouterDom = require("react-router-dom");
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _row = require("react-bootstrap/Row");
@@ -36142,7 +36143,6 @@ var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
 var _navbar = require("react-bootstrap/Navbar");
 var _navbarDefault = parcelHelpers.interopDefault(_navbar);
-var _reactRouterDom = require("react-router-dom");
 var _reactBootstrap = require("react-bootstrap");
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
@@ -36182,7 +36182,6 @@ class MainView extends _reactDefault.default.Component {
         this.setState({
             user: authData.user.Username
         });
-        //this.props.setUser(authData.user.Username);
         //Stores the token and username in local storage
         localStorage.setItem('token', authData.token);
         localStorage.setItem('user', authData.user.Username);
@@ -36198,9 +36197,9 @@ class MainView extends _reactDefault.default.Component {
             user: null
         });
     }
-    isRegistered(user) {
+    isRegistered(register) {
         this.setState({
-            user
+            register: register
         });
     }
     //Gets all the movies from external DB
@@ -36214,7 +36213,6 @@ class MainView extends _reactDefault.default.Component {
             this.setState({
                 movies: response.data
             });
-        //this.props.setMovies(response.data);
         }).catch(function(error) {
             console.log(error);
         });
@@ -36242,79 +36240,20 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 128
+                lineNumber: 127
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 129
+                lineNumber: 128
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_navbarDefault.default, {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 130
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 131
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.NavbarBrand, {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 132
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
-            to: '/',
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 133
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 134
-            },
-            __self: this
-        }, "myFlix Client API"))), /*#__PURE__*/ _reactDefault.default.createElement(_navbarDefault.default.Text, {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 137
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
-            to: '/users/${user}',
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 138
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 139
-            },
-            __self: this
-        }, user))), /*#__PURE__*/ _reactDefault.default.createElement("button", {
-            onClick: ()=>{
-                this.onLoggedOut();
-            },
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 142
-            },
-            __self: this
-        }, "Logout"))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "main-view justify-content-md-center",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 150
+                lineNumber: 149
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -36323,8 +36262,6 @@ class MainView extends _reactDefault.default.Component {
             render: ()=>{
                 if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
-                    ,
-                    onRegisterClick: (register)=>this.onRegisterClick(register)
                 })));
                 if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
                     className: "main-view"
@@ -36341,7 +36278,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 151
+                lineNumber: 150
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -36350,13 +36287,21 @@ class MainView extends _reactDefault.default.Component {
                 if (user) return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Redirect, {
                     to: "/"
                 }));
-                return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_registrationView.RegistrationView, {
-                    onRegisterBack: (register)=>this.onRegisterBack(register)
-                })));
+                return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_registrationView.RegistrationView, null)));
             },
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 165
+                lineNumber: 164
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+            path: "/profile",
+            render: ()=>{
+                if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_profileView.ProfileView, null)));
+            },
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
+                lineNumber: 171
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -36364,8 +36309,6 @@ class MainView extends _reactDefault.default.Component {
             render: ({ match , history  })=>{
                 if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
-                    ,
-                    onRegisterClick: (register)=>this.onRegisterClick(register)
                 })));
                 if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
                     className: "main-view"
@@ -36378,7 +36321,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 174
+                lineNumber: 177
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -36386,8 +36329,6 @@ class MainView extends _reactDefault.default.Component {
             render: ({ match , history  })=>{
                 if (user) return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
-                    ,
-                    onRegisterClick: (register)=>this.onRegisterClick(register)
                 })));
                 if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
                     className: "main-view"
@@ -36400,7 +36341,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 188
+                lineNumber: 187
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -36408,8 +36349,6 @@ class MainView extends _reactDefault.default.Component {
             render: ({ match , history  })=>{
                 if (user) return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
-                    ,
-                    onRegisterClick: (register)=>this.onRegisterClick(register)
                 })));
                 if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
                     className: "main-view"
@@ -36422,29 +36361,25 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 202
+                lineNumber: 197
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
             exact: true,
             path: "/users/:Username",
             render: ({ history  })=>{
-                if (user) return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
+                if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
                     onLoggedIn: (data)=>this.onLoggedIn(data)
-                    ,
-                    onRegisterClick: (register)=>this.onRegisterClick(register)
-                })));
-                if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-                    className: "main-view"
                 }));
-                return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_profileView.ProfileView, {
+                if (movies.length === 0) return;
+                return(/*#__PURE__*/ _reactDefault.default.createElement(_profileView.ProfileView, {
                     history: history,
                     movies: movies
-                })));
+                }));
             },
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 217
+                lineNumber: 207
             },
             __self: this
         })))));
@@ -36457,7 +36392,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","axios":"7rA65","../movie-card/movie-card":"4xoUf","../movie-view/movie-view":"35etM","../login-view/login-view":"7gmrq","../registration-view/registration-view":"49c3f","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J","./main-view.scss":"fuuFa","react-bootstrap":"4n7hB","react-router-dom":"1PMSK","react-bootstrap/Col":"2D0r8","react-bootstrap/Row":"3fzwD","react-bootstrap/Container":"3Mt3t","react-bootstrap/Navbar":"3qLFd","../director-view/director-view":"5QJCQ","../genre-view/genre-view":"4mPGf","../profile-view/profile-view":"48orK"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","../movie-card/movie-card":"4xoUf","../movie-view/movie-view":"35etM","../login-view/login-view":"7gmrq","../registration-view/registration-view":"49c3f","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J","./main-view.scss":"fuuFa","react-bootstrap/Col":"2D0r8","react-bootstrap/Row":"3fzwD","react-bootstrap/Container":"3Mt3t","../director-view/director-view":"5QJCQ","../genre-view/genre-view":"4mPGf","../profile-view/profile-view":"48orK","react-router-dom":"1PMSK","react-bootstrap/Navbar":"3qLFd","react-bootstrap":"4n7hB"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
@@ -37840,25 +37775,27 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactRouterDom = require("react-router-dom");
 var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
-var _reactRouterDom = require("react-router-dom");
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
 class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie  } = this.props;
-        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default, {
+            bg: "secondary",
+            text: "white",
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
+                lineNumber: 19
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: '/movie/${movie._id}',
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 17
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default, {
-            key: movie._id,
-            variant: "light",
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 18
+                lineNumber: 20
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Img, {
@@ -37866,28 +37803,48 @@ class MovieCard extends _reactDefault.default.Component {
             src: movie.imgUrl,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 19
+                lineNumber: 21
             },
             __self: this
-        }), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
+        })), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 20
+                lineNumber: 23
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Title, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 21
+                lineNumber: 24
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 22
+                lineNumber: 25
             },
             __self: this
-        }, movie.Name))))));
+        }, movie.Title)), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Text, {
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
+                lineNumber: 27
+            },
+            __self: this
+        }, movie.Description), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            to: '/movie/${movie._id}',
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
+                lineNumber: 28
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            variant: "primary",
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-card\\movie-card.jsx",
+                lineNumber: 29
+            },
+            __self: this
+        }, "Open")))));
     }
 }
 MovieCard.propTypes = {
@@ -37914,7 +37871,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J","./movie-card.scss":"49lgN","react-router-dom":"1PMSK","prop-types":"4dfy5","react-bootstrap/Card":"1CZWQ"}],"Qgnc0":[function(require,module,exports) {
+},{"react":"3b2NM","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J","./movie-card.scss":"49lgN","prop-types":"4dfy5","react-bootstrap/Card":"1CZWQ","react-router-dom":"1PMSK","react-bootstrap/Button":"1ru0l"}],"Qgnc0":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -38066,7 +38023,1060 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"7An6T"}],"49lgN":[function() {},{}],"1PMSK":[function(require,module,exports) {
+},{"react-refresh/runtime":"7An6T"}],"49lgN":[function() {},{}],"4dfy5":[function(require,module,exports) {
+var ReactIs = require('react-is');
+// By explicitly using `prop-types` you are opting into new development behavior.
+// http://fb.me/prop-types-in-prod
+var throwOnDirectAccess = true;
+module.exports = require('./factoryWithTypeCheckers')(ReactIs.isElement, throwOnDirectAccess);
+
+},{"react-is":"68QIU","./factoryWithTypeCheckers":"1PVBO"}],"68QIU":[function(require,module,exports) {
+'use strict';
+module.exports = require('./cjs/react-is.development.js');
+
+},{"./cjs/react-is.development.js":"2onCQ"}],"2onCQ":[function(require,module,exports) {
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ 'use strict';
+(function() {
+    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+    var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 60103;
+    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 60106;
+    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 60107;
+    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 60108;
+    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 60114;
+    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 60109;
+    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 60110; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+    // (unstable) APIs that have been removed. Can we remove the symbols?
+    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 60111;
+    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 60111;
+    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 60112;
+    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 60113;
+    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 60120;
+    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 60115;
+    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 60116;
+    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 60121;
+    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 60117;
+    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 60118;
+    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 60119;
+    function isValidElementType(type) {
+        return typeof type === 'string' || typeof type === 'function' || type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+    }
+    function typeOf(object) {
+        if (typeof object === 'object' && object !== null) {
+            var $$typeof = object.$$typeof;
+            switch($$typeof){
+                case REACT_ELEMENT_TYPE:
+                    var type = object.type;
+                    switch(type){
+                        case REACT_ASYNC_MODE_TYPE:
+                        case REACT_CONCURRENT_MODE_TYPE:
+                        case REACT_FRAGMENT_TYPE:
+                        case REACT_PROFILER_TYPE:
+                        case REACT_STRICT_MODE_TYPE:
+                        case REACT_SUSPENSE_TYPE:
+                            return type;
+                        default:
+                            var $$typeofType = type && type.$$typeof;
+                            switch($$typeofType){
+                                case REACT_CONTEXT_TYPE:
+                                case REACT_FORWARD_REF_TYPE:
+                                case REACT_LAZY_TYPE:
+                                case REACT_MEMO_TYPE:
+                                case REACT_PROVIDER_TYPE:
+                                    return $$typeofType;
+                                default:
+                                    return $$typeof;
+                            }
+                    }
+                case REACT_PORTAL_TYPE:
+                    return $$typeof;
+            }
+        }
+        return undefined;
+    } // AsyncMode is deprecated along with isAsyncMode
+    var AsyncMode = REACT_ASYNC_MODE_TYPE;
+    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+    var ContextConsumer = REACT_CONTEXT_TYPE;
+    var ContextProvider = REACT_PROVIDER_TYPE;
+    var Element1 = REACT_ELEMENT_TYPE;
+    var ForwardRef = REACT_FORWARD_REF_TYPE;
+    var Fragment = REACT_FRAGMENT_TYPE;
+    var Lazy = REACT_LAZY_TYPE;
+    var Memo = REACT_MEMO_TYPE;
+    var Portal = REACT_PORTAL_TYPE;
+    var Profiler = REACT_PROFILER_TYPE;
+    var StrictMode = REACT_STRICT_MODE_TYPE;
+    var Suspense = REACT_SUSPENSE_TYPE;
+    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+    function isAsyncMode(object) {
+        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+            console['warn']("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
+        }
+        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+    }
+    function isConcurrentMode(object) {
+        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+    }
+    function isContextConsumer(object) {
+        return typeOf(object) === REACT_CONTEXT_TYPE;
+    }
+    function isContextProvider(object) {
+        return typeOf(object) === REACT_PROVIDER_TYPE;
+    }
+    function isElement(object) {
+        return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+    function isForwardRef(object) {
+        return typeOf(object) === REACT_FORWARD_REF_TYPE;
+    }
+    function isFragment(object) {
+        return typeOf(object) === REACT_FRAGMENT_TYPE;
+    }
+    function isLazy(object) {
+        return typeOf(object) === REACT_LAZY_TYPE;
+    }
+    function isMemo(object) {
+        return typeOf(object) === REACT_MEMO_TYPE;
+    }
+    function isPortal(object) {
+        return typeOf(object) === REACT_PORTAL_TYPE;
+    }
+    function isProfiler(object) {
+        return typeOf(object) === REACT_PROFILER_TYPE;
+    }
+    function isStrictMode(object) {
+        return typeOf(object) === REACT_STRICT_MODE_TYPE;
+    }
+    function isSuspense(object) {
+        return typeOf(object) === REACT_SUSPENSE_TYPE;
+    }
+    exports.AsyncMode = AsyncMode;
+    exports.ConcurrentMode = ConcurrentMode;
+    exports.ContextConsumer = ContextConsumer;
+    exports.ContextProvider = ContextProvider;
+    exports.Element = Element1;
+    exports.ForwardRef = ForwardRef;
+    exports.Fragment = Fragment;
+    exports.Lazy = Lazy;
+    exports.Memo = Memo;
+    exports.Portal = Portal;
+    exports.Profiler = Profiler;
+    exports.StrictMode = StrictMode;
+    exports.Suspense = Suspense;
+    exports.isAsyncMode = isAsyncMode;
+    exports.isConcurrentMode = isConcurrentMode;
+    exports.isContextConsumer = isContextConsumer;
+    exports.isContextProvider = isContextProvider;
+    exports.isElement = isElement;
+    exports.isForwardRef = isForwardRef;
+    exports.isFragment = isFragment;
+    exports.isLazy = isLazy;
+    exports.isMemo = isMemo;
+    exports.isPortal = isPortal;
+    exports.isProfiler = isProfiler;
+    exports.isStrictMode = isStrictMode;
+    exports.isSuspense = isSuspense;
+    exports.isValidElementType = isValidElementType;
+    exports.typeOf = typeOf;
+})();
+
+},{}],"1PVBO":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ 'use strict';
+var ReactIs = require('react-is');
+var assign = require('object-assign');
+var ReactPropTypesSecret = require('./lib/ReactPropTypesSecret');
+var checkPropTypes = require('./checkPropTypes');
+var has = Function.call.bind(Object.prototype.hasOwnProperty);
+var printWarning = function() {
+};
+printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') console.error(message);
+    try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+    } catch (x) {
+    }
+};
+function emptyFunctionThatReturnsNull() {
+    return null;
+}
+module.exports = function(isValidElement, throwOnDirectAccess) {
+    /* global Symbol */ var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+    var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+    /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */ function getIteratorFn(maybeIterable) {
+        var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+        if (typeof iteratorFn === 'function') return iteratorFn;
+    }
+    /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */ var ANONYMOUS = '<<anonymous>>';
+    // Important!
+    // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+    var ReactPropTypes = {
+        array: createPrimitiveTypeChecker('array'),
+        bool: createPrimitiveTypeChecker('boolean'),
+        func: createPrimitiveTypeChecker('function'),
+        number: createPrimitiveTypeChecker('number'),
+        object: createPrimitiveTypeChecker('object'),
+        string: createPrimitiveTypeChecker('string'),
+        symbol: createPrimitiveTypeChecker('symbol'),
+        any: createAnyTypeChecker(),
+        arrayOf: createArrayOfTypeChecker,
+        element: createElementTypeChecker(),
+        elementType: createElementTypeTypeChecker(),
+        instanceOf: createInstanceTypeChecker,
+        node: createNodeChecker(),
+        objectOf: createObjectOfTypeChecker,
+        oneOf: createEnumTypeChecker,
+        oneOfType: createUnionTypeChecker,
+        shape: createShapeTypeChecker,
+        exact: createStrictShapeTypeChecker
+    };
+    /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */ /*eslint-disable no-self-compare*/ function is(x, y) {
+        // SameValue algorithm
+        if (x === y) // Steps 1-5, 7-10
+        // Steps 6.b-6.e: +0 != -0
+        return x !== 0 || 1 / x === 1 / y;
+        else // Step 6.a: NaN == NaN
+        return x !== x && y !== y;
+    }
+    /*eslint-enable no-self-compare*/ /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */ function PropTypeError(message) {
+        this.message = message;
+        this.stack = '';
+    }
+    // Make `instanceof Error` still work for returned errors.
+    PropTypeError.prototype = Error.prototype;
+    function createChainableTypeChecker(validate) {
+        var manualPropTypeCallCache = {
+        };
+        var manualPropTypeWarningCount = 0;
+        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+            componentName = componentName || ANONYMOUS;
+            propFullName = propFullName || propName;
+            if (secret !== ReactPropTypesSecret) {
+                if (throwOnDirectAccess) {
+                    // New behavior only for users of `prop-types` package
+                    var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");
+                    err.name = 'Invariant Violation';
+                    throw err;
+                } else if (typeof console !== 'undefined') {
+                    // Old behavior for people using React.PropTypes
+                    var cacheKey = componentName + ':' + propName;
+                    if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
+                    manualPropTypeWarningCount < 3) {
+                        printWarning("You are manually calling a React.PropTypes validation function for the `" + propFullName + '` prop on `' + componentName + '`. This is deprecated ' + 'and will throw in the standalone `prop-types` package. ' + 'You may be seeing this warning due to a third-party PropTypes ' + 'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.');
+                        manualPropTypeCallCache[cacheKey] = true;
+                        manualPropTypeWarningCount++;
+                    }
+                }
+            }
+            if (props[propName] == null) {
+                if (isRequired) {
+                    if (props[propName] === null) return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+                    return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+                }
+                return null;
+            } else return validate(props, propName, componentName, location, propFullName);
+        }
+        var chainedCheckType = checkType.bind(null, false);
+        chainedCheckType.isRequired = checkType.bind(null, true);
+        return chainedCheckType;
+    }
+    function createPrimitiveTypeChecker(expectedType) {
+        function validate(props, propName, componentName, location, propFullName, secret) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== expectedType) {
+                // `propValue` being instance of, say, date/regexp, pass the 'object'
+                // check, but we can offer a more precise error message here rather than
+                // 'of type `object`'.
+                var preciseType = getPreciseType(propValue);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createAnyTypeChecker() {
+        return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+    }
+    function createArrayOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== 'function') return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+            var propValue = props[propName];
+            if (!Array.isArray(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+            }
+            for(var i = 0; i < propValue.length; i++){
+                var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+                if (error instanceof Error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!isValidElement(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!ReactIs.isValidElementType(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createInstanceTypeChecker(expectedClass) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!(props[propName] instanceof expectedClass)) {
+                var expectedClassName = expectedClass.name || ANONYMOUS;
+                var actualClassName = getClassName(props[propName]);
+                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createEnumTypeChecker(expectedValues) {
+        if (!Array.isArray(expectedValues)) {
+            {
+                if (arguments.length > 1) printWarning('Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' + 'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).');
+                else printWarning('Invalid argument supplied to oneOf, expected an array.');
+            }
+            return emptyFunctionThatReturnsNull;
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            for(var i = 0; i < expectedValues.length; i++){
+                if (is(propValue, expectedValues[i])) return null;
+            }
+            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+                var type = getPreciseType(value);
+                if (type === 'symbol') return String(value);
+                return value;
+            });
+            return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createObjectOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== 'function') return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== 'object') return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+            for(var key in propValue)if (has(propValue, key)) {
+                var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+                if (error instanceof Error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createUnionTypeChecker(arrayOfTypeCheckers) {
+        if (!Array.isArray(arrayOfTypeCheckers)) {
+            printWarning('Invalid argument supplied to oneOfType, expected an instance of array.');
+            return emptyFunctionThatReturnsNull;
+        }
+        for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+            var checker = arrayOfTypeCheckers[i];
+            if (typeof checker !== 'function') {
+                printWarning("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + ' at index ' + i + '.');
+                return emptyFunctionThatReturnsNull;
+            }
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            for(var i1 = 0; i1 < arrayOfTypeCheckers.length; i1++){
+                var checker = arrayOfTypeCheckers[i1];
+                if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) return null;
+            }
+            return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createNodeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!isNode(props[propName])) return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== 'object') return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+            for(var key in shapeTypes){
+                var checker = shapeTypes[key];
+                if (!checker) continue;
+                var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+                if (error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createStrictShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== 'object') return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+            // We need to check all keys in case some are required but missing from
+            // props.
+            var allKeys = assign({
+            }, props[propName], shapeTypes);
+            for(var key in allKeys){
+                var checker = shapeTypes[key];
+                if (!checker) return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' + '\nBad object: ' + JSON.stringify(props[propName], null, '  ') + '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  '));
+                var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+                if (error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function isNode(propValue) {
+        switch(typeof propValue){
+            case 'number':
+            case 'string':
+            case 'undefined':
+                return true;
+            case 'boolean':
+                return !propValue;
+            case 'object':
+                if (Array.isArray(propValue)) return propValue.every(isNode);
+                if (propValue === null || isValidElement(propValue)) return true;
+                var iteratorFn = getIteratorFn(propValue);
+                if (iteratorFn) {
+                    var iterator = iteratorFn.call(propValue);
+                    var step;
+                    if (iteratorFn !== propValue.entries) while(!(step = iterator.next()).done){
+                        if (!isNode(step.value)) return false;
+                    }
+                    else // Iterator will provide entry [k,v] tuples rather than values.
+                    while(!(step = iterator.next()).done){
+                        var entry = step.value;
+                        if (entry) {
+                            if (!isNode(entry[1])) return false;
+                        }
+                    }
+                } else return false;
+                return true;
+            default:
+                return false;
+        }
+    }
+    function isSymbol(propType, propValue) {
+        // Native Symbol.
+        if (propType === 'symbol') return true;
+        // falsy value can't be a Symbol
+        if (!propValue) return false;
+        // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+        if (propValue['@@toStringTag'] === 'Symbol') return true;
+        // Fallback for non-spec compliant Symbols which are polyfilled.
+        if (typeof Symbol === 'function' && propValue instanceof Symbol) return true;
+        return false;
+    }
+    // Equivalent of `typeof` but with special handling for array and regexp.
+    function getPropType(propValue) {
+        var propType = typeof propValue;
+        if (Array.isArray(propValue)) return 'array';
+        if (propValue instanceof RegExp) // Old webkits (at least until Android 4.0) return 'function' rather than
+        // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+        // passes PropTypes.object.
+        return 'object';
+        if (isSymbol(propType, propValue)) return 'symbol';
+        return propType;
+    }
+    // This handles more types than `getPropType`. Only used for error messages.
+    // See `createPrimitiveTypeChecker`.
+    function getPreciseType(propValue) {
+        if (typeof propValue === 'undefined' || propValue === null) return '' + propValue;
+        var propType = getPropType(propValue);
+        if (propType === 'object') {
+            if (propValue instanceof Date) return 'date';
+            else if (propValue instanceof RegExp) return 'regexp';
+        }
+        return propType;
+    }
+    // Returns a string that is postfixed to a warning about an invalid type.
+    // For example, "undefined" or "of type array"
+    function getPostfixForTypeWarning(value) {
+        var type = getPreciseType(value);
+        switch(type){
+            case 'array':
+            case 'object':
+                return 'an ' + type;
+            case 'boolean':
+            case 'date':
+            case 'regexp':
+                return 'a ' + type;
+            default:
+                return type;
+        }
+    }
+    // Returns class name of the object, if any.
+    function getClassName(propValue) {
+        if (!propValue.constructor || !propValue.constructor.name) return ANONYMOUS;
+        return propValue.constructor.name;
+    }
+    ReactPropTypes.checkPropTypes = checkPropTypes;
+    ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+    ReactPropTypes.PropTypes = ReactPropTypes;
+    return ReactPropTypes;
+};
+
+},{"react-is":"68QIU","object-assign":"3eM6x","./lib/ReactPropTypesSecret":"3OVnw","./checkPropTypes":"R8SC7"}],"3OVnw":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ 'use strict';
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+module.exports = ReactPropTypesSecret;
+
+},{}],"R8SC7":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ 'use strict';
+var printWarning = function() {
+};
+var ReactPropTypesSecret = require('./lib/ReactPropTypesSecret');
+var loggedTypeFailures = {
+};
+var has = Function.call.bind(Object.prototype.hasOwnProperty);
+printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') console.error(message);
+    try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+    } catch (x) {
+    }
+};
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+    for(var typeSpecName in typeSpecs)if (has(typeSpecs, typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+            // This is intentionally an invariant that gets caught. It's the same
+            // behavior as without this statement except with a better message.
+            if (typeof typeSpecs[typeSpecName] !== 'function') {
+                var err = Error((componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' + 'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.');
+                err.name = 'Invariant Violation';
+                throw err;
+            }
+            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        } catch (ex) {
+            error = ex;
+        }
+        if (error && !(error instanceof Error)) printWarning((componentName || 'React class') + ': type specification of ' + location + ' `' + typeSpecName + '` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a ' + typeof error + '. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).');
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+            // Only monitor this failure once because there tends to be a lot of the
+            // same error.
+            loggedTypeFailures[error.message] = true;
+            var stack = getStack ? getStack() : '';
+            printWarning('Failed ' + location + ' type: ' + error.message + (stack != null ? stack : ''));
+        }
+    }
+}
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */ checkPropTypes.resetWarningCache = function() {
+    loggedTypeFailures = {
+    };
+};
+module.exports = checkPropTypes;
+
+},{"./lib/ReactPropTypesSecret":"3OVnw"}],"1CZWQ":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+var _classnames = _interopRequireDefault(require("classnames"));
+var _react = _interopRequireWildcard(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
+var _divWithClassName = _interopRequireDefault(require("./divWithClassName"));
+var _CardContext = _interopRequireDefault(require("./CardContext"));
+var _CardImg = _interopRequireDefault(require("./CardImg"));
+var _excluded = [
+    "bsPrefix",
+    "className",
+    "bg",
+    "text",
+    "border",
+    "body",
+    "children",
+    "as"
+];
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function _getRequireWildcardCache1(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+var DivStyledAsH5 = _divWithClassName.default('h5');
+var DivStyledAsH6 = _divWithClassName.default('h6');
+var CardBody = _createWithBsPrefix.default('card-body');
+var CardTitle = _createWithBsPrefix.default('card-title', {
+    Component: DivStyledAsH5
+});
+var CardSubtitle = _createWithBsPrefix.default('card-subtitle', {
+    Component: DivStyledAsH6
+});
+var CardLink = _createWithBsPrefix.default('card-link', {
+    Component: 'a'
+});
+var CardText = _createWithBsPrefix.default('card-text', {
+    Component: 'p'
+});
+var CardHeader = _createWithBsPrefix.default('card-header');
+var CardFooter = _createWithBsPrefix.default('card-footer');
+var CardImgOverlay = _createWithBsPrefix.default('card-img-overlay');
+var defaultProps = {
+    body: false
+};
+var Card = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, className = _ref.className, bg = _ref.bg, text = _ref.text, border = _ref.border, body = _ref.body, children = _ref.children, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'div' : _ref$as, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
+    var prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'card');
+    var cardContext = _react.useMemo(function() {
+        return {
+            cardHeaderBsPrefix: prefix + "-header"
+        };
+    }, [
+        prefix
+    ]);
+    return(/*#__PURE__*/ _react.default.createElement(_CardContext.default.Provider, {
+        value: cardContext
+    }, /*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
+        ref: ref
+    }, props, {
+        className: _classnames.default(className, prefix, bg && "bg-" + bg, text && "text-" + text, border && "border-" + border)
+    }), body ? /*#__PURE__*/ // @ts-ignore
+    _react.default.createElement(CardBody, null, children) : children)));
+});
+Card.displayName = 'Card';
+Card.defaultProps = defaultProps;
+Card.Img = _CardImg.default;
+Card.Title = CardTitle;
+Card.Subtitle = CardSubtitle;
+Card.Body = CardBody;
+Card.Link = CardLink;
+Card.Text = CardText;
+Card.Header = CardHeader;
+Card.Footer = CardFooter;
+Card.ImgOverlay = CardImgOverlay;
+var _default = Card;
+exports.default = _default;
+module.exports = exports["default"];
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","./createWithBsPrefix":"2oVVc","./divWithClassName":"27J3S","./CardContext":"71yot","./CardImg":"68LPL"}],"4ttVj":[function(require,module,exports) {
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+module.exports = _interopRequireDefault;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+},{}],"3krLJ":[function(require,module,exports) {
+function _extends() {
+    module.exports = _extends = Object.assign || function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    module.exports["default"] = module.exports, module.exports.__esModule = true;
+    return _extends.apply(this, arguments);
+}
+module.exports = _extends;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+},{}],"3Yx9V":[function(require,module,exports) {
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {
+    };
+    var target = {
+    };
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+module.exports = _objectWithoutPropertiesLoose;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+},{}],"5aJRc":[function(require,module,exports) {
+(function() {
+    var hasOwn = {
+    }.hasOwnProperty;
+    function classNames() {
+        var classes = [];
+        for(var i = 0; i < arguments.length; i++){
+            var arg = arguments[i];
+            if (!arg) continue;
+            var argType = typeof arg;
+            if (argType === 'string' || argType === 'number') classes.push(arg);
+            else if (Array.isArray(arg)) {
+                if (arg.length) {
+                    var inner = classNames.apply(null, arg);
+                    if (inner) classes.push(inner);
+                }
+            } else if (argType === 'object') {
+                if (arg.toString === Object.prototype.toString) {
+                    for(var key in arg)if (hasOwn.call(arg, key) && arg[key]) classes.push(key);
+                } else classes.push(arg.toString());
+            }
+        }
+        return classes.join(' ');
+    }
+    if (typeof module !== 'undefined' && module.exports) {
+        classNames.default = classNames;
+        module.exports = classNames;
+    } else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) // register as 'classnames', consistent with npm package name
+    define('classnames', [], function() {
+        return classNames;
+    });
+    else window.classNames = classNames;
+})();
+
+},{}],"4rz1S":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.useBootstrapPrefix = useBootstrapPrefix;
+exports.createBootstrapComponent = createBootstrapComponent;
+exports.default = exports.ThemeConsumer = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _react = _interopRequireWildcard(require("react"));
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function _getRequireWildcardCache1(nodeInterop1) {
+        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+var ThemeContext = /*#__PURE__*/ _react.default.createContext({
+});
+var Consumer = ThemeContext.Consumer, Provider = ThemeContext.Provider;
+exports.ThemeConsumer = Consumer;
+function ThemeProvider(_ref) {
+    var prefixes = _ref.prefixes, children = _ref.children;
+    var copiedPrefixes = _react.useMemo(function() {
+        return _extends2.default({
+        }, prefixes);
+    }, [
+        prefixes
+    ]);
+    return(/*#__PURE__*/ _react.default.createElement(Provider, {
+        value: copiedPrefixes
+    }, children));
+}
+function useBootstrapPrefix(prefix, defaultPrefix) {
+    var prefixes = _react.useContext(ThemeContext);
+    return prefix || prefixes[defaultPrefix] || defaultPrefix;
+}
+function createBootstrapComponent(Component, opts) {
+    if (typeof opts === 'string') opts = {
+        prefix: opts
+    };
+    var isClassy = Component.prototype && Component.prototype.isReactComponent; // If it's a functional component make sure we don't break it with a ref
+    var _opts = opts, prefix = _opts.prefix, _opts$forwardRefAs = _opts.forwardRefAs, forwardRefAs = _opts$forwardRefAs === void 0 ? isClassy ? 'ref' : 'innerRef' : _opts$forwardRefAs;
+    var Wrapped = /*#__PURE__*/ _react.default.forwardRef(function(_ref2, ref) {
+        var props = _extends2.default({
+        }, _ref2);
+        props[forwardRefAs] = ref;
+        var bsPrefix = useBootstrapPrefix(props.bsPrefix, prefix);
+        return(/*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
+        }, props, {
+            bsPrefix: bsPrefix
+        })));
+    });
+    Wrapped.displayName = "Bootstrap(" + (Component.displayName || Component.name) + ")";
+    return Wrapped;
+}
+var _default = ThemeProvider;
+exports.default = _default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM"}],"2oVVc":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = createWithBsPrefix;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+var _classnames = _interopRequireDefault(require("classnames"));
+var _camelize = _interopRequireDefault(require("dom-helpers/camelize"));
+var _react = _interopRequireDefault(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _excluded = [
+    "className",
+    "bsPrefix",
+    "as"
+];
+var pascalCase = function pascalCase1(str) {
+    return str[0].toUpperCase() + _camelize.default(str).slice(1);
+};
+// TODO: emstricten & fix the typing here! `createWithBsPrefix<TElementType>...`
+function createWithBsPrefix(prefix, _temp) {
+    var _ref = _temp === void 0 ? {
+    } : _temp, _ref$displayName = _ref.displayName, displayName = _ref$displayName === void 0 ? pascalCase(prefix) : _ref$displayName, Component = _ref.Component, defaultProps = _ref.defaultProps;
+    var BsComponent = /*#__PURE__*/ _react.default.forwardRef(function(_ref2, ref) {
+        var className = _ref2.className, bsPrefix = _ref2.bsPrefix, _ref2$as = _ref2.as, Tag = _ref2$as === void 0 ? Component || 'div' : _ref2$as, props = _objectWithoutPropertiesLoose2.default(_ref2, _excluded);
+        var resolvedPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, prefix);
+        return(/*#__PURE__*/ _react.default.createElement(Tag, _extends2.default({
+            ref: ref,
+            className: _classnames.default(className, resolvedPrefix)
+        }, props)));
+    });
+    BsComponent.defaultProps = defaultProps;
+    BsComponent.displayName = displayName;
+    return BsComponent;
+}
+module.exports = exports["default"];
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","dom-helpers/camelize":"7AXwA","react":"3b2NM","./ThemeProvider":"4rz1S"}],"7AXwA":[function(require,module,exports) {
+"use strict";
+exports.__esModule = true;
+exports.default = camelize;
+var rHyphen = /-(.)/g;
+function camelize(string) {
+    return string.replace(rHyphen, function(_, chr) {
+        return chr.toUpperCase();
+    });
+}
+module.exports = exports["default"];
+
+},{}],"27J3S":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _react = _interopRequireDefault(require("react"));
+var _classnames = _interopRequireDefault(require("classnames"));
+var _default = function _default1(className) {
+    return(/*#__PURE__*/ _react.default.forwardRef(function(p, ref) {
+        return(/*#__PURE__*/ _react.default.createElement("div", _extends2.default({
+        }, p, {
+            ref: ref,
+            className: _classnames.default(p.className, className)
+        })));
+    }));
+};
+exports.default = _default;
+module.exports = exports["default"];
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","classnames":"5aJRc"}],"71yot":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
+var context = /*#__PURE__*/ _react.default.createContext(null);
+context.displayName = 'CardContext';
+var _default = context;
+exports.default = _default;
+module.exports = exports["default"];
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","react":"3b2NM"}],"68LPL":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+var _classnames = _interopRequireDefault(require("classnames"));
+var _react = _interopRequireDefault(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _excluded = [
+    "bsPrefix",
+    "className",
+    "variant",
+    "as"
+];
+var defaultProps = {
+    variant: null
+};
+var CardImg = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, className = _ref.className, variant = _ref.variant, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'img' : _ref$as, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
+    var prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'card-img');
+    return(/*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
+        ref: ref,
+        className: _classnames.default(variant ? prefix + "-" + variant : prefix, className)
+    }, props)));
+});
+CardImg.displayName = 'CardImg';
+CardImg.defaultProps = defaultProps;
+var _default = CardImg;
+exports.default = _default;
+module.exports = exports["default"];
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"1PMSK":[function(require,module,exports) {
 "use strict";
 module.exports = require("./cjs/react-router-dom.js");
 
@@ -39059,686 +40069,7 @@ exports.useParams = useParams;
 exports.useRouteMatch = useRouteMatch;
 exports.withRouter = withRouter;
 
-},{"react":"3b2NM","prop-types":"4dfy5","history":"RV0qD","tiny-warning":"3B527","mini-create-react-context":"g8cqP","tiny-invariant":"4v3Kg","path-to-regexp":"5CMSM","react-is":"68QIU","hoist-non-react-statics":"3nUHV"}],"4dfy5":[function(require,module,exports) {
-var ReactIs = require('react-is');
-// By explicitly using `prop-types` you are opting into new development behavior.
-// http://fb.me/prop-types-in-prod
-var throwOnDirectAccess = true;
-module.exports = require('./factoryWithTypeCheckers')(ReactIs.isElement, throwOnDirectAccess);
-
-},{"react-is":"68QIU","./factoryWithTypeCheckers":"1PVBO"}],"68QIU":[function(require,module,exports) {
-'use strict';
-module.exports = require('./cjs/react-is.development.js');
-
-},{"./cjs/react-is.development.js":"2onCQ"}],"2onCQ":[function(require,module,exports) {
-/** @license React v16.13.1
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ 'use strict';
-(function() {
-    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-    // nor polyfill, then a plain number is used for performance.
-    var hasSymbol = typeof Symbol === 'function' && Symbol.for;
-    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 60103;
-    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 60106;
-    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 60107;
-    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 60108;
-    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 60114;
-    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 60109;
-    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 60110; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
-    // (unstable) APIs that have been removed. Can we remove the symbols?
-    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 60111;
-    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 60111;
-    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 60112;
-    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 60113;
-    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 60120;
-    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 60115;
-    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 60116;
-    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 60121;
-    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 60117;
-    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 60118;
-    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 60119;
-    function isValidElementType(type) {
-        return typeof type === 'string' || typeof type === 'function' || type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
-    }
-    function typeOf(object) {
-        if (typeof object === 'object' && object !== null) {
-            var $$typeof = object.$$typeof;
-            switch($$typeof){
-                case REACT_ELEMENT_TYPE:
-                    var type = object.type;
-                    switch(type){
-                        case REACT_ASYNC_MODE_TYPE:
-                        case REACT_CONCURRENT_MODE_TYPE:
-                        case REACT_FRAGMENT_TYPE:
-                        case REACT_PROFILER_TYPE:
-                        case REACT_STRICT_MODE_TYPE:
-                        case REACT_SUSPENSE_TYPE:
-                            return type;
-                        default:
-                            var $$typeofType = type && type.$$typeof;
-                            switch($$typeofType){
-                                case REACT_CONTEXT_TYPE:
-                                case REACT_FORWARD_REF_TYPE:
-                                case REACT_LAZY_TYPE:
-                                case REACT_MEMO_TYPE:
-                                case REACT_PROVIDER_TYPE:
-                                    return $$typeofType;
-                                default:
-                                    return $$typeof;
-                            }
-                    }
-                case REACT_PORTAL_TYPE:
-                    return $$typeof;
-            }
-        }
-        return undefined;
-    } // AsyncMode is deprecated along with isAsyncMode
-    var AsyncMode = REACT_ASYNC_MODE_TYPE;
-    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-    var ContextConsumer = REACT_CONTEXT_TYPE;
-    var ContextProvider = REACT_PROVIDER_TYPE;
-    var Element1 = REACT_ELEMENT_TYPE;
-    var ForwardRef = REACT_FORWARD_REF_TYPE;
-    var Fragment = REACT_FRAGMENT_TYPE;
-    var Lazy = REACT_LAZY_TYPE;
-    var Memo = REACT_MEMO_TYPE;
-    var Portal = REACT_PORTAL_TYPE;
-    var Profiler = REACT_PROFILER_TYPE;
-    var StrictMode = REACT_STRICT_MODE_TYPE;
-    var Suspense = REACT_SUSPENSE_TYPE;
-    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
-    function isAsyncMode(object) {
-        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
-            console['warn']("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
-        }
-        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
-    }
-    function isConcurrentMode(object) {
-        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
-    }
-    function isContextConsumer(object) {
-        return typeOf(object) === REACT_CONTEXT_TYPE;
-    }
-    function isContextProvider(object) {
-        return typeOf(object) === REACT_PROVIDER_TYPE;
-    }
-    function isElement(object) {
-        return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-    }
-    function isForwardRef(object) {
-        return typeOf(object) === REACT_FORWARD_REF_TYPE;
-    }
-    function isFragment(object) {
-        return typeOf(object) === REACT_FRAGMENT_TYPE;
-    }
-    function isLazy(object) {
-        return typeOf(object) === REACT_LAZY_TYPE;
-    }
-    function isMemo(object) {
-        return typeOf(object) === REACT_MEMO_TYPE;
-    }
-    function isPortal(object) {
-        return typeOf(object) === REACT_PORTAL_TYPE;
-    }
-    function isProfiler(object) {
-        return typeOf(object) === REACT_PROFILER_TYPE;
-    }
-    function isStrictMode(object) {
-        return typeOf(object) === REACT_STRICT_MODE_TYPE;
-    }
-    function isSuspense(object) {
-        return typeOf(object) === REACT_SUSPENSE_TYPE;
-    }
-    exports.AsyncMode = AsyncMode;
-    exports.ConcurrentMode = ConcurrentMode;
-    exports.ContextConsumer = ContextConsumer;
-    exports.ContextProvider = ContextProvider;
-    exports.Element = Element1;
-    exports.ForwardRef = ForwardRef;
-    exports.Fragment = Fragment;
-    exports.Lazy = Lazy;
-    exports.Memo = Memo;
-    exports.Portal = Portal;
-    exports.Profiler = Profiler;
-    exports.StrictMode = StrictMode;
-    exports.Suspense = Suspense;
-    exports.isAsyncMode = isAsyncMode;
-    exports.isConcurrentMode = isConcurrentMode;
-    exports.isContextConsumer = isContextConsumer;
-    exports.isContextProvider = isContextProvider;
-    exports.isElement = isElement;
-    exports.isForwardRef = isForwardRef;
-    exports.isFragment = isFragment;
-    exports.isLazy = isLazy;
-    exports.isMemo = isMemo;
-    exports.isPortal = isPortal;
-    exports.isProfiler = isProfiler;
-    exports.isStrictMode = isStrictMode;
-    exports.isSuspense = isSuspense;
-    exports.isValidElementType = isValidElementType;
-    exports.typeOf = typeOf;
-})();
-
-},{}],"1PVBO":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ 'use strict';
-var ReactIs = require('react-is');
-var assign = require('object-assign');
-var ReactPropTypesSecret = require('./lib/ReactPropTypesSecret');
-var checkPropTypes = require('./checkPropTypes');
-var has = Function.call.bind(Object.prototype.hasOwnProperty);
-var printWarning = function() {
-};
-printWarning = function(text) {
-    var message = 'Warning: ' + text;
-    if (typeof console !== 'undefined') console.error(message);
-    try {
-        // --- Welcome to debugging React ---
-        // This error was thrown as a convenience so that you can use this stack
-        // to find the callsite that caused this warning to fire.
-        throw new Error(message);
-    } catch (x) {
-    }
-};
-function emptyFunctionThatReturnsNull() {
-    return null;
-}
-module.exports = function(isValidElement, throwOnDirectAccess) {
-    /* global Symbol */ var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
-    var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
-    /**
-   * Returns the iterator method function contained on the iterable object.
-   *
-   * Be sure to invoke the function with the iterable as context:
-   *
-   *     var iteratorFn = getIteratorFn(myIterable);
-   *     if (iteratorFn) {
-   *       var iterator = iteratorFn.call(myIterable);
-   *       ...
-   *     }
-   *
-   * @param {?object} maybeIterable
-   * @return {?function}
-   */ function getIteratorFn(maybeIterable) {
-        var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
-        if (typeof iteratorFn === 'function') return iteratorFn;
-    }
-    /**
-   * Collection of methods that allow declaration and validation of props that are
-   * supplied to React components. Example usage:
-   *
-   *   var Props = require('ReactPropTypes');
-   *   var MyArticle = React.createClass({
-   *     propTypes: {
-   *       // An optional string prop named "description".
-   *       description: Props.string,
-   *
-   *       // A required enum prop named "category".
-   *       category: Props.oneOf(['News','Photos']).isRequired,
-   *
-   *       // A prop named "dialog" that requires an instance of Dialog.
-   *       dialog: Props.instanceOf(Dialog).isRequired
-   *     },
-   *     render: function() { ... }
-   *   });
-   *
-   * A more formal specification of how these methods are used:
-   *
-   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
-   *   decl := ReactPropTypes.{type}(.isRequired)?
-   *
-   * Each and every declaration produces a function with the same signature. This
-   * allows the creation of custom validation functions. For example:
-   *
-   *  var MyLink = React.createClass({
-   *    propTypes: {
-   *      // An optional string or URI prop named "href".
-   *      href: function(props, propName, componentName) {
-   *        var propValue = props[propName];
-   *        if (propValue != null && typeof propValue !== 'string' &&
-   *            !(propValue instanceof URI)) {
-   *          return new Error(
-   *            'Expected a string or an URI for ' + propName + ' in ' +
-   *            componentName
-   *          );
-   *        }
-   *      }
-   *    },
-   *    render: function() {...}
-   *  });
-   *
-   * @internal
-   */ var ANONYMOUS = '<<anonymous>>';
-    // Important!
-    // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
-    var ReactPropTypes = {
-        array: createPrimitiveTypeChecker('array'),
-        bool: createPrimitiveTypeChecker('boolean'),
-        func: createPrimitiveTypeChecker('function'),
-        number: createPrimitiveTypeChecker('number'),
-        object: createPrimitiveTypeChecker('object'),
-        string: createPrimitiveTypeChecker('string'),
-        symbol: createPrimitiveTypeChecker('symbol'),
-        any: createAnyTypeChecker(),
-        arrayOf: createArrayOfTypeChecker,
-        element: createElementTypeChecker(),
-        elementType: createElementTypeTypeChecker(),
-        instanceOf: createInstanceTypeChecker,
-        node: createNodeChecker(),
-        objectOf: createObjectOfTypeChecker,
-        oneOf: createEnumTypeChecker,
-        oneOfType: createUnionTypeChecker,
-        shape: createShapeTypeChecker,
-        exact: createStrictShapeTypeChecker
-    };
-    /**
-   * inlined Object.is polyfill to avoid requiring consumers ship their own
-   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
-   */ /*eslint-disable no-self-compare*/ function is(x, y) {
-        // SameValue algorithm
-        if (x === y) // Steps 1-5, 7-10
-        // Steps 6.b-6.e: +0 != -0
-        return x !== 0 || 1 / x === 1 / y;
-        else // Step 6.a: NaN == NaN
-        return x !== x && y !== y;
-    }
-    /*eslint-enable no-self-compare*/ /**
-   * We use an Error-like object for backward compatibility as people may call
-   * PropTypes directly and inspect their output. However, we don't use real
-   * Errors anymore. We don't inspect their stack anyway, and creating them
-   * is prohibitively expensive if they are created too often, such as what
-   * happens in oneOfType() for any type before the one that matched.
-   */ function PropTypeError(message) {
-        this.message = message;
-        this.stack = '';
-    }
-    // Make `instanceof Error` still work for returned errors.
-    PropTypeError.prototype = Error.prototype;
-    function createChainableTypeChecker(validate) {
-        var manualPropTypeCallCache = {
-        };
-        var manualPropTypeWarningCount = 0;
-        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
-            componentName = componentName || ANONYMOUS;
-            propFullName = propFullName || propName;
-            if (secret !== ReactPropTypesSecret) {
-                if (throwOnDirectAccess) {
-                    // New behavior only for users of `prop-types` package
-                    var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");
-                    err.name = 'Invariant Violation';
-                    throw err;
-                } else if (typeof console !== 'undefined') {
-                    // Old behavior for people using React.PropTypes
-                    var cacheKey = componentName + ':' + propName;
-                    if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
-                    manualPropTypeWarningCount < 3) {
-                        printWarning("You are manually calling a React.PropTypes validation function for the `" + propFullName + '` prop on `' + componentName + '`. This is deprecated ' + 'and will throw in the standalone `prop-types` package. ' + 'You may be seeing this warning due to a third-party PropTypes ' + 'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.');
-                        manualPropTypeCallCache[cacheKey] = true;
-                        manualPropTypeWarningCount++;
-                    }
-                }
-            }
-            if (props[propName] == null) {
-                if (isRequired) {
-                    if (props[propName] === null) return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
-                    return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
-                }
-                return null;
-            } else return validate(props, propName, componentName, location, propFullName);
-        }
-        var chainedCheckType = checkType.bind(null, false);
-        chainedCheckType.isRequired = checkType.bind(null, true);
-        return chainedCheckType;
-    }
-    function createPrimitiveTypeChecker(expectedType) {
-        function validate(props, propName, componentName, location, propFullName, secret) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== expectedType) {
-                // `propValue` being instance of, say, date/regexp, pass the 'object'
-                // check, but we can offer a more precise error message here rather than
-                // 'of type `object`'.
-                var preciseType = getPreciseType(propValue);
-                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createAnyTypeChecker() {
-        return createChainableTypeChecker(emptyFunctionThatReturnsNull);
-    }
-    function createArrayOfTypeChecker(typeChecker) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (typeof typeChecker !== 'function') return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
-            var propValue = props[propName];
-            if (!Array.isArray(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
-            }
-            for(var i = 0; i < propValue.length; i++){
-                var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
-                if (error instanceof Error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createElementTypeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            if (!isValidElement(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createElementTypeTypeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            if (!ReactIs.isValidElementType(propValue)) {
-                var propType = getPropType(propValue);
-                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createInstanceTypeChecker(expectedClass) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (!(props[propName] instanceof expectedClass)) {
-                var expectedClassName = expectedClass.name || ANONYMOUS;
-                var actualClassName = getClassName(props[propName]);
-                return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createEnumTypeChecker(expectedValues) {
-        if (!Array.isArray(expectedValues)) {
-            {
-                if (arguments.length > 1) printWarning('Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' + 'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).');
-                else printWarning('Invalid argument supplied to oneOf, expected an array.');
-            }
-            return emptyFunctionThatReturnsNull;
-        }
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            for(var i = 0; i < expectedValues.length; i++){
-                if (is(propValue, expectedValues[i])) return null;
-            }
-            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
-                var type = getPreciseType(value);
-                if (type === 'symbol') return String(value);
-                return value;
-            });
-            return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createObjectOfTypeChecker(typeChecker) {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (typeof typeChecker !== 'function') return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== 'object') return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
-            for(var key in propValue)if (has(propValue, key)) {
-                var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-                if (error instanceof Error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createUnionTypeChecker(arrayOfTypeCheckers) {
-        if (!Array.isArray(arrayOfTypeCheckers)) {
-            printWarning('Invalid argument supplied to oneOfType, expected an instance of array.');
-            return emptyFunctionThatReturnsNull;
-        }
-        for(var i = 0; i < arrayOfTypeCheckers.length; i++){
-            var checker = arrayOfTypeCheckers[i];
-            if (typeof checker !== 'function') {
-                printWarning("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + ' at index ' + i + '.');
-                return emptyFunctionThatReturnsNull;
-            }
-        }
-        function validate(props, propName, componentName, location, propFullName) {
-            for(var i1 = 0; i1 < arrayOfTypeCheckers.length; i1++){
-                var checker = arrayOfTypeCheckers[i1];
-                if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) return null;
-            }
-            return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createNodeChecker() {
-        function validate(props, propName, componentName, location, propFullName) {
-            if (!isNode(props[propName])) return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createShapeTypeChecker(shapeTypes) {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== 'object') return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
-            for(var key in shapeTypes){
-                var checker = shapeTypes[key];
-                if (!checker) continue;
-                var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-                if (error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function createStrictShapeTypeChecker(shapeTypes) {
-        function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== 'object') return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
-            // We need to check all keys in case some are required but missing from
-            // props.
-            var allKeys = assign({
-            }, props[propName], shapeTypes);
-            for(var key in allKeys){
-                var checker = shapeTypes[key];
-                if (!checker) return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' + '\nBad object: ' + JSON.stringify(props[propName], null, '  ') + '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  '));
-                var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
-                if (error) return error;
-            }
-            return null;
-        }
-        return createChainableTypeChecker(validate);
-    }
-    function isNode(propValue) {
-        switch(typeof propValue){
-            case 'number':
-            case 'string':
-            case 'undefined':
-                return true;
-            case 'boolean':
-                return !propValue;
-            case 'object':
-                if (Array.isArray(propValue)) return propValue.every(isNode);
-                if (propValue === null || isValidElement(propValue)) return true;
-                var iteratorFn = getIteratorFn(propValue);
-                if (iteratorFn) {
-                    var iterator = iteratorFn.call(propValue);
-                    var step;
-                    if (iteratorFn !== propValue.entries) while(!(step = iterator.next()).done){
-                        if (!isNode(step.value)) return false;
-                    }
-                    else // Iterator will provide entry [k,v] tuples rather than values.
-                    while(!(step = iterator.next()).done){
-                        var entry = step.value;
-                        if (entry) {
-                            if (!isNode(entry[1])) return false;
-                        }
-                    }
-                } else return false;
-                return true;
-            default:
-                return false;
-        }
-    }
-    function isSymbol(propType, propValue) {
-        // Native Symbol.
-        if (propType === 'symbol') return true;
-        // falsy value can't be a Symbol
-        if (!propValue) return false;
-        // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
-        if (propValue['@@toStringTag'] === 'Symbol') return true;
-        // Fallback for non-spec compliant Symbols which are polyfilled.
-        if (typeof Symbol === 'function' && propValue instanceof Symbol) return true;
-        return false;
-    }
-    // Equivalent of `typeof` but with special handling for array and regexp.
-    function getPropType(propValue) {
-        var propType = typeof propValue;
-        if (Array.isArray(propValue)) return 'array';
-        if (propValue instanceof RegExp) // Old webkits (at least until Android 4.0) return 'function' rather than
-        // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
-        // passes PropTypes.object.
-        return 'object';
-        if (isSymbol(propType, propValue)) return 'symbol';
-        return propType;
-    }
-    // This handles more types than `getPropType`. Only used for error messages.
-    // See `createPrimitiveTypeChecker`.
-    function getPreciseType(propValue) {
-        if (typeof propValue === 'undefined' || propValue === null) return '' + propValue;
-        var propType = getPropType(propValue);
-        if (propType === 'object') {
-            if (propValue instanceof Date) return 'date';
-            else if (propValue instanceof RegExp) return 'regexp';
-        }
-        return propType;
-    }
-    // Returns a string that is postfixed to a warning about an invalid type.
-    // For example, "undefined" or "of type array"
-    function getPostfixForTypeWarning(value) {
-        var type = getPreciseType(value);
-        switch(type){
-            case 'array':
-            case 'object':
-                return 'an ' + type;
-            case 'boolean':
-            case 'date':
-            case 'regexp':
-                return 'a ' + type;
-            default:
-                return type;
-        }
-    }
-    // Returns class name of the object, if any.
-    function getClassName(propValue) {
-        if (!propValue.constructor || !propValue.constructor.name) return ANONYMOUS;
-        return propValue.constructor.name;
-    }
-    ReactPropTypes.checkPropTypes = checkPropTypes;
-    ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
-    ReactPropTypes.PropTypes = ReactPropTypes;
-    return ReactPropTypes;
-};
-
-},{"react-is":"68QIU","object-assign":"3eM6x","./lib/ReactPropTypesSecret":"3OVnw","./checkPropTypes":"R8SC7"}],"3OVnw":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ 'use strict';
-var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-module.exports = ReactPropTypesSecret;
-
-},{}],"R8SC7":[function(require,module,exports) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ 'use strict';
-var printWarning = function() {
-};
-var ReactPropTypesSecret = require('./lib/ReactPropTypesSecret');
-var loggedTypeFailures = {
-};
-var has = Function.call.bind(Object.prototype.hasOwnProperty);
-printWarning = function(text) {
-    var message = 'Warning: ' + text;
-    if (typeof console !== 'undefined') console.error(message);
-    try {
-        // --- Welcome to debugging React ---
-        // This error was thrown as a convenience so that you can use this stack
-        // to find the callsite that caused this warning to fire.
-        throw new Error(message);
-    } catch (x) {
-    }
-};
-/**
- * Assert that the values match with the type specs.
- * Error messages are memorized and will only be shown once.
- *
- * @param {object} typeSpecs Map of name to a ReactPropType
- * @param {object} values Runtime values that need to be type-checked
- * @param {string} location e.g. "prop", "context", "child context"
- * @param {string} componentName Name of the component for error messages.
- * @param {?Function} getStack Returns the component stack.
- * @private
- */ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-    for(var typeSpecName in typeSpecs)if (has(typeSpecs, typeSpecName)) {
-        var error;
-        // Prop type validation may throw. In case they do, we don't want to
-        // fail the render phase where it didn't fail before. So we log it.
-        // After these have been cleaned up, we'll let them throw.
-        try {
-            // This is intentionally an invariant that gets caught. It's the same
-            // behavior as without this statement except with a better message.
-            if (typeof typeSpecs[typeSpecName] !== 'function') {
-                var err = Error((componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' + 'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.');
-                err.name = 'Invariant Violation';
-                throw err;
-            }
-            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
-        } catch (ex) {
-            error = ex;
-        }
-        if (error && !(error instanceof Error)) printWarning((componentName || 'React class') + ': type specification of ' + location + ' `' + typeSpecName + '` is invalid; the type checker ' + 'function must return `null` or an `Error` but returned a ' + typeof error + '. ' + 'You may have forgotten to pass an argument to the type checker ' + 'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' + 'shape all require an argument).');
-        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
-            // Only monitor this failure once because there tends to be a lot of the
-            // same error.
-            loggedTypeFailures[error.message] = true;
-            var stack = getStack ? getStack() : '';
-            printWarning('Failed ' + location + ' type: ' + error.message + (stack != null ? stack : ''));
-        }
-    }
-}
-/**
- * Resets warning cache when testing.
- *
- * @private
- */ checkPropTypes.resetWarningCache = function() {
-    loggedTypeFailures = {
-    };
-};
-module.exports = checkPropTypes;
-
-},{"./lib/ReactPropTypesSecret":"3OVnw"}],"RV0qD":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","history":"RV0qD","tiny-warning":"3B527","mini-create-react-context":"g8cqP","tiny-invariant":"4v3Kg","path-to-regexp":"5CMSM","react-is":"68QIU","hoist-non-react-statics":"3nUHV"}],"RV0qD":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/history.js');
 
@@ -41145,7 +41476,7 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 }
 module.exports = hoistNonReactStatics;
 
-},{"react-is":"68QIU"}],"1CZWQ":[function(require,module,exports) {
+},{"react-is":"68QIU"}],"1ru0l":[function(require,module,exports) {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
@@ -41153,373 +41484,142 @@ exports.default = void 0;
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
 var _classnames = _interopRequireDefault(require("classnames"));
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 var _ThemeProvider = require("./ThemeProvider");
-var _createWithBsPrefix = _interopRequireDefault(require("./createWithBsPrefix"));
-var _divWithClassName = _interopRequireDefault(require("./divWithClassName"));
-var _CardContext = _interopRequireDefault(require("./CardContext"));
-var _CardImg = _interopRequireDefault(require("./CardImg"));
+var _SafeAnchor = _interopRequireDefault(require("./SafeAnchor"));
 var _excluded = [
     "bsPrefix",
+    "variant",
+    "size",
+    "active",
     "className",
-    "bg",
-    "text",
-    "border",
-    "body",
-    "children",
+    "block",
+    "type",
     "as"
 ];
-function _getRequireWildcardCache(nodeInterop) {
-    if (typeof WeakMap !== "function") return null;
-    var cacheBabelInterop = new WeakMap();
-    var cacheNodeInterop = new WeakMap();
-    return (_getRequireWildcardCache = function _getRequireWildcardCache1(nodeInterop1) {
-        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
-    })(nodeInterop);
-}
-function _interopRequireWildcard(obj, nodeInterop) {
-    if (!nodeInterop && obj && obj.__esModule) return obj;
-    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
-        default: obj
-    };
-    var cache = _getRequireWildcardCache(nodeInterop);
-    if (cache && cache.has(obj)) return cache.get(obj);
-    var newObj = {
-    };
-    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
-        else newObj[key] = obj[key];
-    }
-    newObj.default = obj;
-    if (cache) cache.set(obj, newObj);
-    return newObj;
-}
-var DivStyledAsH5 = _divWithClassName.default('h5');
-var DivStyledAsH6 = _divWithClassName.default('h6');
-var CardBody = _createWithBsPrefix.default('card-body');
-var CardTitle = _createWithBsPrefix.default('card-title', {
-    Component: DivStyledAsH5
-});
-var CardSubtitle = _createWithBsPrefix.default('card-subtitle', {
-    Component: DivStyledAsH6
-});
-var CardLink = _createWithBsPrefix.default('card-link', {
-    Component: 'a'
-});
-var CardText = _createWithBsPrefix.default('card-text', {
-    Component: 'p'
-});
-var CardHeader = _createWithBsPrefix.default('card-header');
-var CardFooter = _createWithBsPrefix.default('card-footer');
-var CardImgOverlay = _createWithBsPrefix.default('card-img-overlay');
 var defaultProps = {
-    body: false
+    variant: 'primary',
+    active: false,
+    disabled: false
 };
-var Card = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
-    var bsPrefix = _ref.bsPrefix, className = _ref.className, bg = _ref.bg, text = _ref.text, border = _ref.border, body = _ref.body, children = _ref.children, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'div' : _ref$as, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
-    var prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'card');
-    var cardContext = _react.useMemo(function() {
-        return {
-            cardHeaderBsPrefix: prefix + "-header"
-        };
-    }, [
-        prefix
-    ]);
-    return(/*#__PURE__*/ _react.default.createElement(_CardContext.default.Provider, {
-        value: cardContext
-    }, /*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
+var Button = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, variant = _ref.variant, size = _ref.size, active = _ref.active, className = _ref.className, block = _ref.block, type = _ref.type, as = _ref.as, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
+    var prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'btn');
+    var classes = _classnames.default(className, prefix, active && 'active', variant && prefix + "-" + variant, block && prefix + "-block", size && prefix + "-" + size);
+    if (props.href) return(/*#__PURE__*/ _react.default.createElement(_SafeAnchor.default, _extends2.default({
+    }, props, {
+        as: as,
+        ref: ref,
+        className: _classnames.default(classes, props.disabled && 'disabled')
+    })));
+    if (ref) props.ref = ref;
+    if (type) props.type = type;
+    else if (!as) props.type = 'button';
+    var Component = as || 'button';
+    return(/*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
+    }, props, {
+        className: classes
+    })));
+});
+Button.displayName = 'Button';
+Button.defaultProps = defaultProps;
+var _default = Button;
+exports.default = _default;
+module.exports = exports["default"];
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","./SafeAnchor":"5VP5o"}],"5VP5o":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+var _react = _interopRequireDefault(require("react"));
+var _createChainedFunction = _interopRequireDefault(require("./createChainedFunction"));
+var _excluded = [
+    "as",
+    "disabled",
+    "onKeyDown"
+];
+function isTrivialHref(href) {
+    return !href || href.trim() === '#';
+}
+/**
+ * There are situations due to browser quirks or Bootstrap CSS where
+ * an anchor tag is needed, when semantically a button tag is the
+ * better choice. SafeAnchor ensures that when an anchor is used like a
+ * button its accessible. It also emulates input `disabled` behavior for
+ * links, which is usually desirable for Buttons, NavItems, DropdownItems, etc.
+ */ var SafeAnchor = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
+    var _ref$as = _ref.as, Component = _ref$as === void 0 ? 'a' : _ref$as, disabled = _ref.disabled, onKeyDown = _ref.onKeyDown, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
+    var handleClick = function handleClick1(event) {
+        var href = props.href, onClick = props.onClick;
+        if (disabled || isTrivialHref(href)) event.preventDefault();
+        if (disabled) {
+            event.stopPropagation();
+            return;
+        }
+        if (onClick) onClick(event);
+    };
+    var handleKeyDown = function handleKeyDown1(event) {
+        if (event.key === ' ') {
+            event.preventDefault();
+            handleClick(event);
+        }
+    };
+    if (isTrivialHref(props.href)) {
+        props.role = props.role || 'button'; // we want to make sure there is a href attribute on the node
+        // otherwise, the cursor incorrectly styled (except with role='button')
+        props.href = props.href || '#';
+    }
+    if (disabled) {
+        props.tabIndex = -1;
+        props['aria-disabled'] = true;
+    }
+    return(/*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
         ref: ref
     }, props, {
-        className: _classnames.default(className, prefix, bg && "bg-" + bg, text && "text-" + text, border && "border-" + border)
-    }), body ? /*#__PURE__*/ // @ts-ignore
-    _react.default.createElement(CardBody, null, children) : children)));
+        onClick: handleClick,
+        onKeyDown: _createChainedFunction.default(handleKeyDown, onKeyDown)
+    })));
 });
-Card.displayName = 'Card';
-Card.defaultProps = defaultProps;
-Card.Img = _CardImg.default;
-Card.Title = CardTitle;
-Card.Subtitle = CardSubtitle;
-Card.Body = CardBody;
-Card.Link = CardLink;
-Card.Text = CardText;
-Card.Header = CardHeader;
-Card.Footer = CardFooter;
-Card.ImgOverlay = CardImgOverlay;
-var _default = Card;
+SafeAnchor.displayName = 'SafeAnchor';
+var _default = SafeAnchor;
 exports.default = _default;
 module.exports = exports["default"];
 
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","./createWithBsPrefix":"2oVVc","./divWithClassName":"27J3S","./CardContext":"71yot","./CardImg":"68LPL"}],"4ttVj":[function(require,module,exports) {
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        "default": obj
-    };
-}
-module.exports = _interopRequireDefault;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-
-},{}],"3krLJ":[function(require,module,exports) {
-function _extends() {
-    module.exports = _extends = Object.assign || function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    module.exports["default"] = module.exports, module.exports.__esModule = true;
-    return _extends.apply(this, arguments);
-}
-module.exports = _extends;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-
-},{}],"3Yx9V":[function(require,module,exports) {
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {
-    };
-    var target = {
-    };
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
-    }
-    return target;
-}
-module.exports = _objectWithoutPropertiesLoose;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-
-},{}],"5aJRc":[function(require,module,exports) {
-(function() {
-    var hasOwn = {
-    }.hasOwnProperty;
-    function classNames() {
-        var classes = [];
-        for(var i = 0; i < arguments.length; i++){
-            var arg = arguments[i];
-            if (!arg) continue;
-            var argType = typeof arg;
-            if (argType === 'string' || argType === 'number') classes.push(arg);
-            else if (Array.isArray(arg)) {
-                if (arg.length) {
-                    var inner = classNames.apply(null, arg);
-                    if (inner) classes.push(inner);
-                }
-            } else if (argType === 'object') {
-                if (arg.toString === Object.prototype.toString) {
-                    for(var key in arg)if (hasOwn.call(arg, key) && arg[key]) classes.push(key);
-                } else classes.push(arg.toString());
-            }
-        }
-        return classes.join(' ');
-    }
-    if (typeof module !== 'undefined' && module.exports) {
-        classNames.default = classNames;
-        module.exports = classNames;
-    } else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) // register as 'classnames', consistent with npm package name
-    define('classnames', [], function() {
-        return classNames;
-    });
-    else window.classNames = classNames;
-})();
-
-},{}],"4rz1S":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","react":"3b2NM","./createChainedFunction":"4RHiz"}],"4RHiz":[function(require,module,exports) {
 "use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.useBootstrapPrefix = useBootstrapPrefix;
-exports.createBootstrapComponent = createBootstrapComponent;
-exports.default = exports.ThemeConsumer = void 0;
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-var _react = _interopRequireWildcard(require("react"));
-function _getRequireWildcardCache(nodeInterop) {
-    if (typeof WeakMap !== "function") return null;
-    var cacheBabelInterop = new WeakMap();
-    var cacheNodeInterop = new WeakMap();
-    return (_getRequireWildcardCache = function _getRequireWildcardCache1(nodeInterop1) {
-        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
-    })(nodeInterop);
-}
-function _interopRequireWildcard(obj, nodeInterop) {
-    if (!nodeInterop && obj && obj.__esModule) return obj;
-    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
-        default: obj
-    };
-    var cache = _getRequireWildcardCache(nodeInterop);
-    if (cache && cache.has(obj)) return cache.get(obj);
-    var newObj = {
-    };
-    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
-        else newObj[key] = obj[key];
-    }
-    newObj.default = obj;
-    if (cache) cache.set(obj, newObj);
-    return newObj;
-}
-var ThemeContext = /*#__PURE__*/ _react.default.createContext({
-});
-var Consumer = ThemeContext.Consumer, Provider = ThemeContext.Provider;
-exports.ThemeConsumer = Consumer;
-function ThemeProvider(_ref) {
-    var prefixes = _ref.prefixes, children = _ref.children;
-    var copiedPrefixes = _react.useMemo(function() {
-        return _extends2.default({
-        }, prefixes);
-    }, [
-        prefixes
-    ]);
-    return(/*#__PURE__*/ _react.default.createElement(Provider, {
-        value: copiedPrefixes
-    }, children));
-}
-function useBootstrapPrefix(prefix, defaultPrefix) {
-    var prefixes = _react.useContext(ThemeContext);
-    return prefix || prefixes[defaultPrefix] || defaultPrefix;
-}
-function createBootstrapComponent(Component, opts) {
-    if (typeof opts === 'string') opts = {
-        prefix: opts
-    };
-    var isClassy = Component.prototype && Component.prototype.isReactComponent; // If it's a functional component make sure we don't break it with a ref
-    var _opts = opts, prefix = _opts.prefix, _opts$forwardRefAs = _opts.forwardRefAs, forwardRefAs = _opts$forwardRefAs === void 0 ? isClassy ? 'ref' : 'innerRef' : _opts$forwardRefAs;
-    var Wrapped = /*#__PURE__*/ _react.default.forwardRef(function(_ref2, ref) {
-        var props = _extends2.default({
-        }, _ref2);
-        props[forwardRefAs] = ref;
-        var bsPrefix = useBootstrapPrefix(props.bsPrefix, prefix);
-        return(/*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
-        }, props, {
-            bsPrefix: bsPrefix
-        })));
-    });
-    Wrapped.displayName = "Bootstrap(" + (Component.displayName || Component.name) + ")";
-    return Wrapped;
-}
-var _default = ThemeProvider;
-exports.default = _default;
-
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM"}],"2oVVc":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.default = createWithBsPrefix;
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _classnames = _interopRequireDefault(require("classnames"));
-var _camelize = _interopRequireDefault(require("dom-helpers/camelize"));
-var _react = _interopRequireDefault(require("react"));
-var _ThemeProvider = require("./ThemeProvider");
-var _excluded = [
-    "className",
-    "bsPrefix",
-    "as"
-];
-var pascalCase = function pascalCase1(str) {
-    return str[0].toUpperCase() + _camelize.default(str).slice(1);
-};
-// TODO: emstricten & fix the typing here! `createWithBsPrefix<TElementType>...`
-function createWithBsPrefix(prefix, _temp) {
-    var _ref = _temp === void 0 ? {
-    } : _temp, _ref$displayName = _ref.displayName, displayName = _ref$displayName === void 0 ? pascalCase(prefix) : _ref$displayName, Component = _ref.Component, defaultProps = _ref.defaultProps;
-    var BsComponent = /*#__PURE__*/ _react.default.forwardRef(function(_ref2, ref) {
-        var className = _ref2.className, bsPrefix = _ref2.bsPrefix, _ref2$as = _ref2.as, Tag = _ref2$as === void 0 ? Component || 'div' : _ref2$as, props = _objectWithoutPropertiesLoose2.default(_ref2, _excluded);
-        var resolvedPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, prefix);
-        return(/*#__PURE__*/ _react.default.createElement(Tag, _extends2.default({
-            ref: ref,
-            className: _classnames.default(className, resolvedPrefix)
-        }, props)));
-    });
-    BsComponent.defaultProps = defaultProps;
-    BsComponent.displayName = displayName;
-    return BsComponent;
-}
-module.exports = exports["default"];
-
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","dom-helpers/camelize":"7AXwA","react":"3b2NM","./ThemeProvider":"4rz1S"}],"7AXwA":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports.default = camelize;
-var rHyphen = /-(.)/g;
-function camelize(string) {
-    return string.replace(rHyphen, function(_, chr) {
-        return chr.toUpperCase();
-    });
-}
-module.exports = exports["default"];
-
-},{}],"27J3S":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
 exports.default = void 0;
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-var _react = _interopRequireDefault(require("react"));
-var _classnames = _interopRequireDefault(require("classnames"));
-var _default = function _default1(className) {
-    return(/*#__PURE__*/ _react.default.forwardRef(function(p, ref) {
-        return(/*#__PURE__*/ _react.default.createElement("div", _extends2.default({
-        }, p, {
-            ref: ref,
-            className: _classnames.default(p.className, className)
-        })));
-    }));
-};
+/**
+ * Safe chained function
+ *
+ * Will only create a new function if needed,
+ * otherwise will pass back existing functions or null.
+ *
+ * @param {function} functions to chain
+ * @returns {function|null}
+ */ function createChainedFunction() {
+    for(var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++)funcs[_key] = arguments[_key];
+    return funcs.filter(function(f) {
+        return f != null;
+    }).reduce(function(acc, f) {
+        if (typeof f !== 'function') throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
+        if (acc === null) return f;
+        return function chainedFunction() {
+            for(var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++)args[_key2] = arguments[_key2];
+            // @ts-ignore
+            acc.apply(this, args); // @ts-ignore
+            f.apply(this, args);
+        };
+    }, null);
+}
+var _default = createChainedFunction;
 exports.default = _default;
 module.exports = exports["default"];
 
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","classnames":"5aJRc"}],"71yot":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.default = void 0;
-var _react = _interopRequireDefault(require("react"));
-var context = /*#__PURE__*/ _react.default.createContext(null);
-context.displayName = 'CardContext';
-var _default = context;
-exports.default = _default;
-module.exports = exports["default"];
-
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","react":"3b2NM"}],"68LPL":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.default = void 0;
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _classnames = _interopRequireDefault(require("classnames"));
-var _react = _interopRequireDefault(require("react"));
-var _ThemeProvider = require("./ThemeProvider");
-var _excluded = [
-    "bsPrefix",
-    "className",
-    "variant",
-    "as"
-];
-var defaultProps = {
-    variant: null
-};
-var CardImg = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
-    var bsPrefix = _ref.bsPrefix, className = _ref.className, variant = _ref.variant, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'img' : _ref$as, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
-    var prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'card-img');
-    return(/*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
-        ref: ref,
-        className: _classnames.default(variant ? prefix + "-" + variant : prefix, className)
-    }, props)));
-});
-CardImg.displayName = 'CardImg';
-CardImg.defaultProps = defaultProps;
-var _default = CardImg;
-exports.default = _default;
-module.exports = exports["default"];
-
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"35etM":[function(require,module,exports) {
+},{}],"35etM":[function(require,module,exports) {
 var helpers = require("../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41538,44 +41638,47 @@ var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
 var _reactRouterDom = require("react-router-dom");
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _badge = require("react-bootstrap/Badge");
+var _badgeDefault = parcelHelpers.interopDefault(_badge);
 class MovieView extends _reactDefault.default.Component {
-    /* keypressCallback(event) {
-    console.log(event.key);
-  } */ constructor(){
-        super();
-        //Sets initial state to null
-        this.state = {
-            favoriteMovies: []
-        };
+    /*  constructor() {
+   super();
+   //Sets initial state to null
+   this.state = {
+     favoriteMovies: [],
+   }
+ } */ keypressCallback(event) {
+        console.log(event.key);
     }
     componentDidMount() {
-        const accessToken = localStorage.getItem('token');
-        this.getFavorites(accessToken);
+        document.addEventListener('keypress', this.keypressCallback);
     }
-    getFavorites(token) {
-        const username = localStorage.getItem('user');
-        const favoriteMovies = this.state;
-        _axiosDefault.default.get('https://movies-api-21.herokuapp.com/users/${username}', {
-            headers: {
-                Authorization: 'Bearer ${token}'
-            }
-        }).then((response)=>{
-            this.setState({
-                favoriteMovies: response.data.favoriteMovies
-            });
-        }).catch(function(error) {
-            console.log(error);
+    componentWillUnmount() {
+        document.removeEventListener('keypress', this.keypressCallback);
+    }
+    /* getFavorites(token) {
+    const username = localStorage.getItem('user');
+    const favoriteMovies = this.state;
+
+    axios.get('https://movies-api-21.herokuapp.com/users/${username}', {
+      headers: { Authorization: 'Bearer ${token}' }
+    })
+      .then(response => {
+        this.setState({
+          favoriteMovies: response.data.favoriteMovies,
         });
-    }
-    addFavorites() {
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  } */ addFavorites() {
         const token = localStorage.getItem('token');
         const username = localStorage.getItem('user');
-        _axiosDefault.default.post('https://movies-api-21.herokuapp.com/users/:Username/add-movies/${this.props.movie._id}', {
+        _axiosDefault.default.post('https://movies-api-21.herokuapp.com/users/${username}/add-movies/${this.props.movie._id}', {
+        }, {
             headers: {
                 Authorization: 'Bearer ${token}'
             }
@@ -41600,193 +41703,160 @@ class MovieView extends _reactDefault.default.Component {
     }
     render() {
         const { movie , onBackClick  } = this.props;
-        const { favoriteMovies  } = this.state;
-        return(/*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 84
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 85
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
-            className: "movie-img",
-            src: movie.imgUrl,
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-view",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
                 lineNumber: 86
             },
             __self: this
-        })), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-poster",
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
+                lineNumber: 87
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
+            src: movie.imgUrl,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
                 lineNumber: 88
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "movie-view",
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 89
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-title",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
                 lineNumber: 90
             },
             __self: this
-        }, movie.Name), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
                 lineNumber: 91
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_badgeDefault.default, {
+            bg: "primary",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
                 lineNumber: 92
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "label",
+            className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
                 lineNumber: 93
             },
             __self: this
-        }, "Title: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "value",
+        }, movie.Title)))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-description",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 94
-            },
-            __self: this
-        }, movie.Title)), /*#__PURE__*/ _reactDefault.default.createElement("p", {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 96
+                lineNumber: 97
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "label",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 97
+                lineNumber: 98
             },
             __self: this
         }, "Description: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 98
+                lineNumber: 99
             },
             __self: this
-        }, movie.Description)), /*#__PURE__*/ _reactDefault.default.createElement("p", {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 100
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "label",
+        }, movie.Description)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-director",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
                 lineNumber: 101
             },
             __self: this
-        }, "Director: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "value",
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            to: '/directors/${{movie.Director.Name}',
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
                 lineNumber: 102
             },
             __self: this
-        }, movie.Director.Name), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
-            to: '/genres/${movieV.Director.Name}',
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            variant: "link",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
                 lineNumber: 103
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        }, "Director: ")), /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 104
+                lineNumber: 105
             },
             __self: this
-        }, movie.Director.Name))), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        }, movie.Director.Name)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-genre",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
                 lineNumber: 107
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "label",
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            to: '/genres/${movie.Genre.Name}',
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
                 lineNumber: 108
             },
             __self: this
-        }, "Genre: "), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
-            to: '/genres/${movie.Genre.Name}',
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            variant: "link",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
                 lineNumber: 109
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        }, "Genre: ")), /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 110
+                lineNumber: 111
             },
             __self: this
-        }, movie.Genre.Name)))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "view-buttons",
+        }, movie.Genre.Name)), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            variant: "danger",
+            className: "fav-button",
+            value: movie._id,
+            onClick: (e)=>this.addFavorites(e, movie)
+            ,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 114
+                lineNumber: 113
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
+        }, "Add to Favorites"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            variant: "primary",
             onClick: ()=>{
                 onBackClick(null);
             },
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 115
+                lineNumber: 116
             },
             __self: this
-        }, "Back"), favoriteMovies.indexOf(movie._id) === -1 && /*#__PURE__*/ _reactDefault.default.createElement("button", {
-            value: movie.id,
-            onClick: (e)=>this.addFavorites(e, movie)
-            ,
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 117
-            },
-            __self: this
-        }, "Add to Favorites"), favoriteMovies.includes(movie._id) && /*#__PURE__*/ _reactDefault.default.createElement("button", {
-            value: movie.id,
-            onClick: (e)=>this.removeFavorites(e, movie)
-            ,
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 120
-            },
-            __self: this
-        }, "Remove from Favorites"), ";")))));
+        }, "Back")));
     }
 }
 MovieView.propTypes = {
     movie: _propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
-        Featured: _propTypesDefault.default.bool.isRequired,
+        Featured: _propTypesDefault.default.bool,
         imgUrl: _propTypesDefault.default.string.isRequired,
         Genre: _propTypesDefault.default.shape({
             Name: _propTypesDefault.default.string.isRequired,
@@ -41798,13 +41868,7 @@ MovieView.propTypes = {
             Birth: _propTypesDefault.default.string.isRequired,
             Death: _propTypesDefault.default.string.isRequired
         })
-    }).isRequired,
-    user: _propTypesDefault.default.shape({
-        favoriteMovies: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
-            _id: _propTypesDefault.default.string.isRequired,
-            Name: _propTypesDefault.default.string.isRequired
-        }))
-    })
+    }).isRequired
 };
 
   helpers.postlude(module);
@@ -41812,7 +41876,7 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J","./movie-view.scss":"7CXdC","react-router-dom":"1PMSK","axios":"7rA65","react-bootstrap/Col":"2D0r8","react-bootstrap/Row":"3fzwD"}],"7CXdC":[function() {},{}],"2D0r8":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J","./movie-view.scss":"7CXdC","axios":"7rA65","react-router-dom":"1PMSK","react-bootstrap/Button":"1ru0l","react-bootstrap/Badge":"2aFSj"}],"7CXdC":[function() {},{}],"2aFSj":[function(require,module,exports) {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
@@ -41824,105 +41888,26 @@ var _react = _interopRequireDefault(require("react"));
 var _ThemeProvider = require("./ThemeProvider");
 var _excluded = [
     "bsPrefix",
+    "variant",
+    "pill",
     "className",
     "as"
-];
-var DEVICE_SIZES = [
-    'xl',
-    'lg',
-    'md',
-    'sm',
-    'xs'
-];
-var Col = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
-    var bsPrefix = _ref.bsPrefix, className = _ref.className, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'div' : _ref$as, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
-    var prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'col');
-    var spans = [];
-    var classes = [];
-    DEVICE_SIZES.forEach(function(brkPoint) {
-        var propValue = props[brkPoint];
-        delete props[brkPoint];
-        var span;
-        var offset;
-        var order;
-        if (typeof propValue === 'object' && propValue != null) {
-            var _propValue$span = propValue.span;
-            span = _propValue$span === void 0 ? true : _propValue$span;
-            offset = propValue.offset;
-            order = propValue.order;
-        } else span = propValue;
-        var infix = brkPoint !== 'xs' ? "-" + brkPoint : '';
-        if (span) spans.push(span === true ? "" + prefix + infix : "" + prefix + infix + "-" + span);
-        if (order != null) classes.push("order" + infix + "-" + order);
-        if (offset != null) classes.push("offset" + infix + "-" + offset);
-    });
-    if (!spans.length) spans.push(prefix); // plain 'col'
-    return(/*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
-    }, props, {
-        ref: ref,
-        className: _classnames.default.apply(void 0, [
-            className
-        ].concat(spans, classes))
-    })));
-});
-Col.displayName = 'Col';
-var _default = Col;
-exports.default = _default;
-module.exports = exports["default"];
-
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"3fzwD":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.default = void 0;
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _classnames = _interopRequireDefault(require("classnames"));
-var _react = _interopRequireDefault(require("react"));
-var _ThemeProvider = require("./ThemeProvider");
-var _excluded = [
-    "bsPrefix",
-    "className",
-    "noGutters",
-    "as"
-];
-var DEVICE_SIZES = [
-    'xl',
-    'lg',
-    'md',
-    'sm',
-    'xs'
 ];
 var defaultProps = {
-    noGutters: false
+    pill: false
 };
-var Row = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
-    var bsPrefix = _ref.bsPrefix, className = _ref.className, noGutters = _ref.noGutters, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'div' : _ref$as, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
-    var decoratedBsPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'row');
-    var sizePrefix = decoratedBsPrefix + "-cols";
-    var classes = [];
-    DEVICE_SIZES.forEach(function(brkPoint) {
-        var propValue = props[brkPoint];
-        delete props[brkPoint];
-        var cols;
-        if (propValue != null && typeof propValue === 'object') cols = propValue.cols;
-        else cols = propValue;
-        var infix = brkPoint !== 'xs' ? "-" + brkPoint : '';
-        if (cols != null) classes.push("" + sizePrefix + infix + "-" + cols);
-    });
+var Badge = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, variant = _ref.variant, pill = _ref.pill, className = _ref.className, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'span' : _ref$as, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
+    var prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'badge');
     return(/*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
         ref: ref
     }, props, {
-        className: _classnames.default.apply(void 0, [
-            className,
-            decoratedBsPrefix,
-            noGutters && 'no-gutters'
-        ].concat(classes))
+        className: _classnames.default(className, prefix, pill && prefix + "-pill", variant && prefix + "-" + variant)
     })));
 });
-Row.displayName = 'Row';
-Row.defaultProps = defaultProps;
-var _default = Row;
+Badge.displayName = 'Badge';
+Badge.defaultProps = defaultProps;
+var _default = Badge;
 exports.default = _default;
 module.exports = exports["default"];
 
@@ -41945,18 +41930,16 @@ var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactRouterDom = require("react-router-dom");
 var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _reactRouterDom = require("react-router-dom");
-var _formLabel = require("react-bootstrap/FormLabel");
-var _formLabelDefault = parcelHelpers.interopDefault(_formLabel);
 var _s = $RefreshSig$();
 function LoginView(props) {
     _s();
-    const [username, setUsername] = _react.useState('');
-    const [password, setPassword] = _react.useState('');
+    const [username, registerUsername] = _react.useState('');
+    const [password, registerPassword] = _react.useState('');
     const handleSubmit = (e)=>{
         e.preventDefault(); // prevents the default refresh/change of the page from the handleSubmit() method
         // Sends a request to the server for authentication
@@ -41976,92 +41959,85 @@ function LoginView(props) {
     //   props.sendReg(register);
     //}
     return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-        className: "login-view",
-        __source: {
-            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 39
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
-        className: "login-from",
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\login-view\\login-view.jsx",
             lineNumber: 40
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
-        className: "mb-3",
-        controlId: "formUsername",
-        value: username,
-        onChange: (e)=>setUsername(e.target.value)
-        ,
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
+        className: "login justify-content-center",
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\login-view\\login-view.jsx",
             lineNumber: 41
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formLabelDefault.default, {
-        controlId: "floatingUsername",
-        label: "Username",
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         className: "mb-3",
+        controlId: "formUsername",
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\login-view\\login-view.jsx",
             lineNumber: 42
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
-        required: true,
-        type: "text",
-        placeholder: "Username",
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\login-view\\login-view.jsx",
             lineNumber: 43
         },
         __self: this
-    }))), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+    }, "Username:"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        required: true,
+        type: "text",
+        placeholder: "Enter your Username",
+        value: username,
+        onChange: (e)=>registerUsername(e.target.value)
+        ,
+        __source: {
+            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\login-view\\login-view.jsx",
+            lineNumber: 44
+        },
+        __self: this
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         className: "mb-3",
         controlId: "formPassword",
-        value: password,
-        onChange: (e)=>setPassword(e.target.value)
-        ,
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\login-view\\login-view.jsx",
             lineNumber: 46
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formLabelDefault.default, {
-        controlId: "floatingPassword",
-        label: "Password",
-        className: "mb-3",
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\login-view\\login-view.jsx",
             lineNumber: 47
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+    }, "Password:"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
         required: true,
         type: "password",
-        placeholder: "Password",
+        placeholder: "Enter your Password",
+        value: password,
+        onChange: (e)=>registerPassword(e.target.value)
+        ,
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\login-view\\login-view.jsx",
             lineNumber: 48
         },
         __self: this
-    }))), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
         variant: "primary",
         type: "submit",
         value: "Submit",
         onClick: handleSubmit,
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 51
+            lineNumber: 50
         },
         __self: this
     }, "Log in"), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
         to: '/register',
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 52
+            lineNumber: 51
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -42070,19 +42046,20 @@ function LoginView(props) {
         value: "Link",
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 53
+            lineNumber: 52
         },
         __self: this
     }, "Sing up")))));
 }
-_s(LoginView, "wuQOK7xaXdVz4RMrZQhWbI751Oc=");
+_s(LoginView, "1/PUhFbagoiBqCBndjjCveMs8mQ=");
 _c = LoginView;
 LoginView.propTypes = {
     /* sendReg: PropTypes.func.isRequired,
   onLoggedIn: PropTypes.func.isRequired */ user: _propTypesDefault.default.shape({
         username: _propTypesDefault.default.string.isRequired,
         password: _propTypesDefault.default.string.isRequired
-    })
+    }),
+    onLoggedIn: _propTypesDefault.default.func.isRequired
 };
 var _c;
 $RefreshReg$(_c, "LoginView");
@@ -42092,7 +42069,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","./login-view.scss":"5rCUF","axios":"7rA65","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","react-bootstrap/FormLabel":"70qP9"}],"5rCUF":[function() {},{}],"6A5ko":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","./login-view.scss":"5rCUF","axios":"7rA65","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK"}],"5rCUF":[function() {},{}],"6A5ko":[function(require,module,exports) {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
@@ -43069,7 +43046,65 @@ var _default = FormLabel;
 exports.default = _default;
 module.exports = exports["default"];
 
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","warning":"5jojS","./Col":"2D0r8","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"2VsfR":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","warning":"5jojS","./Col":"2D0r8","./FormContext":"72akU","./ThemeProvider":"4rz1S"}],"2D0r8":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+var _classnames = _interopRequireDefault(require("classnames"));
+var _react = _interopRequireDefault(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _excluded = [
+    "bsPrefix",
+    "className",
+    "as"
+];
+var DEVICE_SIZES = [
+    'xl',
+    'lg',
+    'md',
+    'sm',
+    'xs'
+];
+var Col = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, className = _ref.className, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'div' : _ref$as, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
+    var prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'col');
+    var spans = [];
+    var classes = [];
+    DEVICE_SIZES.forEach(function(brkPoint) {
+        var propValue = props[brkPoint];
+        delete props[brkPoint];
+        var span;
+        var offset;
+        var order;
+        if (typeof propValue === 'object' && propValue != null) {
+            var _propValue$span = propValue.span;
+            span = _propValue$span === void 0 ? true : _propValue$span;
+            offset = propValue.offset;
+            order = propValue.order;
+        } else span = propValue;
+        var infix = brkPoint !== 'xs' ? "-" + brkPoint : '';
+        if (span) spans.push(span === true ? "" + prefix + infix : "" + prefix + infix + "-" + span);
+        if (order != null) classes.push("order" + infix + "-" + order);
+        if (offset != null) classes.push("offset" + infix + "-" + offset);
+    });
+    if (!spans.length) spans.push(prefix); // plain 'col'
+    return(/*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
+    }, props, {
+        ref: ref,
+        className: _classnames.default.apply(void 0, [
+            className
+        ].concat(spans, classes))
+    })));
+});
+Col.displayName = 'Col';
+var _default = Col;
+exports.default = _default;
+module.exports = exports["default"];
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"2VsfR":[function(require,module,exports) {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
@@ -43121,150 +43156,7 @@ var _default = Switch;
 exports.default = _default;
 module.exports = exports["default"];
 
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","./FormCheck":"6WcKM"}],"1ru0l":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.default = void 0;
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _classnames = _interopRequireDefault(require("classnames"));
-var _react = _interopRequireDefault(require("react"));
-var _ThemeProvider = require("./ThemeProvider");
-var _SafeAnchor = _interopRequireDefault(require("./SafeAnchor"));
-var _excluded = [
-    "bsPrefix",
-    "variant",
-    "size",
-    "active",
-    "className",
-    "block",
-    "type",
-    "as"
-];
-var defaultProps = {
-    variant: 'primary',
-    active: false,
-    disabled: false
-};
-var Button = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
-    var bsPrefix = _ref.bsPrefix, variant = _ref.variant, size = _ref.size, active = _ref.active, className = _ref.className, block = _ref.block, type = _ref.type, as = _ref.as, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
-    var prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'btn');
-    var classes = _classnames.default(className, prefix, active && 'active', variant && prefix + "-" + variant, block && prefix + "-block", size && prefix + "-" + size);
-    if (props.href) return(/*#__PURE__*/ _react.default.createElement(_SafeAnchor.default, _extends2.default({
-    }, props, {
-        as: as,
-        ref: ref,
-        className: _classnames.default(classes, props.disabled && 'disabled')
-    })));
-    if (ref) props.ref = ref;
-    if (type) props.type = type;
-    else if (!as) props.type = 'button';
-    var Component = as || 'button';
-    return(/*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
-    }, props, {
-        className: classes
-    })));
-});
-Button.displayName = 'Button';
-Button.defaultProps = defaultProps;
-var _default = Button;
-exports.default = _default;
-module.exports = exports["default"];
-
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S","./SafeAnchor":"5VP5o"}],"5VP5o":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.default = void 0;
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _react = _interopRequireDefault(require("react"));
-var _createChainedFunction = _interopRequireDefault(require("./createChainedFunction"));
-var _excluded = [
-    "as",
-    "disabled",
-    "onKeyDown"
-];
-function isTrivialHref(href) {
-    return !href || href.trim() === '#';
-}
-/**
- * There are situations due to browser quirks or Bootstrap CSS where
- * an anchor tag is needed, when semantically a button tag is the
- * better choice. SafeAnchor ensures that when an anchor is used like a
- * button its accessible. It also emulates input `disabled` behavior for
- * links, which is usually desirable for Buttons, NavItems, DropdownItems, etc.
- */ var SafeAnchor = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
-    var _ref$as = _ref.as, Component = _ref$as === void 0 ? 'a' : _ref$as, disabled = _ref.disabled, onKeyDown = _ref.onKeyDown, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
-    var handleClick = function handleClick1(event) {
-        var href = props.href, onClick = props.onClick;
-        if (disabled || isTrivialHref(href)) event.preventDefault();
-        if (disabled) {
-            event.stopPropagation();
-            return;
-        }
-        if (onClick) onClick(event);
-    };
-    var handleKeyDown = function handleKeyDown1(event) {
-        if (event.key === ' ') {
-            event.preventDefault();
-            handleClick(event);
-        }
-    };
-    if (isTrivialHref(props.href)) {
-        props.role = props.role || 'button'; // we want to make sure there is a href attribute on the node
-        // otherwise, the cursor incorrectly styled (except with role='button')
-        props.href = props.href || '#';
-    }
-    if (disabled) {
-        props.tabIndex = -1;
-        props['aria-disabled'] = true;
-    }
-    return(/*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
-        ref: ref
-    }, props, {
-        onClick: handleClick,
-        onKeyDown: _createChainedFunction.default(handleKeyDown, onKeyDown)
-    })));
-});
-SafeAnchor.displayName = 'SafeAnchor';
-var _default = SafeAnchor;
-exports.default = _default;
-module.exports = exports["default"];
-
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","react":"3b2NM","./createChainedFunction":"4RHiz"}],"4RHiz":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports.default = void 0;
-/**
- * Safe chained function
- *
- * Will only create a new function if needed,
- * otherwise will pass back existing functions or null.
- *
- * @param {function} functions to chain
- * @returns {function|null}
- */ function createChainedFunction() {
-    for(var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++)funcs[_key] = arguments[_key];
-    return funcs.filter(function(f) {
-        return f != null;
-    }).reduce(function(acc, f) {
-        if (typeof f !== 'function') throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
-        if (acc === null) return f;
-        return function chainedFunction() {
-            for(var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++)args[_key2] = arguments[_key2];
-            // @ts-ignore
-            acc.apply(this, args); // @ts-ignore
-            f.apply(this, args);
-        };
-    }, null);
-}
-var _default = createChainedFunction;
-exports.default = _default;
-module.exports = exports["default"];
-
-},{}],"49c3f":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM","./FormCheck":"6WcKM"}],"49c3f":[function(require,module,exports) {
 var helpers = require("../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -43273,6 +43165,7 @@ helpers.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+//import { FloatingLabel } from 'react-bootstrap';
 parcelHelpers.export(exports, "RegistrationView", ()=>RegistrationView
 );
 //imports SCSS styles
@@ -43283,272 +43176,258 @@ var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactRouterDom = require("react-router-dom");
 var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
 var _reactBootstrap = require("react-bootstrap");
-var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 function RegistrationView() {
     _s();
-    const [username, setUsername] = _react.useState('');
-    const [password, setPassword] = _react.useState('');
-    const [email, setEmail] = _react.useState('');
-    const [birthday, setBirthday] = _react.useState('');
+    const [username, registerUsername] = _react.useState('');
+    const [password, registerPassword] = _react.useState('');
+    const [email, registerEmail] = _react.useState('');
+    const [birthdate, registerBirthdate] = _react.useState('');
     const [usernameError, registerUsernameError] = _react.useState('');
     const [passwordError, registerPasswordError] = _react.useState('');
     const [emailError, registerEmailError] = _react.useState('');
-    const [birthdayError, registerBirthdayErorr] = _react.useState('');
+    const [birthdateError, registerBirthdateErorr] = _react.useState('');
     /* function sendRegister() {
     alert('Thank you for signing up.')
     let register = true
     props.sendReg(register);
   } */ const handleRegister = (e)=>{
         e.preventDefault();
-        const isValidated = validationForm();
+        let isValidated = validationForm();
         if (isValidated) _axiosDefault.default.post('https://movies-api-21.herokuapp.com/users', {
             Username: username,
             Password: password,
             Email: email,
-            Birthday: birthday
+            Birthdate: birthdate
         }).then((response)=>{
             const data = response.data;
             console.log(data);
+            windows.open('/', '_self'); //the '_self' argument opens the page in the current tab.
         }).catch(function(error) {
             console.log(error);
         });
     };
     const validationForm = ()=>{
-        const usernameError1 = {
+        let usernameError1 = {
         };
-        const passwordError1 = {
+        let passwordError1 = {
         };
-        const emailError1 = {
+        let emailError1 = {
         };
-        const birthdayError1 = {
+        let birthdateError1 = {
         };
-        let isValidated = true;
-        if (username.length < 4 || username === '') {
-            usernameError1.notValidUsername = 'Username must be at least 4 characters.';
-            isValidated = false;
+        let isValid = true;
+        if (username.trim().length < 6) {
+            usernameError1.notValidUsername = 'Username must be at least 6 characters.';
+            isValid = false;
         }
-        if (password.length < 8 || password === '') {
-            passwordError1.notValidPassword = 'Password must be at least 6 characters.';
-            isValidated = false;
+        if (password.trim().length < 12 || password === '') {
+            passwordError1.notValidPassword = 'Password must be at least 12 characters.';
+            isValid = false;
         }
-        if (!email || email.indexOf('@') === -1) {
+        if (!(email && email.includes('.') && email.indexOf('@'))) {
             emailError1.notValidEmail = 'Please enter a valid email address';
-            isValidated = false;
+            isValid = false;
         }
-        if (!birthday) {
-            birthdayError1.notValidBirthday = 'Please enter your date of birth.';
-            isValidated = false;
+        if (birthdate === '') {
+            birthdateError1.notValidBirthdate = 'Please enter your date of birth.';
+            isValid = false;
         }
         registerUsernameError(usernameError1);
         registerPasswordError(passwordError1);
         registerEmailError(emailError1);
-        registerBirthdayErorr(birthdayError1);
-        return isValidated;
+        registerBirthdateErorr(birthdateError1);
+        return isValid;
     };
-    return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-        className: "registration-view",
-        __source: {
-            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 83
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
-        className: "registration-form",
-        __source: {
-            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 84
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
-        className: "mb2",
-        __source: {
-            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 85
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Text, {
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
+        className: "register justify-content-md-center",
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
             lineNumber: 86
         },
         __self: this
-    }, "Enter your information")), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
-        className: "mb-3",
-        controlId: "emailForm",
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 87
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        controlId: "formUsername",
+        __source: {
+            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 88
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+        __source: {
+            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 89
+        },
+        __self: this
+    }, "Username: "), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "text",
+        value: username,
+        onChange: (e)=>registerUsername(e.target.value)
+        ,
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
             lineNumber: 90
         },
         __self: this
-    }, Object.keys(emailError).map((key)=>{
+    }), Object.keys(usernameError).map((key)=>{
         return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "form-validation",
             key: key,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
                 lineNumber: 93
             },
             __self: this
-        }, emailError[key]));
-    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.FloatingLabel, {
-        label: "Email",
-        className: "mb-3",
-        type: "email",
+        }, usernameError[key]));
+    }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 98
+            lineNumber: 101
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
-        required: true,
-        type: "email",
-        placeholder: "Email address",
-        value: email,
-        onChange: (e)=>registerEmail(e.target.value)
-        ,
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        controlId: "formPassword",
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 99
+            lineNumber: 102
         },
         __self: this
-    }))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.FormGroup, {
-        className: "mb-3",
-        contralId: "usernameForm",
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
             lineNumber: 103
         },
         __self: this
-    }, Object.keys(usernameError).map((key)=>{
-        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "form-validation",
-            key: key,
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 106
-            },
-            __self: this
-        }, usernameError[key]));
-    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.FloatingLabel, {
-        label: "Username",
-        className: "mb-3",
-        __source: {
-            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 111
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
-        required: true,
-        type: "text",
-        placeholder: "Username",
-        value: username,
-        onChange: (e)=>registerUsername(e.target.value)
-        ,
-        __source: {
-            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 112
-        },
-        __self: this
-    }))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.FormGroup, {
-        className: "mb-3",
-        contralId: "passwordForm",
-        __source: {
-            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 116
-        },
-        __self: this
-    }, Object.keys(passwordError).map((key)=>{
-        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "form-validation",
-            key: key,
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 119
-            },
-            __self: this
-        }, usernameError[key]));
-    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.FloatingLabel, {
-        label: "Password",
-        className: "mb-3",
-        __source: {
-            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 124
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
-        required: true,
+    }, "Password: "), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
         type: "password",
-        placeholder: "Password",
         value: password,
         onChange: (e)=>registerPassword(e.target.value)
         ,
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 125
+            lineNumber: 104
         },
         __self: this
-    }))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.FormGroup, {
-        className: "mb-3",
-        contralId: "birthdayForm",
+    }), Object.keys(passwordError).map((key)=>{
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            key: key,
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+                lineNumber: 107
+            },
+            __self: this
+        }, passwordError[key]));
+    }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+        __source: {
+            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 115
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        controlId: "formEmail",
+        __source: {
+            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 116
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+        __source: {
+            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 117
+        },
+        __self: this
+    }, "Email: "), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "email",
+        value: email,
+        onChange: (e)=>registerEmail(e.target.value)
+        ,
+        __source: {
+            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 118
+        },
+        __self: this
+    }), Object.keys(emailError).map((key)=>{
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            key: key,
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+                lineNumber: 121
+            },
+            __self: this
+        }, emailError[key]));
+    }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
             lineNumber: 129
         },
         __self: this
-    }, Object.keys(birthdayError).map((key)=>{
-        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "form-validation",
-            key: key,
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 132
-            },
-            __self: this
-        }, birthdayError[key]));
-    }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.FloatingLabel, {
-        label: "Birthday",
-        className: "mb-3",
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        controlId: "formBirthdate",
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 137
+            lineNumber: 130
         },
         __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
-        required: true,
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+        __source: {
+            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 131
+        },
+        __self: this
+    }, "Birthdate: "), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
         type: "date",
-        placeholder: "Birthday",
-        value: birthday,
-        onChange: (e)=>registerBirthday(e.target.value)
+        value: birthdate,
+        onChange: (e)=>registerBirthdate(e.target.value)
         ,
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 138
+            lineNumber: 132
         },
         __self: this
-    }))), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-        type: "button",
-        variant: "primary",
+    }), Object.keys(birthdateError).map((key)=>{
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            key: key,
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+                lineNumber: 135
+            },
+            __self: this
+        }, birthdateError[key]));
+    }))), /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        __source: {
+            fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
+            lineNumber: 143
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+        type: "submit",
         onClick: handleRegister,
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 142
+            lineNumber: 144
         },
         __self: this
-    }, "Submit"), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
-        to: '/',
+    }, "Sign Up"), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+        to: "/",
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
             lineNumber: 145
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-        type: "button",
         variant: "secondary",
         __source: {
             fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx",
@@ -43557,14 +43436,14 @@ function RegistrationView() {
         __self: this
     }, "Back")))));
 }
-_s(RegistrationView, "gIp5ALEWVlYSZ9Phr67S2Qbvwe4=");
+_s(RegistrationView, "wF6Awe5tTw4o1ZP9PkXDYGFK4mQ=");
 _c = RegistrationView;
 RegistrationView.propTypes = {
-    user: _propTypesDefault.default.shape({
+    register: _propTypesDefault.default.shape({
         Email: _propTypesDefault.default.string.isRequired,
         Username: _propTypesDefault.default.string.isRequired,
         Password: _propTypesDefault.default.string.isRequired,
-        Birthday: _propTypesDefault.default.string.isRequired
+        Birthdate: _propTypesDefault.default.string.isRequired
     })
 };
 var _c;
@@ -43575,7 +43454,63 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J","./registration-view.scss":"4PoSO","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","axios":"7rA65","react-router-dom":"1PMSK","react-bootstrap":"4n7hB"}],"4PoSO":[function() {},{}],"4n7hB":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J","./registration-view.scss":"4PoSO","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","axios":"7rA65","react-router-dom":"1PMSK","react-bootstrap/Row":"3fzwD","react-bootstrap":"4n7hB"}],"4PoSO":[function() {},{}],"3fzwD":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+var _classnames = _interopRequireDefault(require("classnames"));
+var _react = _interopRequireDefault(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _excluded = [
+    "bsPrefix",
+    "className",
+    "noGutters",
+    "as"
+];
+var DEVICE_SIZES = [
+    'xl',
+    'lg',
+    'md',
+    'sm',
+    'xs'
+];
+var defaultProps = {
+    noGutters: false
+};
+var Row = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, className = _ref.className, noGutters = _ref.noGutters, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'div' : _ref$as, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
+    var decoratedBsPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'row');
+    var sizePrefix = decoratedBsPrefix + "-cols";
+    var classes = [];
+    DEVICE_SIZES.forEach(function(brkPoint) {
+        var propValue = props[brkPoint];
+        delete props[brkPoint];
+        var cols;
+        if (propValue != null && typeof propValue === 'object') cols = propValue.cols;
+        else cols = propValue;
+        var infix = brkPoint !== 'xs' ? "-" + brkPoint : '';
+        if (cols != null) classes.push("" + sizePrefix + infix + "-" + cols);
+    });
+    return(/*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
+        ref: ref
+    }, props, {
+        className: _classnames.default.apply(void 0, [
+            className,
+            decoratedBsPrefix,
+            noGutters && 'no-gutters'
+        ].concat(classes))
+    })));
+});
+Row.displayName = 'Row';
+Row.defaultProps = defaultProps;
+var _default = Row;
+exports.default = _default;
+module.exports = exports["default"];
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"4n7hB":[function(require,module,exports) {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
@@ -45698,42 +45633,7 @@ var _default = CloseButton;
 exports.default = _default;
 module.exports = exports["default"];
 
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","prop-types":"4dfy5","react":"3b2NM","classnames":"5aJRc"}],"2aFSj":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.default = void 0;
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _classnames = _interopRequireDefault(require("classnames"));
-var _react = _interopRequireDefault(require("react"));
-var _ThemeProvider = require("./ThemeProvider");
-var _excluded = [
-    "bsPrefix",
-    "variant",
-    "pill",
-    "className",
-    "as"
-];
-var defaultProps = {
-    pill: false
-};
-var Badge = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
-    var bsPrefix = _ref.bsPrefix, variant = _ref.variant, pill = _ref.pill, className = _ref.className, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'span' : _ref$as, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
-    var prefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'badge');
-    return(/*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
-        ref: ref
-    }, props, {
-        className: _classnames.default(className, prefix, pill && prefix + "-pill", variant && prefix + "-" + variant)
-    })));
-});
-Badge.displayName = 'Badge';
-Badge.defaultProps = defaultProps;
-var _default = Badge;
-exports.default = _default;
-module.exports = exports["default"];
-
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"hcZkb":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","prop-types":"4dfy5","react":"3b2NM","classnames":"5aJRc"}],"hcZkb":[function(require,module,exports) {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
@@ -54185,7 +54085,7 @@ class DirectorView extends _reactDefault.default.Component {
             className: "director-view",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 14
+                lineNumber: 15
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
@@ -54193,50 +54093,75 @@ class DirectorView extends _reactDefault.default.Component {
             md: 12,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 15
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
                 lineNumber: 16
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "director-name",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
                 lineNumber: 17
             },
             __self: this
-        }, director.Name), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
                 lineNumber: 18
             },
             __self: this
-        }, "Bio:", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 20
+                lineNumber: 19
             },
             __self: this
-        }, director.Bio)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "d-flex align-items-center",
+        }, director.Name))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "director-bio",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
                 lineNumber: 22
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
-            onClick: ()=>{
-                onBackClick(null);
-            },
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
                 lineNumber: 23
             },
             __self: this
-        }, "Back"))))));
+        }, director.Bio)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "director-birthdate",
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                lineNumber: 25
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "value",
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                lineNumber: 26
+            },
+            __self: this
+        }, director.Birth)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "button-space",
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                lineNumber: 28
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(Button, {
+            variant: "primary",
+            onClick: ()=>{
+                onBackClick(null);
+            },
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
+                lineNumber: 29
+            },
+            __self: this
+        }, "Back"))));
     }
 }
 DirectorView.propTypes = {
@@ -54282,7 +54207,7 @@ class GenreView extends _reactDefault.default.Component {
             className: "genre-view",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 14
+                lineNumber: 15
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
@@ -54290,49 +54215,60 @@ class GenreView extends _reactDefault.default.Component {
             md: 12,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 15
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
                 lineNumber: 16
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "genre-name",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
                 lineNumber: 17
             },
             __self: this
-        }, genre.Name), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
                 lineNumber: 18
             },
             __self: this
-        }, "Bio:", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 20
+                lineNumber: 19
             },
             __self: this
-        }, genre.Description)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        }, genre.Name))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "genre-description",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
                 lineNumber: 22
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
-            onClick: ()=>{
-                onBackClick(null);
-            },
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
                 lineNumber: 23
             },
             __self: this
-        }, "Back"))))));
+        }, genre.Description)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "button-space",
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
+                lineNumber: 25
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(Button, {
+            onClick: ()=>{
+                onBackClick(null);
+            },
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\genre-view\\genre-view.jsx",
+                lineNumber: 26
+            },
+            __self: this
+        }, "Back"))));
     }
 }
 GenreView.propTypes = {
@@ -54369,17 +54305,16 @@ var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _moment = require("moment");
 var _momentDefault = parcelHelpers.interopDefault(_moment);
-var _reactRouterDom = require("react-router-dom");
 var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
 var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
+var _cardDeck = require("react-bootstrap/CardDeck");
+var _cardDeckDefault = parcelHelpers.interopDefault(_cardDeck);
 class ProfileView extends _reactDefault.default.Component {
     constructor(){
         super();
@@ -54389,93 +54324,13 @@ class ProfileView extends _reactDefault.default.Component {
             Username: null,
             Password: null,
             Email: null,
-            Birthday: null,
-            UsernameError: '',
-            PasswordError: '',
-            EmailError: '',
-            BirthdayError: ''
+            Birthdate: null,
+            validated: null
         };
-        this.onUsernameChange = this.onUsernameChange.bind(this);
-        this.onPasswordChange = this.onPasswordChange.bind(this);
-        this.onEmailChange = this.onEmailChange.bind(this);
-        this.onBirthdayChange = this.onBirthdayChange.bind(this);
-        this.handleUpdateUser = this.handleUpdateUser.bind(this);
-    }
-    onUsernameChange(event) {
-        this.setState({
-            Username: event.target.value
-        });
-    }
-    onPasswordChange(event) {
-        this.setState({
-            Password: event.target.value
-        });
-    }
-    onEmailChange(event) {
-        this.setState({
-            Email: event.target.value
-        });
-    }
-    onBirthdayChange(event) {
-        this.setState({
-            Birthday: event.target.value
-        });
-    }
-    handleUpdateUser(event) {
-        e.preventDefault();
-        const token = localStorage.getItem('token');
-        const username = localStorage.getItem('user');
-        let validated = this.validationForm();
-        if (validated) _axiosDefault.default.put('https://movies-api-21.herokuapp.com/users/${username}', {
-            Username: this.state.Username,
-            Password: this.state.Password,
-            Email: this.state.Email,
-            Birthday: this.state.Birthday
-        }, {
-            headers: {
-                Authorization: 'Bearer ${token}'
-            }
-        }).then((response)=>{
-            const data = response.data;
-            console.log(data);
-            alert('The data has been updated.');
-        }).catch(function(error) {
-            console.log('An error occurred, please try again later');
-        });
-    }
-    validationForm() {
-        let UsernameError = {
-        }, EmailError = {
-        }, PasswordError = {
-        }, BirthdayError = {
-        }, isValidated = true;
-        if (!(this.state.Username && this.Username.lenght > 6)) {
-            UsernameError.notValidatedUsername = 'Username must be at least 4 characters.';
-            isValidated = false;
-        }
-        if (!(this.state.Password && this.Password.lenght > 16)) {
-            PasswordError.notValidatedPassword = 'Password must be at least 16 characters.';
-            isValidated = false;
-        }
-        if (!(this.state.Email && this.Email.includes('@'))) {
-            EmailError.notValidatedEmail = 'Please enter a valid email address.';
-            isValidated = false;
-        }
-        if (!this.state.Birthday) {
-            EmailError.notValidatedBirthday = 'Please enter your date of birth (DD/MM/YYYY).';
-            isValidated = false;
-        }
-        this.setState({
-            UsernameError: UsernameError,
-            PasswordError: PasswordError,
-            EmailError: EmailError,
-            BirthdayError: BirthdayError
-        });
-        return isValidated;
     }
     componentDidMount() {
         const accessToken = localStorage.getItem('token');
-        this.getUser(accessToken);
+        if (accessToken !== null) this.getUser(accessToken);
     }
     //Gets user information by username
     getUser(token) {
@@ -54489,361 +54344,364 @@ class ProfileView extends _reactDefault.default.Component {
                 Username: response.data.Username,
                 Password: response.data.Password,
                 Email: response.data.Email,
-                Birthday: _momentDefault.default(response.data.Birthday).format('DD/MM/YYYY'),
+                Birthdate: _momentDefault.default(response.data.Birthdate).format('DD/MM/YYYY'),
                 favoriteMovies: response.data.favoriteMovies
             });
         }).catch(function(error) {
             console.log(error);
         });
     }
+    removeFavouriteMovie(movie) {
+        const token = localStorage.getItem('token');
+        const username = localStorage.getItem('user');
+        _axiosDefault.default.detele('https://movies-api-21.herokuapp.com/users/${username}/delete-movies/${movie._id}', {
+            headers: {
+                Authorization: 'Bearer ${token}'
+            }
+        }).then(()=>{
+            alert('The movie was deleted from favorites');
+            this.componentDidMount();
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
+    handleUpdateUser(e, updateUsername, updatePassword, updateEmail, updateBirthdate) {
+        this.setState({
+            validated: null
+        });
+        const form = e.currentTarget;
+        if (form.checkValidity() === false) {
+            e.preventDefault();
+            e.stopPropagation();
+            this.setState({
+                validated: true
+            });
+            return;
+        }
+        e.preventDefault();
+        const token = localStorage.getItem('token');
+        const username = localStorage.getItem('user');
+        _axiosDefault.default.put('https://movies-api-21.herokuapp.com/users/${username}', {
+            headers: {
+                Authorization: 'Bearer ${token}'
+            },
+            data: {
+                Username: updateUsername ? updateUsername : this.state.Username,
+                Password: updatePassword ? updatePassword : this.state.Password,
+                Email: updateEmail ? updateEmail : this.state.Email,
+                Birthdate: updateBirthdate ? updateBirthdate : this.state.Birthdate
+            }
+        }).then((response)=>{
+            alert('The data has been updated.');
+            this.setState({
+                Username: response.data.Username,
+                Password: response.data.Password,
+                Email: response.data.Email,
+                Birthdate: response.data.Birthdate
+            });
+            localStorage.setItem('user', this.state.Username);
+            window.open('/users/${username}', '_self');
+        }).catch(function(error) {
+            console.log('An error occurred, please try again later');
+        });
+    }
+    setUsername(input) {
+        this.Username = input;
+    }
+    setPassword(input) {
+        this.Password = input;
+    }
+    setEmail(input) {
+        this.Email = input;
+    }
+    setBirthdate(input) {
+        this.Birthdate = input;
+    }
     //Allows the users to delete their account
-    handleUserDeletion = (e)=>{
+    handleUserDeletion(e) {
         e.preventDefault();
         const answer = windows.confirm('Do you want to delete the account? After account deletion recovery process of this user won\'t be possible.');
         if (answer) {
             const token = localStorage.getItem('token');
             const username = localStorage.getItem('user');
-            _axiosDefault.default.get('https://movies-api-21.herokuapp.com/users/${username}', {
+            _axiosDefault.default.detele('https://movies-api-21.herokuapp.com/users/${username}', {
                 headers: {
                     Authorization: 'Bearer ${token}'
                 }
             }).then(()=>{
                 localStorage.removeItem('user');
-                localStorage.removeItem('token');
+                localStorage.removeItme('token');
                 alert('Your account has been deleted.');
-            }).catch((e1)=>{
-                console.log(e1);
+                windows.open('/', '_self');
+            }).catch((e)=>{
+                console.log(e);
             });
         }
-    };
+    }
     render() {
-        const { favoriteMovies  } = this.state;
+        const { favoriteMovies , validated  } = this.state;
         const { movies  } = this.props;
-        const { UsernameError , PasswordError , EmailError , BirthdayError  } = this.state;
-        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
             className: "profile-view",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 174
+                lineNumber: 167
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("h3", {
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default, {
+            className: "profile-card",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 175
+                lineNumber: 168
             },
             __self: this
-        }, "Hi, ", this.state.Username), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
-            className: "profile=view",
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 177
+                lineNumber: 169
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+        }, "Your favotites movies"), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 178
+                lineNumber: 170
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            sm: "3",
+        }, favoriteMovies.length === 0 && /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "text-center",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 179
+                lineNumber: 171
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+        }, "Empty"), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "favorite-movies",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 180
+                lineNumber: 173
             },
             __self: this
-        }, "Email")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 184
-            },
-            __self: this
-        }, Object.keys(EmailError).map((key)=>{
-            return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-                key: key,
+        }, favoriteMovies.length > 0 && movie.map((movie)=>{
+            if (movie._id === favoriteMovies.find((favMovies)=>favMovies === movie._id
+            )) return(/*#__PURE__*/ _reactDefault.default.createElement(_cardDeckDefault.default, {
+                className: "movie-card-deck",
                 __source: {
                     fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 187
+                    lineNumber: 177
                 },
                 __self: this
-            }, EmailError[key]));
-        }), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
-            required: true,
-            type: "text",
-            placeholder: this.state.Email,
-            onChange: this.onEmailChange,
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default, {
+                className: "card-content",
+                key: movie._id,
+                __source: {
+                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
+                    lineNumber: 178
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Img, {
+                className: "movie-poster",
+                variant: "top",
+                src: movie.imgUrl,
+                __source: {
+                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
+                    lineNumber: 179
+                },
+                __self: this
+            }), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
+                __source: {
+                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
+                    lineNumber: 180
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Title, {
+                className: "movie-card-title",
+                __source: {
+                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
+                    lineNumber: 181
+                },
+                __self: this
+            }, movie.Title), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+                size: "sm",
+                className: "profile-button remove-favorite-movie",
+                variant: "danger",
+                value: movie._id,
+                onClick: (e)=>this.removeFavouriteMovie(e, movie)
+                ,
+                __source: {
+                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
+                    lineNumber: 182
+                },
+                __self: this
+            }, "Remove")))));
+        }))), /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+            className: "section",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 192
+                lineNumber: 194
             },
             __self: this
-        }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+        }, "Update Profile"), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
                 lineNumber: 195
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            sm: "3",
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
+            validated: "{validated}",
+            className: "update-form",
+            onSubmit: (e)=>this.handleUpdateUser(e, this.Username, this.Password, this.Email, this.Birthdate)
+            ,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
                 lineNumber: 196
             },
             __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+            controlId: "formUsername",
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
+                lineNumber: 198
+            },
+            __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+            className: "form-label",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 197
+                lineNumber: 199
             },
             __self: this
-        }, "Username")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            sm: "9",
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 201
-            },
-            __self: this
-        }, Object.key(UsernameError).map((key)=>{
-            return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-                key: key,
-                __source: {
-                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 204
-                },
-                __self: this
-            }, UsernameError[key]));
-        }), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
-            required: true,
+        }, "Username"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
             type: "text",
-            placeholder: this.state.Username,
-            onChange: this.onUsernameChange,
+            placeholder: "Change Username",
+            onChange: (e)=>this.setUsername(e.target.value)
+            ,
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
+                lineNumber: 200
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+            controlId: "formPassword",
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
+                lineNumber: 203
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+            className: "form-label",
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
+                lineNumber: 204
+            },
+            __self: this
+        }, "Password"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+            type: "password",
+            placeholder: "Change Password",
+            onChange: (e)=>this.setPassword(e.target.value)
+            ,
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
+                lineNumber: 205
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+            controlId: "formEmail",
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
+                lineNumber: 208
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+            className: "form-label",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
                 lineNumber: 209
             },
             __self: this
-        }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+        }, "Email"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+            type: "email",
+            placeholder: "Change Email",
+            onChange: (e)=>this.setEmail(e.target.value)
+            ,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 212
+                lineNumber: 210
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            sm: "3",
+        })), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+            controlId: "formBirthdate",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
                 lineNumber: 213
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+            className: "form-label",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
                 lineNumber: 214
             },
             __self: this
-        }, "Password")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            sm: "9",
+        }, "Birthdate"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+            type: "date",
+            placeholder: "Change Birthdate",
+            onChange: (e)=>this.setBirthdate(e.target.value)
+            ,
+            __source: {
+                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
+                lineNumber: 215
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            variant: "danger",
+            type: "submit",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
                 lineNumber: 218
             },
             __self: this
-        }, Object.key(PasswordError).map((key)=>{
-            return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-                key: key,
-                __source: {
-                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 221
-                },
-                __self: this
-            }, PasswordError[key]));
-        }), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
-            required: true,
-            type: "password",
-            placeholder: "",
-            onChange: this.onPasswordChange,
+        }, "Update"), /*#__PURE__*/ _reactDefault.default.createElement("h3", {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 226
+                lineNumber: 222
             },
             __self: this
-        }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+        }, "Delete your account"), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 229
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            sm: "3",
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 230
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 231
-            },
-            __self: this
-        }, "Birthday")), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            sm: "9",
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 235
-            },
-            __self: this
-        }, Object.key(BirthdayError).map((key)=>{
-            return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-                key: key,
-                __source: {
-                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 238
-                },
-                __self: this
-            }, BirthdayError[key]));
-        }), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
-            required: true,
-            type: "data",
-            defaultValue: this.state.Birthday,
-            onChange: this.onBirthdayChange,
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 243
-            },
-            __self: this
-        }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 246
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 247
+                lineNumber: 223
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-            type: "button",
-            varriant: "secondary",
-            onClick: this.handleUpdateUser,
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 248
-            },
-            __self: this
-        }, "Update the Information"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-            type: "button",
             variant: "danger",
-            onClick: this.handleUserDeletion,
+            onClick: (e)=>this.handleUserDeletion(e)
+            ,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 251
+                lineNumber: 224
             },
             __self: this
-        }, "Delete Account")))), /*#__PURE__*/ _reactDefault.default.createElement("h3", {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 257
-            },
-            __self: this
-        }, "Favorite Movies"), favoriteMovies.length === 0 && /*#__PURE__*/ _reactDefault.default.createElement("p", {
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 258
-            },
-            __self: this
-        }, "You have no movies yet in your list of favorites!"), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
-            xs: 1,
-            sm: 2,
-            md: 3,
-            className: "g-4",
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 259
-            },
-            __self: this
-        }, favoriteMovies.length > 0 && movies.map((movie)=>{
-            if (movies._id === favoriteMovies.find((findFavoriteMovies)=>findFavoriteMovies === movie._id
-            )) return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-                key: movie._id,
-                __source: {
-                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 263
-                },
-                __self: this
-            }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
-                to: '/movies/${movie._id}',
-                __source: {
-                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 264
-                },
-                __self: this
-            }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default, {
-                key: movie._id,
-                variant: "light",
-                __source: {
-                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 265
-                },
-                __self: this
-            }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Img, {
-                variant: "top",
-                scr: movie.imgUrl,
-                __source: {
-                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 266
-                },
-                __self: this
-            }), /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Body, {
-                __source: {
-                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 267
-                },
-                __self: this
-            }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Title, {
-                __source: {
-                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 268
-                },
-                __self: this
-            }, /*#__PURE__*/ _reactDefault.default.createElement("h5", {
-                __source: {
-                    fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 269
-                },
-                __self: this
-            }, movie.Name)))))));
-        }))));
+        }, "Delete Account")))))));
     }
 }
 ProfileView.PropTypes = {
     user: _propTypesDefault.default.shape({
         favoriteMovies: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
             _id: _propTypesDefault.default.string.isRequired,
-            Name: _propTypesDefault.default.string.isRequired
+            Title: _propTypesDefault.default.string.isRequired
         })),
         Username: _propTypesDefault.default.string.isRequired,
         Email: _propTypesDefault.default.string.isRequired,
-        Birthday: _propTypesDefault.default.string.isRequired
+        Birthdate: _propTypesDefault.default.string.isRequired
     })
 };
-exports.default = ProfileView;
 
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"./profile-view.scss":"7pheU","react":"3b2NM","axios":"7rA65","prop-types":"4dfy5","moment":"5Hi32","react-router-dom":"1PMSK","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J"}],"7pheU":[function() {},{}],"5Hi32":[function(require,module,exports) {
+},{"./profile-view.scss":"7pheU","react":"3b2NM","axios":"7rA65","prop-types":"4dfy5","moment":"5Hi32","react-bootstrap/Row":"3fzwD","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","react-bootstrap/Card":"1CZWQ","react-bootstrap/CardDeck":"4fiZs","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J"}],"7pheU":[function() {},{}],"5Hi32":[function(require,module,exports) {
 (function(global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() : typeof define === 'function' && define.amd ? define(factory) : global.moment = factory();
 })(this, function() {
