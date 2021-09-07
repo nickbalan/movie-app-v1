@@ -5,12 +5,12 @@ import React from 'react';
 import axios from 'axios';
 
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import { NavbarBrand } from 'react-bootstrap';
+//import Container from 'react-bootstrap/Container';
+//import Navbar from 'react-bootstrap/Navbar';
+//import { NavbarBrand } from 'react-bootstrap';
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';

@@ -26,7 +26,7 @@ export function LoginView(props) {
         props.onLoggedIn(data); // allows a user to be automatically logged in
       })
       .catch(e => {
-        alert('Incorrect email or password')
+        // alert('Incorrect email or password')
         console.log('No such user')
       });
   };
@@ -37,8 +37,8 @@ export function LoginView(props) {
   //}
 
   return (
-    <div>
-      <Form className='login justify-content-center'>
+    <div className='login'>
+      <Form className='justify-content-center'>
         <Form.Group className='mb-3' controlId='formUsername'>
           <Form.Label>Username:</Form.Label>
           <Form.Control required type='text' placeholder='Enter your Username' value={username} onChange={e => registerUsername(e.target.value)} />
