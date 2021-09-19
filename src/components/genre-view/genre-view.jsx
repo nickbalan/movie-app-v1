@@ -16,9 +16,9 @@ export class GenreView extends React.Component {
       <Row className='genre-view'>
         <Col className='d-flex' md={12}>
           <div className='genre-name'>
-            <h2>
+            <h1>
               <span className='value'>{genre.Name}</span>
-            </h2>
+            </h1>
           </div>
           <div className='genre-description'>
             <span className='value'>{genre.Description}</span>

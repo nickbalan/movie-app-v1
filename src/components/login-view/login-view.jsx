@@ -27,7 +27,6 @@ export function LoginView(props) {
         props.onLoggedIn(data); // allows a user to be automatically logged in
       })
       .catch(e => {
-        // alert('Incorrect email or password')
         console.log('No such user')
       });
   };
@@ -44,7 +43,7 @@ export function LoginView(props) {
           <Form.Control required type='password' placeholder='Enter your Password' value={password} onChange={e => registerPassword(e.target.value)} />
         </Form.Group>
         <Button variant='primary' type='submit' value='Submit' onClick={handleSubmit}>Log in</Button>
-        <Link to={'/register'}>
+        <Link to={`/register`}>
           <Button variant='secondary' type='link' value='Link'>Sing up</Button>
         </Link>
       </Form>

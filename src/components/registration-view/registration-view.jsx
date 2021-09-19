@@ -3,7 +3,6 @@ import './registration-view.scss';
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
@@ -17,10 +16,10 @@ export function RegistrationView() {
   const [email, registerEmail] = useState('');
   const [birthdate, registerBirthdate] = useState('');
 
-  const [usernameError, registerUsernameError] = useState('');
-  const [passwordError, registerPasswordError] = useState('');
-  const [emailError, registerEmailError] = useState('');
-  const [birthdateError, registerBirthdateErorr] = useState('');
+  const [usernameError, registerUsernameError] = useState({});
+  const [passwordError, registerPasswordError] = useState({});
+  const [emailError, registerEmailError] = useState({});
+  const [birthdateError, registerBirthdateErorr] = useState({});
 
 
   const handleRegister = (e) => {
@@ -38,7 +37,7 @@ export function RegistrationView() {
           console.log(data);
           windows.open('/', '_self'); //the '_self' argument opens the page in the current tab.
         })
-        .catch(function (error) {
+        .catch(error => {
           console.log(error);
         });
     }
@@ -141,13 +140,4 @@ export function RegistrationView() {
       </span>
     </Form>
   );
-}
-
-RegistrationView.propTypes = {
-  register: PropTypes.shape({
-    Email: PropTypes.string.isRequired,
-    Username: PropTypes.string.isRequired,
-    Password: PropTypes.string.isRequired,
-    Birthdate: PropTypes.string.isRequired
-  })
 }

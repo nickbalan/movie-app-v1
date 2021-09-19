@@ -2,23 +2,16 @@
 import './movie-view.scss';
 
 import React from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import Badge from 'react-bootstrap/Badge';
+//import Badge from 'react-bootstrap/Badge';
 
 
 export class MovieView extends React.Component {
 
-  /*  constructor() {
-   super();
-   //Sets initial state to null
-   this.state = {
-     favoriteMovies: [],
-   }
- } */
 
   keypressCallback(event) {
     console.log(event.key);
@@ -32,29 +25,12 @@ export class MovieView extends React.Component {
     document.removeEventListener('keypress', this.keypressCallback);
   }
 
-  /* getFavorites(token) {
-    const username = localStorage.getItem('user');
-    const favoriteMovies = this.state;
-
-    axios.get('https://movies-api-21.herokuapp.com/users/${username}', {
-      headers: { Authorization: 'Bearer ${token}' }
-    })
-      .then(response => {
-        this.setState({
-          favoriteMovies: response.data.favoriteMovies,
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  } */
-
-  addFavorites() {
+  addFavorite() {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
 
-    axios.post('https://movies-api-21.herokuapp.com/users/${username}/add-movies/${this.props.movie._id}', {}, {
-      headers: { Authorization: 'Bearer ${token}' }
+    axios.post(`https://movies-api-21.herokuapp.com/users/${username}/add-movies/${this.props.movie._id}`, {}, {
+      headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
         alert('This movie was added to the Favorites List')
@@ -68,8 +44,8 @@ export class MovieView extends React.Component {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
 
-    axios.delete('https://movies-api-21.herokuapp.com/users/:Username/add-movies/${this.props.movie._id}', {
-      headers: { Authorization: 'Bearer ${token}' }
+    axios.delete(`https://movies-api-21.herokuapp.com/users/:Username/add-movies/${this.props.movie._id}`, {
+      headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
         alert('This movie was deleted from the Favorites List')
@@ -99,41 +75,21 @@ export class MovieView extends React.Component {
           <span className='value'>{movie.Description}</span>
         </div>
         <div className='movie-director'>
-          <Link to={'/directors/${{movie.Director.Name}'}>
-            <Button variant='link'>Director: </Button>
-          </Link>
+          <Link to={`/directors/${movie.Director.Name}`}>Director: </Link>
           <span className='value'>{movie.Director.Name}</span>
         </div>
         <div className='movie-genre'>
-          <Link to={'/genres/${movie.Genre.Name}'}>
-            <Button variant='link'>Genre: </Button>
-          </Link>
+          <Link to={`/genres/${movie.Genre.Name}`}>Genre: </Link>
           <span className='value'>{movie.Genre.Name}</span>
         </div>
-        <Button variant='danger' className='fav-button' value={movie._id} onClick={(e) => this.addFavorites(e, movie)}>
+        <Button variant='success' className='fav-button' value={movie._id} onClick={(e) => this.addFavorite(e, movie)}>
           Add to Favorites
+        </Button>
+        <Button variant='success' className='fav-button' value={movie._id} onClick={(e) => this.removeFavorites(e, movie)}>
+          Remove from Favorites
         </Button>
         <Button variant='primary' onClick={() => { onBackClick(null); }}>Back</Button>
       </div>
     );
   }
 }
-
-MovieView.propTypes = {
-  movie: PropTypes.shape({
-    Title: PropTypes.string.isRequired,
-    Description: PropTypes.string.isRequired,
-    Featured: PropTypes.bool,
-    imgUrl: PropTypes.string.isRequired,
-    Genre: PropTypes.shape({
-      Name: PropTypes.string.isRequired,
-      Description: PropTypes.string.isRequired
-    }),
-    Director: PropTypes.shape({
-      Name: PropTypes.string.isRequired,
-      Bio: PropTypes.string.isRequired,
-      Birth: PropTypes.string.isRequired,
-      Death: PropTypes.string.isRequired
-    })
-  }).isRequired,
-};

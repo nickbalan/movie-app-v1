@@ -3,9 +3,9 @@ import './main-view.scss';
 
 import React from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
@@ -115,7 +115,6 @@ class MainView extends React.Component {
   } */
 
   render() {
-    const { movies, user } = this.state;
     let { movies } = this.props;
     let { user } = this.state;
 
