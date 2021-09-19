@@ -7,7 +7,7 @@ import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-//import Badge from 'react-bootstrap/Badge';
+import Badge from 'react-bootstrap/Badge';
 
 
 export class MovieView extends React.Component {
