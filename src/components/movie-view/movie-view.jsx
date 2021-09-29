@@ -2,7 +2,6 @@
 import './movie-view.scss';
 
 import React from 'react';
-//import PropTypes from 'prop-types';
 import axios from 'axios';
 
 import { Link } from 'react-router-dom';
@@ -29,7 +28,7 @@ export class MovieView extends React.Component {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
 
-    axios.post(`https://movies-api-21.herokuapp.com/users/${username}/add-movies/${this.props.movie._id}`, {}, {
+    axios.put(`https://movies-api-21.herokuapp.com/users/${username}/add-movies/${this.props.movie._id}`, {}, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
@@ -44,7 +43,7 @@ export class MovieView extends React.Component {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
 
-    axios.delete(`https://movies-api-21.herokuapp.com/users/:Username/add-movies/${this.props.movie._id}`, {
+    axios.delete(`https://movies-api-21.herokuapp.com/users/${username}/delete-movies/${this.props.movie._id}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
@@ -71,7 +70,6 @@ export class MovieView extends React.Component {
           </h1>
         </div>
         <div className='movie-description'>
-          <span className='label'>Description: </span>
           <span className='value'>{movie.Description}</span>
         </div>
         <div className='movie-director'>

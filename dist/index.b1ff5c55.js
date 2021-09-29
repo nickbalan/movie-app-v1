@@ -37782,7 +37782,6 @@ parcelHelpers.export(exports, "MovieView", ()=>MovieView
 var _movieViewScss = require("./movie-view.scss");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-//import PropTypes from 'prop-types';
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _reactRouterDom = require("react-router-dom");
@@ -37803,7 +37802,7 @@ class MovieView extends _reactDefault.default.Component {
     addFavorite() {
         const token = localStorage.getItem('token');
         const username = localStorage.getItem('user');
-        _axiosDefault.default.post(`https://movies-api-21.herokuapp.com/users/${username}/add-movies/${this.props.movie._id}`, {
+        _axiosDefault.default.put(`https://movies-api-21.herokuapp.com/users/${username}/add-movies/${this.props.movie._id}`, {
         }, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -37817,7 +37816,7 @@ class MovieView extends _reactDefault.default.Component {
     removeFavorites() {
         const token = localStorage.getItem('token');
         const username = localStorage.getItem('user');
-        _axiosDefault.default.delete(`https://movies-api-21.herokuapp.com/users/:Username/add-movies/${this.props.movie._id}`, {
+        _axiosDefault.default.delete(`https://movies-api-21.herokuapp.com/users/${username}/delete-movies/${this.props.movie._id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -37833,111 +37832,104 @@ class MovieView extends _reactDefault.default.Component {
             className: "movie-view",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 62
+                lineNumber: 61
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-poster",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 63
+                lineNumber: 62
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
             src: movie.imgUrl,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 64
+                lineNumber: 63
             },
             __self: this
         })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-title",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 66
+                lineNumber: 65
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 67
+                lineNumber: 66
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_badgeDefault.default, {
             bg: "primary",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 68
+                lineNumber: 67
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 69
+                lineNumber: 68
             },
             __self: this
         }, movie.Title)))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-description",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 73
+                lineNumber: 72
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "label",
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 74
-            },
-            __self: this
-        }, "Description: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 75
+                lineNumber: 73
             },
             __self: this
         }, movie.Description)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-director",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 77
+                lineNumber: 75
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/directors/${movie.Director.Name}`,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 78
+                lineNumber: 76
             },
             __self: this
         }, "Director: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 79
+                lineNumber: 77
             },
             __self: this
         }, movie.Director.Name)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-genre",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 81
+                lineNumber: 79
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/genres/${movie.Genre.Name}`,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 82
+                lineNumber: 80
             },
             __self: this
         }, "Genre: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 83
+                lineNumber: 81
             },
             __self: this
         }, movie.Genre.Name)), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -37948,7 +37940,7 @@ class MovieView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 85
+                lineNumber: 83
             },
             __self: this
         }, "Add to Favorites"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -37959,7 +37951,7 @@ class MovieView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 88
+                lineNumber: 86
             },
             __self: this
         }, "Remove from Favorites"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -37969,7 +37961,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 91
+                lineNumber: 89
             },
             __self: this
         }, "Back")));
@@ -44508,83 +44500,71 @@ var _directorViewScss = require("./director-view.scss");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 //import PropTypes from 'prop-types';
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 class DirectorView extends _reactDefault.default.Component {
     render() {
         const { director , onBackClick  } = this.props;
-        return(/*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "director-view",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 16
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
-            className: "d-flex",
-            md: 12,
-            __source: {
-                fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 17
+                lineNumber: 15
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "director-name",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 18
+                lineNumber: 16
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 19
+                lineNumber: 17
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 20
+                lineNumber: 18
             },
             __self: this
         }, director.Name))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "director-bio",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 23
+                lineNumber: 21
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 24
+                lineNumber: 22
             },
             __self: this
         }, director.Bio)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "director-birthdate",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 26
+                lineNumber: 24
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 27
+                lineNumber: 25
             },
             __self: this
         }, director.Birth)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "button-space",
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 29
+                lineNumber: 27
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -44594,10 +44574,10 @@ class DirectorView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Users\\Nick_B\\Documents\\careerfoundry\\Github_Achiev_3\\myFlix-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 30
+                lineNumber: 28
             },
             __self: this
-        }, "Back"))));
+        }, "Back")));
     }
 }
 
@@ -44606,7 +44586,7 @@ class DirectorView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"./director-view.scss":"2Gm3L","react":"3b2NM","react-bootstrap/Col":"2D0r8","react-bootstrap/Row":"3fzwD","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J","react-bootstrap/Button":"1ru0l"}],"2Gm3L":[function() {},{}],"4mPGf":[function(require,module,exports) {
+},{"./director-view.scss":"2Gm3L","react":"3b2NM","@parcel/transformer-js/src/esmodule-helpers.js":"Qgnc0","../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3TT6J","react-bootstrap/Button":"1ru0l"}],"2Gm3L":[function() {},{}],"4mPGf":[function(require,module,exports) {
 var helpers = require("../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -49213,6 +49193,7 @@ class MovieCard extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default.Img, {
+            className: "image-container",
             variant: "top",
             src: movie.imgUrl,
             __source: {
@@ -49241,7 +49222,7 @@ class MovieCard extends _reactDefault.default.Component {
                 lineNumber: 41
             },
             __self: this
-        }, "Add Favorites")))));
+        }, "Add to Favorites")))));
     }
 }
 

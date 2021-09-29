@@ -26,10 +26,6 @@ export class ProfileView extends React.Component {
       Email: null,
       Birthdate: null,
       validated: null
-      /* UsernameError: '',
-      PasswordError: '',
-      EmailError: '',
-      BirthdateError: '',*/
     };
   }
 
@@ -176,9 +172,9 @@ export class ProfileView extends React.Component {
                 return (
                   <CardDeck className='movie-card-deck' key={movie._id}>
                     <Card className='card-content favorites-item border-0' key={movie._id} style={{ width: '16rem' }}>
-                      <Card.Img className='movie-poster' variant='top' src={movie.imgUrl} />
+                      <Card.Img className='movie-card' variant='top' src={movie.imgUrl} />
                       <Card.Title className='movie-card-title'>{movie.Title}</Card.Title>
-                      <Button size='sm' className='profile-button remove-favorite-movie' variant='danger' value={movie._id} onClick={(e) => this.removeFavouriteMovie(e, movie)}>
+                      <Button size='sm' className='profile-button remove-favorite-movie' variant='danger' value={movie._id} onClick={() => this.removeFavouriteMovie(e, movie)}>
                         Remove from Favorites
                       </Button>
                     </Card>

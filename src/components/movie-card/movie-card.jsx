@@ -35,11 +35,11 @@ export class MovieCard extends React.Component {
       <Container>
         <Card bg='secondary' text='white'>
           <Link to={`/movies/${movie._id}`}>
-            <Card.Img variant='top' src={movie.imgUrl} />
+            <Card.Img className='image-container' variant='top' src={movie.imgUrl} />
           </Link>
           <Card.Body className='fav-btn' style={{ paddingLeft: 30, margin: 'auto' }}>
             <Button variant='dark' value={movie._id} onClick={(e) => this.addFavorite(e, movie)}>
-              Add Favorites
+              Add to Favorites
             </Button>
           </Card.Body>
         </Card>
