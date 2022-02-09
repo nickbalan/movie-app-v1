@@ -44,7 +44,7 @@ class MainView extends React.Component {
 
   //Updates the user's state on logged in
   onLoggedIn(authData) {
-    console.log(authData);
+    //console.log(authData);
     this.setState({
       user: authData.user.Username
     });
@@ -77,7 +77,7 @@ class MainView extends React.Component {
       <div className='main-view'>
         <Router>
           <NavBar user={user} />
-          <Row className='main-view justify-content-md-center'>
+          <Row className='main-view justify-content-md-center mt-5'>
             <Route exact path='/' render={() => {
               if (!user) return <Col>
                 <LoginView onLoggedIn={user => this.onLoggedIn(user)} />

@@ -42,13 +42,14 @@ export class ProfileView extends React.Component {
     axios.get(`https://movies-api-21.herokuapp.com/users/${username}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
-      .this(response => {
+      .then(response => {
+        //console.log(response);
         this.setState({
           Username: response.data.Username,
           Password: response.data.Password,
           Email: response.data.Email,
           Birthdate: moment(response.data.Birthdate).format('DD/MM/YYYY'),
-          favoriteMovies: response.data.favoriteMovies
+          favoriteMovies: response.data.FavoriteMovies
         });
       })
       .catch(function (error) {
@@ -171,7 +172,7 @@ export class ProfileView extends React.Component {
               if (movie._id === favoriteMovies.find((favMovies) => favMovies === movie._id)) {
                 return (
                   <CardDeck className='movie-card-deck' key={movie._id}>
-                    <Card className='card-content favorites-item border-0' key={movie._id} style={{ width: '16rem' }}>
+                    <Card className='card-content favorites-item border-0' key={movie._id} style={{ width: 'auto' }}>
                       <Card.Img className='movie-card' variant='top' src={movie.imgUrl} />
                       <Card.Title className='movie-card-title'>{movie.Title}</Card.Title>
                       <Button size='sm' className='profile-button remove-favorite-movie' variant='danger' value={movie._id} onClick={() => this.removeFavouriteMovie(e, movie)}>
