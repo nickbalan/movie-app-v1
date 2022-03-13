@@ -1,4 +1,4 @@
-# MyFlix Client
+# MyFlix Client (React)
  
 # Objective
 Using React, build the client-side for an application called myFlix based on its existing server-side code (REST API and database)
@@ -41,7 +41,7 @@ Using React, build the client-side for an application called myFlix based on its
 - The application must be written with React Redux (hence respecting the Flux pattern) 
 - The application must use Bootstrap as a UI library for styling and responsiveness 
 - The application must contain a mix of class components and function components 
-- The application may be hosted online 
+- The application may be hosted online
 
 ## MyFlix Client screenshot
 
