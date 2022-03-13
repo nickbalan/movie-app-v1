@@ -42,3 +42,7 @@ Using React, build the client-side for an application called myFlix based on its
 - The application must use Bootstrap as a UI library for styling and responsiveness 
 - The application must contain a mix of class components and function components 
 - The application may be hosted online 
+
+## MyFlix Client screenshot
+
+![Livescreen](src/img/Livescreen/MyFLixClient_Livescreen_1.JPG)
