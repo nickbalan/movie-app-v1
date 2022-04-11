@@ -53,6 +53,6 @@ Using React, build the client-side for an application called MyFlix based on an 
 - The application must contain a mix of class components and function components 
 - The application may be hosted online.
 
-## MyFlix Client screenshot
+## MyFlix Client (React App) screenshot
 
 ![Livescreen](src/img/Livescreen/MyFLixClient_Livescreen_1.JPG)
