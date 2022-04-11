@@ -1,11 +1,21 @@
-# MyFlix Client (React)
+# MyFlix Client (React App)
  
 # Objective
-Using React, build the client-side for an application called myFlix based on its existing server-side code (REST API and database)
+Using React, build the client-side for an application called MyFlix based on an existing server-side code (REST API and database).
+
+## My Role
+- Full-Stack Web Developer
+
+## The 5 W's
+- Who? — The users of your myFlix application. They will be movie enthusiasts who enjoy reading information about different movies
+- What? — A single-page, responsive application with routing, rich interactions, several interface views, and a polished user experience. The client-side development in this project supports the existing server-side code (REST API and database) by facilitating user requests and rendering the response from the server-side via several different interface views
+- When? — MyFlix users will be able to use it whenever they want to read information about different movies or update their user data — for instance, their list of "Favorite Movies"
+- Where? — The application is hosted online. The MyFlix application itself is responsive and can be used anywhere and on any device, giving all users the same experience
+- Why? — Movie enthusiasts should be able to access information about different movies, directors, and genres, whenever they want to. Having the ability to save lists of favorite movies will ensure users always have access to the films they want to watch or recommend to their peers.
 
 ## User Stories 
-- As a user, I want to be able to access information on movies, directors, and genres so that I can learn more about movies I’ve watched or am interested in 
-- As a user, I want to be able to create a profile so I can save data about my favorite movies.
+- As a user, I should be able to access information on movies, directors, and genres so that I can learn more about movies I've watched or am interested in 
+- As a user, I should be able to create an account to save data about my favorite movies.
 
 ## Essential Views and Features: 
 ### Main view 
@@ -29,19 +39,19 @@ Using React, build the client-side for an application called myFlix based on its
 - Allows users to update their user info (username, password, email, date of birth) 
 - Allows existing users to deregister 
 - Displays favorite movies  
-- Allows users to remove a movie from their list of favorites 
+- Allows users to remove a movie from their list of favorites.
 
-## Initial Technical Requirements 
+## Technical Requirements 
 - The application must be a single-page application (SPA) 
 - The application must use state routing to navigate between views and share URLs 
 - The application must give users the option to filter movies  
 - The application must give users the option to sort movies 
 - The application must initially use Parcel as its build tool 
 - The application must be written using the React library and in ES2015+ 
-- The application must be written with React Redux (hence respecting the Flux pattern) 
+- The application must be written with React-Redux (hence respecting the Flux pattern) 
 - The application must use Bootstrap as a UI library for styling and responsiveness 
 - The application must contain a mix of class components and function components 
-- The application may be hosted online
+- The application may be hosted online.
 
 ## MyFlix Client screenshot
 
