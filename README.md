@@ -1,4 +1,4 @@
-# MyFlix Client (React App)
+# MyFlix Client (React App). Technical Case Study
  
 # Objective
 Using React, build the client-side for an application called MyFlix based on an existing server-side code (REST API and database).
@@ -17,7 +17,19 @@ Using React, build the client-side for an application called MyFlix based on an 
 - As a user, I should be able to access information on movies, directors, and genres so that I can learn more about movies I've watched or am interested in 
 - As a user, I should be able to create an account to save data about my favorite movies.
 
-## Essential Views and Features: 
+## Technical Requirements & Solutions
+- The application must be a single-page application (SPA) 
+- The application must use state routing to navigate between views and share URLs 
+- The application must give users the option to filter movies  
+- The application must give users the option to sort movies 
+- The application must initially use Parcel as its build tool 
+- The application must be written using the React library and in ES2015+ 
+- The application must be written with React-Redux (hence respecting the Flux pattern) 
+- The application must use Bootstrap as a UI library for styling and responsiveness 
+- The application must contain a mix of class components and function components 
+- The application may be hosted online.
+
+## Essential Views and Features 
 ### Main view 
 - Returns a list of ALL movies to the user (each listed item with an image, title, and description) 
 - Sorting and filtering  
@@ -40,18 +52,6 @@ Using React, build the client-side for an application called MyFlix based on an 
 - Allows existing users to deregister 
 - Displays favorite movies  
 - Allows users to remove a movie from their list of favorites.
-
-## Technical Requirements 
-- The application must be a single-page application (SPA) 
-- The application must use state routing to navigate between views and share URLs 
-- The application must give users the option to filter movies  
-- The application must give users the option to sort movies 
-- The application must initially use Parcel as its build tool 
-- The application must be written using the React library and in ES2015+ 
-- The application must be written with React-Redux (hence respecting the Flux pattern) 
-- The application must use Bootstrap as a UI library for styling and responsiveness 
-- The application must contain a mix of class components and function components 
-- The application may be hosted online.
 
 ## MyFlix Client (React App) screenshot
 
