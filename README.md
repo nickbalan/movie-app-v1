@@ -6,8 +6,11 @@ Using React, build the client-side for an application called MyFlix based on an 
 ## Context
 Client-side development hasn’t always been so prominent. In the past, web pages would be generated on the server-side and sent to the browser, resulting in a poor user experience. But thanks to modern browsers and libraries such as React, the client-side of an application is today considered to be just as important as the server-side. 
 
-## Project Owner and Acknowledgement
-- CareerFoundry
+## Project Deliverables Acknowledgement
+- CareerFoundry (25.02.2021 - 17.03.2022)
+
+## Project Improvement Strategies
+- Nick Balan (18.03.2022 - Current)
 
 ## My Role
 - Full-Stack Web Developer
