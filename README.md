@@ -1,4 +1,4 @@
-# Client-Side App - MyFlix. Technical Case Study
+# Client-Side MyFlix App. Technical Case Study
 
 # Objective
 
