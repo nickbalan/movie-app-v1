@@ -8,13 +8,9 @@ Build a client-side app with React as Front-End and using a REST API as Back-End
 
 Client-side development hasn’t always been so prominent. In the past, web pages would be generated on the server-side and sent to the browser, resulting in a poor user experience. But thanks to modern browsers and libraries such as React, the client-side of an application is today considered to be just as important as the server-side.
 
-## Project Deliverables Acknowledgement
+## Project Owner, Management, and Acknowledgement
 
-- CareerFoundry (25.02.2021 - 17.03.2022)
-
-## Project Improvement Strategies
-
-- Nick Balan (18.03.2022 - Current)
+[CareerFoundry](https://careerfoundry.com/) (25.02.2021 - 17.03.2022)
 
 ## My Role
 
