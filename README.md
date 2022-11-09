@@ -1,8 +1,8 @@
-# Client-Side MyFlix App. Technical Case Study
+# Movie App v1. Technical Case Study
 
 # Objective
 
-Build a client-side app with React as Front-End and using a REST API as Back-End.
+Build a movie client-side app with React as Front-End and using a REST API as Back-End.
 
 ## Context
 
@@ -18,10 +18,10 @@ Client-side development hasn’t always been so prominent. In the past, web page
 
 ## The 5 W's
 
-- Who? — The users of your myFlix application. They will be movie enthusiasts who enjoy reading information about different movies
+- Who? — The users of your movie application. They will be movie enthusiasts who enjoy reading information about different movies
 - What? — A single-page, responsive application with routing, rich interactions, several interface views, and a polished user experience. The client-side development in this project supports the existing server-side code (REST API and database) by facilitating user requests and rendering the response from the server-side via several different interface views
-- When? — MyFlix users will be able to use it whenever they want to read information about different movies or update their user data — for instance, their list of "Favorite Movies"
-- Where? — The application is hosted online. The MyFlix application itself is responsive and can be used anywhere and on any device, giving all users the same experience
+- When? — Users will be able to use the Movie App whenever they want to read information about different movies or update their user data — for instance, their list of "Favorite Movies"
+- Where? — The application is hosted online. The Movie application itself is responsive and can be used anywhere and on any device, giving all users the same experience
 - Why? — Movie enthusiasts should be able to access information about different movies, directors, and genres, whenever they want to. Having the ability to save lists of favorite movies will ensure users always have access to the films they want to watch or recommend to their peers.
 
 ## User Stories
@@ -78,6 +78,6 @@ Client-side development hasn’t always been so prominent. In the past, web page
 - Displays favorite movies
 - Allows users to remove a movie from their list of favorites.
 
-## MyFlix Client (React App) screenshot
+## Movie App v1 screenshot
 
-![Livescreen](src/img/Livescreen/MyFLixClient_Livescreen_1.JPG)
+![Livescreen](src/img/Livescreen/Movie_App_v1_Livescreen_1.JPG)
