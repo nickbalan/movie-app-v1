@@ -12,6 +12,10 @@ Client-side development hasn’t always been so prominent. In the past, web page
 
 [CareerFoundry](https://careerfoundry.com/) (25.02.2021 - 17.03.2022)
 
+## Project Owner and improvements
+
+Nick Balan (18.03.2022 - now)
+
 ## My Role
 
 - Full-Stack Web Developer

@@ -1,5 +1,5 @@
 {
-  "name": "myflix-client",
+  "name": "movie-app-v1",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -10,10 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.14",
+    "@mui/material": "^5.10.14",
     "axios": "^0.21.1",
     "chokidar": "^3.5.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
+    "parcel": "^2.8.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
@@ -25,6 +30,7 @@
     "uuid": "^7.0.3"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-beta.3.1"
+    "@parcel/transformer-sass": "^2.8.0",
+    "process": "^0.11.10"
   }
 }

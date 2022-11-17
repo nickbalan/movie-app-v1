@@ -7,6 +7,8 @@
 build.json
 
 # compiled output
+/parcel-cache
+.parcel-cache
 /dist
 /node_modules
 node_modules
