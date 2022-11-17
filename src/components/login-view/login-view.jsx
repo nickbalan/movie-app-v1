@@ -10,6 +10,31 @@ import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+//imports Material UI components
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import Link from '@mui/material/Link';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+function Copyright(props) {
+  return (
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="/">
+        Movie App v1
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
+
+const theme = createTheme();
 
 export function LoginView(props) {
   const [username, registerUsername] = useState('');
@@ -30,24 +55,45 @@ export function LoginView(props) {
         console.log('No such user')
       });
   };
-
+  
   return (
-    <div className='login'>
-      <Form className='justify-content-center'>
-        <Form.Group className='mb-3' controlId='formUsername'>
-          <Form.Label>Username:</Form.Label>
-          <Form.Control required type='text' placeholder='Enter your Username' value={username} onChange={e => registerUsername(e.target.value)} />
-        </Form.Group>
-        <Form.Group className='mb-3' controlId='formPassword'>
-          <Form.Label>Password:</Form.Label>
-          <Form.Control required type='password' placeholder='Enter your Password' value={password} onChange={e => registerPassword(e.target.value)} />
-        </Form.Group>
-        <Button variant='primary' type='submit' value='Submit' onClick={handleSubmit}>Log in</Button>
-        <Link to={`/register`}>
-          <Button variant='secondary' type='link' value='Link'>Sign up</Button>
-        </Link>
-      </Form>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box 
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign in <br/><br/>
+          </Typography>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }} className='login'>
+            <Form className='justify-content-center'>
+              <Form.Group className='mb-3' controlId='formUsername'>
+                <Form.Label>Username:</Form.Label>
+                <Form.Control required type='text' placeholder='Enter your Username' value={username} onChange={e => registerUsername(e.target.value)} />
+              </Form.Group>
+              <Form.Group className='mb-3' controlId='formPassword'>
+                <Form.Label>Password:</Form.Label>
+                <Form.Control required type='password' placeholder='Enter your Password' value={password} onChange={e => registerPassword(e.target.value)} />
+              </Form.Group>
+              <Button variant='primary' type='submit' value='Submit' onClick={handleSubmit}>Log in</Button>
+              <Link to={`/register`}>
+                <Button variant='secondary' type='link' value='Link'>Sign up</Button>
+              </Link>
+            </Form>
+            <Copyright sx={{ mt: 8, mb: 4 }} />
+          </Box>
+        </Box>
+      </Container>
+    </ThemeProvider>
   )
 }
 
