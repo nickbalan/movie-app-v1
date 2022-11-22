@@ -47589,37 +47589,33 @@ function LoginView(props) {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault1.default), {
-                                            variant: "primary",
                                             type: "submit",
-                                            value: "Submit",
+                                            fullWidth: true,
+                                            variant: "contained",
+                                            sx: {
+                                                mt: 3,
+                                                mb: 2
+                                            },
                                             onClick: handleSubmit1,
                                             children: "Log in"
                                         }, void 0, false, {
                                             fileName: "src/components/login-view/login-view.jsx",
                                             lineNumber: 87,
                                             columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
-                                            to: `/register`,
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault1.default), {
-                                                variant: "secondary",
-                                                type: "link",
-                                                value: "Link",
-                                                children: "Sign up"
-                                            }, void 0, false, {
-                                                fileName: "src/components/login-view/login-view.jsx",
-                                                lineNumber: 89,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 88,
-                                            columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/login-view/login-view.jsx",
                                     lineNumber: 78,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
+                                    href: "/register",
+                                    variant: "body2",
+                                    children: "Don't have an account? Sign Up"
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 97,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Copyright, {
@@ -47629,7 +47625,7 @@ function LoginView(props) {
                                     }
                                 }, void 0, false, {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 92,
+                                    lineNumber: 100,
                                     columnNumber: 13
                                 }, this)
                             ]
