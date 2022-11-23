@@ -47395,16 +47395,13 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _reactRedux = require("react-redux");
-var _reactRouterDom = require("react-router-dom");
 var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
 //imports Material UI components
 var _avatar = require("@mui/material/Avatar");
 var _avatarDefault = parcelHelpers.interopDefault(_avatar);
-var _button1 = require("@mui/material/Button");
-var _buttonDefault1 = parcelHelpers.interopDefault(_button1);
+var _button = require("@mui/material/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _cssBaseline = require("@mui/material/CssBaseline");
 var _cssBaselineDefault = parcelHelpers.interopDefault(_cssBaseline);
 var _link = require("@mui/material/Link");
@@ -47433,7 +47430,7 @@ function Copyright(props) {
                 children: "Movie App v1"
             }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 28,
+                lineNumber: 26,
                 columnNumber: 7
             }, this),
             " ",
@@ -47442,7 +47439,7 @@ function Copyright(props) {
         ]
     }, void 0, true, {
         fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 26,
+        lineNumber: 24,
         columnNumber: 5
     }, this);
 }
@@ -47473,7 +47470,7 @@ function LoginView(props) {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cssBaselineDefault.default), {}, void 0, false, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 62,
+                    lineNumber: 60,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
@@ -47491,12 +47488,12 @@ function LoginView(props) {
                             },
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _lockOutlinedDefault.default), {}, void 0, false, {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 72,
+                                lineNumber: 70,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 71,
+                            lineNumber: 69,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
@@ -47506,18 +47503,18 @@ function LoginView(props) {
                                 "Sign in ",
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 75,
+                                    lineNumber: 73,
                                     columnNumber: 21
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 75,
+                                    lineNumber: 73,
                                     columnNumber: 26
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 74,
+                            lineNumber: 72,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
@@ -47540,7 +47537,7 @@ function LoginView(props) {
                                                     children: "Username:"
                                                 }, void 0, false, {
                                                     fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 80,
+                                                    lineNumber: 78,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -47551,13 +47548,13 @@ function LoginView(props) {
                                                     onChange: (e)=>registerUsername(e.target.value)
                                                 }, void 0, false, {
                                                     fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 81,
+                                                    lineNumber: 79,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 79,
+                                            lineNumber: 77,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -47568,7 +47565,7 @@ function LoginView(props) {
                                                     children: "Password:"
                                                 }, void 0, false, {
                                                     fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 84,
+                                                    lineNumber: 82,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -47579,16 +47576,16 @@ function LoginView(props) {
                                                     onChange: (e)=>registerPassword(e.target.value)
                                                 }, void 0, false, {
                                                     fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 85,
+                                                    lineNumber: 83,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 83,
+                                            lineNumber: 81,
                                             columnNumber: 15
                                         }, this),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault1.default), {
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                                             type: "submit",
                                             fullWidth: true,
                                             variant: "contained",
@@ -47600,13 +47597,13 @@ function LoginView(props) {
                                             children: "Log in"
                                         }, void 0, false, {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 87,
+                                            lineNumber: 85,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 78,
+                                    lineNumber: 76,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
@@ -47615,7 +47612,7 @@ function LoginView(props) {
                                     children: "Don't have an account? Sign Up"
                                 }, void 0, false, {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 97,
+                                    lineNumber: 95,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Copyright, {
@@ -47625,30 +47622,30 @@ function LoginView(props) {
                                     }
                                 }, void 0, false, {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 100,
+                                    lineNumber: 98,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 77,
+                            lineNumber: 75,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 63,
+                    lineNumber: 61,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 61,
+            lineNumber: 59,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 60,
+        lineNumber: 58,
         columnNumber: 5
     }, this);
 }
@@ -47667,7 +47664,7 @@ $RefreshReg$(_c1, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./login-view.scss":"e57ax","react":"21dqq","axios":"jo6P5","react-redux":"bdVon","react-router-dom":"cHIiW","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@mui/material/Container":"fPxWU","@mui/material/Typography":"kbDYG","@mui/material/Avatar":"a1E31","@mui/material/Button":"eFe0Q","@mui/material/CssBaseline":"YDHu9","@mui/material/Link":"2FkZs","@mui/material/Box":"gh88n","@mui/icons-material/LockOutlined":"9fx6t","@mui/material/styles":"eZWTQ"}],"e57ax":[function() {},{}],"fPxWU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./login-view.scss":"e57ax","react":"21dqq","axios":"jo6P5","react-redux":"bdVon","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@mui/material/Container":"fPxWU","@mui/material/Typography":"kbDYG","@mui/material/Avatar":"a1E31","@mui/material/Button":"eFe0Q","@mui/material/CssBaseline":"YDHu9","@mui/material/Link":"2FkZs","@mui/material/Box":"gh88n","@mui/icons-material/LockOutlined":"9fx6t","@mui/material/styles":"eZWTQ"}],"e57ax":[function() {},{}],"fPxWU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _containerDefault.default));
@@ -73946,6 +73943,26 @@ var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
+//imports Material UI components
+var _avatar = require("@mui/material/Avatar");
+var _avatarDefault = parcelHelpers.interopDefault(_avatar);
+var _button1 = require("@mui/material/Button");
+var _buttonDefault1 = parcelHelpers.interopDefault(_button1);
+var _cssBaseline = require("@mui/material/CssBaseline");
+var _cssBaselineDefault = parcelHelpers.interopDefault(_cssBaseline);
+var _link = require("@mui/material/Link");
+var _linkDefault = parcelHelpers.interopDefault(_link);
+var _grid = require("@mui/material/Grid");
+var _gridDefault = parcelHelpers.interopDefault(_grid);
+var _box = require("@mui/material/Box");
+var _boxDefault = parcelHelpers.interopDefault(_box);
+var _lockOutlined = require("@mui/icons-material/LockOutlined");
+var _lockOutlinedDefault = parcelHelpers.interopDefault(_lockOutlined);
+var _typography = require("@mui/material/Typography");
+var _typographyDefault = parcelHelpers.interopDefault(_typography);
+var _container = require("@mui/material/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _styles = require("@mui/material/styles");
 var _s = $RefreshSig$();
 function RegistrationView() {
     _s();
@@ -73957,6 +73974,34 @@ function RegistrationView() {
     const [passwordError, registerPasswordError] = (0, _react.useState)({});
     const [emailError, registerEmailError] = (0, _react.useState)({});
     const [birthdateError, registerBirthdateErorr] = (0, _react.useState)({});
+    function Copyright(props) {
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
+            variant: "body2",
+            color: "text.secondary",
+            align: "center",
+            ...props,
+            children: [
+                "Copyright \xa9 ",
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
+                    color: "inherit",
+                    href: "/",
+                    children: "Movie App v1"
+                }, void 0, false, {
+                    fileName: "src/components/registration-view/registration-view.jsx",
+                    lineNumber: 40,
+                    columnNumber: 9
+                }, this),
+                " ",
+                new Date().getFullYear(),
+                "."
+            ]
+        }, void 0, true, {
+            fileName: "src/components/registration-view/registration-view.jsx",
+            lineNumber: 38,
+            columnNumber: 7
+        }, this);
+    }
+    const theme = (0, _styles.createTheme)();
     const handleRegister = (e)=>{
         e.preventDefault();
         let isValidated = validationForm();
@@ -73968,7 +74013,7 @@ function RegistrationView() {
         }).then((response)=>{
             const data = response.data;
             console.log(data);
-            windows.open("/", "_self"); //the '_self' argument opens the page in the current tab.
+            windows.open("/", "_self"); //opens the page in the current tab.
         }).catch((error)=>{
             console.log(error);
         });
@@ -74001,205 +74046,308 @@ function RegistrationView() {
         registerBirthdateErorr(birthdateError);
         return isValid;
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
-        className: "register justify-content-md-center",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                    controlId: "formUsername",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                            children: "Username: "
-                        }, void 0, false, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 81,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                            type: "text",
-                            value: username,
-                            onChange: (e)=>registerUsername(e.target.value)
-                        }, void 0, false, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 82,
-                            columnNumber: 11
-                        }, this),
-                        Object.keys(usernameError).map((key)=>{
-                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                children: usernameError[key]
-                            }, key, false, {
-                                fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 85,
-                                columnNumber: 15
-                            }, this);
-                        })
-                    ]
-                }, void 0, true, {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _styles.ThemeProvider), {
+        theme: theme,
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
+            component: "main",
+            maxWidth: "xs",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cssBaselineDefault.default), {}, void 0, false, {
                     fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 80,
+                    lineNumber: 106,
                     columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 79,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                    controlId: "formPassword",
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
+                    sx: {
+                        marginTop: 8,
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center"
+                    },
                     children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                            children: "Password: "
-                        }, void 0, false, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 95,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                            type: "password",
-                            value: password,
-                            onChange: (e)=>registerPassword(e.target.value)
-                        }, void 0, false, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 96,
-                            columnNumber: 11
-                        }, this),
-                        Object.keys(passwordError).map((key)=>{
-                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                children: passwordError[key]
-                            }, key, false, {
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _avatarDefault.default), {
+                            sx: {
+                                m: 1,
+                                bgcolor: "secondary.main"
+                            },
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _lockOutlinedDefault.default), {}, void 0, false, {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 99,
-                                columnNumber: 15
-                            }, this);
-                        })
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 94,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 93,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                    controlId: "formEmail",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                            children: "Email: "
+                                lineNumber: 116,
+                                columnNumber: 13
+                            }, this)
                         }, void 0, false, {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 109,
+                            lineNumber: 115,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                            type: "email",
-                            value: email,
-                            onChange: (e)=>registerEmail(e.target.value)
-                        }, void 0, false, {
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
+                            component: "h1",
+                            variant: "h5",
+                            children: [
+                                "Sign up ",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 119,
+                                    columnNumber: 21
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 119,
+                                    columnNumber: 26
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 110,
+                            lineNumber: 118,
                             columnNumber: 11
                         }, this),
-                        Object.keys(emailError).map((key)=>{
-                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                children: emailError[key]
-                            }, key, false, {
-                                fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 113,
-                                columnNumber: 15
-                            }, this);
-                        })
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 108,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 107,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                    controlId: "formBirthdate",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                            children: "Birthdate: "
-                        }, void 0, false, {
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
+                            component: "form",
+                            noValidate: true,
+                            onSubmit: handleRegister,
+                            sx: {
+                                mt: 3
+                            },
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
+                                    className: "register justify-content-md-center",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                                                controlId: "formUsername",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                                        children: "Enter your username: "
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 125,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                                        type: "text",
+                                                        value: username,
+                                                        onChange: (e)=>registerUsername(e.target.value)
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 126,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    Object.keys(usernameError).map((key)=>{
+                                                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                            children: usernameError[key]
+                                                        }, key, false, {
+                                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                                            lineNumber: 129,
+                                                            columnNumber: 23
+                                                        }, this);
+                                                    })
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/registration-view/registration-view.jsx",
+                                                lineNumber: 124,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 123,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                                                controlId: "formPassword",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                                        children: "Enter your password"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 138,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                                        type: "password",
+                                                        value: password,
+                                                        onChange: (e)=>registerPassword(e.target.value)
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 139,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    Object.keys(passwordError).map((key)=>{
+                                                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                            children: passwordError[key]
+                                                        }, key, false, {
+                                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                                            lineNumber: 142,
+                                                            columnNumber: 23
+                                                        }, this);
+                                                    })
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/registration-view/registration-view.jsx",
+                                                lineNumber: 137,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 136,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                                                controlId: "formEmail",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                                        children: "Email"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 151,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                                        type: "email",
+                                                        value: email,
+                                                        onChange: (e)=>registerEmail(e.target.value)
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 152,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    Object.keys(emailError).map((key)=>{
+                                                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                            children: emailError[key]
+                                                        }, key, false, {
+                                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                                            lineNumber: 155,
+                                                            columnNumber: 23
+                                                        }, this);
+                                                    })
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/registration-view/registration-view.jsx",
+                                                lineNumber: 150,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 149,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                                                controlId: "formBirthdate",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                                        children: "Enter your date of birth"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 164,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                                        type: "date",
+                                                        value: birthdate,
+                                                        onChange: (e)=>registerBirthdate(e.target.value)
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 165,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    Object.keys(birthdateError).map((key)=>{
+                                                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                            children: birthdateError[key]
+                                                        }, key, false, {
+                                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                                            lineNumber: 168,
+                                                            columnNumber: 23
+                                                        }, this);
+                                                    })
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/registration-view/registration-view.jsx",
+                                                lineNumber: 163,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 162,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault1.default), {
+                                            type: "submit",
+                                            fullWidth: true,
+                                            variant: "contained",
+                                            sx: {
+                                                mt: 3,
+                                                mb: 2
+                                            },
+                                            onClick: handleRegister,
+                                            children: "Sign Up"
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 175,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gridDefault.default), {
+                                            container: true,
+                                            justifyContent: "flex-end",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gridDefault.default), {
+                                                item: true,
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
+                                                    href: "/",
+                                                    variant: "body2",
+                                                    children: "Already have an account? Sign in"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                                    lineNumber: 186,
+                                                    columnNumber: 19
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "src/components/registration-view/registration-view.jsx",
+                                                lineNumber: 185,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 184,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 122,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Copyright, {
+                                    sx: {
+                                        mt: 8,
+                                        mb: 4
+                                    }
+                                }, void 0, false, {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 192,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 123,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                            type: "date",
-                            value: birthdate,
-                            onChange: (e)=>registerBirthdate(e.target.value)
-                        }, void 0, false, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 124,
-                            columnNumber: 11
-                        }, this),
-                        Object.keys(birthdateError).map((key)=>{
-                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                children: birthdateError[key]
-                            }, key, false, {
-                                fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 127,
-                                columnNumber: 15
-                            }, this);
-                        })
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 122,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 121,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                        type: "submit",
-                        onClick: handleRegister,
-                        children: "Sign Up"
-                    }, void 0, false, {
-                        fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 136,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                            variant: "secondary",
-                            children: "Back"
-                        }, void 0, false, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 138,
+                            lineNumber: 121,
                             columnNumber: 11
                         }, this)
-                    }, void 0, false, {
-                        fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 137,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 135,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/registration-view/registration-view.jsx",
+                    lineNumber: 107,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/registration-view/registration-view.jsx",
+            lineNumber: 105,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
         fileName: "src/components/registration-view/registration-view.jsx",
-        lineNumber: 78,
+        lineNumber: 104,
         columnNumber: 5
     }, this);
 }
@@ -74213,7 +74361,670 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./registration-view.scss":"clIxH","react":"21dqq","axios":"jo6P5","react-router-dom":"cHIiW","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt","react-bootstrap/Row":"cMC39","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"clIxH":[function() {},{}],"9tpci":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./registration-view.scss":"clIxH","react":"21dqq","axios":"jo6P5","react-router-dom":"cHIiW","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt","react-bootstrap/Row":"cMC39","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@mui/material/Avatar":"a1E31","@mui/material/Button":"eFe0Q","@mui/material/CssBaseline":"YDHu9","@mui/material/Link":"2FkZs","@mui/material/Grid":"8fbPl","@mui/material/Box":"gh88n","@mui/icons-material/LockOutlined":"9fx6t","@mui/material/Typography":"kbDYG","@mui/material/Container":"fPxWU","@mui/material/styles":"eZWTQ"}],"clIxH":[function() {},{}],"8fbPl":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>(0, _gridDefault.default));
+parcelHelpers.export(exports, "gridClasses", ()=>(0, _gridClassesDefault.default));
+var _grid = require("./Grid");
+var _gridDefault = parcelHelpers.interopDefault(_grid);
+var _gridClasses = require("./gridClasses");
+var _gridClassesDefault = parcelHelpers.interopDefault(_gridClasses);
+parcelHelpers.exportAll(_gridClasses, exports);
+
+},{"./Grid":"bqVEq","./gridClasses":"8IGG3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bqVEq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "generateGrid", ()=>generateGrid);
+parcelHelpers.export(exports, "generateDirection", ()=>generateDirection);
+parcelHelpers.export(exports, "generateRowGap", ()=>generateRowGap);
+parcelHelpers.export(exports, "generateColumnGap", ()=>generateColumnGap);
+parcelHelpers.export(exports, "resolveSpacingStyles", ()=>resolveSpacingStyles);
+parcelHelpers.export(exports, "resolveSpacingClasses", ()=>resolveSpacingClasses);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+// A grid component using the following libs as inspiration.
+//
+// For the implementation:
+// - https://getbootstrap.com/docs/4.3/layout/grid/
+// - https://github.com/kristoferjoseph/flexboxgrid/blob/master/src/css/flexboxgrid.css
+// - https://github.com/roylee0704/react-flexbox-grid
+// - https://material.angularjs.org/latest/layout/introduction
+//
+// Follow this flexbox Guide to better understand the underlying model:
+// - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+var _react = require("react");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _clsx = require("clsx");
+var _clsxDefault = parcelHelpers.interopDefault(_clsx);
+var _system = require("@mui/system");
+var _base = require("@mui/base");
+var _requirePropFactory = require("../utils/requirePropFactory");
+var _requirePropFactoryDefault = parcelHelpers.interopDefault(_requirePropFactory);
+var _styled = require("../styles/styled");
+var _styledDefault = parcelHelpers.interopDefault(_styled);
+var _useThemeProps = require("../styles/useThemeProps");
+var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
+var _useTheme = require("../styles/useTheme");
+var _useThemeDefault = parcelHelpers.interopDefault(_useTheme);
+var _gridContext = require("./GridContext");
+var _gridContextDefault = parcelHelpers.interopDefault(_gridContext);
+var _gridClasses = require("./gridClasses");
+var _gridClassesDefault = parcelHelpers.interopDefault(_gridClasses);
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "className",
+    "columns",
+    "columnSpacing",
+    "component",
+    "container",
+    "direction",
+    "item",
+    "rowSpacing",
+    "spacing",
+    "wrap",
+    "zeroMinWidth"
+];
+function getOffset(val) {
+    const parse = parseFloat(val);
+    return `${parse}${String(val).replace(String(parse), "") || "px"}`;
+}
+function generateGrid({ theme , ownerState  }) {
+    let size;
+    return theme.breakpoints.keys.reduce((globalStyles, breakpoint)=>{
+        // Use side effect over immutability for better performance.
+        let styles = {};
+        if (ownerState[breakpoint]) size = ownerState[breakpoint];
+        if (!size) return globalStyles;
+        if (size === true) // For the auto layouting
+        styles = {
+            flexBasis: 0,
+            flexGrow: 1,
+            maxWidth: "100%"
+        };
+        else if (size === "auto") styles = {
+            flexBasis: "auto",
+            flexGrow: 0,
+            flexShrink: 0,
+            maxWidth: "none",
+            width: "auto"
+        };
+        else {
+            const columnsBreakpointValues = (0, _system.unstable_resolveBreakpointValues)({
+                values: ownerState.columns,
+                breakpoints: theme.breakpoints.values
+            });
+            const columnValue = typeof columnsBreakpointValues === "object" ? columnsBreakpointValues[breakpoint] : columnsBreakpointValues;
+            if (columnValue === undefined || columnValue === null) return globalStyles;
+            // Keep 7 significant numbers.
+            const width = `${Math.round(size / columnValue * 10e7) / 10e5}%`;
+            let more = {};
+            if (ownerState.container && ownerState.item && ownerState.columnSpacing !== 0) {
+                const themeSpacing = theme.spacing(ownerState.columnSpacing);
+                if (themeSpacing !== "0px") {
+                    const fullWidth = `calc(${width} + ${getOffset(themeSpacing)})`;
+                    more = {
+                        flexBasis: fullWidth,
+                        maxWidth: fullWidth
+                    };
+                }
+            }
+            // Close to the bootstrap implementation:
+            // https://github.com/twbs/bootstrap/blob/8fccaa2439e97ec72a4b7dc42ccc1f649790adb0/scss/mixins/_grid.scss#L41
+            styles = (0, _extendsDefault.default)({
+                flexBasis: width,
+                flexGrow: 0,
+                maxWidth: width
+            }, more);
+        }
+        // No need for a media query for the first size.
+        if (theme.breakpoints.values[breakpoint] === 0) Object.assign(globalStyles, styles);
+        else globalStyles[theme.breakpoints.up(breakpoint)] = styles;
+        return globalStyles;
+    }, {});
+}
+function generateDirection({ theme , ownerState  }) {
+    const directionValues = (0, _system.unstable_resolveBreakpointValues)({
+        values: ownerState.direction,
+        breakpoints: theme.breakpoints.values
+    });
+    return (0, _system.handleBreakpoints)({
+        theme
+    }, directionValues, (propValue)=>{
+        const output = {
+            flexDirection: propValue
+        };
+        if (propValue.indexOf("column") === 0) output[`& > .${(0, _gridClassesDefault.default).item}`] = {
+            maxWidth: "none"
+        };
+        return output;
+    });
+}
+/**
+ * Extracts zero value breakpoint keys before a non-zero value breakpoint key.
+ * @example { xs: 0, sm: 0, md: 2, lg: 0, xl: 0 } or [0, 0, 2, 0, 0]
+ * @returns [xs, sm]
+ */ function extractZeroValueBreakpointKeys({ breakpoints , values  }) {
+    let nonZeroKey = "";
+    Object.keys(values).forEach((key)=>{
+        if (nonZeroKey !== "") return;
+        if (values[key] !== 0) nonZeroKey = key;
+    });
+    const sortedBreakpointKeysByValue = Object.keys(breakpoints).sort((a, b)=>{
+        return breakpoints[a] - breakpoints[b];
+    });
+    return sortedBreakpointKeysByValue.slice(0, sortedBreakpointKeysByValue.indexOf(nonZeroKey));
+}
+function generateRowGap({ theme , ownerState  }) {
+    const { container , rowSpacing  } = ownerState;
+    let styles = {};
+    if (container && rowSpacing !== 0) {
+        const rowSpacingValues = (0, _system.unstable_resolveBreakpointValues)({
+            values: rowSpacing,
+            breakpoints: theme.breakpoints.values
+        });
+        let zeroValueBreakpointKeys;
+        if (typeof rowSpacingValues === "object") zeroValueBreakpointKeys = extractZeroValueBreakpointKeys({
+            breakpoints: theme.breakpoints.values,
+            values: rowSpacingValues
+        });
+        styles = (0, _system.handleBreakpoints)({
+            theme
+        }, rowSpacingValues, (propValue, breakpoint)=>{
+            var _zeroValueBreakpointK;
+            const themeSpacing = theme.spacing(propValue);
+            if (themeSpacing !== "0px") return {
+                marginTop: `-${getOffset(themeSpacing)}`,
+                [`& > .${(0, _gridClassesDefault.default).item}`]: {
+                    paddingTop: getOffset(themeSpacing)
+                }
+            };
+            if ((_zeroValueBreakpointK = zeroValueBreakpointKeys) != null && _zeroValueBreakpointK.includes(breakpoint)) return {};
+            return {
+                marginTop: 0,
+                [`& > .${(0, _gridClassesDefault.default).item}`]: {
+                    paddingTop: 0
+                }
+            };
+        });
+    }
+    return styles;
+}
+function generateColumnGap({ theme , ownerState  }) {
+    const { container , columnSpacing  } = ownerState;
+    let styles = {};
+    if (container && columnSpacing !== 0) {
+        const columnSpacingValues = (0, _system.unstable_resolveBreakpointValues)({
+            values: columnSpacing,
+            breakpoints: theme.breakpoints.values
+        });
+        let zeroValueBreakpointKeys;
+        if (typeof columnSpacingValues === "object") zeroValueBreakpointKeys = extractZeroValueBreakpointKeys({
+            breakpoints: theme.breakpoints.values,
+            values: columnSpacingValues
+        });
+        styles = (0, _system.handleBreakpoints)({
+            theme
+        }, columnSpacingValues, (propValue, breakpoint)=>{
+            var _zeroValueBreakpointK2;
+            const themeSpacing = theme.spacing(propValue);
+            if (themeSpacing !== "0px") return {
+                width: `calc(100% + ${getOffset(themeSpacing)})`,
+                marginLeft: `-${getOffset(themeSpacing)}`,
+                [`& > .${(0, _gridClassesDefault.default).item}`]: {
+                    paddingLeft: getOffset(themeSpacing)
+                }
+            };
+            if ((_zeroValueBreakpointK2 = zeroValueBreakpointKeys) != null && _zeroValueBreakpointK2.includes(breakpoint)) return {};
+            return {
+                width: "100%",
+                marginLeft: 0,
+                [`& > .${(0, _gridClassesDefault.default).item}`]: {
+                    paddingLeft: 0
+                }
+            };
+        });
+    }
+    return styles;
+}
+function resolveSpacingStyles(spacing, breakpoints, styles = {}) {
+    // undefined/null or `spacing` <= 0
+    if (!spacing || spacing <= 0) return [];
+    // in case of string/number `spacing`
+    if (typeof spacing === "string" && !Number.isNaN(Number(spacing)) || typeof spacing === "number") return [
+        styles[`spacing-xs-${String(spacing)}`]
+    ];
+    // in case of object `spacing`
+    const spacingStyles = [];
+    breakpoints.forEach((breakpoint)=>{
+        const value = spacing[breakpoint];
+        if (Number(value) > 0) spacingStyles.push(styles[`spacing-${breakpoint}-${String(value)}`]);
+    });
+    return spacingStyles;
+}
+// Default CSS values
+// flex: '0 1 auto',
+// flexDirection: 'row',
+// alignItems: 'flex-start',
+// flexWrap: 'nowrap',
+// justifyContent: 'flex-start',
+const GridRoot = (0, _styledDefault.default)("div", {
+    name: "MuiGrid",
+    slot: "Root",
+    overridesResolver: (props, styles)=>{
+        const { ownerState  } = props;
+        const { container , direction , item , spacing , wrap , zeroMinWidth , breakpoints  } = ownerState;
+        let spacingStyles = [];
+        // in case of grid item
+        if (container) spacingStyles = resolveSpacingStyles(spacing, breakpoints, styles);
+        const breakpointsStyles = [];
+        breakpoints.forEach((breakpoint)=>{
+            const value = ownerState[breakpoint];
+            if (value) breakpointsStyles.push(styles[`grid-${breakpoint}-${String(value)}`]);
+        });
+        return [
+            styles.root,
+            container && styles.container,
+            item && styles.item,
+            zeroMinWidth && styles.zeroMinWidth,
+            ...spacingStyles,
+            direction !== "row" && styles[`direction-xs-${String(direction)}`],
+            wrap !== "wrap" && styles[`wrap-xs-${String(wrap)}`],
+            ...breakpointsStyles
+        ];
+    }
+})(({ ownerState  })=>(0, _extendsDefault.default)({
+        boxSizing: "border-box"
+    }, ownerState.container && {
+        display: "flex",
+        flexWrap: "wrap",
+        width: "100%"
+    }, ownerState.item && {
+        margin: 0 // For instance, it's useful when used with a `figure` element.
+    }, ownerState.zeroMinWidth && {
+        minWidth: 0
+    }, ownerState.wrap !== "wrap" && {
+        flexWrap: ownerState.wrap
+    }), generateDirection, generateRowGap, generateColumnGap, generateGrid);
+function resolveSpacingClasses(spacing, breakpoints) {
+    // undefined/null or `spacing` <= 0
+    if (!spacing || spacing <= 0) return [];
+    // in case of string/number `spacing`
+    if (typeof spacing === "string" && !Number.isNaN(Number(spacing)) || typeof spacing === "number") return [
+        `spacing-xs-${String(spacing)}`
+    ];
+    // in case of object `spacing`
+    const classes = [];
+    breakpoints.forEach((breakpoint)=>{
+        const value = spacing[breakpoint];
+        if (Number(value) > 0) {
+            const className = `spacing-${breakpoint}-${String(value)}`;
+            classes.push(className);
+        }
+    });
+    return classes;
+}
+const useUtilityClasses = (ownerState)=>{
+    const { classes , container , direction , item , spacing , wrap , zeroMinWidth , breakpoints  } = ownerState;
+    let spacingClasses = [];
+    // in case of grid item
+    if (container) spacingClasses = resolveSpacingClasses(spacing, breakpoints);
+    const breakpointsClasses = [];
+    breakpoints.forEach((breakpoint)=>{
+        const value = ownerState[breakpoint];
+        if (value) breakpointsClasses.push(`grid-${breakpoint}-${String(value)}`);
+    });
+    const slots = {
+        root: [
+            "root",
+            container && "container",
+            item && "item",
+            zeroMinWidth && "zeroMinWidth",
+            ...spacingClasses,
+            direction !== "row" && `direction-xs-${String(direction)}`,
+            wrap !== "wrap" && `wrap-xs-${String(wrap)}`,
+            ...breakpointsClasses
+        ]
+    };
+    return (0, _base.unstable_composeClasses)(slots, (0, _gridClasses.getGridUtilityClass), classes);
+};
+const Grid = /*#__PURE__*/ _react.forwardRef(function Grid(inProps, ref) {
+    const themeProps = (0, _useThemePropsDefault.default)({
+        props: inProps,
+        name: "MuiGrid"
+    });
+    const { breakpoints  } = (0, _useThemeDefault.default)();
+    const props = (0, _system.unstable_extendSxProp)(themeProps);
+    const { className , columns: columnsProp , columnSpacing: columnSpacingProp , component ="div" , container =false , direction ="row" , item =false , rowSpacing: rowSpacingProp , spacing =0 , wrap ="wrap" , zeroMinWidth =false  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
+    const rowSpacing = rowSpacingProp || spacing;
+    const columnSpacing = columnSpacingProp || spacing;
+    const columnsContext = _react.useContext((0, _gridContextDefault.default));
+    // columns set with default breakpoint unit of 12
+    const columns = container ? columnsProp || 12 : columnsContext;
+    const breakpointsValues = {};
+    const otherFiltered = (0, _extendsDefault.default)({}, other);
+    breakpoints.keys.forEach((breakpoint)=>{
+        if (other[breakpoint] != null) {
+            breakpointsValues[breakpoint] = other[breakpoint];
+            delete otherFiltered[breakpoint];
+        }
+    });
+    const ownerState = (0, _extendsDefault.default)({}, props, {
+        columns,
+        container,
+        direction,
+        item,
+        rowSpacing,
+        columnSpacing,
+        wrap,
+        zeroMinWidth,
+        spacing
+    }, breakpointsValues, {
+        breakpoints: breakpoints.keys
+    });
+    const classes = useUtilityClasses(ownerState);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _gridContextDefault.default).Provider, {
+        value: columns,
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(GridRoot, (0, _extendsDefault.default)({
+            ownerState: ownerState,
+            className: (0, _clsxDefault.default)(classes.root, className),
+            as: component,
+            ref: ref
+        }, otherFiltered))
+    });
+});
+Grid.propTypes /* remove-proptypes */  = {
+    // ----------------------------- Warning --------------------------------
+    // | These PropTypes are generated from the TypeScript type definitions |
+    // |     To update them edit the d.ts file and run "yarn proptypes"     |
+    // ----------------------------------------------------------------------
+    /**
+   * The content of the component.
+   */ children: (0, _propTypesDefault.default).node,
+    /**
+   * Override or extend the styles applied to the component.
+   */ classes: (0, _propTypesDefault.default).object,
+    /**
+   * @ignore
+   */ className: (0, _propTypesDefault.default).string,
+    /**
+   * The number of columns.
+   * @default 12
+   */ columns: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).number),
+        (0, _propTypesDefault.default).number,
+        (0, _propTypesDefault.default).object
+    ]),
+    /**
+   * Defines the horizontal space between the type `item` components.
+   * It overrides the value of the `spacing` prop.
+   */ columnSpacing: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).number,
+            (0, _propTypesDefault.default).string
+        ])),
+        (0, _propTypesDefault.default).number,
+        (0, _propTypesDefault.default).object,
+        (0, _propTypesDefault.default).string
+    ]),
+    /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */ component: (0, _propTypesDefault.default).elementType,
+    /**
+   * If `true`, the component will have the flex *container* behavior.
+   * You should be wrapping *items* with a *container*.
+   * @default false
+   */ container: (0, _propTypesDefault.default).bool,
+    /**
+   * Defines the `flex-direction` style property.
+   * It is applied for all screen sizes.
+   * @default 'row'
+   */ direction: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "column-reverse",
+            "column",
+            "row-reverse",
+            "row"
+        ]),
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOf([
+            "column-reverse",
+            "column",
+            "row-reverse",
+            "row"
+        ])),
+        (0, _propTypesDefault.default).object
+    ]),
+    /**
+   * If `true`, the component will have the flex *item* behavior.
+   * You should be wrapping *items* with a *container*.
+   * @default false
+   */ item: (0, _propTypesDefault.default).bool,
+    /**
+   * If a number, it sets the number of columns the grid item uses.
+   * It can't be greater than the total number of columns of the container (12 by default).
+   * If 'auto', the grid item's width matches its content.
+   * If false, the prop is ignored.
+   * If true, the grid item's width grows to use the space available in the grid container.
+   * The value is applied for the `lg` breakpoint and wider screens if not overridden.
+   * @default false
+   */ lg: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "auto"
+        ]),
+        (0, _propTypesDefault.default).number,
+        (0, _propTypesDefault.default).bool
+    ]),
+    /**
+   * If a number, it sets the number of columns the grid item uses.
+   * It can't be greater than the total number of columns of the container (12 by default).
+   * If 'auto', the grid item's width matches its content.
+   * If false, the prop is ignored.
+   * If true, the grid item's width grows to use the space available in the grid container.
+   * The value is applied for the `md` breakpoint and wider screens if not overridden.
+   * @default false
+   */ md: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "auto"
+        ]),
+        (0, _propTypesDefault.default).number,
+        (0, _propTypesDefault.default).bool
+    ]),
+    /**
+   * Defines the vertical space between the type `item` components.
+   * It overrides the value of the `spacing` prop.
+   */ rowSpacing: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).number,
+            (0, _propTypesDefault.default).string
+        ])),
+        (0, _propTypesDefault.default).number,
+        (0, _propTypesDefault.default).object,
+        (0, _propTypesDefault.default).string
+    ]),
+    /**
+   * If a number, it sets the number of columns the grid item uses.
+   * It can't be greater than the total number of columns of the container (12 by default).
+   * If 'auto', the grid item's width matches its content.
+   * If false, the prop is ignored.
+   * If true, the grid item's width grows to use the space available in the grid container.
+   * The value is applied for the `sm` breakpoint and wider screens if not overridden.
+   * @default false
+   */ sm: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "auto"
+        ]),
+        (0, _propTypesDefault.default).number,
+        (0, _propTypesDefault.default).bool
+    ]),
+    /**
+   * Defines the space between the type `item` components.
+   * It can only be used on a type `container` component.
+   * @default 0
+   */ spacing: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).number,
+            (0, _propTypesDefault.default).string
+        ])),
+        (0, _propTypesDefault.default).number,
+        (0, _propTypesDefault.default).object,
+        (0, _propTypesDefault.default).string
+    ]),
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).func,
+            (0, _propTypesDefault.default).object,
+            (0, _propTypesDefault.default).bool
+        ])),
+        (0, _propTypesDefault.default).func,
+        (0, _propTypesDefault.default).object
+    ]),
+    /**
+   * Defines the `flex-wrap` style property.
+   * It's applied for all screen sizes.
+   * @default 'wrap'
+   */ wrap: (0, _propTypesDefault.default).oneOf([
+        "nowrap",
+        "wrap-reverse",
+        "wrap"
+    ]),
+    /**
+   * If a number, it sets the number of columns the grid item uses.
+   * It can't be greater than the total number of columns of the container (12 by default).
+   * If 'auto', the grid item's width matches its content.
+   * If false, the prop is ignored.
+   * If true, the grid item's width grows to use the space available in the grid container.
+   * The value is applied for the `xl` breakpoint and wider screens if not overridden.
+   * @default false
+   */ xl: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "auto"
+        ]),
+        (0, _propTypesDefault.default).number,
+        (0, _propTypesDefault.default).bool
+    ]),
+    /**
+   * If a number, it sets the number of columns the grid item uses.
+   * It can't be greater than the total number of columns of the container (12 by default).
+   * If 'auto', the grid item's width matches its content.
+   * If false, the prop is ignored.
+   * If true, the grid item's width grows to use the space available in the grid container.
+   * The value is applied for all the screen sizes with the lowest priority.
+   * @default false
+   */ xs: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "auto"
+        ]),
+        (0, _propTypesDefault.default).number,
+        (0, _propTypesDefault.default).bool
+    ]),
+    /**
+   * If `true`, it sets `min-width: 0` on the item.
+   * Refer to the limitations section of the documentation to better understand the use case.
+   * @default false
+   */ zeroMinWidth: (0, _propTypesDefault.default).bool
+};
+{
+    const requireProp = (0, _requirePropFactoryDefault.default)("Grid", Grid);
+    // eslint-disable-next-line no-useless-concat
+    Grid["propTypes"] = (0, _extendsDefault.default)({}, Grid.propTypes, {
+        direction: requireProp("container"),
+        lg: requireProp("item"),
+        md: requireProp("item"),
+        sm: requireProp("item"),
+        spacing: requireProp("container"),
+        wrap: requireProp("container"),
+        xs: requireProp("item"),
+        zeroMinWidth: requireProp("item")
+    });
+}exports.default = Grid;
+
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/system":"Q0Zql","@mui/base":"656dE","../utils/requirePropFactory":"djqNS","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../styles/useTheme":"ge9MG","./GridContext":"7G96g","./gridClasses":"8IGG3","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7G96g":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+/**
+ * @ignore - internal component.
+ */ const GridContext = /*#__PURE__*/ _react.createContext();
+GridContext.displayName = "GridContext";
+exports.default = GridContext;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8IGG3":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getGridUtilityClass", ()=>getGridUtilityClass);
+var _utils = require("@mui/utils");
+var _generateUtilityClass = require("../generateUtilityClass");
+var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
+function getGridUtilityClass(slot) {
+    return (0, _generateUtilityClassDefault.default)("MuiGrid", slot);
+}
+const SPACINGS = [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+];
+const DIRECTIONS = [
+    "column-reverse",
+    "column",
+    "row-reverse",
+    "row"
+];
+const WRAPS = [
+    "nowrap",
+    "wrap-reverse",
+    "wrap"
+];
+const GRID_SIZES = [
+    "auto",
+    true,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+];
+const gridClasses = (0, _utils.unstable_generateUtilityClasses)("MuiGrid", [
+    "root",
+    "container",
+    "item",
+    "zeroMinWidth",
+    // spacings
+    ...SPACINGS.map((spacing)=>`spacing-xs-${spacing}`),
+    // direction values
+    ...DIRECTIONS.map((direction)=>`direction-xs-${direction}`),
+    // wrap values
+    ...WRAPS.map((wrap)=>`wrap-xs-${wrap}`),
+    // grid sizes for all breakpoints
+    ...GRID_SIZES.map((size)=>`grid-xs-${size}`),
+    ...GRID_SIZES.map((size)=>`grid-sm-${size}`),
+    ...GRID_SIZES.map((size)=>`grid-md-${size}`),
+    ...GRID_SIZES.map((size)=>`grid-lg-${size}`),
+    ...GRID_SIZES.map((size)=>`grid-xl-${size}`)
+]);
+exports.default = gridClasses;
+
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9tpci":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ad4a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
