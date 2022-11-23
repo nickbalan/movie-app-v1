@@ -6,9 +6,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
-import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 
 //imports Material UI components
 import Avatar from '@mui/material/Avatar';
@@ -23,9 +21,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+    <Typography variant='body2' color='text.secondary' align='center' {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="/">
+      <Link color='inherit' href='/'>
         Movie App v1
       </Link>{' '}
       {new Date().getFullYear()}
@@ -58,7 +56,7 @@ export function LoginView(props) {
   
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component='main' maxWidth='xs'>
         <CssBaseline />
         <Box 
           sx={{
@@ -71,10 +69,10 @@ export function LoginView(props) {
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography component='h1' variant='h5'>
             Sign in <br/><br/>
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }} className='login'>
+          <Box component='form' onSubmit={handleSubmit} noValidate sx={{ mt: 1 }} className='login'>
             <Form className='justify-content-center'>
               <Form.Group className='mb-3' controlId='formUsername'>
                 <Form.Label>Username:</Form.Label>
@@ -85,16 +83,16 @@ export function LoginView(props) {
                 <Form.Control required type='password' placeholder='Enter your Password' value={password} onChange={e => registerPassword(e.target.value)} />
               </Form.Group>
               <Button 
-                type="submit"
+                type='submit'
                 fullWidth
-                variant="contained"
+                variant='contained'
                 sx={{ mt: 3, mb: 2 }} 
                 onClick={handleSubmit}
               >
                 Log in
               </Button> 
             </Form>
-            <Link href="/register" variant="body2">
+            <Link href='/register' variant='body2'>
               {"Don't have an account? Sign Up"}
             </Link>
             <Copyright sx={{ mt: 8, mb: 4 }} />
