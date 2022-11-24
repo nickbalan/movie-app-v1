@@ -79372,6 +79372,16 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
 var _reactBootstrap = require("react-bootstrap");
+var _appBar = require("@mui/material/AppBar");
+var _appBarDefault = parcelHelpers.interopDefault(_appBar);
+var _toolbar = require("@mui/material/Toolbar");
+var _toolbarDefault = parcelHelpers.interopDefault(_toolbar);
+var _typography = require("@mui/material/Typography");
+var _typographyDefault = parcelHelpers.interopDefault(_typography);
+var _cssBaseline = require("@mui/material/CssBaseline");
+var _cssBaselineDefault = parcelHelpers.interopDefault(_cssBaseline);
+var _globalStyles = require("@mui/material/GlobalStyles");
+var _globalStylesDefault = parcelHelpers.interopDefault(_globalStyles);
 class NavBar extends (0, _reactDefault.default).Component {
     constructor(){
         super();
@@ -79386,72 +79396,134 @@ class NavBar extends (0, _reactDefault.default).Component {
         const movies = `/`;
         const profile = `/users/${user}`;
         if (!user) return null;
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "navbar-div",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar), {
-                className: "navbar navbar-expand-lg navbar-light bg-light",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Toggle, {
-                        "aria-controls": "basic-navbar-nav"
-                    }, void 0, false, {
-                        fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 28,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Collapse, {
-                        id: "responsive-navbar-nav",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav), {
-                            className: "ml-auto",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
-                                    as: (0, _reactRouterDom.Link),
-                                    to: movies,
-                                    className: "link-text",
-                                    children: "Home"
-                                }, void 0, false, {
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDefault.default).Fragment, {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _globalStylesDefault.default), {
+                    styles: {
+                        ul: {
+                            margin: 0,
+                            padding: 0,
+                            listStyle: "none"
+                        }
+                    }
+                }, void 0, false, {
+                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                    lineNumber: 32,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cssBaselineDefault.default), {}, void 0, false, {
+                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                    lineNumber: 33,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appBarDefault.default), {
+                    position: "static",
+                    color: "default",
+                    elevation: 0,
+                    sx: {
+                        borderBottom: (theme)=>`1px solid ${theme.palette.divider}`
+                    },
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _toolbarDefault.default), {
+                        sx: {
+                            flexWrap: "wrap"
+                        },
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
+                                variant: "h6",
+                                color: "inherit",
+                                noWrap: true,
+                                sx: {
+                                    flexGrow: 1
+                                },
+                                children: "Movie App v1"
+                            }, void 0, false, {
+                                fileName: "src/components/navbar-view/navbar-view.jsx",
+                                lineNumber: 41,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
+                                className: "navbar-div",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar), {
+                                    className: "navbar navbar-expand-lg navbar-light bg-light",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Toggle, {
+                                            "aria-controls": "basic-navbar-nav"
+                                        }, void 0, false, {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 47,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Collapse, {
+                                            id: "responsive-navbar-nav",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav), {
+                                                className: "ml-auto",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                                        as: (0, _reactRouterDom.Link),
+                                                        to: movies,
+                                                        className: "link-text",
+                                                        children: "Home"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                                                        lineNumber: 50,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                                        as: (0, _reactRouterDom.Link),
+                                                        to: profile,
+                                                        className: "link-text",
+                                                        children: "Profile"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                                                        lineNumber: 53,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                                        onClick: this.onLoggedOut,
+                                                        to: "/",
+                                                        children: "Log Out"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                                                        lineNumber: 56,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/navbar-view/navbar-view.jsx",
+                                                lineNumber: 49,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            lineNumber: 48,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 31,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
-                                    as: (0, _reactRouterDom.Link),
-                                    to: profile,
-                                    className: "link-text",
-                                    children: "Profile"
-                                }, void 0, false, {
-                                    fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 34,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
-                                    to: "/",
-                                    onClick: this.onLoggedOut,
-                                    children: "Log Out"
-                                }, void 0, false, {
-                                    fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 37,
+                                    lineNumber: 45,
                                     columnNumber: 15
                                 }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                            lineNumber: 30,
-                            columnNumber: 13
-                        }, this)
-                    }, void 0, false, {
+                            }, void 0, false, {
+                                fileName: "src/components/navbar-view/navbar-view.jsx",
+                                lineNumber: 44,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 29,
+                        lineNumber: 40,
                         columnNumber: 11
                     }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 26,
-                columnNumber: 9
-            }, this)
-        }, void 0, false, {
+                }, void 0, false, {
+                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                    lineNumber: 34,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
             fileName: "src/components/navbar-view/navbar-view.jsx",
-            lineNumber: 25,
+            lineNumber: 31,
             columnNumber: 7
         }, this);
     }
@@ -79463,7 +79535,411 @@ exports.default = NavBar;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"cHIiW","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3AD9A":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@mui/material/AppBar":"f8cnS","@mui/material/Toolbar":"dFZWN","@mui/material/Typography":"kbDYG","react-router-dom":"cHIiW","react-bootstrap":"3AD9A","@mui/material/CssBaseline":"YDHu9","@mui/material/GlobalStyles":"cj3U5"}],"f8cnS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>(0, _appBarDefault.default));
+parcelHelpers.export(exports, "appBarClasses", ()=>(0, _appBarClassesDefault.default));
+var _appBar = require("./AppBar");
+var _appBarDefault = parcelHelpers.interopDefault(_appBar);
+var _appBarClasses = require("./appBarClasses");
+var _appBarClassesDefault = parcelHelpers.interopDefault(_appBarClasses);
+parcelHelpers.exportAll(_appBarClasses, exports);
+
+},{"./AppBar":"cOh7k","./appBarClasses":"4C7ac","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cOh7k":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _react = require("react");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _clsx = require("clsx");
+var _clsxDefault = parcelHelpers.interopDefault(_clsx);
+var _base = require("@mui/base");
+var _styled = require("../styles/styled");
+var _styledDefault = parcelHelpers.interopDefault(_styled);
+var _useThemeProps = require("../styles/useThemeProps");
+var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
+var _capitalize = require("../utils/capitalize");
+var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
+var _paper = require("../Paper");
+var _paperDefault = parcelHelpers.interopDefault(_paper);
+var _appBarClasses = require("./appBarClasses");
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "className",
+    "color",
+    "enableColorOnDark",
+    "position"
+];
+const useUtilityClasses = (ownerState)=>{
+    const { color , position , classes  } = ownerState;
+    const slots = {
+        root: [
+            "root",
+            `color${(0, _capitalizeDefault.default)(color)}`,
+            `position${(0, _capitalizeDefault.default)(position)}`
+        ]
+    };
+    return (0, _base.unstable_composeClasses)(slots, (0, _appBarClasses.getAppBarUtilityClass), classes);
+};
+// var2 is the fallback.
+// Ex. var1: 'var(--a)', var2: 'var(--b)'; return: 'var(--a, var(--b))'
+const joinVars = (var1, var2)=>`${var1 == null ? void 0 : var1.replace(")", "")}, ${var2})`;
+const AppBarRoot = (0, _styledDefault.default)((0, _paperDefault.default), {
+    name: "MuiAppBar",
+    slot: "Root",
+    overridesResolver: (props, styles)=>{
+        const { ownerState  } = props;
+        return [
+            styles.root,
+            styles[`position${(0, _capitalizeDefault.default)(ownerState.position)}`],
+            styles[`color${(0, _capitalizeDefault.default)(ownerState.color)}`]
+        ];
+    }
+})(({ theme , ownerState  })=>{
+    const backgroundColorDefault = theme.palette.mode === "light" ? theme.palette.grey[100] : theme.palette.grey[900];
+    return (0, _extendsDefault.default)({
+        display: "flex",
+        flexDirection: "column",
+        width: "100%",
+        boxSizing: "border-box",
+        // Prevent padding issue with the Modal and fixed positioned AppBar.
+        flexShrink: 0
+    }, ownerState.position === "fixed" && {
+        position: "fixed",
+        zIndex: (theme.vars || theme).zIndex.appBar,
+        top: 0,
+        left: "auto",
+        right: 0,
+        "@media print": {
+            // Prevent the app bar to be visible on each printed page.
+            position: "absolute"
+        }
+    }, ownerState.position === "absolute" && {
+        position: "absolute",
+        zIndex: (theme.vars || theme).zIndex.appBar,
+        top: 0,
+        left: "auto",
+        right: 0
+    }, ownerState.position === "sticky" && {
+        // ⚠️ sticky is not supported by IE11.
+        position: "sticky",
+        zIndex: (theme.vars || theme).zIndex.appBar,
+        top: 0,
+        left: "auto",
+        right: 0
+    }, ownerState.position === "static" && {
+        position: "static"
+    }, ownerState.position === "relative" && {
+        position: "relative"
+    }, !theme.vars && (0, _extendsDefault.default)({}, ownerState.color === "default" && {
+        backgroundColor: backgroundColorDefault,
+        color: theme.palette.getContrastText(backgroundColorDefault)
+    }, ownerState.color && ownerState.color !== "default" && ownerState.color !== "inherit" && ownerState.color !== "transparent" && {
+        backgroundColor: theme.palette[ownerState.color].main,
+        color: theme.palette[ownerState.color].contrastText
+    }, ownerState.color === "inherit" && {
+        color: "inherit"
+    }, theme.palette.mode === "dark" && !ownerState.enableColorOnDark && {
+        backgroundColor: null,
+        color: null
+    }, ownerState.color === "transparent" && (0, _extendsDefault.default)({
+        backgroundColor: "transparent",
+        color: "inherit"
+    }, theme.palette.mode === "dark" && {
+        backgroundImage: "none"
+    })), theme.vars && (0, _extendsDefault.default)({}, ownerState.color === "default" && {
+        "--AppBar-background": ownerState.enableColorOnDark ? theme.vars.palette.AppBar.defaultBg : joinVars(theme.vars.palette.AppBar.darkBg, theme.vars.palette.AppBar.defaultBg),
+        "--AppBar-color": ownerState.enableColorOnDark ? theme.vars.palette.text.primary : joinVars(theme.vars.palette.AppBar.darkColor, theme.vars.palette.text.primary)
+    }, ownerState.color && !ownerState.color.match(/^(default|inherit|transparent)$/) && {
+        "--AppBar-background": ownerState.enableColorOnDark ? theme.vars.palette[ownerState.color].main : joinVars(theme.vars.palette.AppBar.darkBg, theme.vars.palette[ownerState.color].main),
+        "--AppBar-color": ownerState.enableColorOnDark ? theme.vars.palette[ownerState.color].contrastText : joinVars(theme.vars.palette.AppBar.darkColor, theme.vars.palette[ownerState.color].contrastText)
+    }, {
+        backgroundColor: "var(--AppBar-background)",
+        color: ownerState.color === "inherit" ? "inherit" : "var(--AppBar-color)"
+    }, ownerState.color === "transparent" && {
+        backgroundImage: "none",
+        backgroundColor: "transparent",
+        color: "inherit"
+    }));
+});
+const AppBar = /*#__PURE__*/ _react.forwardRef(function AppBar(inProps, ref) {
+    const props = (0, _useThemePropsDefault.default)({
+        props: inProps,
+        name: "MuiAppBar"
+    });
+    const { className , color ="primary" , enableColorOnDark =false , position ="fixed"  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
+    const ownerState = (0, _extendsDefault.default)({}, props, {
+        color,
+        position,
+        enableColorOnDark
+    });
+    const classes = useUtilityClasses(ownerState);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(AppBarRoot, (0, _extendsDefault.default)({
+        square: true,
+        component: "header",
+        ownerState: ownerState,
+        elevation: 4,
+        className: (0, _clsxDefault.default)(classes.root, className, position === "fixed" && "mui-fixed"),
+        ref: ref
+    }, other));
+});
+AppBar.propTypes /* remove-proptypes */  = {
+    // ----------------------------- Warning --------------------------------
+    // | These PropTypes are generated from the TypeScript type definitions |
+    // |     To update them edit the d.ts file and run "yarn proptypes"     |
+    // ----------------------------------------------------------------------
+    /**
+   * The content of the component.
+   */ children: (0, _propTypesDefault.default).node,
+    /**
+   * Override or extend the styles applied to the component.
+   */ classes: (0, _propTypesDefault.default).object,
+    /**
+   * @ignore
+   */ className: (0, _propTypesDefault.default).string,
+    /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
+   * @default 'primary'
+   */ color: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "default",
+            "inherit",
+            "primary",
+            "secondary",
+            "transparent"
+        ]),
+        (0, _propTypesDefault.default).string
+    ]),
+    /**
+   * If true, the `color` prop is applied in dark mode.
+   * @default false
+   */ enableColorOnDark: (0, _propTypesDefault.default).bool,
+    /**
+   * The positioning type. The behavior of the different options is described
+   * [in the MDN web docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning).
+   * Note: `sticky` is not universally supported and will fall back to `static` when unavailable.
+   * @default 'fixed'
+   */ position: (0, _propTypesDefault.default).oneOf([
+        "absolute",
+        "fixed",
+        "relative",
+        "static",
+        "sticky"
+    ]),
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).func,
+            (0, _propTypesDefault.default).object,
+            (0, _propTypesDefault.default).bool
+        ])),
+        (0, _propTypesDefault.default).func,
+        (0, _propTypesDefault.default).object
+    ])
+};
+exports.default = AppBar;
+
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/base":"656dE","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../utils/capitalize":"kuBnp","../Paper":"aTVuT","./appBarClasses":"4C7ac","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aTVuT":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>(0, _paperDefault.default));
+parcelHelpers.export(exports, "paperClasses", ()=>(0, _paperClassesDefault.default));
+var _paper = require("./Paper");
+var _paperDefault = parcelHelpers.interopDefault(_paper);
+var _paperClasses = require("./paperClasses");
+var _paperClassesDefault = parcelHelpers.interopDefault(_paperClasses);
+parcelHelpers.exportAll(_paperClasses, exports);
+
+},{"./Paper":"5srYA","./paperClasses":"gxMbh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4C7ac":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getAppBarUtilityClass", ()=>getAppBarUtilityClass);
+var _utils = require("@mui/utils");
+var _generateUtilityClass = require("../generateUtilityClass");
+var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
+function getAppBarUtilityClass(slot) {
+    return (0, _generateUtilityClassDefault.default)("MuiAppBar", slot);
+}
+const appBarClasses = (0, _utils.unstable_generateUtilityClasses)("MuiAppBar", [
+    "root",
+    "positionFixed",
+    "positionAbsolute",
+    "positionSticky",
+    "positionStatic",
+    "positionRelative",
+    "colorDefault",
+    "colorPrimary",
+    "colorSecondary",
+    "colorInherit",
+    "colorTransparent"
+]);
+exports.default = appBarClasses;
+
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dFZWN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>(0, _toolbarDefault.default));
+parcelHelpers.export(exports, "toolbarClasses", ()=>(0, _toolbarClassesDefault.default));
+var _toolbar = require("./Toolbar");
+var _toolbarDefault = parcelHelpers.interopDefault(_toolbar);
+var _toolbarClasses = require("./toolbarClasses");
+var _toolbarClassesDefault = parcelHelpers.interopDefault(_toolbarClasses);
+parcelHelpers.exportAll(_toolbarClasses, exports);
+
+},{"./Toolbar":"is5qo","./toolbarClasses":"g6L54","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"is5qo":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _react = require("react");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _clsx = require("clsx");
+var _clsxDefault = parcelHelpers.interopDefault(_clsx);
+var _base = require("@mui/base");
+var _useThemeProps = require("../styles/useThemeProps");
+var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
+var _styled = require("../styles/styled");
+var _styledDefault = parcelHelpers.interopDefault(_styled);
+var _toolbarClasses = require("./toolbarClasses");
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "className",
+    "component",
+    "disableGutters",
+    "variant"
+];
+const useUtilityClasses = (ownerState)=>{
+    const { classes , disableGutters , variant  } = ownerState;
+    const slots = {
+        root: [
+            "root",
+            !disableGutters && "gutters",
+            variant
+        ]
+    };
+    return (0, _base.unstable_composeClasses)(slots, (0, _toolbarClasses.getToolbarUtilityClass), classes);
+};
+const ToolbarRoot = (0, _styledDefault.default)("div", {
+    name: "MuiToolbar",
+    slot: "Root",
+    overridesResolver: (props, styles)=>{
+        const { ownerState  } = props;
+        return [
+            styles.root,
+            !ownerState.disableGutters && styles.gutters,
+            styles[ownerState.variant]
+        ];
+    }
+})(({ theme , ownerState  })=>(0, _extendsDefault.default)({
+        position: "relative",
+        display: "flex",
+        alignItems: "center"
+    }, !ownerState.disableGutters && {
+        paddingLeft: theme.spacing(2),
+        paddingRight: theme.spacing(2),
+        [theme.breakpoints.up("sm")]: {
+            paddingLeft: theme.spacing(3),
+            paddingRight: theme.spacing(3)
+        }
+    }, ownerState.variant === "dense" && {
+        minHeight: 48
+    }), ({ theme , ownerState  })=>ownerState.variant === "regular" && theme.mixins.toolbar);
+const Toolbar = /*#__PURE__*/ _react.forwardRef(function Toolbar(inProps, ref) {
+    const props = (0, _useThemePropsDefault.default)({
+        props: inProps,
+        name: "MuiToolbar"
+    });
+    const { className , component ="div" , disableGutters =false , variant ="regular"  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
+    const ownerState = (0, _extendsDefault.default)({}, props, {
+        component,
+        disableGutters,
+        variant
+    });
+    const classes = useUtilityClasses(ownerState);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(ToolbarRoot, (0, _extendsDefault.default)({
+        as: component,
+        className: (0, _clsxDefault.default)(classes.root, className),
+        ref: ref,
+        ownerState: ownerState
+    }, other));
+});
+Toolbar.propTypes /* remove-proptypes */  = {
+    // ----------------------------- Warning --------------------------------
+    // | These PropTypes are generated from the TypeScript type definitions |
+    // |     To update them edit the d.ts file and run "yarn proptypes"     |
+    // ----------------------------------------------------------------------
+    /**
+   * The Toolbar children, usually a mixture of `IconButton`, `Button` and `Typography`.
+   * The Toolbar is a flex container, allowing flex item properites to be used to lay out the children.
+   */ children: (0, _propTypesDefault.default).node,
+    /**
+   * Override or extend the styles applied to the component.
+   */ classes: (0, _propTypesDefault.default).object,
+    /**
+   * @ignore
+   */ className: (0, _propTypesDefault.default).string,
+    /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */ component: (0, _propTypesDefault.default).elementType,
+    /**
+   * If `true`, disables gutter padding.
+   * @default false
+   */ disableGutters: (0, _propTypesDefault.default).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).func,
+            (0, _propTypesDefault.default).object,
+            (0, _propTypesDefault.default).bool
+        ])),
+        (0, _propTypesDefault.default).func,
+        (0, _propTypesDefault.default).object
+    ]),
+    /**
+   * The variant to use.
+   * @default 'regular'
+   */ variant: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "dense",
+            "regular"
+        ]),
+        (0, _propTypesDefault.default).string
+    ])
+};
+exports.default = Toolbar;
+
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/base":"656dE","../styles/useThemeProps":"1WXY3","../styles/styled":"9NVzk","./toolbarClasses":"g6L54","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"g6L54":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getToolbarUtilityClass", ()=>getToolbarUtilityClass);
+var _utils = require("@mui/utils");
+var _generateUtilityClass = require("../generateUtilityClass");
+var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
+function getToolbarUtilityClass(slot) {
+    return (0, _generateUtilityClassDefault.default)("MuiToolbar", slot);
+}
+const toolbarClasses = (0, _utils.unstable_generateUtilityClasses)("MuiToolbar", [
+    "root",
+    "gutters",
+    "regular",
+    "dense"
+]);
+exports.default = toolbarClasses;
+
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3AD9A":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>(0, _accordionDefault.default));
