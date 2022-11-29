@@ -122,7 +122,7 @@ export function RegistrationView() {
             <Form className='register justify-content-md-center'>
               <Row>
                 <Form.Group controlId='formUsername'>
-                  <Form.Label>Enter your username: </Form.Label>
+                  <Form.Label>Enter your username</Form.Label>
                   <Form.Control type='text' value={username} onChange={e => registerUsername(e.target.value)} />
                   {Object.keys(usernameError).map((key) => {
                     return (
