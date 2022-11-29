@@ -1,6 +1,7 @@
 //imports SCSS styles 
 import './login-view.scss';
 
+//imports React and hooks
 import React, { useState } from 'react';
 //import PropTypes from 'prop-types';
 import axios from 'axios';
@@ -75,11 +76,11 @@ export function LoginView(props) {
           <Box component='form' onSubmit={handleSubmit} noValidate sx={{ mt: 1 }} className='login'>
             <Form className='justify-content-center'>
               <Form.Group className='mb-3' controlId='formUsername'>
-                <Form.Label>Username:</Form.Label>
+                <Form.Label>Username</Form.Label>
                 <Form.Control required type='text' placeholder='Enter your Username' value={username} onChange={e => registerUsername(e.target.value)} />
               </Form.Group>
               <Form.Group className='mb-3' controlId='formPassword'>
-                <Form.Label>Password:</Form.Label>
+                <Form.Label>Password</Form.Label>
                 <Form.Control required type='password' placeholder='Enter your Password' value={password} onChange={e => registerPassword(e.target.value)} />
               </Form.Group>
               <Button 
