@@ -35,6 +35,7 @@ Nick Balan (18.03.2022 - now)
 
 ## Technical Requirements & Solutions
 
+- The application must use the [Movie API](https://github.com/nickbalan/movie-api) as Back-End
 - The application must be a single-page application (SPA)
 - The application must use state routing to navigate between views and share URLs
 - The application must give users the option to filter movies
