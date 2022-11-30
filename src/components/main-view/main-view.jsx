@@ -57,7 +57,7 @@ class MainView extends React.Component {
 
   //Gets all the movies from external DB
   getMovies(token) {
-    axios.get('https://movies-api-21.herokuapp.com/movies', {
+    axios.get('https://movie-api-22.onrender.com/movies', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
