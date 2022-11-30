@@ -41834,7 +41834,7 @@ class MainView extends (0, _reactDefault.default).Component {
     }
     //Gets all the movies from external DB
     getMovies(token) {
-        (0, _axiosDefault.default).get("https://movies-api-21.herokuapp.com/movies", {
+        (0, _axiosDefault.default).get("https://movie-api-22.onrender.com/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -45758,7 +45758,7 @@ class MovieCard extends (0, _reactDefault.default).Component {
     addFavorite() {
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).put(`https://movies-api-21.herokuapp.com/users/${username}/add-movies/${this.props.movie._id}`, {}, {
+        (0, _axiosDefault.default).put(`https://movie-api-22.onrender.com/users/${username}/add-movies/${this.props.movie._id}`, {}, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -47166,7 +47166,7 @@ class MovieView extends (0, _reactDefault.default).Component {
     addFavorite() {
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).put(`https://movies-api-21.herokuapp.com/users/${username}/add-movies/${this.props.movie._id}`, {}, {
+        (0, _axiosDefault.default).put(`https://movie-api-22.onrender.com/users/${username}/add-movies/${this.props.movie._id}`, {}, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -47453,7 +47453,7 @@ function LoginView(props) {
     const handleSubmit1 = (e)=>{
         e.preventDefault(); // prevents the default refresh/change of the page from the handleSubmit() method
         // Sends a request to the server for authentication
-        (0, _axiosDefault.default).post("https://movies-api-21.herokuapp.com/login", {
+        (0, _axiosDefault.default).post("https://movie-api-22.onrender.com/login", {
             Username: username,
             Password: password
         }).then((response)=>{
@@ -73772,7 +73772,7 @@ function RegistrationView() {
     const handleRegister = (e)=>{
         e.preventDefault();
         let isValidated = validationForm();
-        if (isValidated) (0, _axiosDefault.default).post("https://movies-api-21.herokuapp.com/users", {
+        if (isValidated) (0, _axiosDefault.default).post("https://movie-api-22.onrender.com/users", {
             Username: username,
             Password: password,
             Email: email,
@@ -75041,7 +75041,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
     //Gets user information by username
     getUser(token) {
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).get(`https://movies-api-21.herokuapp.com/users/${username}`, {
+        (0, _axiosDefault.default).get(`https://movie-api-22.onrender.com/users/${username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -75061,7 +75061,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
     removeFavouriteMovie(movie) {
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).delete(`https://movies-api-21.herokuapp.com/users/${username}/delete-movies/${movie._id}`, {
+        (0, _axiosDefault.default).delete(`https://movie-api-22.onrender.com/users/${username}/delete-movies/${movie._id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -75088,7 +75088,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
         e1.preventDefault();
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).put(`https://movies-api-21.herokuapp.com/users/${username}`, {
+        (0, _axiosDefault.default).put(`https://movie-api-22.onrender.com/users/${username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             },
@@ -75131,7 +75131,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
         if (answer) {
             const token = localStorage.getItem("token");
             const username = localStorage.getItem("user");
-            (0, _axiosDefault.default).delete(`https://movies-api-21.herokuapp.com/users/${username}`, {
+            (0, _axiosDefault.default).delete(`https://movie-api-22.onrender.com/users/${username}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

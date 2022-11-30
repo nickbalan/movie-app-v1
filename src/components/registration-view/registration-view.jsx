@@ -52,7 +52,7 @@ export function RegistrationView() {
     e.preventDefault();
     let isValidated = validationForm();
     if (isValidated) {
-      axios.post('https://movies-api-21.herokuapp.com/users', {
+      axios.post('https://movie-api-22.onrender.com/users', {
         Username: username,
         Password: password,
         Email: email,
