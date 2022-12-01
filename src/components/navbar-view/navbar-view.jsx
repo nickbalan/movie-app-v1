@@ -11,7 +11,6 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 export class NavBar extends React.Component {
   constructor() {
     super();
-
     this.state = {};
   }
 
@@ -38,12 +37,11 @@ export class NavBar extends React.Component {
           sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
         >
           <Toolbar sx={{ flexWrap: 'wrap' }}>
-          <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-            Movie App v1
-          </Typography>
+            <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+              Movie App v1
+            </Typography>
             <nav className="navbar-div">
               <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
-                
                 <Navbar.Toggle aria-controls='basic-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>
                   <Nav className='ml-auto'>
@@ -53,14 +51,13 @@ export class NavBar extends React.Component {
                     <Nav.Link as={Link} to={profile} className='link-text'>
                       Profile
                     </Nav.Link>
-                    <Nav.Link onClick={this.onLoggedOut} to={'/'}>
+                    <Nav.Link onClick={this.onLoggedOut}>
                       Log Out
                     </Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
-
               </Navbar >
-          </nav>
+            </nav>
           </Toolbar>
         </AppBar>
       </React.Fragment>
