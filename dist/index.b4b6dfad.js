@@ -45750,10 +45750,55 @@ var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _reactRouterDom = require("react-router-dom");
 var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _container = require("react-bootstrap/Container");
+/* import Button from 'react-bootstrap/Button'; */ var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
+//imports Material UI components
+var _avatar = require("@mui/material/Avatar");
+var _avatarDefault = parcelHelpers.interopDefault(_avatar);
+var _button = require("@mui/material/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _cssBaseline = require("@mui/material/CssBaseline");
+var _cssBaselineDefault = parcelHelpers.interopDefault(_cssBaseline);
+/* import Link from '@mui/material/Link'; */ var _box = require("@mui/material/Box");
+var _boxDefault = parcelHelpers.interopDefault(_box);
+var _lockOutlined = require("@mui/icons-material/LockOutlined");
+var _lockOutlinedDefault = parcelHelpers.interopDefault(_lockOutlined);
+var _typography = require("@mui/material/Typography");
+var _typographyDefault = parcelHelpers.interopDefault(_typography);
+var _container1 = require("@mui/material/Container");
+var _containerDefault1 = parcelHelpers.interopDefault(_container1);
+var _grid = require("@mui/material/Grid");
+var _gridDefault = parcelHelpers.interopDefault(_grid);
+var _styles = require("@mui/material/styles");
+function Copyright(props) {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
+        variant: "body2",
+        color: "text.secondary",
+        align: "center",
+        ...props,
+        children: [
+            "Copyright \xa9 ",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                color: "inherit",
+                href: "/",
+                children: "Movie App v1"
+            }, void 0, false, {
+                fileName: "src/components/movie-card/movie-card.jsx",
+                lineNumber: 28,
+                columnNumber: 7
+            }, this),
+            " ",
+            new Date().getFullYear(),
+            "."
+        ]
+    }, void 0, true, {
+        fileName: "src/components/movie-card/movie-card.jsx",
+        lineNumber: 26,
+        columnNumber: 5
+    }, this);
+}
+_c = Copyright;
+const theme = (0, _styles.createTheme)();
 class MovieCard extends (0, _reactDefault.default).Component {
     addFavorite() {
         const token = localStorage.getItem("token");
@@ -45771,68 +45816,94 @@ class MovieCard extends (0, _reactDefault.default).Component {
     }
     render() {
         const { movie  } = this.props;
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
-                bg: "secondary",
-                text: "white",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: `/movies/${movie._id}`,
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Img, {
-                            className: "image-container",
-                            variant: "top",
-                            src: movie.imgUrl
-                        }, void 0, false, {
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _styles.ThemeProvider), {
+            theme: theme,
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cssBaselineDefault.default), {}, void 0, false, {
+                    fileName: "src/components/movie-card/movie-card.jsx",
+                    lineNumber: 62,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault1.default), {
+                    sx: {
+                        py: 6
+                    },
+                    maxWidth: "md",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gridDefault.default), {
+                        container: true,
+                        spacing: 2,
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
+                            sx: {
+                                height: "100%",
+                                display: "flex",
+                                flexDirection: "column"
+                            },
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    to: `/movies/${movie._id}`,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Img, {
+                                        variant: "top",
+                                        src: movie.imgUrl
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-card/movie-card.jsx",
+                                        lineNumber: 67,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 66,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
+                                    className: "favorites-btn",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                        variant: "dark",
+                                        value: movie._id,
+                                        onClick: (e)=>this.addFavorite(e, movie),
+                                        children: "Add to Favorites"
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-card/movie-card.jsx",
+                                        lineNumber: 70,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 69,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 38,
+                            lineNumber: 65,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 37,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
-                        className: "fav-btn",
-                        style: {
-                            paddingLeft: 30,
-                            margin: "auto"
-                        },
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                            variant: "dark",
-                            value: movie._id,
-                            onClick: (e)=>this.addFavorite(e, movie),
-                            children: "Add to Favorites"
-                        }, void 0, false, {
-                            fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 41,
-                            columnNumber: 13
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 40,
+                        lineNumber: 64,
                         columnNumber: 11
                     }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 36,
-                columnNumber: 9
-            }, this)
-        }, void 0, false, {
+                }, void 0, false, {
+                    fileName: "src/components/movie-card/movie-card.jsx",
+                    lineNumber: 63,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
             fileName: "src/components/movie-card/movie-card.jsx",
-            lineNumber: 35,
+            lineNumber: 61,
             columnNumber: 7
         }, this);
     }
 }
+var _c;
+$RefreshReg$(_c, "Copyright");
 
   $parcel$ReactRefreshHelpers$67b2.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./movie-card.scss":"d6HH4","react":"21dqq","axios":"jo6P5","react-router-dom":"cHIiW","react-bootstrap/Card":"lAynp","react-bootstrap/Button":"aPzUt","react-bootstrap/Container":"hEdsw","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"d6HH4":[function() {},{}],"lAynp":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./movie-card.scss":"d6HH4","react":"21dqq","axios":"jo6P5","react-router-dom":"cHIiW","react-bootstrap/Card":"lAynp","react-bootstrap/Container":"hEdsw","@mui/material/Avatar":"a1E31","@mui/material/Button":"eFe0Q","@mui/material/CssBaseline":"YDHu9","@mui/material/Box":"gh88n","@mui/icons-material/LockOutlined":"9fx6t","@mui/material/Typography":"kbDYG","@mui/material/Container":"fPxWU","@mui/material/Grid":"8fbPl","@mui/material/styles":"eZWTQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"d6HH4":[function() {},{}],"lAynp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _extends = require("@babel/runtime/helpers/esm/extends");
@@ -46024,1648 +46095,7 @@ CardImg.displayName = "CardImg";
 CardImg.defaultProps = defaultProps;
 exports.default = CardImg;
 
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aPzUt":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _themeProvider = require("./ThemeProvider");
-var _safeAnchor = require("./SafeAnchor");
-var _safeAnchorDefault = parcelHelpers.interopDefault(_safeAnchor);
-var _excluded = [
-    "bsPrefix",
-    "variant",
-    "size",
-    "active",
-    "className",
-    "block",
-    "type",
-    "as"
-];
-var defaultProps = {
-    variant: "primary",
-    active: false,
-    disabled: false
-};
-var Button = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var bsPrefix = _ref.bsPrefix, variant = _ref.variant, size = _ref.size, active = _ref.active, className = _ref.className, block = _ref.block, type = _ref.type, as = _ref.as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    var prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "btn");
-    var classes = (0, _classnamesDefault.default)(className, prefix, active && "active", variant && prefix + "-" + variant, block && prefix + "-block", size && prefix + "-" + size);
-    if (props.href) return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _safeAnchorDefault.default), (0, _extendsDefault.default)({}, props, {
-        as: as,
-        ref: ref,
-        className: (0, _classnamesDefault.default)(classes, props.disabled && "disabled")
-    }));
-    if (ref) props.ref = ref;
-    if (type) props.type = type;
-    else if (!as) props.type = "button";
-    var Component = as || "button";
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
-        className: classes
-    }));
-});
-Button.displayName = "Button";
-Button.defaultProps = defaultProps;
-exports.default = Button;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./SafeAnchor":"7vUDg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7vUDg":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _createChainedFunction = require("./createChainedFunction");
-var _createChainedFunctionDefault = parcelHelpers.interopDefault(_createChainedFunction);
-var _excluded = [
-    "as",
-    "disabled",
-    "onKeyDown"
-];
-function isTrivialHref(href) {
-    return !href || href.trim() === "#";
-}
-/**
- * There are situations due to browser quirks or Bootstrap CSS where
- * an anchor tag is needed, when semantically a button tag is the
- * better choice. SafeAnchor ensures that when an anchor is used like a
- * button its accessible. It also emulates input `disabled` behavior for
- * links, which is usually desirable for Buttons, NavItems, DropdownItems, etc.
- */ var SafeAnchor = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var _ref$as = _ref.as, Component = _ref$as === void 0 ? "a" : _ref$as, disabled = _ref.disabled, onKeyDown = _ref.onKeyDown, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    var handleClick = function handleClick(event) {
-        var href = props.href, onClick = props.onClick;
-        if (disabled || isTrivialHref(href)) event.preventDefault();
-        if (disabled) {
-            event.stopPropagation();
-            return;
-        }
-        if (onClick) onClick(event);
-    };
-    var handleKeyDown = function handleKeyDown(event) {
-        if (event.key === " ") {
-            event.preventDefault();
-            handleClick(event);
-        }
-    };
-    if (isTrivialHref(props.href)) {
-        props.role = props.role || "button"; // we want to make sure there is a href attribute on the node
-        // otherwise, the cursor incorrectly styled (except with role='button')
-        props.href = props.href || "#";
-    }
-    if (disabled) {
-        props.tabIndex = -1;
-        props["aria-disabled"] = true;
-    }
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({
-        ref: ref
-    }, props, {
-        onClick: handleClick,
-        onKeyDown: (0, _createChainedFunctionDefault.default)(handleKeyDown, onKeyDown)
-    }));
-});
-SafeAnchor.displayName = "SafeAnchor";
-exports.default = SafeAnchor;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","react":"21dqq","./createChainedFunction":"1KNLM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1KNLM":[function(require,module,exports) {
-/**
- * Safe chained function
- *
- * Will only create a new function if needed,
- * otherwise will pass back existing functions or null.
- *
- * @param {function} functions to chain
- * @returns {function|null}
- */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function createChainedFunction() {
-    for(var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++)funcs[_key] = arguments[_key];
-    return funcs.filter(function(f) {
-        return f != null;
-    }).reduce(function(acc, f) {
-        if (typeof f !== "function") throw new Error("Invalid Argument Type, must only provide functions, undefined, or null.");
-        if (acc === null) return f;
-        return function chainedFunction() {
-            for(var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++)args[_key2] = arguments[_key2];
-            // @ts-ignore
-            acc.apply(this, args); // @ts-ignore
-            f.apply(this, args);
-        };
-    }, null);
-}
-exports.default = createChainedFunction;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
-"use strict";
-var Refresh = require("react-refresh/runtime");
-function debounce(func, delay) {
-    var args;
-    {
-        let timeout = undefined;
-        let lastTime = 0;
-        return function(args) {
-            // Call immediately if last call was more than the delay ago.
-            // Otherwise, set a timeout. This means the first call is fast
-            // (for the common case of a single update), and subsequent updates
-            // are batched.
-            let now = Date.now();
-            if (now - lastTime > delay) {
-                lastTime = now;
-                func.call(null, args);
-            } else {
-                clearTimeout(timeout);
-                timeout = setTimeout(function() {
-                    timeout = undefined;
-                    lastTime = Date.now();
-                    func.call(null, args);
-                }, delay);
-            }
-        };
-    }
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30); // Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module1) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module1.id + " " + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module1) {
-    if (isReactRefreshBoundary(module1.exports)) {
-        registerExportsForReactRefresh(module1);
-        if (module1.hot) {
-            module1.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module1.exports;
-            });
-            module1.hot.accept(function(getParents) {
-                var prevExports = module1.hot.data.prevExports;
-                var nextExports = module1.exports; // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-} // When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module1) {
-    var exports = module1.exports, id = module1.id;
-    Refresh.register(exports, id + " %exports%");
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        Refresh.register(exportValue, id + " %exports% " + key);
-    }
-}
-
-},{"react-refresh/runtime":"786KC"}],"gtTIg":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$dea5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$dea5.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRedux = require("react-redux");
-var _form = require("react-bootstrap/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
-var _actions = require("../../actions/actions");
-function VisibilityFilterInput(props) {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-        onChange: (e)=>props.setFilter(e.target.value),
-        value: props.visibilityFilter,
-        placeholder: "Search movies"
-    }, void 0, false, {
-        fileName: "src/components/visibility-filter-input/visibility-filter-input.jsx",
-        lineNumber: 8,
-        columnNumber: 10
-    }, this);
-}
-_c = VisibilityFilterInput;
-exports.default = (0, _reactRedux.connect)(null, {
-    setFilter: (0, _actions.setFilter)
-})(VisibilityFilterInput);
-var _c;
-$RefreshReg$(_c, "VisibilityFilterInput");
-
-  $parcel$ReactRefreshHelpers$dea5.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-redux":"bdVon","react-bootstrap/Form":"iBZ80","../../actions/actions":"biFwH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iBZ80":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _formCheck = require("./FormCheck");
-var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
-var _formFile = require("./FormFile");
-var _formFileDefault = parcelHelpers.interopDefault(_formFile);
-var _formControl = require("./FormControl");
-var _formControlDefault = parcelHelpers.interopDefault(_formControl);
-var _formGroup = require("./FormGroup");
-var _formGroupDefault = parcelHelpers.interopDefault(_formGroup);
-var _formLabel = require("./FormLabel");
-var _formLabelDefault = parcelHelpers.interopDefault(_formLabel);
-var _formText = require("./FormText");
-var _formTextDefault = parcelHelpers.interopDefault(_formText);
-var _switch = require("./Switch");
-var _switchDefault = parcelHelpers.interopDefault(_switch);
-var _themeProvider = require("./ThemeProvider");
-var _createWithBsPrefix = require("./createWithBsPrefix");
-var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
-var _excluded = [
-    "bsPrefix",
-    "inline",
-    "className",
-    "validated",
-    "as"
-];
-var FormRow = (0, _createWithBsPrefixDefault.default)("form-row");
-var defaultProps = {
-    inline: false
-};
-var FormImpl = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var bsPrefix = _ref.bsPrefix, inline = _ref.inline, className = _ref.className, validated = _ref.validated, _ref$as = _ref.as, Component = _ref$as === void 0 ? "form" : _ref$as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form");
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
-        ref: ref,
-        className: (0, _classnamesDefault.default)(className, validated && "was-validated", inline && bsPrefix + "-inline")
-    }));
-});
-FormImpl.displayName = "Form";
-FormImpl.defaultProps = defaultProps;
-FormImpl.Row = FormRow;
-FormImpl.Group = (0, _formGroupDefault.default);
-FormImpl.Control = (0, _formControlDefault.default);
-FormImpl.Check = (0, _formCheckDefault.default);
-FormImpl.File = (0, _formFileDefault.default);
-FormImpl.Switch = (0, _switchDefault.default);
-FormImpl.Label = (0, _formLabelDefault.default);
-FormImpl.Text = (0, _formTextDefault.default);
-exports.default = FormImpl;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./FormCheck":"idkr0","./FormFile":"jzm8K","./FormControl":"iynMc","./FormGroup":"1qBHH","./FormLabel":"66epi","./FormText":"ffeC7","./Switch":"9O81i","./ThemeProvider":"dVixI","./createWithBsPrefix":"itt7e","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"idkr0":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _all = require("prop-types-extra/lib/all");
-var _allDefault = parcelHelpers.interopDefault(_all);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _feedback = require("./Feedback");
-var _feedbackDefault = parcelHelpers.interopDefault(_feedback);
-var _formCheckInput = require("./FormCheckInput");
-var _formCheckInputDefault = parcelHelpers.interopDefault(_formCheckInput);
-var _formCheckLabel = require("./FormCheckLabel");
-var _formCheckLabelDefault = parcelHelpers.interopDefault(_formCheckLabel);
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _themeProvider = require("./ThemeProvider");
-var _excluded = [
-    "id",
-    "bsPrefix",
-    "bsCustomPrefix",
-    "inline",
-    "disabled",
-    "isValid",
-    "isInvalid",
-    "feedbackTooltip",
-    "feedback",
-    "className",
-    "style",
-    "title",
-    "type",
-    "label",
-    "children",
-    "custom",
-    "as"
-];
-var FormCheck = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var id = _ref.id, bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, _ref$inline = _ref.inline, inline = _ref$inline === void 0 ? false : _ref$inline, _ref$disabled = _ref.disabled, disabled = _ref$disabled === void 0 ? false : _ref$disabled, _ref$isValid = _ref.isValid, isValid = _ref$isValid === void 0 ? false : _ref$isValid, _ref$isInvalid = _ref.isInvalid, isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid, _ref$feedbackTooltip = _ref.feedbackTooltip, feedbackTooltip = _ref$feedbackTooltip === void 0 ? false : _ref$feedbackTooltip, feedback = _ref.feedback, className = _ref.className, style = _ref.style, _ref$title = _ref.title, title = _ref$title === void 0 ? "" : _ref$title, _ref$type = _ref.type, type = _ref$type === void 0 ? "checkbox" : _ref$type, label = _ref.label, children = _ref.children, propCustom = _ref.custom, _ref$as = _ref.as, as = _ref$as === void 0 ? "input" : _ref$as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    var custom = type === "switch" ? true : propCustom;
-    var _ref2 = custom ? [
-        bsCustomPrefix,
-        "custom-control"
-    ] : [
-        bsPrefix,
-        "form-check"
-    ], prefix = _ref2[0], defaultPrefix = _ref2[1];
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
-    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId;
-    var innerFormContext = (0, _react.useMemo)(function() {
-        return {
-            controlId: id || controlId,
-            custom: custom
-        };
-    }, [
-        controlId,
-        custom,
-        id
-    ]);
-    var hasLabel = custom || label != null && label !== false && !children;
-    var input = /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formCheckInputDefault.default), (0, _extendsDefault.default)({}, props, {
-        type: type === "switch" ? "checkbox" : type,
-        ref: ref,
-        isValid: isValid,
-        isInvalid: isInvalid,
-        isStatic: !hasLabel,
-        disabled: disabled,
-        as: as
-    }));
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formContextDefault.default).Provider, {
-        value: innerFormContext
-    }, /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
-        style: style,
-        className: (0, _classnamesDefault.default)(className, bsPrefix, custom && "custom-" + type, inline && bsPrefix + "-inline")
-    }, children || /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _reactDefault.default).Fragment, null, input, hasLabel && /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formCheckLabelDefault.default), {
-        title: title
-    }, label), (isValid || isInvalid) && /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _feedbackDefault.default), {
-        type: isValid ? "valid" : "invalid",
-        tooltip: feedbackTooltip
-    }, feedback))));
-});
-FormCheck.displayName = "FormCheck";
-FormCheck.Input = (0, _formCheckInputDefault.default);
-FormCheck.Label = (0, _formCheckLabelDefault.default);
-exports.default = FormCheck;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","prop-types-extra/lib/all":"37Ank","react":"21dqq","./Feedback":"aWeg2","./FormCheckInput":"dPzD9","./FormCheckLabel":"fGhS2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"37Ank":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = all;
-var _createChainableTypeChecker = require("./utils/createChainableTypeChecker");
-var _createChainableTypeChecker2 = _interopRequireDefault(_createChainableTypeChecker);
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-function all() {
-    for(var _len = arguments.length, validators = Array(_len), _key = 0; _key < _len; _key++)validators[_key] = arguments[_key];
-    function allPropTypes() {
-        for(var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++)args[_key2] = arguments[_key2];
-        var error = null;
-        validators.forEach(function(validator) {
-            if (error != null) return;
-            var result = validator.apply(undefined, args);
-            if (result != null) error = result;
-        });
-        return error;
-    }
-    return (0, _createChainableTypeChecker2.default)(allPropTypes);
-}
-module.exports = exports["default"];
-
-},{"./utils/createChainableTypeChecker":"1m8lT"}],"1m8lT":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = createChainableTypeChecker;
-/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */ // Mostly taken from ReactPropTypes.
-function createChainableTypeChecker(validate) {
-    function checkType(isRequired, props, propName, componentName, location, propFullName) {
-        var componentNameSafe = componentName || "<<anonymous>>";
-        var propFullNameSafe = propFullName || propName;
-        if (props[propName] == null) {
-            if (isRequired) return new Error("Required " + location + " `" + propFullNameSafe + "` was not specified " + ("in `" + componentNameSafe + "`."));
-            return null;
-        }
-        for(var _len = arguments.length, args = Array(_len > 6 ? _len - 6 : 0), _key = 6; _key < _len; _key++)args[_key - 6] = arguments[_key];
-        return validate.apply(undefined, [
-            props,
-            propName,
-            componentNameSafe,
-            location,
-            propFullNameSafe
-        ].concat(args));
-    }
-    var chainedCheckType = checkType.bind(null, false);
-    chainedCheckType.isRequired = checkType.bind(null, true);
-    return chainedCheckType;
-}
-module.exports = exports["default"];
-
-},{}],"aWeg2":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _excluded = [
-    "as",
-    "className",
-    "type",
-    "tooltip"
-];
-var propTypes = {
-    /**
-   * Specify whether the feedback is for valid or invalid fields
-   *
-   * @type {('valid'|'invalid')}
-   */ type: (0, _propTypesDefault.default).string,
-    /** Display feedback as a tooltip. */ tooltip: (0, _propTypesDefault.default).bool,
-    as: (0, _propTypesDefault.default).elementType
-};
-var Feedback = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var _ref$as = _ref.as, Component = _ref$as === void 0 ? "div" : _ref$as, className = _ref.className, _ref$type = _ref.type, type = _ref$type === void 0 ? "valid" : _ref$type, _ref$tooltip = _ref.tooltip, tooltip = _ref$tooltip === void 0 ? false : _ref$tooltip, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
-        ref: ref,
-        className: (0, _classnamesDefault.default)(className, type + "-" + (tooltip ? "tooltip" : "feedback"))
-    }));
-});
-Feedback.displayName = "Feedback";
-Feedback.propTypes = propTypes;
-exports.default = Feedback;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dPzD9":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _themeProvider = require("./ThemeProvider");
-var _excluded = [
-    "id",
-    "bsPrefix",
-    "bsCustomPrefix",
-    "className",
-    "type",
-    "isValid",
-    "isInvalid",
-    "isStatic",
-    "as"
-];
-var FormCheckInput = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var id = _ref.id, bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, className = _ref.className, _ref$type = _ref.type, type = _ref$type === void 0 ? "checkbox" : _ref$type, _ref$isValid = _ref.isValid, isValid = _ref$isValid === void 0 ? false : _ref$isValid, _ref$isInvalid = _ref.isInvalid, isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid, isStatic = _ref.isStatic, _ref$as = _ref.as, Component = _ref$as === void 0 ? "input" : _ref$as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId, custom = _useContext.custom;
-    var _ref2 = custom ? [
-        bsCustomPrefix,
-        "custom-control-input"
-    ] : [
-        bsPrefix,
-        "form-check-input"
-    ], prefix = _ref2[0], defaultPrefix = _ref2[1];
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
-        ref: ref,
-        type: type,
-        id: id || controlId,
-        className: (0, _classnamesDefault.default)(className, bsPrefix, isValid && "is-valid", isInvalid && "is-invalid", isStatic && "position-static")
-    }));
-});
-FormCheckInput.displayName = "FormCheckInput";
-exports.default = FormCheckInput;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gjvSt":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react"); // TODO
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var FormContext = /*#__PURE__*/ (0, _reactDefault.default).createContext({
-    controlId: undefined
-});
-exports.default = FormContext;
-
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fGhS2":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _themeProvider = require("./ThemeProvider");
-var _excluded = [
-    "bsPrefix",
-    "bsCustomPrefix",
-    "className",
-    "htmlFor"
-];
-var FormCheckLabel = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, className = _ref.className, htmlFor = _ref.htmlFor, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId, custom = _useContext.custom;
-    var _ref2 = custom ? [
-        bsCustomPrefix,
-        "custom-control-label"
-    ] : [
-        bsPrefix,
-        "form-check-label"
-    ], prefix = _ref2[0], defaultPrefix = _ref2[1];
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement("label", (0, _extendsDefault.default)({}, props, {
-        ref: ref,
-        htmlFor: htmlFor || controlId,
-        className: (0, _classnamesDefault.default)(className, bsPrefix)
-    }));
-});
-FormCheckLabel.displayName = "FormCheckLabel";
-exports.default = FormCheckLabel;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jzm8K":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _all = require("prop-types-extra/lib/all");
-var _allDefault = parcelHelpers.interopDefault(_all);
-var _feedback = require("./Feedback");
-var _feedbackDefault = parcelHelpers.interopDefault(_feedback);
-var _formFileInput = require("./FormFileInput");
-var _formFileInputDefault = parcelHelpers.interopDefault(_formFileInput);
-var _formFileLabel = require("./FormFileLabel");
-var _formFileLabelDefault = parcelHelpers.interopDefault(_formFileLabel);
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _themeProvider = require("./ThemeProvider");
-var _excluded = [
-    "id",
-    "bsPrefix",
-    "bsCustomPrefix",
-    "disabled",
-    "isValid",
-    "isInvalid",
-    "feedbackTooltip",
-    "feedback",
-    "className",
-    "style",
-    "label",
-    "children",
-    "custom",
-    "lang",
-    "data-browse",
-    "as",
-    "inputAs"
-];
-var FormFile = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var id = _ref.id, bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, _ref$disabled = _ref.disabled, disabled = _ref$disabled === void 0 ? false : _ref$disabled, _ref$isValid = _ref.isValid, isValid = _ref$isValid === void 0 ? false : _ref$isValid, _ref$isInvalid = _ref.isInvalid, isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid, _ref$feedbackTooltip = _ref.feedbackTooltip, feedbackTooltip = _ref$feedbackTooltip === void 0 ? false : _ref$feedbackTooltip, feedback = _ref.feedback, className = _ref.className, style = _ref.style, label = _ref.label, children = _ref.children, custom = _ref.custom, lang = _ref.lang, dataBrowse = _ref["data-browse"], _ref$as = _ref.as, Component = _ref$as === void 0 ? "div" : _ref$as, _ref$inputAs = _ref.inputAs, inputAs = _ref$inputAs === void 0 ? "input" : _ref$inputAs, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    var _ref2 = custom ? [
-        bsCustomPrefix,
-        "custom"
-    ] : [
-        bsPrefix,
-        "form-file"
-    ], prefix = _ref2[0], defaultPrefix = _ref2[1];
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
-    var type = "file";
-    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId;
-    var innerFormContext = (0, _react.useMemo)(function() {
-        return {
-            controlId: id || controlId,
-            custom: custom
-        };
-    }, [
-        controlId,
-        custom,
-        id
-    ]);
-    var hasLabel = label != null && label !== false && !children;
-    var input = /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formFileInputDefault.default), (0, _extendsDefault.default)({}, props, {
-        ref: ref,
-        isValid: isValid,
-        isInvalid: isInvalid,
-        disabled: disabled,
-        as: inputAs,
-        lang: lang
-    }));
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formContextDefault.default).Provider, {
-        value: innerFormContext
-    }, /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, {
-        style: style,
-        className: (0, _classnamesDefault.default)(className, bsPrefix, custom && "custom-" + type)
-    }, children || /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _reactDefault.default).Fragment, null, custom ? /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _reactDefault.default).Fragment, null, input, hasLabel && /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formFileLabelDefault.default), {
-        "data-browse": dataBrowse
-    }, label)) : /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _reactDefault.default).Fragment, null, hasLabel && /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formFileLabelDefault.default), null, label), input), (isValid || isInvalid) && /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _feedbackDefault.default), {
-        type: isValid ? "valid" : "invalid",
-        tooltip: feedbackTooltip
-    }, feedback))));
-});
-FormFile.displayName = "FormFile";
-FormFile.Input = (0, _formFileInputDefault.default);
-FormFile.Label = (0, _formFileLabelDefault.default);
-exports.default = FormFile;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","prop-types-extra/lib/all":"37Ank","./Feedback":"aWeg2","./FormFileInput":"bxbt2","./FormFileLabel":"cLy2M","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bxbt2":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _themeProvider = require("./ThemeProvider");
-var _excluded = [
-    "id",
-    "bsPrefix",
-    "bsCustomPrefix",
-    "className",
-    "isValid",
-    "isInvalid",
-    "lang",
-    "as"
-];
-var FormFileInput = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var id = _ref.id, bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, className = _ref.className, isValid = _ref.isValid, isInvalid = _ref.isInvalid, lang = _ref.lang, _ref$as = _ref.as, Component = _ref$as === void 0 ? "input" : _ref$as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId, custom = _useContext.custom;
-    var type = "file";
-    var _ref2 = custom ? [
-        bsCustomPrefix,
-        "custom-file-input"
-    ] : [
-        bsPrefix,
-        "form-control-file"
-    ], prefix = _ref2[0], defaultPrefix = _ref2[1];
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
-        ref: ref,
-        id: id || controlId,
-        type: type,
-        lang: lang,
-        className: (0, _classnamesDefault.default)(className, bsPrefix, isValid && "is-valid", isInvalid && "is-invalid")
-    }));
-});
-FormFileInput.displayName = "FormFileInput";
-exports.default = FormFileInput;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cLy2M":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _themeProvider = require("./ThemeProvider");
-var _excluded = [
-    "bsPrefix",
-    "bsCustomPrefix",
-    "className",
-    "htmlFor"
-];
-var FormFileLabel = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, className = _ref.className, htmlFor = _ref.htmlFor, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId, custom = _useContext.custom;
-    var _ref2 = custom ? [
-        bsCustomPrefix,
-        "custom-file-label"
-    ] : [
-        bsPrefix,
-        "form-file-label"
-    ], prefix = _ref2[0], defaultPrefix = _ref2[1];
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement("label", (0, _extendsDefault.default)({}, props, {
-        ref: ref,
-        htmlFor: htmlFor || controlId,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
-        "data-browse": props["data-browse"]
-    }));
-});
-FormFileLabel.displayName = "FormFileLabel";
-exports.default = FormFileLabel;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iynMc":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _all = require("prop-types-extra/lib/all");
-var _allDefault = parcelHelpers.interopDefault(_all);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _warning = require("warning");
-var _warningDefault = parcelHelpers.interopDefault(_warning);
-var _feedback = require("./Feedback");
-var _feedbackDefault = parcelHelpers.interopDefault(_feedback);
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _themeProvider = require("./ThemeProvider");
-var _excluded = [
-    "bsPrefix",
-    "bsCustomPrefix",
-    "type",
-    "size",
-    "htmlSize",
-    "id",
-    "className",
-    "isValid",
-    "isInvalid",
-    "plaintext",
-    "readOnly",
-    "custom",
-    "as"
-];
-var FormControl = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, type = _ref.type, size = _ref.size, htmlSize = _ref.htmlSize, id = _ref.id, className = _ref.className, _ref$isValid = _ref.isValid, isValid = _ref$isValid === void 0 ? false : _ref$isValid, _ref$isInvalid = _ref.isInvalid, isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid, plaintext = _ref.plaintext, readOnly = _ref.readOnly, custom = _ref.custom, _ref$as = _ref.as, Component = _ref$as === void 0 ? "input" : _ref$as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId;
-    var _ref2 = custom ? [
-        bsCustomPrefix,
-        "custom"
-    ] : [
-        bsPrefix,
-        "form-control"
-    ], prefix = _ref2[0], defaultPrefix = _ref2[1];
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
-    var classes;
-    if (plaintext) {
-        var _classes;
-        classes = (_classes = {}, _classes[bsPrefix + "-plaintext"] = true, _classes);
-    } else if (type === "file") {
-        var _classes2;
-        classes = (_classes2 = {}, _classes2[bsPrefix + "-file"] = true, _classes2);
-    } else if (type === "range") {
-        var _classes3;
-        classes = (_classes3 = {}, _classes3[bsPrefix + "-range"] = true, _classes3);
-    } else if (Component === "select" && custom) {
-        var _classes4;
-        classes = (_classes4 = {}, _classes4[bsPrefix + "-select"] = true, _classes4[bsPrefix + "-select-" + size] = size, _classes4);
-    } else {
-        var _classes5;
-        classes = (_classes5 = {}, _classes5[bsPrefix] = true, _classes5[bsPrefix + "-" + size] = size, _classes5);
-    }
-    (0, _warningDefault.default)(controlId == null || !id, "`controlId` is ignored on `<FormControl>` when `id` is specified.");
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
-        type: type,
-        size: htmlSize,
-        ref: ref,
-        readOnly: readOnly,
-        id: id || controlId,
-        className: (0, _classnamesDefault.default)(className, classes, isValid && "is-valid", isInvalid && "is-invalid")
-    }));
-});
-FormControl.displayName = "FormControl";
-exports.default = Object.assign(FormControl, {
-    Feedback: (0, _feedbackDefault.default)
-});
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","prop-types-extra/lib/all":"37Ank","react":"21dqq","warning":"eUVzU","./Feedback":"aWeg2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eUVzU":[function(require,module,exports) {
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-/**
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */ var __DEV__ = true;
-var warning = function() {};
-if (__DEV__) {
-    var printWarning = function printWarning(format, args) {
-        var len = arguments.length;
-        args = new Array(len > 1 ? len - 1 : 0);
-        for(var key = 1; key < len; key++)args[key - 1] = arguments[key];
-        var argIndex = 0;
-        var message = "Warning: " + format.replace(/%s/g, function() {
-            return args[argIndex++];
-        });
-        if (typeof console !== "undefined") console.error(message);
-        try {
-            // --- Welcome to debugging React ---
-            // This error was thrown as a convenience so that you can use this stack
-            // to find the callsite that caused this warning to fire.
-            throw new Error(message);
-        } catch (x) {}
-    };
-    warning = function(condition, format, args) {
-        var len = arguments.length;
-        args = new Array(len > 2 ? len - 2 : 0);
-        for(var key = 2; key < len; key++)args[key - 2] = arguments[key];
-        if (format === undefined) throw new Error("`warning(condition, format, ...args)` requires a warning message argument");
-        if (!condition) printWarning.apply(null, [
-            format
-        ].concat(args));
-    };
-}
-module.exports = warning;
-
-},{}],"1qBHH":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _themeProvider = require("./ThemeProvider");
-var _excluded = [
-    "bsPrefix",
-    "className",
-    "children",
-    "controlId",
-    "as"
-];
-var FormGroup = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var bsPrefix = _ref.bsPrefix, className = _ref.className, children = _ref.children, controlId = _ref.controlId, _ref$as = _ref.as, Component = _ref$as === void 0 ? "div" : _ref$as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-group");
-    var context = (0, _react.useMemo)(function() {
-        return {
-            controlId: controlId
-        };
-    }, [
-        controlId
-    ]);
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formContextDefault.default).Provider, {
-        value: context
-    }, /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
-        ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix)
-    }), children));
-});
-FormGroup.displayName = "FormGroup";
-exports.default = FormGroup;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"66epi":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _warning = require("warning");
-var _warningDefault = parcelHelpers.interopDefault(_warning);
-var _col = require("./Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _formContext = require("./FormContext");
-var _formContextDefault = parcelHelpers.interopDefault(_formContext);
-var _themeProvider = require("./ThemeProvider");
-var _excluded = [
-    "as",
-    "bsPrefix",
-    "column",
-    "srOnly",
-    "className",
-    "htmlFor"
-];
-var defaultProps = {
-    column: false,
-    srOnly: false
-};
-var FormLabel = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var _ref$as = _ref.as, Component = _ref$as === void 0 ? "label" : _ref$as, bsPrefix = _ref.bsPrefix, column = _ref.column, srOnly = _ref.srOnly, className = _ref.className, htmlFor = _ref.htmlFor, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId;
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-label");
-    var columnClass = "col-form-label";
-    if (typeof column === "string") columnClass = columnClass + " " + columnClass + "-" + column;
-    var classes = (0, _classnamesDefault.default)(className, bsPrefix, srOnly && "sr-only", column && columnClass);
-    (0, _warningDefault.default)(controlId == null || !htmlFor, "`controlId` is ignored on `<FormLabel>` when `htmlFor` is specified.");
-    htmlFor = htmlFor || controlId;
-    if (column) return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _colDefault.default), (0, _extendsDefault.default)({
-        ref: ref,
-        as: "label",
-        className: classes,
-        htmlFor: htmlFor
-    }, props));
-    return(/*#__PURE__*/ // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
-    (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({
-        ref: ref,
-        className: classes,
-        htmlFor: htmlFor
-    }, props)));
-});
-FormLabel.displayName = "FormLabel";
-FormLabel.defaultProps = defaultProps;
-exports.default = FormLabel;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Col":"2L2I6","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ffeC7":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _themeProvider = require("./ThemeProvider");
-var _excluded = [
-    "bsPrefix",
-    "className",
-    "as",
-    "muted"
-];
-var FormText = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var bsPrefix = _ref.bsPrefix, className = _ref.className, _ref$as = _ref.as, Component = _ref$as === void 0 ? "small" : _ref$as, muted = _ref.muted, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-text");
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
-        ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix, muted && "text-muted")
-    }));
-});
-FormText.displayName = "FormText";
-exports.default = FormText;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9O81i":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _formCheck = require("./FormCheck");
-var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
-var Switch = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(props, ref) {
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formCheckDefault.default), (0, _extendsDefault.default)({}, props, {
-        ref: ref,
-        type: "switch"
-    }));
-});
-Switch.displayName = "Switch";
-Switch.Input = (0, _formCheckDefault.default).Input;
-Switch.Label = (0, _formCheckDefault.default).Label;
-exports.default = Switch;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","./FormCheck":"idkr0","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ggaUx":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e9f6.prelude(module);
-
-try {
-//imports SCSS styles
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-//import { GenreView } from '../genre-view/genre-view';
-parcelHelpers.export(exports, "MovieView", ()=>MovieView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _movieViewScss = require("./movie-view.scss");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-//import { Link } from 'react-router-dom';
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _badge = require("react-bootstrap/Badge");
-var _badgeDefault = parcelHelpers.interopDefault(_badge);
-class MovieView extends (0, _reactDefault.default).Component {
-    keypressCallback(event) {
-        console.log(event.key);
-    }
-    componentDidMount() {
-        document.addEventListener("keypress", this.keypressCallback);
-    }
-    componentWillUnmount() {
-        document.removeEventListener("keypress", this.keypressCallback);
-    }
-    addFavorite() {
-        const token = localStorage.getItem("token");
-        const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).put(`https://movie-api-22.onrender.com/users/${username}/add-movies/${this.props.movie._id}`, {}, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response)=>{
-            alert("This movie was added to the Favorites List");
-        }).catch(function(error) {
-            console.log(error);
-        });
-    }
-    removeFavorites() {
-        const token = localStorage.getItem("token");
-        const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).delete(`https://movies-api-21.herokuapp.com/users/${username}/delete-movies/${this.props.movie._id}`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response)=>{
-            alert("This movie was deleted from the Favorites List");
-        }).catch(function(error) {
-            console.log(error);
-        });
-    }
-    render() {
-        const { movie , onBackClick  } = this.props;
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "movie-view",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-poster",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                        src: movie.imgUrl
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 65,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 64,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-title",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _badgeDefault.default), {
-                                className: "badge badge-light",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    className: "value",
-                                    children: movie.Title
-                                }, void 0, false, {
-                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 70,
-                                    columnNumber: 15
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 69,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 68,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "movie-director",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "value",
-                                children: [
-                                    "Director: ",
-                                    movie.Director[0]
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 74,
-                                columnNumber: 11
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 73,
-                            columnNumber: 9
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "movie-genre",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "value",
-                                children: [
-                                    "Genre: ",
-                                    movie.Genre[0]
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 77,
-                                columnNumber: 11
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 76,
-                            columnNumber: 9
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 67,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-description",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        className: "value",
-                        children: movie.Description
-                    }, void 0, false, {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 81,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 80,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 83,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                    variant: "success",
-                    className: "fav-button",
-                    value: movie._id,
-                    onClick: (e)=>this.addFavorite(e, movie),
-                    children: "Add to Favorites"
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 84,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                    variant: "success",
-                    className: "fav-button",
-                    value: movie._id,
-                    onClick: (e)=>this.removeFavorites(e, movie),
-                    children: "Remove from Favorites"
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 87,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                    variant: "primary",
-                    onClick: ()=>{
-                        onBackClick(null);
-                    },
-                    children: "Back"
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 90,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/movie-view/movie-view.jsx",
-            lineNumber: 63,
-            columnNumber: 7
-        }, this);
-    }
-}
-
-  $parcel$ReactRefreshHelpers$e9f6.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","./movie-view.scss":"jnlR5","react":"21dqq","axios":"jo6P5","react-bootstrap/Button":"aPzUt","react-bootstrap/Badge":"eEyks","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jnlR5":[function() {},{}],"eEyks":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _themeProvider = require("./ThemeProvider");
-var _excluded = [
-    "bsPrefix",
-    "variant",
-    "pill",
-    "className",
-    "as"
-];
-var defaultProps = {
-    pill: false
-};
-var Badge = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
-    var bsPrefix = _ref.bsPrefix, variant = _ref.variant, pill = _ref.pill, className = _ref.className, _ref$as = _ref.as, Component = _ref$as === void 0 ? "span" : _ref$as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
-    var prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "badge");
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({
-        ref: ref
-    }, props, {
-        className: (0, _classnamesDefault.default)(className, prefix, pill && prefix + "-pill", variant && prefix + "-" + variant)
-    }));
-});
-Badge.displayName = "Badge";
-Badge.defaultProps = defaultProps;
-exports.default = Badge;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9YtA0":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$9fee.prelude(module);
-
-try {
-//imports SCSS styles 
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "LoginView", ()=>LoginView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _loginViewScss = require("./login-view.scss");
-//imports React and hooks
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-//import PropTypes from 'prop-types';
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _reactRedux = require("react-redux");
-var _form = require("react-bootstrap/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
-//imports Material UI components
-var _avatar = require("@mui/material/Avatar");
-var _avatarDefault = parcelHelpers.interopDefault(_avatar);
-var _button = require("@mui/material/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _cssBaseline = require("@mui/material/CssBaseline");
-var _cssBaselineDefault = parcelHelpers.interopDefault(_cssBaseline);
-var _link = require("@mui/material/Link");
-var _linkDefault = parcelHelpers.interopDefault(_link);
-var _box = require("@mui/material/Box");
-var _boxDefault = parcelHelpers.interopDefault(_box);
-var _lockOutlined = require("@mui/icons-material/LockOutlined");
-var _lockOutlinedDefault = parcelHelpers.interopDefault(_lockOutlined);
-var _typography = require("@mui/material/Typography");
-var _typographyDefault = parcelHelpers.interopDefault(_typography);
-var _container = require("@mui/material/Container");
-var _containerDefault = parcelHelpers.interopDefault(_container);
-var _styles = require("@mui/material/styles");
-var _s = $RefreshSig$();
-function Copyright(props) {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
-        variant: "body2",
-        color: "text.secondary",
-        align: "center",
-        ...props,
-        children: [
-            "Copyright \xa9 ",
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
-                color: "inherit",
-                href: "/",
-                children: "Movie App v1"
-            }, void 0, false, {
-                fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 27,
-                columnNumber: 7
-            }, this),
-            " ",
-            new Date().getFullYear(),
-            "."
-        ]
-    }, void 0, true, {
-        fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 25,
-        columnNumber: 5
-    }, this);
-}
-_c = Copyright;
-const theme = (0, _styles.createTheme)();
-function LoginView(props) {
-    _s();
-    const [username, registerUsername] = (0, _react.useState)("");
-    const [password, registerPassword] = (0, _react.useState)("");
-    const handleSubmit1 = (e)=>{
-        e.preventDefault(); // prevents the default refresh/change of the page from the handleSubmit() method
-        // Sends a request to the server for authentication
-        (0, _axiosDefault.default).post("https://movie-api-22.onrender.com/login", {
-            Username: username,
-            Password: password
-        }).then((response)=>{
-            const data = response.data;
-            props.onLoggedIn(data); // allows a user to be automatically logged in
-        }).catch((e)=>{
-            console.log("No such user");
-        });
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _styles.ThemeProvider), {
-        theme: theme,
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
-            component: "main",
-            maxWidth: "xs",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cssBaselineDefault.default), {}, void 0, false, {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 61,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
-                    sx: {
-                        marginTop: 8,
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center"
-                    },
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _avatarDefault.default), {
-                            sx: {
-                                m: 1,
-                                bgcolor: "secondary.main"
-                            },
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _lockOutlinedDefault.default), {}, void 0, false, {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 71,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 70,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
-                            component: "h1",
-                            variant: "h5",
-                            children: [
-                                "Sign in ",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 74,
-                                    columnNumber: 21
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 74,
-                                    columnNumber: 26
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 73,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
-                            component: "form",
-                            onSubmit: handleSubmit1,
-                            noValidate: true,
-                            sx: {
-                                mt: 1
-                            },
-                            className: "login",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
-                                    className: "justify-content-center",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                                            className: "mb-3",
-                                            controlId: "formUsername",
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                                                    children: "Username"
-                                                }, void 0, false, {
-                                                    fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 79,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                                                    required: true,
-                                                    type: "text",
-                                                    placeholder: "Enter your Username",
-                                                    value: username,
-                                                    onChange: (e)=>registerUsername(e.target.value)
-                                                }, void 0, false, {
-                                                    fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 80,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 78,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                                            className: "mb-3",
-                                            controlId: "formPassword",
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                                                    children: "Password"
-                                                }, void 0, false, {
-                                                    fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 83,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                                                    required: true,
-                                                    type: "password",
-                                                    placeholder: "Enter your Password",
-                                                    value: password,
-                                                    onChange: (e)=>registerPassword(e.target.value)
-                                                }, void 0, false, {
-                                                    fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 84,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 82,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                                            type: "submit",
-                                            fullWidth: true,
-                                            variant: "contained",
-                                            sx: {
-                                                mt: 3,
-                                                mb: 2
-                                            },
-                                            onClick: handleSubmit1,
-                                            children: "Log in"
-                                        }, void 0, false, {
-                                            fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 86,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 77,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
-                                    href: "/register",
-                                    variant: "body2",
-                                    children: "Don't have an account? Sign Up"
-                                }, void 0, false, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 96,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Copyright, {
-                                    sx: {
-                                        mt: 8,
-                                        mb: 4
-                                    }
-                                }, void 0, false, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 99,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 76,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 62,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 60,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
-        fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 59,
-        columnNumber: 5
-    }, this);
-}
-_s(LoginView, "1/PUhFbagoiBqCBndjjCveMs8mQ=");
-_c1 = LoginView;
-const mapDispatchToProps = (dispatch)=>({
-        handleSubmit: (username, password)=>dispatch(handleSubmit(username, password))
-    });
-exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(LoginView);
-var _c, _c1;
-$RefreshReg$(_c, "Copyright");
-$RefreshReg$(_c1, "LoginView");
-
-  $parcel$ReactRefreshHelpers$9fee.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","./login-view.scss":"e57ax","react":"21dqq","axios":"jo6P5","react-redux":"bdVon","react-bootstrap/Form":"iBZ80","@mui/material/Avatar":"a1E31","@mui/material/Button":"eFe0Q","@mui/material/CssBaseline":"YDHu9","@mui/material/Link":"2FkZs","@mui/material/Box":"gh88n","@mui/icons-material/LockOutlined":"9fx6t","@mui/material/Typography":"kbDYG","@mui/material/Container":"fPxWU","@mui/material/styles":"eZWTQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"e57ax":[function() {},{}],"a1E31":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a1E31":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _avatarDefault.default));
@@ -72167,571 +70597,7 @@ GlobalStyles.propTypes /* remove-proptypes */  = {
 };
 exports.default = GlobalStyles;
 
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","@mui/system":"Q0Zql","../styles/defaultTheme":"isygc","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2FkZs":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>(0, _linkDefault.default));
-parcelHelpers.export(exports, "linkClasses", ()=>(0, _linkClassesDefault.default));
-var _link = require("./Link");
-var _linkDefault = parcelHelpers.interopDefault(_link);
-var _linkClasses = require("./linkClasses");
-var _linkClassesDefault = parcelHelpers.interopDefault(_linkClasses);
-parcelHelpers.exportAll(_linkClasses, exports);
-
-},{"./Link":"ji8ts","./linkClasses":"4YrwT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ji8ts":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _react = require("react");
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _clsx = require("clsx");
-var _clsxDefault = parcelHelpers.interopDefault(_clsx);
-var _utils = require("@mui/utils");
-var _base = require("@mui/base");
-var _capitalize = require("../utils/capitalize");
-var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
-var _styled = require("../styles/styled");
-var _styledDefault = parcelHelpers.interopDefault(_styled);
-var _useThemeProps = require("../styles/useThemeProps");
-var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
-var _useIsFocusVisible = require("../utils/useIsFocusVisible");
-var _useIsFocusVisibleDefault = parcelHelpers.interopDefault(_useIsFocusVisible);
-var _useForkRef = require("../utils/useForkRef");
-var _useForkRefDefault = parcelHelpers.interopDefault(_useForkRef);
-var _typography = require("../Typography");
-var _typographyDefault = parcelHelpers.interopDefault(_typography);
-var _linkClasses = require("./linkClasses");
-var _linkClassesDefault = parcelHelpers.interopDefault(_linkClasses);
-var _getTextDecoration = require("./getTextDecoration");
-var _getTextDecorationDefault = parcelHelpers.interopDefault(_getTextDecoration);
-var _jsxRuntime = require("react/jsx-runtime");
-const _excluded = [
-    "className",
-    "color",
-    "component",
-    "onBlur",
-    "onFocus",
-    "TypographyClasses",
-    "underline",
-    "variant",
-    "sx"
-];
-const useUtilityClasses = (ownerState)=>{
-    const { classes , component , focusVisible , underline  } = ownerState;
-    const slots = {
-        root: [
-            "root",
-            `underline${(0, _capitalizeDefault.default)(underline)}`,
-            component === "button" && "button",
-            focusVisible && "focusVisible"
-        ]
-    };
-    return (0, _base.unstable_composeClasses)(slots, (0, _linkClasses.getLinkUtilityClass), classes);
-};
-const LinkRoot = (0, _styledDefault.default)((0, _typographyDefault.default), {
-    name: "MuiLink",
-    slot: "Root",
-    overridesResolver: (props, styles)=>{
-        const { ownerState  } = props;
-        return [
-            styles.root,
-            styles[`underline${(0, _capitalizeDefault.default)(ownerState.underline)}`],
-            ownerState.component === "button" && styles.button
-        ];
-    }
-})(({ theme , ownerState  })=>{
-    return (0, _extendsDefault.default)({}, ownerState.underline === "none" && {
-        textDecoration: "none"
-    }, ownerState.underline === "hover" && {
-        textDecoration: "none",
-        "&:hover": {
-            textDecoration: "underline"
-        }
-    }, ownerState.underline === "always" && (0, _extendsDefault.default)({
-        textDecoration: "underline"
-    }, ownerState.color !== "inherit" && {
-        textDecorationColor: (0, _getTextDecorationDefault.default)({
-            theme,
-            ownerState
-        })
-    }, {
-        "&:hover": {
-            textDecorationColor: "inherit"
-        }
-    }), ownerState.component === "button" && {
-        position: "relative",
-        WebkitTapHighlightColor: "transparent",
-        backgroundColor: "transparent",
-        // Reset default value
-        // We disable the focus ring for mouse, touch and keyboard users.
-        outline: 0,
-        border: 0,
-        margin: 0,
-        // Remove the margin in Safari
-        borderRadius: 0,
-        padding: 0,
-        // Remove the padding in Firefox
-        cursor: "pointer",
-        userSelect: "none",
-        verticalAlign: "middle",
-        MozAppearance: "none",
-        // Reset
-        WebkitAppearance: "none",
-        // Reset
-        "&::-moz-focus-inner": {
-            borderStyle: "none" // Remove Firefox dotted outline.
-        },
-        [`&.${(0, _linkClassesDefault.default).focusVisible}`]: {
-            outline: "auto"
-        }
-    });
-});
-const Link = /*#__PURE__*/ _react.forwardRef(function Link(inProps, ref) {
-    const props = (0, _useThemePropsDefault.default)({
-        props: inProps,
-        name: "MuiLink"
-    });
-    const { className , color ="primary" , component ="a" , onBlur , onFocus , TypographyClasses , underline ="always" , variant ="inherit" , sx  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
-    const { isFocusVisibleRef , onBlur: handleBlurVisible , onFocus: handleFocusVisible , ref: focusVisibleRef  } = (0, _useIsFocusVisibleDefault.default)();
-    const [focusVisible, setFocusVisible] = _react.useState(false);
-    const handlerRef = (0, _useForkRefDefault.default)(ref, focusVisibleRef);
-    const handleBlur = (event)=>{
-        handleBlurVisible(event);
-        if (isFocusVisibleRef.current === false) setFocusVisible(false);
-        if (onBlur) onBlur(event);
-    };
-    const handleFocus = (event)=>{
-        handleFocusVisible(event);
-        if (isFocusVisibleRef.current === true) setFocusVisible(true);
-        if (onFocus) onFocus(event);
-    };
-    const ownerState = (0, _extendsDefault.default)({}, props, {
-        color,
-        component,
-        focusVisible,
-        underline,
-        variant
-    });
-    const classes = useUtilityClasses(ownerState);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(LinkRoot, (0, _extendsDefault.default)({
-        color: color,
-        className: (0, _clsxDefault.default)(classes.root, className),
-        classes: TypographyClasses,
-        component: component,
-        onBlur: handleBlur,
-        onFocus: handleFocus,
-        ref: handlerRef,
-        ownerState: ownerState,
-        variant: variant,
-        sx: [
-            ...!Object.keys((0, _getTextDecoration.colorTransformations)).includes(color) ? [
-                {
-                    color
-                }
-            ] : [],
-            ...Array.isArray(sx) ? sx : [
-                sx
-            ]
-        ]
-    }, other));
-});
-Link.propTypes /* remove-proptypes */  = {
-    // ----------------------------- Warning --------------------------------
-    // | These PropTypes are generated from the TypeScript type definitions |
-    // |     To update them edit the d.ts file and run "yarn proptypes"     |
-    // ----------------------------------------------------------------------
-    /**
-   * The content of the component.
-   */ children: (0, _propTypesDefault.default).node,
-    /**
-   * Override or extend the styles applied to the component.
-   */ classes: (0, _propTypesDefault.default).object,
-    /**
-   * @ignore
-   */ className: (0, _propTypesDefault.default).string,
-    /**
-   * The color of the link.
-   * @default 'primary'
-   */ color: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).any,
-    /**
-   * The component used for the root node.
-   * Either a string to use a HTML element or a component.
-   */ component: (0, _utils.elementTypeAcceptingRef),
-    /**
-   * @ignore
-   */ onBlur: (0, _propTypesDefault.default).func,
-    /**
-   * @ignore
-   */ onFocus: (0, _propTypesDefault.default).func,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, _propTypesDefault.default).oneOfType([
-        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
-            (0, _propTypesDefault.default).func,
-            (0, _propTypesDefault.default).object,
-            (0, _propTypesDefault.default).bool
-        ])),
-        (0, _propTypesDefault.default).func,
-        (0, _propTypesDefault.default).object
-    ]),
-    /**
-   * `classes` prop applied to the [`Typography`](/material-ui/api/typography/) element.
-   */ TypographyClasses: (0, _propTypesDefault.default).object,
-    /**
-   * Controls when the link should have an underline.
-   * @default 'always'
-   */ underline: (0, _propTypesDefault.default).oneOf([
-        "always",
-        "hover",
-        "none"
-    ]),
-    /**
-   * Applies the theme typography styles.
-   * @default 'inherit'
-   */ variant: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
-        (0, _propTypesDefault.default).oneOf([
-            "body1",
-            "body2",
-            "button",
-            "caption",
-            "h1",
-            "h2",
-            "h3",
-            "h4",
-            "h5",
-            "h6",
-            "inherit",
-            "overline",
-            "subtitle1",
-            "subtitle2"
-        ]),
-        (0, _propTypesDefault.default).string
-    ])
-};
-exports.default = Link;
-
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/utils":"cttLn","@mui/base":"656dE","../utils/capitalize":"kuBnp","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../utils/useIsFocusVisible":"bKzlq","../utils/useForkRef":"dOG5T","../Typography":"kbDYG","./linkClasses":"4YrwT","./getTextDecoration":"kEuZY","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kbDYG":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>(0, _typographyDefault.default));
-parcelHelpers.export(exports, "typographyClasses", ()=>(0, _typographyClassesDefault.default));
-var _typography = require("./Typography");
-var _typographyDefault = parcelHelpers.interopDefault(_typography);
-var _typographyClasses = require("./typographyClasses");
-var _typographyClassesDefault = parcelHelpers.interopDefault(_typographyClasses);
-parcelHelpers.exportAll(_typographyClasses, exports);
-
-},{"./Typography":"e6BFl","./typographyClasses":"btt3y","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e6BFl":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "TypographyRoot", ()=>TypographyRoot);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _react = require("react");
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _clsx = require("clsx");
-var _clsxDefault = parcelHelpers.interopDefault(_clsx);
-var _system = require("@mui/system");
-var _base = require("@mui/base");
-var _styled = require("../styles/styled");
-var _styledDefault = parcelHelpers.interopDefault(_styled);
-var _useThemeProps = require("../styles/useThemeProps");
-var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
-var _capitalize = require("../utils/capitalize");
-var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
-var _typographyClasses = require("./typographyClasses");
-var _jsxRuntime = require("react/jsx-runtime");
-const _excluded = [
-    "align",
-    "className",
-    "component",
-    "gutterBottom",
-    "noWrap",
-    "paragraph",
-    "variant",
-    "variantMapping"
-];
-const useUtilityClasses = (ownerState)=>{
-    const { align , gutterBottom , noWrap , paragraph , variant , classes  } = ownerState;
-    const slots = {
-        root: [
-            "root",
-            variant,
-            ownerState.align !== "inherit" && `align${(0, _capitalizeDefault.default)(align)}`,
-            gutterBottom && "gutterBottom",
-            noWrap && "noWrap",
-            paragraph && "paragraph"
-        ]
-    };
-    return (0, _base.unstable_composeClasses)(slots, (0, _typographyClasses.getTypographyUtilityClass), classes);
-};
-const TypographyRoot = (0, _styledDefault.default)("span", {
-    name: "MuiTypography",
-    slot: "Root",
-    overridesResolver: (props, styles)=>{
-        const { ownerState  } = props;
-        return [
-            styles.root,
-            ownerState.variant && styles[ownerState.variant],
-            ownerState.align !== "inherit" && styles[`align${(0, _capitalizeDefault.default)(ownerState.align)}`],
-            ownerState.noWrap && styles.noWrap,
-            ownerState.gutterBottom && styles.gutterBottom,
-            ownerState.paragraph && styles.paragraph
-        ];
-    }
-})(({ theme , ownerState  })=>(0, _extendsDefault.default)({
-        margin: 0
-    }, ownerState.variant && theme.typography[ownerState.variant], ownerState.align !== "inherit" && {
-        textAlign: ownerState.align
-    }, ownerState.noWrap && {
-        overflow: "hidden",
-        textOverflow: "ellipsis",
-        whiteSpace: "nowrap"
-    }, ownerState.gutterBottom && {
-        marginBottom: "0.35em"
-    }, ownerState.paragraph && {
-        marginBottom: 16
-    }));
-const defaultVariantMapping = {
-    h1: "h1",
-    h2: "h2",
-    h3: "h3",
-    h4: "h4",
-    h5: "h5",
-    h6: "h6",
-    subtitle1: "h6",
-    subtitle2: "h6",
-    body1: "p",
-    body2: "p",
-    inherit: "p"
-};
-// TODO v6: deprecate these color values in v5.x and remove the transformation in v6
-const colorTransformations = {
-    primary: "primary.main",
-    textPrimary: "text.primary",
-    secondary: "secondary.main",
-    textSecondary: "text.secondary",
-    error: "error.main"
-};
-const transformDeprecatedColors = (color)=>{
-    return colorTransformations[color] || color;
-};
-const Typography = /*#__PURE__*/ _react.forwardRef(function Typography(inProps, ref) {
-    const themeProps = (0, _useThemePropsDefault.default)({
-        props: inProps,
-        name: "MuiTypography"
-    });
-    const color = transformDeprecatedColors(themeProps.color);
-    const props = (0, _system.unstable_extendSxProp)((0, _extendsDefault.default)({}, themeProps, {
-        color
-    }));
-    const { align ="inherit" , className , component , gutterBottom =false , noWrap =false , paragraph =false , variant ="body1" , variantMapping =defaultVariantMapping  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
-    const ownerState = (0, _extendsDefault.default)({}, props, {
-        align,
-        color,
-        className,
-        component,
-        gutterBottom,
-        noWrap,
-        paragraph,
-        variant,
-        variantMapping
-    });
-    const Component = component || (paragraph ? "p" : variantMapping[variant] || defaultVariantMapping[variant]) || "span";
-    const classes = useUtilityClasses(ownerState);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(TypographyRoot, (0, _extendsDefault.default)({
-        as: Component,
-        ref: ref,
-        ownerState: ownerState,
-        className: (0, _clsxDefault.default)(classes.root, className)
-    }, other));
-});
-Typography.propTypes /* remove-proptypes */  = {
-    // ----------------------------- Warning --------------------------------
-    // | These PropTypes are generated from the TypeScript type definitions |
-    // |     To update them edit the d.ts file and run "yarn proptypes"     |
-    // ----------------------------------------------------------------------
-    /**
-   * Set the text-align on the component.
-   * @default 'inherit'
-   */ align: (0, _propTypesDefault.default).oneOf([
-        "center",
-        "inherit",
-        "justify",
-        "left",
-        "right"
-    ]),
-    /**
-   * The content of the component.
-   */ children: (0, _propTypesDefault.default).node,
-    /**
-   * Override or extend the styles applied to the component.
-   */ classes: (0, _propTypesDefault.default).object,
-    /**
-   * @ignore
-   */ className: (0, _propTypesDefault.default).string,
-    /**
-   * The component used for the root node.
-   * Either a string to use a HTML element or a component.
-   */ component: (0, _propTypesDefault.default).elementType,
-    /**
-   * If `true`, the text will have a bottom margin.
-   * @default false
-   */ gutterBottom: (0, _propTypesDefault.default).bool,
-    /**
-   * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
-   *
-   * Note that text overflow can only happen with block or inline-block level elements
-   * (the element needs to have a width in order to overflow).
-   * @default false
-   */ noWrap: (0, _propTypesDefault.default).bool,
-    /**
-   * If `true`, the element will be a paragraph element.
-   * @default false
-   */ paragraph: (0, _propTypesDefault.default).bool,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, _propTypesDefault.default).oneOfType([
-        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
-            (0, _propTypesDefault.default).func,
-            (0, _propTypesDefault.default).object,
-            (0, _propTypesDefault.default).bool
-        ])),
-        (0, _propTypesDefault.default).func,
-        (0, _propTypesDefault.default).object
-    ]),
-    /**
-   * Applies the theme typography styles.
-   * @default 'body1'
-   */ variant: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
-        (0, _propTypesDefault.default).oneOf([
-            "body1",
-            "body2",
-            "button",
-            "caption",
-            "h1",
-            "h2",
-            "h3",
-            "h4",
-            "h5",
-            "h6",
-            "inherit",
-            "overline",
-            "subtitle1",
-            "subtitle2"
-        ]),
-        (0, _propTypesDefault.default).string
-    ]),
-    /**
-   * The component maps the variant prop to a range of different HTML element types.
-   * For instance, subtitle1 to `<h6>`.
-   * If you wish to change that mapping, you can provide your own.
-   * Alternatively, you can use the `component` prop.
-   * @default {
-   *   h1: 'h1',
-   *   h2: 'h2',
-   *   h3: 'h3',
-   *   h4: 'h4',
-   *   h5: 'h5',
-   *   h6: 'h6',
-   *   subtitle1: 'h6',
-   *   subtitle2: 'h6',
-   *   body1: 'p',
-   *   body2: 'p',
-   *   inherit: 'p',
-   * }
-   */ variantMapping: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).object
-};
-exports.default = Typography;
-
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/system":"Q0Zql","@mui/base":"656dE","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../utils/capitalize":"kuBnp","./typographyClasses":"btt3y","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"btt3y":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getTypographyUtilityClass", ()=>getTypographyUtilityClass);
-var _utils = require("@mui/utils");
-var _generateUtilityClass = require("../generateUtilityClass");
-var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
-function getTypographyUtilityClass(slot) {
-    return (0, _generateUtilityClassDefault.default)("MuiTypography", slot);
-}
-const typographyClasses = (0, _utils.unstable_generateUtilityClasses)("MuiTypography", [
-    "root",
-    "h1",
-    "h2",
-    "h3",
-    "h4",
-    "h5",
-    "h6",
-    "subtitle1",
-    "subtitle2",
-    "body1",
-    "body2",
-    "inherit",
-    "button",
-    "caption",
-    "overline",
-    "alignLeft",
-    "alignRight",
-    "alignCenter",
-    "alignJustify",
-    "noWrap",
-    "gutterBottom",
-    "paragraph"
-]);
-exports.default = typographyClasses;
-
-},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4YrwT":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getLinkUtilityClass", ()=>getLinkUtilityClass);
-var _utils = require("@mui/utils");
-var _generateUtilityClass = require("../generateUtilityClass");
-var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
-function getLinkUtilityClass(slot) {
-    return (0, _generateUtilityClassDefault.default)("MuiLink", slot);
-}
-const linkClasses = (0, _utils.unstable_generateUtilityClasses)("MuiLink", [
-    "root",
-    "underlineNone",
-    "underlineHover",
-    "underlineAlways",
-    "button",
-    "focusVisible"
-]);
-exports.default = linkClasses;
-
-},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kEuZY":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "colorTransformations", ()=>colorTransformations);
-var _system = require("@mui/system");
-const colorTransformations = {
-    primary: "primary.main",
-    textPrimary: "text.primary",
-    secondary: "secondary.main",
-    textSecondary: "text.secondary",
-    error: "error.main"
-};
-const transformDeprecatedColors = (color)=>{
-    return colorTransformations[color] || color;
-};
-const getTextDecoration = ({ theme , ownerState  })=>{
-    const transformedColor = transformDeprecatedColors(ownerState.color);
-    const color = (0, _system.getPath)(theme, `palette.${transformedColor}`, false) || ownerState.color;
-    const channelColor = (0, _system.getPath)(theme, `palette.${transformedColor}Channel`);
-    if ("vars" in theme && channelColor) return `rgba(${channelColor} / 0.4)`;
-    return (0, _system.alpha)(color, 0.4);
-};
-exports.default = getTextDecoration;
-
-},{"@mui/system":"Q0Zql","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gh88n":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","@mui/system":"Q0Zql","../styles/defaultTheme":"isygc","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gh88n":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _boxDefault.default));
@@ -73566,7 +71432,280 @@ parcelHelpers.defineInteropFlag(exports);
 var _utils = require("@mui/utils");
 exports.default = (0, _utils.unstable_useControlled);
 
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPxWU":[function(require,module,exports) {
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kbDYG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>(0, _typographyDefault.default));
+parcelHelpers.export(exports, "typographyClasses", ()=>(0, _typographyClassesDefault.default));
+var _typography = require("./Typography");
+var _typographyDefault = parcelHelpers.interopDefault(_typography);
+var _typographyClasses = require("./typographyClasses");
+var _typographyClassesDefault = parcelHelpers.interopDefault(_typographyClasses);
+parcelHelpers.exportAll(_typographyClasses, exports);
+
+},{"./Typography":"e6BFl","./typographyClasses":"btt3y","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e6BFl":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "TypographyRoot", ()=>TypographyRoot);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _react = require("react");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _clsx = require("clsx");
+var _clsxDefault = parcelHelpers.interopDefault(_clsx);
+var _system = require("@mui/system");
+var _base = require("@mui/base");
+var _styled = require("../styles/styled");
+var _styledDefault = parcelHelpers.interopDefault(_styled);
+var _useThemeProps = require("../styles/useThemeProps");
+var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
+var _capitalize = require("../utils/capitalize");
+var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
+var _typographyClasses = require("./typographyClasses");
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "align",
+    "className",
+    "component",
+    "gutterBottom",
+    "noWrap",
+    "paragraph",
+    "variant",
+    "variantMapping"
+];
+const useUtilityClasses = (ownerState)=>{
+    const { align , gutterBottom , noWrap , paragraph , variant , classes  } = ownerState;
+    const slots = {
+        root: [
+            "root",
+            variant,
+            ownerState.align !== "inherit" && `align${(0, _capitalizeDefault.default)(align)}`,
+            gutterBottom && "gutterBottom",
+            noWrap && "noWrap",
+            paragraph && "paragraph"
+        ]
+    };
+    return (0, _base.unstable_composeClasses)(slots, (0, _typographyClasses.getTypographyUtilityClass), classes);
+};
+const TypographyRoot = (0, _styledDefault.default)("span", {
+    name: "MuiTypography",
+    slot: "Root",
+    overridesResolver: (props, styles)=>{
+        const { ownerState  } = props;
+        return [
+            styles.root,
+            ownerState.variant && styles[ownerState.variant],
+            ownerState.align !== "inherit" && styles[`align${(0, _capitalizeDefault.default)(ownerState.align)}`],
+            ownerState.noWrap && styles.noWrap,
+            ownerState.gutterBottom && styles.gutterBottom,
+            ownerState.paragraph && styles.paragraph
+        ];
+    }
+})(({ theme , ownerState  })=>(0, _extendsDefault.default)({
+        margin: 0
+    }, ownerState.variant && theme.typography[ownerState.variant], ownerState.align !== "inherit" && {
+        textAlign: ownerState.align
+    }, ownerState.noWrap && {
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        whiteSpace: "nowrap"
+    }, ownerState.gutterBottom && {
+        marginBottom: "0.35em"
+    }, ownerState.paragraph && {
+        marginBottom: 16
+    }));
+const defaultVariantMapping = {
+    h1: "h1",
+    h2: "h2",
+    h3: "h3",
+    h4: "h4",
+    h5: "h5",
+    h6: "h6",
+    subtitle1: "h6",
+    subtitle2: "h6",
+    body1: "p",
+    body2: "p",
+    inherit: "p"
+};
+// TODO v6: deprecate these color values in v5.x and remove the transformation in v6
+const colorTransformations = {
+    primary: "primary.main",
+    textPrimary: "text.primary",
+    secondary: "secondary.main",
+    textSecondary: "text.secondary",
+    error: "error.main"
+};
+const transformDeprecatedColors = (color)=>{
+    return colorTransformations[color] || color;
+};
+const Typography = /*#__PURE__*/ _react.forwardRef(function Typography(inProps, ref) {
+    const themeProps = (0, _useThemePropsDefault.default)({
+        props: inProps,
+        name: "MuiTypography"
+    });
+    const color = transformDeprecatedColors(themeProps.color);
+    const props = (0, _system.unstable_extendSxProp)((0, _extendsDefault.default)({}, themeProps, {
+        color
+    }));
+    const { align ="inherit" , className , component , gutterBottom =false , noWrap =false , paragraph =false , variant ="body1" , variantMapping =defaultVariantMapping  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
+    const ownerState = (0, _extendsDefault.default)({}, props, {
+        align,
+        color,
+        className,
+        component,
+        gutterBottom,
+        noWrap,
+        paragraph,
+        variant,
+        variantMapping
+    });
+    const Component = component || (paragraph ? "p" : variantMapping[variant] || defaultVariantMapping[variant]) || "span";
+    const classes = useUtilityClasses(ownerState);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(TypographyRoot, (0, _extendsDefault.default)({
+        as: Component,
+        ref: ref,
+        ownerState: ownerState,
+        className: (0, _clsxDefault.default)(classes.root, className)
+    }, other));
+});
+Typography.propTypes /* remove-proptypes */  = {
+    // ----------------------------- Warning --------------------------------
+    // | These PropTypes are generated from the TypeScript type definitions |
+    // |     To update them edit the d.ts file and run "yarn proptypes"     |
+    // ----------------------------------------------------------------------
+    /**
+   * Set the text-align on the component.
+   * @default 'inherit'
+   */ align: (0, _propTypesDefault.default).oneOf([
+        "center",
+        "inherit",
+        "justify",
+        "left",
+        "right"
+    ]),
+    /**
+   * The content of the component.
+   */ children: (0, _propTypesDefault.default).node,
+    /**
+   * Override or extend the styles applied to the component.
+   */ classes: (0, _propTypesDefault.default).object,
+    /**
+   * @ignore
+   */ className: (0, _propTypesDefault.default).string,
+    /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */ component: (0, _propTypesDefault.default).elementType,
+    /**
+   * If `true`, the text will have a bottom margin.
+   * @default false
+   */ gutterBottom: (0, _propTypesDefault.default).bool,
+    /**
+   * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+   *
+   * Note that text overflow can only happen with block or inline-block level elements
+   * (the element needs to have a width in order to overflow).
+   * @default false
+   */ noWrap: (0, _propTypesDefault.default).bool,
+    /**
+   * If `true`, the element will be a paragraph element.
+   * @default false
+   */ paragraph: (0, _propTypesDefault.default).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).func,
+            (0, _propTypesDefault.default).object,
+            (0, _propTypesDefault.default).bool
+        ])),
+        (0, _propTypesDefault.default).func,
+        (0, _propTypesDefault.default).object
+    ]),
+    /**
+   * Applies the theme typography styles.
+   * @default 'body1'
+   */ variant: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "body1",
+            "body2",
+            "button",
+            "caption",
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6",
+            "inherit",
+            "overline",
+            "subtitle1",
+            "subtitle2"
+        ]),
+        (0, _propTypesDefault.default).string
+    ]),
+    /**
+   * The component maps the variant prop to a range of different HTML element types.
+   * For instance, subtitle1 to `<h6>`.
+   * If you wish to change that mapping, you can provide your own.
+   * Alternatively, you can use the `component` prop.
+   * @default {
+   *   h1: 'h1',
+   *   h2: 'h2',
+   *   h3: 'h3',
+   *   h4: 'h4',
+   *   h5: 'h5',
+   *   h6: 'h6',
+   *   subtitle1: 'h6',
+   *   subtitle2: 'h6',
+   *   body1: 'p',
+   *   body2: 'p',
+   *   inherit: 'p',
+   * }
+   */ variantMapping: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).object
+};
+exports.default = Typography;
+
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/system":"Q0Zql","@mui/base":"656dE","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../utils/capitalize":"kuBnp","./typographyClasses":"btt3y","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"btt3y":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getTypographyUtilityClass", ()=>getTypographyUtilityClass);
+var _utils = require("@mui/utils");
+var _generateUtilityClass = require("../generateUtilityClass");
+var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
+function getTypographyUtilityClass(slot) {
+    return (0, _generateUtilityClassDefault.default)("MuiTypography", slot);
+}
+const typographyClasses = (0, _utils.unstable_generateUtilityClasses)("MuiTypography", [
+    "root",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "subtitle1",
+    "subtitle2",
+    "body1",
+    "body2",
+    "inherit",
+    "button",
+    "caption",
+    "overline",
+    "alignLeft",
+    "alignRight",
+    "alignCenter",
+    "alignJustify",
+    "noWrap",
+    "gutterBottom",
+    "paragraph"
+]);
+exports.default = typographyClasses;
+
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPxWU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _containerDefault.default));
@@ -73686,449 +71825,7 @@ const containerClasses = (0, _utils.unstable_generateUtilityClasses)("MuiContain
 ]);
 exports.default = containerClasses;
 
-},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3U8r7":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$789c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$789c.prelude(module);
-
-try {
-//imports SCSS styles
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "RegistrationView", ()=>RegistrationView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _registrationViewScss = require("./registration-view.scss");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _reactRouterDom = require("react-router-dom");
-var _form = require("react-bootstrap/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
-//imports Material UI components
-var _avatar = require("@mui/material/Avatar");
-var _avatarDefault = parcelHelpers.interopDefault(_avatar);
-var _button1 = require("@mui/material/Button");
-var _buttonDefault1 = parcelHelpers.interopDefault(_button1);
-var _cssBaseline = require("@mui/material/CssBaseline");
-var _cssBaselineDefault = parcelHelpers.interopDefault(_cssBaseline);
-var _link = require("@mui/material/Link");
-var _linkDefault = parcelHelpers.interopDefault(_link);
-var _grid = require("@mui/material/Grid");
-var _gridDefault = parcelHelpers.interopDefault(_grid);
-var _box = require("@mui/material/Box");
-var _boxDefault = parcelHelpers.interopDefault(_box);
-var _lockOutlined = require("@mui/icons-material/LockOutlined");
-var _lockOutlinedDefault = parcelHelpers.interopDefault(_lockOutlined);
-var _typography = require("@mui/material/Typography");
-var _typographyDefault = parcelHelpers.interopDefault(_typography);
-var _container = require("@mui/material/Container");
-var _containerDefault = parcelHelpers.interopDefault(_container);
-var _styles = require("@mui/material/styles");
-var _s = $RefreshSig$();
-function RegistrationView() {
-    _s();
-    const [username, registerUsername] = (0, _react.useState)("");
-    const [password, registerPassword] = (0, _react.useState)("");
-    const [email, registerEmail] = (0, _react.useState)("");
-    const [birthdate, registerBirthdate] = (0, _react.useState)("");
-    const [usernameError, registerUsernameError] = (0, _react.useState)({});
-    const [passwordError, registerPasswordError] = (0, _react.useState)({});
-    const [emailError, registerEmailError] = (0, _react.useState)({});
-    const [birthdateError, registerBirthdateErorr] = (0, _react.useState)({});
-    function Copyright(props) {
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
-            variant: "body2",
-            color: "text.secondary",
-            align: "center",
-            ...props,
-            children: [
-                "Copyright \xa9 ",
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
-                    color: "inherit",
-                    href: "/",
-                    children: "Movie App v1"
-                }, void 0, false, {
-                    fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 40,
-                    columnNumber: 9
-                }, this),
-                " ",
-                new Date().getFullYear(),
-                "."
-            ]
-        }, void 0, true, {
-            fileName: "src/components/registration-view/registration-view.jsx",
-            lineNumber: 38,
-            columnNumber: 7
-        }, this);
-    }
-    const theme = (0, _styles.createTheme)();
-    const handleRegister = (e)=>{
-        e.preventDefault();
-        let isValidated = validationForm();
-        if (isValidated) (0, _axiosDefault.default).post("https://movie-api-22.onrender.com/users", {
-            Username: username,
-            Password: password,
-            Email: email,
-            Birthdate: birthdate
-        }).then((response)=>{
-            const data = response.data;
-            console.log(data);
-            windows.open("/", "_self"); //opens the page in the current tab.
-        }).catch((error)=>{
-            console.log(error);
-        });
-    };
-    const validationForm = ()=>{
-        let usernameError = {};
-        let passwordError = {};
-        let emailError = {};
-        let birthdateError = {};
-        let isValid = true;
-        if (username.trim().length < 6) {
-            usernameError.notValidUsername = "Username must be at least 6 characters.";
-            isValid = false;
-        }
-        if (password.trim().length < 12 || password === "") {
-            passwordError.notValidPassword = "Password must be at least 12 characters.";
-            isValid = false;
-        }
-        if (!(email && email.includes(".") && email.indexOf("@"))) {
-            emailError.notValidEmail = "Please enter a valid email address";
-            isValid = false;
-        }
-        if (birthdate === "") {
-            birthdateError.notValidBirthdate = "Please enter your date of birth.";
-            isValid = false;
-        }
-        registerUsernameError(usernameError);
-        registerPasswordError(passwordError);
-        registerEmailError(emailError);
-        registerBirthdateErorr(birthdateError);
-        return isValid;
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _styles.ThemeProvider), {
-        theme: theme,
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
-            component: "main",
-            maxWidth: "xs",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cssBaselineDefault.default), {}, void 0, false, {
-                    fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 106,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
-                    sx: {
-                        marginTop: 8,
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center"
-                    },
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _avatarDefault.default), {
-                            sx: {
-                                m: 1,
-                                bgcolor: "secondary.main"
-                            },
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _lockOutlinedDefault.default), {}, void 0, false, {
-                                fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 116,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 115,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
-                            component: "h1",
-                            variant: "h5",
-                            children: [
-                                "Sign up ",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 119,
-                                    columnNumber: 21
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 119,
-                                    columnNumber: 26
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 118,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
-                            component: "form",
-                            noValidate: true,
-                            onSubmit: handleRegister,
-                            sx: {
-                                mt: 3
-                            },
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
-                                    className: "register justify-content-md-center",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                                                controlId: "formUsername",
-                                                children: [
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                                                        children: "Enter your username"
-                                                    }, void 0, false, {
-                                                        fileName: "src/components/registration-view/registration-view.jsx",
-                                                        lineNumber: 125,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                                                        type: "text",
-                                                        value: username,
-                                                        onChange: (e)=>registerUsername(e.target.value)
-                                                    }, void 0, false, {
-                                                        fileName: "src/components/registration-view/registration-view.jsx",
-                                                        lineNumber: 126,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    Object.keys(usernameError).map((key)=>{
-                                                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                            children: usernameError[key]
-                                                        }, key, false, {
-                                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                                            lineNumber: 129,
-                                                            columnNumber: 23
-                                                        }, this);
-                                                    })
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "src/components/registration-view/registration-view.jsx",
-                                                lineNumber: 124,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 123,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                                                controlId: "formPassword",
-                                                children: [
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                                                        children: "Enter your password"
-                                                    }, void 0, false, {
-                                                        fileName: "src/components/registration-view/registration-view.jsx",
-                                                        lineNumber: 138,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                                                        type: "password",
-                                                        value: password,
-                                                        onChange: (e)=>registerPassword(e.target.value)
-                                                    }, void 0, false, {
-                                                        fileName: "src/components/registration-view/registration-view.jsx",
-                                                        lineNumber: 139,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    Object.keys(passwordError).map((key)=>{
-                                                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                            children: passwordError[key]
-                                                        }, key, false, {
-                                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                                            lineNumber: 142,
-                                                            columnNumber: 23
-                                                        }, this);
-                                                    })
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "src/components/registration-view/registration-view.jsx",
-                                                lineNumber: 137,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 136,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                                                controlId: "formEmail",
-                                                children: [
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                                                        children: "Email"
-                                                    }, void 0, false, {
-                                                        fileName: "src/components/registration-view/registration-view.jsx",
-                                                        lineNumber: 151,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                                                        type: "email",
-                                                        value: email,
-                                                        onChange: (e)=>registerEmail(e.target.value)
-                                                    }, void 0, false, {
-                                                        fileName: "src/components/registration-view/registration-view.jsx",
-                                                        lineNumber: 152,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    Object.keys(emailError).map((key)=>{
-                                                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                            children: emailError[key]
-                                                        }, key, false, {
-                                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                                            lineNumber: 155,
-                                                            columnNumber: 23
-                                                        }, this);
-                                                    })
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "src/components/registration-view/registration-view.jsx",
-                                                lineNumber: 150,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 149,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                                                controlId: "formBirthdate",
-                                                children: [
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                                                        children: "Enter your date of birth"
-                                                    }, void 0, false, {
-                                                        fileName: "src/components/registration-view/registration-view.jsx",
-                                                        lineNumber: 164,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                                                        type: "date",
-                                                        value: birthdate,
-                                                        onChange: (e)=>registerBirthdate(e.target.value)
-                                                    }, void 0, false, {
-                                                        fileName: "src/components/registration-view/registration-view.jsx",
-                                                        lineNumber: 165,
-                                                        columnNumber: 19
-                                                    }, this),
-                                                    Object.keys(birthdateError).map((key)=>{
-                                                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                            children: birthdateError[key]
-                                                        }, key, false, {
-                                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                                            lineNumber: 168,
-                                                            columnNumber: 23
-                                                        }, this);
-                                                    })
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "src/components/registration-view/registration-view.jsx",
-                                                lineNumber: 163,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 162,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault1.default), {
-                                            type: "submit",
-                                            fullWidth: true,
-                                            variant: "contained",
-                                            sx: {
-                                                mt: 3,
-                                                mb: 2
-                                            },
-                                            onClick: handleRegister,
-                                            children: "Sign Up"
-                                        }, void 0, false, {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 175,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gridDefault.default), {
-                                            container: true,
-                                            justifyContent: "flex-end",
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gridDefault.default), {
-                                                item: true,
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
-                                                    href: "/",
-                                                    variant: "body2",
-                                                    children: "Already have an account? Sign in"
-                                                }, void 0, false, {
-                                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                                    lineNumber: 186,
-                                                    columnNumber: 19
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "src/components/registration-view/registration-view.jsx",
-                                                lineNumber: 185,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 184,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 122,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Copyright, {
-                                    sx: {
-                                        mt: 8,
-                                        mb: 4
-                                    }
-                                }, void 0, false, {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 192,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 121,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 107,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/registration-view/registration-view.jsx",
-            lineNumber: 105,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
-        fileName: "src/components/registration-view/registration-view.jsx",
-        lineNumber: 104,
-        columnNumber: 5
-    }, this);
-}
-_s(RegistrationView, "xPMp2YC9s+32mqF6ESUt98SwOZs=");
-_c = RegistrationView;
-var _c;
-$RefreshReg$(_c, "RegistrationView");
-
-  $parcel$ReactRefreshHelpers$789c.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","./registration-view.scss":"clIxH","react":"21dqq","axios":"jo6P5","react-router-dom":"cHIiW","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt","react-bootstrap/Row":"cMC39","@mui/material/Avatar":"a1E31","@mui/material/Button":"eFe0Q","@mui/material/CssBaseline":"YDHu9","@mui/material/Link":"2FkZs","@mui/material/Grid":"8fbPl","@mui/material/Box":"gh88n","@mui/icons-material/LockOutlined":"9fx6t","@mui/material/Typography":"kbDYG","@mui/material/Container":"fPxWU","@mui/material/styles":"eZWTQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"clIxH":[function() {},{}],"8fbPl":[function(require,module,exports) {
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8fbPl":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _gridDefault.default));
@@ -74791,7 +72488,2381 @@ const gridClasses = (0, _utils.unstable_generateUtilityClasses)("MuiGrid", [
 ]);
 exports.default = gridClasses;
 
-},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9tpci":[function(require,module,exports) {
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
+"use strict";
+var Refresh = require("react-refresh/runtime");
+function debounce(func, delay) {
+    var args;
+    {
+        let timeout = undefined;
+        let lastTime = 0;
+        return function(args) {
+            // Call immediately if last call was more than the delay ago.
+            // Otherwise, set a timeout. This means the first call is fast
+            // (for the common case of a single update), and subsequent updates
+            // are batched.
+            let now = Date.now();
+            if (now - lastTime > delay) {
+                lastTime = now;
+                func.call(null, args);
+            } else {
+                clearTimeout(timeout);
+                timeout = setTimeout(function() {
+                    timeout = undefined;
+                    lastTime = Date.now();
+                    func.call(null, args);
+                }, delay);
+            }
+        };
+    }
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30); // Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module1) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module1.id + " " + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module1) {
+    if (isReactRefreshBoundary(module1.exports)) {
+        registerExportsForReactRefresh(module1);
+        if (module1.hot) {
+            module1.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module1.exports;
+            });
+            module1.hot.accept(function(getParents) {
+                var prevExports = module1.hot.data.prevExports;
+                var nextExports = module1.exports; // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+} // When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module1) {
+    var exports = module1.exports, id = module1.id;
+    Refresh.register(exports, id + " %exports%");
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        Refresh.register(exportValue, id + " %exports% " + key);
+    }
+}
+
+},{"react-refresh/runtime":"786KC"}],"gtTIg":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$dea5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$dea5.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRedux = require("react-redux");
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _actions = require("../../actions/actions");
+function VisibilityFilterInput(props) {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+        onChange: (e)=>props.setFilter(e.target.value),
+        value: props.visibilityFilter,
+        placeholder: "Search movies"
+    }, void 0, false, {
+        fileName: "src/components/visibility-filter-input/visibility-filter-input.jsx",
+        lineNumber: 8,
+        columnNumber: 10
+    }, this);
+}
+_c = VisibilityFilterInput;
+exports.default = (0, _reactRedux.connect)(null, {
+    setFilter: (0, _actions.setFilter)
+})(VisibilityFilterInput);
+var _c;
+$RefreshReg$(_c, "VisibilityFilterInput");
+
+  $parcel$ReactRefreshHelpers$dea5.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-redux":"bdVon","react-bootstrap/Form":"iBZ80","../../actions/actions":"biFwH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iBZ80":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _formCheck = require("./FormCheck");
+var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
+var _formFile = require("./FormFile");
+var _formFileDefault = parcelHelpers.interopDefault(_formFile);
+var _formControl = require("./FormControl");
+var _formControlDefault = parcelHelpers.interopDefault(_formControl);
+var _formGroup = require("./FormGroup");
+var _formGroupDefault = parcelHelpers.interopDefault(_formGroup);
+var _formLabel = require("./FormLabel");
+var _formLabelDefault = parcelHelpers.interopDefault(_formLabel);
+var _formText = require("./FormText");
+var _formTextDefault = parcelHelpers.interopDefault(_formText);
+var _switch = require("./Switch");
+var _switchDefault = parcelHelpers.interopDefault(_switch);
+var _themeProvider = require("./ThemeProvider");
+var _createWithBsPrefix = require("./createWithBsPrefix");
+var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
+var _excluded = [
+    "bsPrefix",
+    "inline",
+    "className",
+    "validated",
+    "as"
+];
+var FormRow = (0, _createWithBsPrefixDefault.default)("form-row");
+var defaultProps = {
+    inline: false
+};
+var FormImpl = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, inline = _ref.inline, className = _ref.className, validated = _ref.validated, _ref$as = _ref.as, Component = _ref$as === void 0 ? "form" : _ref$as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form");
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, validated && "was-validated", inline && bsPrefix + "-inline")
+    }));
+});
+FormImpl.displayName = "Form";
+FormImpl.defaultProps = defaultProps;
+FormImpl.Row = FormRow;
+FormImpl.Group = (0, _formGroupDefault.default);
+FormImpl.Control = (0, _formControlDefault.default);
+FormImpl.Check = (0, _formCheckDefault.default);
+FormImpl.File = (0, _formFileDefault.default);
+FormImpl.Switch = (0, _switchDefault.default);
+FormImpl.Label = (0, _formLabelDefault.default);
+FormImpl.Text = (0, _formTextDefault.default);
+exports.default = FormImpl;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./FormCheck":"idkr0","./FormFile":"jzm8K","./FormControl":"iynMc","./FormGroup":"1qBHH","./FormLabel":"66epi","./FormText":"ffeC7","./Switch":"9O81i","./ThemeProvider":"dVixI","./createWithBsPrefix":"itt7e","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"idkr0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _all = require("prop-types-extra/lib/all");
+var _allDefault = parcelHelpers.interopDefault(_all);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _feedback = require("./Feedback");
+var _feedbackDefault = parcelHelpers.interopDefault(_feedback);
+var _formCheckInput = require("./FormCheckInput");
+var _formCheckInputDefault = parcelHelpers.interopDefault(_formCheckInput);
+var _formCheckLabel = require("./FormCheckLabel");
+var _formCheckLabelDefault = parcelHelpers.interopDefault(_formCheckLabel);
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _excluded = [
+    "id",
+    "bsPrefix",
+    "bsCustomPrefix",
+    "inline",
+    "disabled",
+    "isValid",
+    "isInvalid",
+    "feedbackTooltip",
+    "feedback",
+    "className",
+    "style",
+    "title",
+    "type",
+    "label",
+    "children",
+    "custom",
+    "as"
+];
+var FormCheck = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var id = _ref.id, bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, _ref$inline = _ref.inline, inline = _ref$inline === void 0 ? false : _ref$inline, _ref$disabled = _ref.disabled, disabled = _ref$disabled === void 0 ? false : _ref$disabled, _ref$isValid = _ref.isValid, isValid = _ref$isValid === void 0 ? false : _ref$isValid, _ref$isInvalid = _ref.isInvalid, isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid, _ref$feedbackTooltip = _ref.feedbackTooltip, feedbackTooltip = _ref$feedbackTooltip === void 0 ? false : _ref$feedbackTooltip, feedback = _ref.feedback, className = _ref.className, style = _ref.style, _ref$title = _ref.title, title = _ref$title === void 0 ? "" : _ref$title, _ref$type = _ref.type, type = _ref$type === void 0 ? "checkbox" : _ref$type, label = _ref.label, children = _ref.children, propCustom = _ref.custom, _ref$as = _ref.as, as = _ref$as === void 0 ? "input" : _ref$as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    var custom = type === "switch" ? true : propCustom;
+    var _ref2 = custom ? [
+        bsCustomPrefix,
+        "custom-control"
+    ] : [
+        bsPrefix,
+        "form-check"
+    ], prefix = _ref2[0], defaultPrefix = _ref2[1];
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId;
+    var innerFormContext = (0, _react.useMemo)(function() {
+        return {
+            controlId: id || controlId,
+            custom: custom
+        };
+    }, [
+        controlId,
+        custom,
+        id
+    ]);
+    var hasLabel = custom || label != null && label !== false && !children;
+    var input = /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formCheckInputDefault.default), (0, _extendsDefault.default)({}, props, {
+        type: type === "switch" ? "checkbox" : type,
+        ref: ref,
+        isValid: isValid,
+        isInvalid: isInvalid,
+        isStatic: !hasLabel,
+        disabled: disabled,
+        as: as
+    }));
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formContextDefault.default).Provider, {
+        value: innerFormContext
+    }, /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
+        style: style,
+        className: (0, _classnamesDefault.default)(className, bsPrefix, custom && "custom-" + type, inline && bsPrefix + "-inline")
+    }, children || /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _reactDefault.default).Fragment, null, input, hasLabel && /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formCheckLabelDefault.default), {
+        title: title
+    }, label), (isValid || isInvalid) && /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _feedbackDefault.default), {
+        type: isValid ? "valid" : "invalid",
+        tooltip: feedbackTooltip
+    }, feedback))));
+});
+FormCheck.displayName = "FormCheck";
+FormCheck.Input = (0, _formCheckInputDefault.default);
+FormCheck.Label = (0, _formCheckLabelDefault.default);
+exports.default = FormCheck;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","prop-types-extra/lib/all":"37Ank","react":"21dqq","./Feedback":"aWeg2","./FormCheckInput":"dPzD9","./FormCheckLabel":"fGhS2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"37Ank":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = all;
+var _createChainableTypeChecker = require("./utils/createChainableTypeChecker");
+var _createChainableTypeChecker2 = _interopRequireDefault(_createChainableTypeChecker);
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+function all() {
+    for(var _len = arguments.length, validators = Array(_len), _key = 0; _key < _len; _key++)validators[_key] = arguments[_key];
+    function allPropTypes() {
+        for(var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++)args[_key2] = arguments[_key2];
+        var error = null;
+        validators.forEach(function(validator) {
+            if (error != null) return;
+            var result = validator.apply(undefined, args);
+            if (result != null) error = result;
+        });
+        return error;
+    }
+    return (0, _createChainableTypeChecker2.default)(allPropTypes);
+}
+module.exports = exports["default"];
+
+},{"./utils/createChainableTypeChecker":"1m8lT"}],"1m8lT":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = createChainableTypeChecker;
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */ // Mostly taken from ReactPropTypes.
+function createChainableTypeChecker(validate) {
+    function checkType(isRequired, props, propName, componentName, location, propFullName) {
+        var componentNameSafe = componentName || "<<anonymous>>";
+        var propFullNameSafe = propFullName || propName;
+        if (props[propName] == null) {
+            if (isRequired) return new Error("Required " + location + " `" + propFullNameSafe + "` was not specified " + ("in `" + componentNameSafe + "`."));
+            return null;
+        }
+        for(var _len = arguments.length, args = Array(_len > 6 ? _len - 6 : 0), _key = 6; _key < _len; _key++)args[_key - 6] = arguments[_key];
+        return validate.apply(undefined, [
+            props,
+            propName,
+            componentNameSafe,
+            location,
+            propFullNameSafe
+        ].concat(args));
+    }
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+    return chainedCheckType;
+}
+module.exports = exports["default"];
+
+},{}],"aWeg2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _excluded = [
+    "as",
+    "className",
+    "type",
+    "tooltip"
+];
+var propTypes = {
+    /**
+   * Specify whether the feedback is for valid or invalid fields
+   *
+   * @type {('valid'|'invalid')}
+   */ type: (0, _propTypesDefault.default).string,
+    /** Display feedback as a tooltip. */ tooltip: (0, _propTypesDefault.default).bool,
+    as: (0, _propTypesDefault.default).elementType
+};
+var Feedback = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var _ref$as = _ref.as, Component = _ref$as === void 0 ? "div" : _ref$as, className = _ref.className, _ref$type = _ref.type, type = _ref$type === void 0 ? "valid" : _ref$type, _ref$tooltip = _ref.tooltip, tooltip = _ref$tooltip === void 0 ? false : _ref$tooltip, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, type + "-" + (tooltip ? "tooltip" : "feedback"))
+    }));
+});
+Feedback.displayName = "Feedback";
+Feedback.propTypes = propTypes;
+exports.default = Feedback;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dPzD9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _excluded = [
+    "id",
+    "bsPrefix",
+    "bsCustomPrefix",
+    "className",
+    "type",
+    "isValid",
+    "isInvalid",
+    "isStatic",
+    "as"
+];
+var FormCheckInput = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var id = _ref.id, bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, className = _ref.className, _ref$type = _ref.type, type = _ref$type === void 0 ? "checkbox" : _ref$type, _ref$isValid = _ref.isValid, isValid = _ref$isValid === void 0 ? false : _ref$isValid, _ref$isInvalid = _ref.isInvalid, isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid, isStatic = _ref.isStatic, _ref$as = _ref.as, Component = _ref$as === void 0 ? "input" : _ref$as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId, custom = _useContext.custom;
+    var _ref2 = custom ? [
+        bsCustomPrefix,
+        "custom-control-input"
+    ] : [
+        bsPrefix,
+        "form-check-input"
+    ], prefix = _ref2[0], defaultPrefix = _ref2[1];
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
+        ref: ref,
+        type: type,
+        id: id || controlId,
+        className: (0, _classnamesDefault.default)(className, bsPrefix, isValid && "is-valid", isInvalid && "is-invalid", isStatic && "position-static")
+    }));
+});
+FormCheckInput.displayName = "FormCheckInput";
+exports.default = FormCheckInput;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gjvSt":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react"); // TODO
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var FormContext = /*#__PURE__*/ (0, _reactDefault.default).createContext({
+    controlId: undefined
+});
+exports.default = FormContext;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fGhS2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _excluded = [
+    "bsPrefix",
+    "bsCustomPrefix",
+    "className",
+    "htmlFor"
+];
+var FormCheckLabel = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, className = _ref.className, htmlFor = _ref.htmlFor, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId, custom = _useContext.custom;
+    var _ref2 = custom ? [
+        bsCustomPrefix,
+        "custom-control-label"
+    ] : [
+        bsPrefix,
+        "form-check-label"
+    ], prefix = _ref2[0], defaultPrefix = _ref2[1];
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement("label", (0, _extendsDefault.default)({}, props, {
+        ref: ref,
+        htmlFor: htmlFor || controlId,
+        className: (0, _classnamesDefault.default)(className, bsPrefix)
+    }));
+});
+FormCheckLabel.displayName = "FormCheckLabel";
+exports.default = FormCheckLabel;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jzm8K":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _all = require("prop-types-extra/lib/all");
+var _allDefault = parcelHelpers.interopDefault(_all);
+var _feedback = require("./Feedback");
+var _feedbackDefault = parcelHelpers.interopDefault(_feedback);
+var _formFileInput = require("./FormFileInput");
+var _formFileInputDefault = parcelHelpers.interopDefault(_formFileInput);
+var _formFileLabel = require("./FormFileLabel");
+var _formFileLabelDefault = parcelHelpers.interopDefault(_formFileLabel);
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _excluded = [
+    "id",
+    "bsPrefix",
+    "bsCustomPrefix",
+    "disabled",
+    "isValid",
+    "isInvalid",
+    "feedbackTooltip",
+    "feedback",
+    "className",
+    "style",
+    "label",
+    "children",
+    "custom",
+    "lang",
+    "data-browse",
+    "as",
+    "inputAs"
+];
+var FormFile = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var id = _ref.id, bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, _ref$disabled = _ref.disabled, disabled = _ref$disabled === void 0 ? false : _ref$disabled, _ref$isValid = _ref.isValid, isValid = _ref$isValid === void 0 ? false : _ref$isValid, _ref$isInvalid = _ref.isInvalid, isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid, _ref$feedbackTooltip = _ref.feedbackTooltip, feedbackTooltip = _ref$feedbackTooltip === void 0 ? false : _ref$feedbackTooltip, feedback = _ref.feedback, className = _ref.className, style = _ref.style, label = _ref.label, children = _ref.children, custom = _ref.custom, lang = _ref.lang, dataBrowse = _ref["data-browse"], _ref$as = _ref.as, Component = _ref$as === void 0 ? "div" : _ref$as, _ref$inputAs = _ref.inputAs, inputAs = _ref$inputAs === void 0 ? "input" : _ref$inputAs, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    var _ref2 = custom ? [
+        bsCustomPrefix,
+        "custom"
+    ] : [
+        bsPrefix,
+        "form-file"
+    ], prefix = _ref2[0], defaultPrefix = _ref2[1];
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+    var type = "file";
+    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId;
+    var innerFormContext = (0, _react.useMemo)(function() {
+        return {
+            controlId: id || controlId,
+            custom: custom
+        };
+    }, [
+        controlId,
+        custom,
+        id
+    ]);
+    var hasLabel = label != null && label !== false && !children;
+    var input = /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formFileInputDefault.default), (0, _extendsDefault.default)({}, props, {
+        ref: ref,
+        isValid: isValid,
+        isInvalid: isInvalid,
+        disabled: disabled,
+        as: inputAs,
+        lang: lang
+    }));
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formContextDefault.default).Provider, {
+        value: innerFormContext
+    }, /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, {
+        style: style,
+        className: (0, _classnamesDefault.default)(className, bsPrefix, custom && "custom-" + type)
+    }, children || /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _reactDefault.default).Fragment, null, custom ? /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _reactDefault.default).Fragment, null, input, hasLabel && /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formFileLabelDefault.default), {
+        "data-browse": dataBrowse
+    }, label)) : /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _reactDefault.default).Fragment, null, hasLabel && /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formFileLabelDefault.default), null, label), input), (isValid || isInvalid) && /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _feedbackDefault.default), {
+        type: isValid ? "valid" : "invalid",
+        tooltip: feedbackTooltip
+    }, feedback))));
+});
+FormFile.displayName = "FormFile";
+FormFile.Input = (0, _formFileInputDefault.default);
+FormFile.Label = (0, _formFileLabelDefault.default);
+exports.default = FormFile;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","prop-types-extra/lib/all":"37Ank","./Feedback":"aWeg2","./FormFileInput":"bxbt2","./FormFileLabel":"cLy2M","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bxbt2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _excluded = [
+    "id",
+    "bsPrefix",
+    "bsCustomPrefix",
+    "className",
+    "isValid",
+    "isInvalid",
+    "lang",
+    "as"
+];
+var FormFileInput = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var id = _ref.id, bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, className = _ref.className, isValid = _ref.isValid, isInvalid = _ref.isInvalid, lang = _ref.lang, _ref$as = _ref.as, Component = _ref$as === void 0 ? "input" : _ref$as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId, custom = _useContext.custom;
+    var type = "file";
+    var _ref2 = custom ? [
+        bsCustomPrefix,
+        "custom-file-input"
+    ] : [
+        bsPrefix,
+        "form-control-file"
+    ], prefix = _ref2[0], defaultPrefix = _ref2[1];
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
+        ref: ref,
+        id: id || controlId,
+        type: type,
+        lang: lang,
+        className: (0, _classnamesDefault.default)(className, bsPrefix, isValid && "is-valid", isInvalid && "is-invalid")
+    }));
+});
+FormFileInput.displayName = "FormFileInput";
+exports.default = FormFileInput;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cLy2M":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _excluded = [
+    "bsPrefix",
+    "bsCustomPrefix",
+    "className",
+    "htmlFor"
+];
+var FormFileLabel = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, className = _ref.className, htmlFor = _ref.htmlFor, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId, custom = _useContext.custom;
+    var _ref2 = custom ? [
+        bsCustomPrefix,
+        "custom-file-label"
+    ] : [
+        bsPrefix,
+        "form-file-label"
+    ], prefix = _ref2[0], defaultPrefix = _ref2[1];
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement("label", (0, _extendsDefault.default)({}, props, {
+        ref: ref,
+        htmlFor: htmlFor || controlId,
+        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        "data-browse": props["data-browse"]
+    }));
+});
+FormFileLabel.displayName = "FormFileLabel";
+exports.default = FormFileLabel;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iynMc":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _all = require("prop-types-extra/lib/all");
+var _allDefault = parcelHelpers.interopDefault(_all);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _warning = require("warning");
+var _warningDefault = parcelHelpers.interopDefault(_warning);
+var _feedback = require("./Feedback");
+var _feedbackDefault = parcelHelpers.interopDefault(_feedback);
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _excluded = [
+    "bsPrefix",
+    "bsCustomPrefix",
+    "type",
+    "size",
+    "htmlSize",
+    "id",
+    "className",
+    "isValid",
+    "isInvalid",
+    "plaintext",
+    "readOnly",
+    "custom",
+    "as"
+];
+var FormControl = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, bsCustomPrefix = _ref.bsCustomPrefix, type = _ref.type, size = _ref.size, htmlSize = _ref.htmlSize, id = _ref.id, className = _ref.className, _ref$isValid = _ref.isValid, isValid = _ref$isValid === void 0 ? false : _ref$isValid, _ref$isInvalid = _ref.isInvalid, isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid, plaintext = _ref.plaintext, readOnly = _ref.readOnly, custom = _ref.custom, _ref$as = _ref.as, Component = _ref$as === void 0 ? "input" : _ref$as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId;
+    var _ref2 = custom ? [
+        bsCustomPrefix,
+        "custom"
+    ] : [
+        bsPrefix,
+        "form-control"
+    ], prefix = _ref2[0], defaultPrefix = _ref2[1];
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(prefix, defaultPrefix);
+    var classes;
+    if (plaintext) {
+        var _classes;
+        classes = (_classes = {}, _classes[bsPrefix + "-plaintext"] = true, _classes);
+    } else if (type === "file") {
+        var _classes2;
+        classes = (_classes2 = {}, _classes2[bsPrefix + "-file"] = true, _classes2);
+    } else if (type === "range") {
+        var _classes3;
+        classes = (_classes3 = {}, _classes3[bsPrefix + "-range"] = true, _classes3);
+    } else if (Component === "select" && custom) {
+        var _classes4;
+        classes = (_classes4 = {}, _classes4[bsPrefix + "-select"] = true, _classes4[bsPrefix + "-select-" + size] = size, _classes4);
+    } else {
+        var _classes5;
+        classes = (_classes5 = {}, _classes5[bsPrefix] = true, _classes5[bsPrefix + "-" + size] = size, _classes5);
+    }
+    (0, _warningDefault.default)(controlId == null || !id, "`controlId` is ignored on `<FormControl>` when `id` is specified.");
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
+        type: type,
+        size: htmlSize,
+        ref: ref,
+        readOnly: readOnly,
+        id: id || controlId,
+        className: (0, _classnamesDefault.default)(className, classes, isValid && "is-valid", isInvalid && "is-invalid")
+    }));
+});
+FormControl.displayName = "FormControl";
+exports.default = Object.assign(FormControl, {
+    Feedback: (0, _feedbackDefault.default)
+});
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","prop-types-extra/lib/all":"37Ank","react":"21dqq","warning":"eUVzU","./Feedback":"aWeg2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eUVzU":[function(require,module,exports) {
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */ var __DEV__ = true;
+var warning = function() {};
+if (__DEV__) {
+    var printWarning = function printWarning(format, args) {
+        var len = arguments.length;
+        args = new Array(len > 1 ? len - 1 : 0);
+        for(var key = 1; key < len; key++)args[key - 1] = arguments[key];
+        var argIndex = 0;
+        var message = "Warning: " + format.replace(/%s/g, function() {
+            return args[argIndex++];
+        });
+        if (typeof console !== "undefined") console.error(message);
+        try {
+            // --- Welcome to debugging React ---
+            // This error was thrown as a convenience so that you can use this stack
+            // to find the callsite that caused this warning to fire.
+            throw new Error(message);
+        } catch (x) {}
+    };
+    warning = function(condition, format, args) {
+        var len = arguments.length;
+        args = new Array(len > 2 ? len - 2 : 0);
+        for(var key = 2; key < len; key++)args[key - 2] = arguments[key];
+        if (format === undefined) throw new Error("`warning(condition, format, ...args)` requires a warning message argument");
+        if (!condition) printWarning.apply(null, [
+            format
+        ].concat(args));
+    };
+}
+module.exports = warning;
+
+},{}],"1qBHH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _excluded = [
+    "bsPrefix",
+    "className",
+    "children",
+    "controlId",
+    "as"
+];
+var FormGroup = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, className = _ref.className, children = _ref.children, controlId = _ref.controlId, _ref$as = _ref.as, Component = _ref$as === void 0 ? "div" : _ref$as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-group");
+    var context = (0, _react.useMemo)(function() {
+        return {
+            controlId: controlId
+        };
+    }, [
+        controlId
+    ]);
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formContextDefault.default).Provider, {
+        value: context
+    }, /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, bsPrefix)
+    }), children));
+});
+FormGroup.displayName = "FormGroup";
+exports.default = FormGroup;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"66epi":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _warning = require("warning");
+var _warningDefault = parcelHelpers.interopDefault(_warning);
+var _col = require("./Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _formContext = require("./FormContext");
+var _formContextDefault = parcelHelpers.interopDefault(_formContext);
+var _themeProvider = require("./ThemeProvider");
+var _excluded = [
+    "as",
+    "bsPrefix",
+    "column",
+    "srOnly",
+    "className",
+    "htmlFor"
+];
+var defaultProps = {
+    column: false,
+    srOnly: false
+};
+var FormLabel = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var _ref$as = _ref.as, Component = _ref$as === void 0 ? "label" : _ref$as, bsPrefix = _ref.bsPrefix, column = _ref.column, srOnly = _ref.srOnly, className = _ref.className, htmlFor = _ref.htmlFor, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    var _useContext = (0, _react.useContext)((0, _formContextDefault.default)), controlId = _useContext.controlId;
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-label");
+    var columnClass = "col-form-label";
+    if (typeof column === "string") columnClass = columnClass + " " + columnClass + "-" + column;
+    var classes = (0, _classnamesDefault.default)(className, bsPrefix, srOnly && "sr-only", column && columnClass);
+    (0, _warningDefault.default)(controlId == null || !htmlFor, "`controlId` is ignored on `<FormLabel>` when `htmlFor` is specified.");
+    htmlFor = htmlFor || controlId;
+    if (column) return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _colDefault.default), (0, _extendsDefault.default)({
+        ref: ref,
+        as: "label",
+        className: classes,
+        htmlFor: htmlFor
+    }, props));
+    return(/*#__PURE__*/ // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
+    (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({
+        ref: ref,
+        className: classes,
+        htmlFor: htmlFor
+    }, props)));
+});
+FormLabel.displayName = "FormLabel";
+FormLabel.defaultProps = defaultProps;
+exports.default = FormLabel;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Col":"2L2I6","./FormContext":"gjvSt","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ffeC7":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _themeProvider = require("./ThemeProvider");
+var _excluded = [
+    "bsPrefix",
+    "className",
+    "as",
+    "muted"
+];
+var FormText = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, className = _ref.className, _ref$as = _ref.as, Component = _ref$as === void 0 ? "small" : _ref$as, muted = _ref.muted, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-text");
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
+        ref: ref,
+        className: (0, _classnamesDefault.default)(className, bsPrefix, muted && "text-muted")
+    }));
+});
+FormText.displayName = "FormText";
+exports.default = FormText;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9O81i":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _formCheck = require("./FormCheck");
+var _formCheckDefault = parcelHelpers.interopDefault(_formCheck);
+var Switch = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(props, ref) {
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _formCheckDefault.default), (0, _extendsDefault.default)({}, props, {
+        ref: ref,
+        type: "switch"
+    }));
+});
+Switch.displayName = "Switch";
+Switch.Input = (0, _formCheckDefault.default).Input;
+Switch.Label = (0, _formCheckDefault.default).Label;
+exports.default = Switch;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","./FormCheck":"idkr0","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ggaUx":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e9f6.prelude(module);
+
+try {
+//imports SCSS styles
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+//import { GenreView } from '../genre-view/genre-view';
+parcelHelpers.export(exports, "MovieView", ()=>MovieView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _movieViewScss = require("./movie-view.scss");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+//import { Link } from 'react-router-dom';
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _badge = require("react-bootstrap/Badge");
+var _badgeDefault = parcelHelpers.interopDefault(_badge);
+class MovieView extends (0, _reactDefault.default).Component {
+    keypressCallback(event) {
+        console.log(event.key);
+    }
+    componentDidMount() {
+        document.addEventListener("keypress", this.keypressCallback);
+    }
+    componentWillUnmount() {
+        document.removeEventListener("keypress", this.keypressCallback);
+    }
+    addFavorite() {
+        const token = localStorage.getItem("token");
+        const username = localStorage.getItem("user");
+        (0, _axiosDefault.default).put(`https://movie-api-22.onrender.com/users/${username}/add-movies/${this.props.movie._id}`, {}, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            alert("This movie was added to the Favorites List");
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
+    removeFavorites() {
+        const token = localStorage.getItem("token");
+        const username = localStorage.getItem("user");
+        (0, _axiosDefault.default).delete(`https://movies-api-21.herokuapp.com/users/${username}/delete-movies/${this.props.movie._id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            alert("This movie was deleted from the Favorites List");
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
+    render() {
+        const { movie , onBackClick  } = this.props;
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "movie-view",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-poster",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        src: movie.imgUrl
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 65,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 64,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-title",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _badgeDefault.default), {
+                                className: "badge badge-light",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                    className: "value",
+                                    children: movie.Title
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                    lineNumber: 70,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 69,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 68,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "movie-director",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "value",
+                                children: [
+                                    "Director: ",
+                                    movie.Director[0]
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 74,
+                                columnNumber: 11
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 73,
+                            columnNumber: 9
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "movie-genre",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "value",
+                                children: [
+                                    "Genre: ",
+                                    movie.Genre[0]
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 77,
+                                columnNumber: 11
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 76,
+                            columnNumber: 9
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 67,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-description",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "value",
+                        children: movie.Description
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 81,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 80,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 83,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                    variant: "success",
+                    className: "fav-button",
+                    value: movie._id,
+                    onClick: (e)=>this.addFavorite(e, movie),
+                    children: "Add to Favorites"
+                }, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 84,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                    variant: "success",
+                    className: "fav-button",
+                    value: movie._id,
+                    onClick: (e)=>this.removeFavorites(e, movie),
+                    children: "Remove from Favorites"
+                }, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 87,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                    variant: "primary",
+                    onClick: ()=>{
+                        onBackClick(null);
+                    },
+                    children: "Back"
+                }, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 90,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 63,
+            columnNumber: 7
+        }, this);
+    }
+}
+
+  $parcel$ReactRefreshHelpers$e9f6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","./movie-view.scss":"jnlR5","react":"21dqq","axios":"jo6P5","react-bootstrap/Button":"aPzUt","react-bootstrap/Badge":"eEyks","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jnlR5":[function() {},{}],"aPzUt":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _themeProvider = require("./ThemeProvider");
+var _safeAnchor = require("./SafeAnchor");
+var _safeAnchorDefault = parcelHelpers.interopDefault(_safeAnchor);
+var _excluded = [
+    "bsPrefix",
+    "variant",
+    "size",
+    "active",
+    "className",
+    "block",
+    "type",
+    "as"
+];
+var defaultProps = {
+    variant: "primary",
+    active: false,
+    disabled: false
+};
+var Button = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, variant = _ref.variant, size = _ref.size, active = _ref.active, className = _ref.className, block = _ref.block, type = _ref.type, as = _ref.as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    var prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "btn");
+    var classes = (0, _classnamesDefault.default)(className, prefix, active && "active", variant && prefix + "-" + variant, block && prefix + "-block", size && prefix + "-" + size);
+    if (props.href) return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _safeAnchorDefault.default), (0, _extendsDefault.default)({}, props, {
+        as: as,
+        ref: ref,
+        className: (0, _classnamesDefault.default)(classes, props.disabled && "disabled")
+    }));
+    if (ref) props.ref = ref;
+    if (type) props.type = type;
+    else if (!as) props.type = "button";
+    var Component = as || "button";
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({}, props, {
+        className: classes
+    }));
+});
+Button.displayName = "Button";
+Button.defaultProps = defaultProps;
+exports.default = Button;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./SafeAnchor":"7vUDg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7vUDg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _createChainedFunction = require("./createChainedFunction");
+var _createChainedFunctionDefault = parcelHelpers.interopDefault(_createChainedFunction);
+var _excluded = [
+    "as",
+    "disabled",
+    "onKeyDown"
+];
+function isTrivialHref(href) {
+    return !href || href.trim() === "#";
+}
+/**
+ * There are situations due to browser quirks or Bootstrap CSS where
+ * an anchor tag is needed, when semantically a button tag is the
+ * better choice. SafeAnchor ensures that when an anchor is used like a
+ * button its accessible. It also emulates input `disabled` behavior for
+ * links, which is usually desirable for Buttons, NavItems, DropdownItems, etc.
+ */ var SafeAnchor = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var _ref$as = _ref.as, Component = _ref$as === void 0 ? "a" : _ref$as, disabled = _ref.disabled, onKeyDown = _ref.onKeyDown, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    var handleClick = function handleClick(event) {
+        var href = props.href, onClick = props.onClick;
+        if (disabled || isTrivialHref(href)) event.preventDefault();
+        if (disabled) {
+            event.stopPropagation();
+            return;
+        }
+        if (onClick) onClick(event);
+    };
+    var handleKeyDown = function handleKeyDown(event) {
+        if (event.key === " ") {
+            event.preventDefault();
+            handleClick(event);
+        }
+    };
+    if (isTrivialHref(props.href)) {
+        props.role = props.role || "button"; // we want to make sure there is a href attribute on the node
+        // otherwise, the cursor incorrectly styled (except with role='button')
+        props.href = props.href || "#";
+    }
+    if (disabled) {
+        props.tabIndex = -1;
+        props["aria-disabled"] = true;
+    }
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({
+        ref: ref
+    }, props, {
+        onClick: handleClick,
+        onKeyDown: (0, _createChainedFunctionDefault.default)(handleKeyDown, onKeyDown)
+    }));
+});
+SafeAnchor.displayName = "SafeAnchor";
+exports.default = SafeAnchor;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","react":"21dqq","./createChainedFunction":"1KNLM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1KNLM":[function(require,module,exports) {
+/**
+ * Safe chained function
+ *
+ * Will only create a new function if needed,
+ * otherwise will pass back existing functions or null.
+ *
+ * @param {function} functions to chain
+ * @returns {function|null}
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function createChainedFunction() {
+    for(var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++)funcs[_key] = arguments[_key];
+    return funcs.filter(function(f) {
+        return f != null;
+    }).reduce(function(acc, f) {
+        if (typeof f !== "function") throw new Error("Invalid Argument Type, must only provide functions, undefined, or null.");
+        if (acc === null) return f;
+        return function chainedFunction() {
+            for(var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++)args[_key2] = arguments[_key2];
+            // @ts-ignore
+            acc.apply(this, args); // @ts-ignore
+            f.apply(this, args);
+        };
+    }, null);
+}
+exports.default = createChainedFunction;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eEyks":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _themeProvider = require("./ThemeProvider");
+var _excluded = [
+    "bsPrefix",
+    "variant",
+    "pill",
+    "className",
+    "as"
+];
+var defaultProps = {
+    pill: false
+};
+var Badge = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, variant = _ref.variant, pill = _ref.pill, className = _ref.className, _ref$as = _ref.as, Component = _ref$as === void 0 ? "span" : _ref$as, props = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    var prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "badge");
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, (0, _extendsDefault.default)({
+        ref: ref
+    }, props, {
+        className: (0, _classnamesDefault.default)(className, prefix, pill && prefix + "-pill", variant && prefix + "-" + variant)
+    }));
+});
+Badge.displayName = "Badge";
+Badge.defaultProps = defaultProps;
+exports.default = Badge;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9YtA0":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9fee.prelude(module);
+
+try {
+//imports SCSS styles 
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LoginView", ()=>LoginView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _loginViewScss = require("./login-view.scss");
+//imports React and hooks
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+//import PropTypes from 'prop-types';
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactRedux = require("react-redux");
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+//imports Material UI components
+var _avatar = require("@mui/material/Avatar");
+var _avatarDefault = parcelHelpers.interopDefault(_avatar);
+var _button = require("@mui/material/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _cssBaseline = require("@mui/material/CssBaseline");
+var _cssBaselineDefault = parcelHelpers.interopDefault(_cssBaseline);
+var _link = require("@mui/material/Link");
+var _linkDefault = parcelHelpers.interopDefault(_link);
+var _box = require("@mui/material/Box");
+var _boxDefault = parcelHelpers.interopDefault(_box);
+var _lockOutlined = require("@mui/icons-material/LockOutlined");
+var _lockOutlinedDefault = parcelHelpers.interopDefault(_lockOutlined);
+var _typography = require("@mui/material/Typography");
+var _typographyDefault = parcelHelpers.interopDefault(_typography);
+var _container = require("@mui/material/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _styles = require("@mui/material/styles");
+var _s = $RefreshSig$();
+function Copyright(props) {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
+        variant: "body2",
+        color: "text.secondary",
+        align: "center",
+        ...props,
+        children: [
+            "Copyright \xa9 ",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
+                color: "inherit",
+                href: "/",
+                children: "Movie App v1"
+            }, void 0, false, {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 27,
+                columnNumber: 7
+            }, this),
+            " ",
+            new Date().getFullYear(),
+            "."
+        ]
+    }, void 0, true, {
+        fileName: "src/components/login-view/login-view.jsx",
+        lineNumber: 25,
+        columnNumber: 5
+    }, this);
+}
+_c = Copyright;
+const theme = (0, _styles.createTheme)();
+function LoginView(props) {
+    _s();
+    const [username, registerUsername] = (0, _react.useState)("");
+    const [password, registerPassword] = (0, _react.useState)("");
+    const handleSubmit1 = (e)=>{
+        e.preventDefault(); // prevents the default refresh/change of the page from the handleSubmit() method
+        // Sends a request to the server for authentication
+        (0, _axiosDefault.default).post("https://movie-api-22.onrender.com/login", {
+            Username: username,
+            Password: password
+        }).then((response)=>{
+            const data = response.data;
+            props.onLoggedIn(data); // allows a user to be automatically logged in
+        }).catch((e)=>{
+            console.log("No such user");
+        });
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _styles.ThemeProvider), {
+        theme: theme,
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
+            component: "main",
+            maxWidth: "xs",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cssBaselineDefault.default), {}, void 0, false, {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 61,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
+                    sx: {
+                        marginTop: 8,
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center"
+                    },
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _avatarDefault.default), {
+                            sx: {
+                                m: 1,
+                                bgcolor: "secondary.main"
+                            },
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _lockOutlinedDefault.default), {}, void 0, false, {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 71,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 70,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
+                            component: "h1",
+                            variant: "h5",
+                            children: [
+                                "Sign in ",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 74,
+                                    columnNumber: 21
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 74,
+                                    columnNumber: 26
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 73,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
+                            component: "form",
+                            onSubmit: handleSubmit1,
+                            noValidate: true,
+                            sx: {
+                                mt: 1
+                            },
+                            className: "login",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
+                                    className: "justify-content-center",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                                            className: "mb-3",
+                                            controlId: "formUsername",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                                    children: "Username"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 79,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                                    required: true,
+                                                    type: "text",
+                                                    placeholder: "Enter your Username",
+                                                    value: username,
+                                                    onChange: (e)=>registerUsername(e.target.value)
+                                                }, void 0, false, {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 80,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 78,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                                            className: "mb-3",
+                                            controlId: "formPassword",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                                    children: "Password"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 83,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                                    required: true,
+                                                    type: "password",
+                                                    placeholder: "Enter your Password",
+                                                    value: password,
+                                                    onChange: (e)=>registerPassword(e.target.value)
+                                                }, void 0, false, {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 84,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 82,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                            type: "submit",
+                                            fullWidth: true,
+                                            variant: "contained",
+                                            sx: {
+                                                mt: 3,
+                                                mb: 2
+                                            },
+                                            onClick: handleSubmit1,
+                                            children: "Log in"
+                                        }, void 0, false, {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 86,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 77,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
+                                    href: "/register",
+                                    variant: "body2",
+                                    children: "Don't have an account? Sign Up"
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 96,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Copyright, {
+                                    sx: {
+                                        mt: 8,
+                                        mb: 4
+                                    }
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 99,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 76,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 62,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/login-view/login-view.jsx",
+            lineNumber: 60,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "src/components/login-view/login-view.jsx",
+        lineNumber: 59,
+        columnNumber: 5
+    }, this);
+}
+_s(LoginView, "1/PUhFbagoiBqCBndjjCveMs8mQ=");
+_c1 = LoginView;
+const mapDispatchToProps = (dispatch)=>({
+        handleSubmit: (username, password)=>dispatch(handleSubmit(username, password))
+    });
+exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(LoginView);
+var _c, _c1;
+$RefreshReg$(_c, "Copyright");
+$RefreshReg$(_c1, "LoginView");
+
+  $parcel$ReactRefreshHelpers$9fee.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","./login-view.scss":"e57ax","react":"21dqq","axios":"jo6P5","react-redux":"bdVon","react-bootstrap/Form":"iBZ80","@mui/material/Avatar":"a1E31","@mui/material/Button":"eFe0Q","@mui/material/CssBaseline":"YDHu9","@mui/material/Link":"2FkZs","@mui/material/Box":"gh88n","@mui/icons-material/LockOutlined":"9fx6t","@mui/material/Typography":"kbDYG","@mui/material/Container":"fPxWU","@mui/material/styles":"eZWTQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"e57ax":[function() {},{}],"2FkZs":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>(0, _linkDefault.default));
+parcelHelpers.export(exports, "linkClasses", ()=>(0, _linkClassesDefault.default));
+var _link = require("./Link");
+var _linkDefault = parcelHelpers.interopDefault(_link);
+var _linkClasses = require("./linkClasses");
+var _linkClassesDefault = parcelHelpers.interopDefault(_linkClasses);
+parcelHelpers.exportAll(_linkClasses, exports);
+
+},{"./Link":"ji8ts","./linkClasses":"4YrwT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ji8ts":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _react = require("react");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _clsx = require("clsx");
+var _clsxDefault = parcelHelpers.interopDefault(_clsx);
+var _utils = require("@mui/utils");
+var _base = require("@mui/base");
+var _capitalize = require("../utils/capitalize");
+var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
+var _styled = require("../styles/styled");
+var _styledDefault = parcelHelpers.interopDefault(_styled);
+var _useThemeProps = require("../styles/useThemeProps");
+var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
+var _useIsFocusVisible = require("../utils/useIsFocusVisible");
+var _useIsFocusVisibleDefault = parcelHelpers.interopDefault(_useIsFocusVisible);
+var _useForkRef = require("../utils/useForkRef");
+var _useForkRefDefault = parcelHelpers.interopDefault(_useForkRef);
+var _typography = require("../Typography");
+var _typographyDefault = parcelHelpers.interopDefault(_typography);
+var _linkClasses = require("./linkClasses");
+var _linkClassesDefault = parcelHelpers.interopDefault(_linkClasses);
+var _getTextDecoration = require("./getTextDecoration");
+var _getTextDecorationDefault = parcelHelpers.interopDefault(_getTextDecoration);
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "className",
+    "color",
+    "component",
+    "onBlur",
+    "onFocus",
+    "TypographyClasses",
+    "underline",
+    "variant",
+    "sx"
+];
+const useUtilityClasses = (ownerState)=>{
+    const { classes , component , focusVisible , underline  } = ownerState;
+    const slots = {
+        root: [
+            "root",
+            `underline${(0, _capitalizeDefault.default)(underline)}`,
+            component === "button" && "button",
+            focusVisible && "focusVisible"
+        ]
+    };
+    return (0, _base.unstable_composeClasses)(slots, (0, _linkClasses.getLinkUtilityClass), classes);
+};
+const LinkRoot = (0, _styledDefault.default)((0, _typographyDefault.default), {
+    name: "MuiLink",
+    slot: "Root",
+    overridesResolver: (props, styles)=>{
+        const { ownerState  } = props;
+        return [
+            styles.root,
+            styles[`underline${(0, _capitalizeDefault.default)(ownerState.underline)}`],
+            ownerState.component === "button" && styles.button
+        ];
+    }
+})(({ theme , ownerState  })=>{
+    return (0, _extendsDefault.default)({}, ownerState.underline === "none" && {
+        textDecoration: "none"
+    }, ownerState.underline === "hover" && {
+        textDecoration: "none",
+        "&:hover": {
+            textDecoration: "underline"
+        }
+    }, ownerState.underline === "always" && (0, _extendsDefault.default)({
+        textDecoration: "underline"
+    }, ownerState.color !== "inherit" && {
+        textDecorationColor: (0, _getTextDecorationDefault.default)({
+            theme,
+            ownerState
+        })
+    }, {
+        "&:hover": {
+            textDecorationColor: "inherit"
+        }
+    }), ownerState.component === "button" && {
+        position: "relative",
+        WebkitTapHighlightColor: "transparent",
+        backgroundColor: "transparent",
+        // Reset default value
+        // We disable the focus ring for mouse, touch and keyboard users.
+        outline: 0,
+        border: 0,
+        margin: 0,
+        // Remove the margin in Safari
+        borderRadius: 0,
+        padding: 0,
+        // Remove the padding in Firefox
+        cursor: "pointer",
+        userSelect: "none",
+        verticalAlign: "middle",
+        MozAppearance: "none",
+        // Reset
+        WebkitAppearance: "none",
+        // Reset
+        "&::-moz-focus-inner": {
+            borderStyle: "none" // Remove Firefox dotted outline.
+        },
+        [`&.${(0, _linkClassesDefault.default).focusVisible}`]: {
+            outline: "auto"
+        }
+    });
+});
+const Link = /*#__PURE__*/ _react.forwardRef(function Link(inProps, ref) {
+    const props = (0, _useThemePropsDefault.default)({
+        props: inProps,
+        name: "MuiLink"
+    });
+    const { className , color ="primary" , component ="a" , onBlur , onFocus , TypographyClasses , underline ="always" , variant ="inherit" , sx  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
+    const { isFocusVisibleRef , onBlur: handleBlurVisible , onFocus: handleFocusVisible , ref: focusVisibleRef  } = (0, _useIsFocusVisibleDefault.default)();
+    const [focusVisible, setFocusVisible] = _react.useState(false);
+    const handlerRef = (0, _useForkRefDefault.default)(ref, focusVisibleRef);
+    const handleBlur = (event)=>{
+        handleBlurVisible(event);
+        if (isFocusVisibleRef.current === false) setFocusVisible(false);
+        if (onBlur) onBlur(event);
+    };
+    const handleFocus = (event)=>{
+        handleFocusVisible(event);
+        if (isFocusVisibleRef.current === true) setFocusVisible(true);
+        if (onFocus) onFocus(event);
+    };
+    const ownerState = (0, _extendsDefault.default)({}, props, {
+        color,
+        component,
+        focusVisible,
+        underline,
+        variant
+    });
+    const classes = useUtilityClasses(ownerState);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(LinkRoot, (0, _extendsDefault.default)({
+        color: color,
+        className: (0, _clsxDefault.default)(classes.root, className),
+        classes: TypographyClasses,
+        component: component,
+        onBlur: handleBlur,
+        onFocus: handleFocus,
+        ref: handlerRef,
+        ownerState: ownerState,
+        variant: variant,
+        sx: [
+            ...!Object.keys((0, _getTextDecoration.colorTransformations)).includes(color) ? [
+                {
+                    color
+                }
+            ] : [],
+            ...Array.isArray(sx) ? sx : [
+                sx
+            ]
+        ]
+    }, other));
+});
+Link.propTypes /* remove-proptypes */  = {
+    // ----------------------------- Warning --------------------------------
+    // | These PropTypes are generated from the TypeScript type definitions |
+    // |     To update them edit the d.ts file and run "yarn proptypes"     |
+    // ----------------------------------------------------------------------
+    /**
+   * The content of the component.
+   */ children: (0, _propTypesDefault.default).node,
+    /**
+   * Override or extend the styles applied to the component.
+   */ classes: (0, _propTypesDefault.default).object,
+    /**
+   * @ignore
+   */ className: (0, _propTypesDefault.default).string,
+    /**
+   * The color of the link.
+   * @default 'primary'
+   */ color: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).any,
+    /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */ component: (0, _utils.elementTypeAcceptingRef),
+    /**
+   * @ignore
+   */ onBlur: (0, _propTypesDefault.default).func,
+    /**
+   * @ignore
+   */ onFocus: (0, _propTypesDefault.default).func,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).func,
+            (0, _propTypesDefault.default).object,
+            (0, _propTypesDefault.default).bool
+        ])),
+        (0, _propTypesDefault.default).func,
+        (0, _propTypesDefault.default).object
+    ]),
+    /**
+   * `classes` prop applied to the [`Typography`](/material-ui/api/typography/) element.
+   */ TypographyClasses: (0, _propTypesDefault.default).object,
+    /**
+   * Controls when the link should have an underline.
+   * @default 'always'
+   */ underline: (0, _propTypesDefault.default).oneOf([
+        "always",
+        "hover",
+        "none"
+    ]),
+    /**
+   * Applies the theme typography styles.
+   * @default 'inherit'
+   */ variant: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "body1",
+            "body2",
+            "button",
+            "caption",
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6",
+            "inherit",
+            "overline",
+            "subtitle1",
+            "subtitle2"
+        ]),
+        (0, _propTypesDefault.default).string
+    ])
+};
+exports.default = Link;
+
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/utils":"cttLn","@mui/base":"656dE","../utils/capitalize":"kuBnp","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../utils/useIsFocusVisible":"bKzlq","../utils/useForkRef":"dOG5T","../Typography":"kbDYG","./linkClasses":"4YrwT","./getTextDecoration":"kEuZY","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4YrwT":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getLinkUtilityClass", ()=>getLinkUtilityClass);
+var _utils = require("@mui/utils");
+var _generateUtilityClass = require("../generateUtilityClass");
+var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
+function getLinkUtilityClass(slot) {
+    return (0, _generateUtilityClassDefault.default)("MuiLink", slot);
+}
+const linkClasses = (0, _utils.unstable_generateUtilityClasses)("MuiLink", [
+    "root",
+    "underlineNone",
+    "underlineHover",
+    "underlineAlways",
+    "button",
+    "focusVisible"
+]);
+exports.default = linkClasses;
+
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kEuZY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "colorTransformations", ()=>colorTransformations);
+var _system = require("@mui/system");
+const colorTransformations = {
+    primary: "primary.main",
+    textPrimary: "text.primary",
+    secondary: "secondary.main",
+    textSecondary: "text.secondary",
+    error: "error.main"
+};
+const transformDeprecatedColors = (color)=>{
+    return colorTransformations[color] || color;
+};
+const getTextDecoration = ({ theme , ownerState  })=>{
+    const transformedColor = transformDeprecatedColors(ownerState.color);
+    const color = (0, _system.getPath)(theme, `palette.${transformedColor}`, false) || ownerState.color;
+    const channelColor = (0, _system.getPath)(theme, `palette.${transformedColor}Channel`);
+    if ("vars" in theme && channelColor) return `rgba(${channelColor} / 0.4)`;
+    return (0, _system.alpha)(color, 0.4);
+};
+exports.default = getTextDecoration;
+
+},{"@mui/system":"Q0Zql","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3U8r7":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$789c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$789c.prelude(module);
+
+try {
+//imports SCSS styles
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "RegistrationView", ()=>RegistrationView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _registrationViewScss = require("./registration-view.scss");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactRouterDom = require("react-router-dom");
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+//imports Material UI components
+var _avatar = require("@mui/material/Avatar");
+var _avatarDefault = parcelHelpers.interopDefault(_avatar);
+var _button1 = require("@mui/material/Button");
+var _buttonDefault1 = parcelHelpers.interopDefault(_button1);
+var _cssBaseline = require("@mui/material/CssBaseline");
+var _cssBaselineDefault = parcelHelpers.interopDefault(_cssBaseline);
+var _link = require("@mui/material/Link");
+var _linkDefault = parcelHelpers.interopDefault(_link);
+var _grid = require("@mui/material/Grid");
+var _gridDefault = parcelHelpers.interopDefault(_grid);
+var _box = require("@mui/material/Box");
+var _boxDefault = parcelHelpers.interopDefault(_box);
+var _lockOutlined = require("@mui/icons-material/LockOutlined");
+var _lockOutlinedDefault = parcelHelpers.interopDefault(_lockOutlined);
+var _typography = require("@mui/material/Typography");
+var _typographyDefault = parcelHelpers.interopDefault(_typography);
+var _container = require("@mui/material/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _styles = require("@mui/material/styles");
+var _s = $RefreshSig$();
+function RegistrationView() {
+    _s();
+    const [username, registerUsername] = (0, _react.useState)("");
+    const [password, registerPassword] = (0, _react.useState)("");
+    const [email, registerEmail] = (0, _react.useState)("");
+    const [birthdate, registerBirthdate] = (0, _react.useState)("");
+    const [usernameError, registerUsernameError] = (0, _react.useState)({});
+    const [passwordError, registerPasswordError] = (0, _react.useState)({});
+    const [emailError, registerEmailError] = (0, _react.useState)({});
+    const [birthdateError, registerBirthdateErorr] = (0, _react.useState)({});
+    function Copyright(props) {
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
+            variant: "body2",
+            color: "text.secondary",
+            align: "center",
+            ...props,
+            children: [
+                "Copyright \xa9 ",
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
+                    color: "inherit",
+                    href: "/",
+                    children: "Movie App v1"
+                }, void 0, false, {
+                    fileName: "src/components/registration-view/registration-view.jsx",
+                    lineNumber: 40,
+                    columnNumber: 9
+                }, this),
+                " ",
+                new Date().getFullYear(),
+                "."
+            ]
+        }, void 0, true, {
+            fileName: "src/components/registration-view/registration-view.jsx",
+            lineNumber: 38,
+            columnNumber: 7
+        }, this);
+    }
+    const theme = (0, _styles.createTheme)();
+    const handleRegister = (e)=>{
+        e.preventDefault();
+        let isValidated = validationForm();
+        if (isValidated) (0, _axiosDefault.default).post("https://movie-api-22.onrender.com/users", {
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthdate: birthdate
+        }).then((response)=>{
+            const data = response.data;
+            console.log(data);
+            windows.open("/", "_self"); //opens the page in the current tab.
+        }).catch((error)=>{
+            console.log(error);
+        });
+    };
+    const validationForm = ()=>{
+        let usernameError = {};
+        let passwordError = {};
+        let emailError = {};
+        let birthdateError = {};
+        let isValid = true;
+        if (username.trim().length < 6) {
+            usernameError.notValidUsername = "Username must be at least 6 characters.";
+            isValid = false;
+        }
+        if (password.trim().length < 12 || password === "") {
+            passwordError.notValidPassword = "Password must be at least 12 characters.";
+            isValid = false;
+        }
+        if (!(email && email.includes(".") && email.indexOf("@"))) {
+            emailError.notValidEmail = "Please enter a valid email address";
+            isValid = false;
+        }
+        if (birthdate === "") {
+            birthdateError.notValidBirthdate = "Please enter your date of birth.";
+            isValid = false;
+        }
+        registerUsernameError(usernameError);
+        registerPasswordError(passwordError);
+        registerEmailError(emailError);
+        registerBirthdateErorr(birthdateError);
+        return isValid;
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _styles.ThemeProvider), {
+        theme: theme,
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
+            component: "main",
+            maxWidth: "xs",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cssBaselineDefault.default), {}, void 0, false, {
+                    fileName: "src/components/registration-view/registration-view.jsx",
+                    lineNumber: 106,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
+                    sx: {
+                        marginTop: 8,
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center"
+                    },
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _avatarDefault.default), {
+                            sx: {
+                                m: 1,
+                                bgcolor: "secondary.main"
+                            },
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _lockOutlinedDefault.default), {}, void 0, false, {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 116,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "src/components/registration-view/registration-view.jsx",
+                            lineNumber: 115,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
+                            component: "h1",
+                            variant: "h5",
+                            children: [
+                                "Sign up ",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 119,
+                                    columnNumber: 21
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 119,
+                                    columnNumber: 26
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/registration-view/registration-view.jsx",
+                            lineNumber: 118,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
+                            component: "form",
+                            noValidate: true,
+                            onSubmit: handleRegister,
+                            sx: {
+                                mt: 3
+                            },
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
+                                    className: "register justify-content-md-center",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                                                controlId: "formUsername",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                                        children: "Enter your username"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 125,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                                        type: "text",
+                                                        value: username,
+                                                        onChange: (e)=>registerUsername(e.target.value)
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 126,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    Object.keys(usernameError).map((key)=>{
+                                                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                            children: usernameError[key]
+                                                        }, key, false, {
+                                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                                            lineNumber: 129,
+                                                            columnNumber: 23
+                                                        }, this);
+                                                    })
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/registration-view/registration-view.jsx",
+                                                lineNumber: 124,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 123,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                                                controlId: "formPassword",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                                        children: "Enter your password"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 138,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                                        type: "password",
+                                                        value: password,
+                                                        onChange: (e)=>registerPassword(e.target.value)
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 139,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    Object.keys(passwordError).map((key)=>{
+                                                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                            children: passwordError[key]
+                                                        }, key, false, {
+                                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                                            lineNumber: 142,
+                                                            columnNumber: 23
+                                                        }, this);
+                                                    })
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/registration-view/registration-view.jsx",
+                                                lineNumber: 137,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 136,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                                                controlId: "formEmail",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                                        children: "Email"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 151,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                                        type: "email",
+                                                        value: email,
+                                                        onChange: (e)=>registerEmail(e.target.value)
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 152,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    Object.keys(emailError).map((key)=>{
+                                                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                            children: emailError[key]
+                                                        }, key, false, {
+                                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                                            lineNumber: 155,
+                                                            columnNumber: 23
+                                                        }, this);
+                                                    })
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/registration-view/registration-view.jsx",
+                                                lineNumber: 150,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 149,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                                                controlId: "formBirthdate",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                                        children: "Enter your date of birth"
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 164,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                                        type: "date",
+                                                        value: birthdate,
+                                                        onChange: (e)=>registerBirthdate(e.target.value)
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/registration-view/registration-view.jsx",
+                                                        lineNumber: 165,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    Object.keys(birthdateError).map((key)=>{
+                                                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                            children: birthdateError[key]
+                                                        }, key, false, {
+                                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                                            lineNumber: 168,
+                                                            columnNumber: 23
+                                                        }, this);
+                                                    })
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/registration-view/registration-view.jsx",
+                                                lineNumber: 163,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 162,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault1.default), {
+                                            type: "submit",
+                                            fullWidth: true,
+                                            variant: "contained",
+                                            sx: {
+                                                mt: 3,
+                                                mb: 2
+                                            },
+                                            onClick: handleRegister,
+                                            children: "Sign Up"
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 175,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gridDefault.default), {
+                                            container: true,
+                                            justifyContent: "flex-end",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _gridDefault.default), {
+                                                item: true,
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
+                                                    href: "/",
+                                                    variant: "body2",
+                                                    children: "Already have an account? Sign in"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                                    lineNumber: 186,
+                                                    columnNumber: 19
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "src/components/registration-view/registration-view.jsx",
+                                                lineNumber: 185,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 184,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 122,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Copyright, {
+                                    sx: {
+                                        mt: 8,
+                                        mb: 4
+                                    }
+                                }, void 0, false, {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 192,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/registration-view/registration-view.jsx",
+                            lineNumber: 121,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/registration-view/registration-view.jsx",
+                    lineNumber: 107,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/registration-view/registration-view.jsx",
+            lineNumber: 105,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "src/components/registration-view/registration-view.jsx",
+        lineNumber: 104,
+        columnNumber: 5
+    }, this);
+}
+_s(RegistrationView, "xPMp2YC9s+32mqF6ESUt98SwOZs=");
+_c = RegistrationView;
+var _c;
+$RefreshReg$(_c, "RegistrationView");
+
+  $parcel$ReactRefreshHelpers$789c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","./registration-view.scss":"clIxH","react":"21dqq","axios":"jo6P5","react-router-dom":"cHIiW","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt","react-bootstrap/Row":"cMC39","@mui/material/Avatar":"a1E31","@mui/material/Button":"eFe0Q","@mui/material/CssBaseline":"YDHu9","@mui/material/Link":"2FkZs","@mui/material/Grid":"8fbPl","@mui/material/Box":"gh88n","@mui/icons-material/LockOutlined":"9fx6t","@mui/material/Typography":"kbDYG","@mui/material/Container":"fPxWU","@mui/material/styles":"eZWTQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"clIxH":[function() {},{}],"9tpci":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ad4a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -79175,12 +79246,12 @@ class NavBar extends (0, _reactDefault.default).Component {
                     }
                 }, void 0, false, {
                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                    lineNumber: 32,
+                    lineNumber: 31,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cssBaselineDefault.default), {}, void 0, false, {
                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                    lineNumber: 33,
+                    lineNumber: 32,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appBarDefault.default), {
@@ -79205,8 +79276,8 @@ class NavBar extends (0, _reactDefault.default).Component {
                                 children: "Movie App v1"
                             }, void 0, false, {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 41,
-                                columnNumber: 11
+                                lineNumber: 40,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
                                 className: "navbar-div",
@@ -79217,7 +79288,7 @@ class NavBar extends (0, _reactDefault.default).Component {
                                             "aria-controls": "basic-navbar-nav"
                                         }, void 0, false, {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 47,
+                                            lineNumber: 45,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Collapse, {
@@ -79232,7 +79303,7 @@ class NavBar extends (0, _reactDefault.default).Component {
                                                         children: "Home"
                                                     }, void 0, false, {
                                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                                        lineNumber: 50,
+                                                        lineNumber: 48,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
@@ -79242,55 +79313,54 @@ class NavBar extends (0, _reactDefault.default).Component {
                                                         children: "Profile"
                                                     }, void 0, false, {
                                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                                        lineNumber: 53,
+                                                        lineNumber: 51,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
                                                         onClick: this.onLoggedOut,
-                                                        to: "/",
                                                         children: "Log Out"
                                                     }, void 0, false, {
                                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                                        lineNumber: 56,
+                                                        lineNumber: 54,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                                lineNumber: 49,
+                                                lineNumber: 47,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 48,
+                                            lineNumber: 46,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 45,
+                                    lineNumber: 44,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 44,
+                                lineNumber: 43,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                    lineNumber: 34,
+                    lineNumber: 33,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/navbar-view/navbar-view.jsx",
-            lineNumber: 31,
+            lineNumber: 30,
             columnNumber: 7
         }, this);
     }

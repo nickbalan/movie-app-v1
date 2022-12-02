@@ -6,9 +6,31 @@ import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+/* import Button from 'react-bootstrap/Button'; */
 import Container from 'react-bootstrap/Container';
 
+//imports Material UI components
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+function Copyright(props) {
+  return (
+    <Typography variant='body2' color='text.secondary' align='center' {...props}>
+      {'Copyright © '}
+      <Link color='inherit' href='/'>
+        Movie App v1
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
+
+const theme = createTheme();
 
 export class MovieCard extends React.Component {
 
@@ -32,18 +54,23 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Container>
-        <Card bg='secondary' text='white'>
-          <Link to={`/movies/${movie._id}`}>
-            <Card.Img className='image-container' variant='top' src={movie.imgUrl} />
-          </Link>
-          <Card.Body className='fav-btn' style={{ paddingLeft: 30, margin: 'auto' }}>
-            <Button variant='dark' value={movie._id} onClick={(e) => this.addFavorite(e, movie)}>
-              Add to Favorites
-            </Button>
-          </Card.Body>
-        </Card>
-      </Container>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Container sx={{ py: 6 }} maxWidth='md'>
+          <Grid container spacing={2}>
+            <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column'}}>
+              <Link to={`/movies/${movie._id}`}>
+                <Card.Img variant='top' src={movie.imgUrl} />
+              </Link> 
+              <Card.Body className='favorites-btn'>
+                <Button variant='dark' value={movie._id} onClick={(e) => this.addFavorite(e, movie)}>
+                  Add to Favorites
+                </Button>
+              </Card.Body>
+            </Card> 
+          </Grid>
+        </Container>
+      </ThemeProvider>
     );
   }
 }
