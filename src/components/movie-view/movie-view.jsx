@@ -1,14 +1,30 @@
 //imports SCSS styles
 import './movie-view.scss';
 
+//imports React components and libraries
 import React from 'react';
 import axios from 'axios';
 
-//import { Link } from 'react-router-dom';
+//imports React Bootstrap components
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
-//import { GenreView } from '../genre-view/genre-view';
 
+//imports Material UI components
+import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
+
+function Copyright(props) {
+  return (
+    <Typography variant='body2' color='text.secondary' align='center' {...props}>
+      {'Copyright © '}
+      <Link color='inherit' href='/'>
+        Movie App v1
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 
 export class MovieView extends React.Component {
 
@@ -44,7 +60,7 @@ export class MovieView extends React.Component {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
 
-    axios.delete(`https://movies-api-21.herokuapp.com/users/${username}/delete-movies/${this.props.movie._id}`, {
+    axios.delete(`https://movie-api-22.onrender.com/users/${username}/delete-movies/${this.props.movie._id}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
@@ -88,6 +104,7 @@ export class MovieView extends React.Component {
           Remove from Favorites
         </Button>
         <Button variant='primary' onClick={() => { onBackClick(null); }}>Back</Button>
+        <Copyright sx={{ mt: 8, mb: 4 }} />
       </div>
     );
   }
