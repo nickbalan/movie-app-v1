@@ -45743,32 +45743,31 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _movieCardScss = require("./movie-card.scss");
+//imports React components and libraries
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+//imports React Router components
 var _reactRouterDom = require("react-router-dom");
+//imports React Bootstrap components
 var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
-/* import Button from 'react-bootstrap/Button'; */ var _container = require("react-bootstrap/Container");
+var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
 //imports Material UI components
-var _avatar = require("@mui/material/Avatar");
-var _avatarDefault = parcelHelpers.interopDefault(_avatar);
 var _button = require("@mui/material/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _cssBaseline = require("@mui/material/CssBaseline");
 var _cssBaselineDefault = parcelHelpers.interopDefault(_cssBaseline);
-/* import Link from '@mui/material/Link'; */ var _box = require("@mui/material/Box");
-var _boxDefault = parcelHelpers.interopDefault(_box);
-var _lockOutlined = require("@mui/icons-material/LockOutlined");
-var _lockOutlinedDefault = parcelHelpers.interopDefault(_lockOutlined);
 var _typography = require("@mui/material/Typography");
 var _typographyDefault = parcelHelpers.interopDefault(_typography);
 var _container1 = require("@mui/material/Container");
 var _containerDefault1 = parcelHelpers.interopDefault(_container1);
 var _grid = require("@mui/material/Grid");
 var _gridDefault = parcelHelpers.interopDefault(_grid);
+var _bookmark = require("@mui/icons-material/Bookmark");
+var _bookmarkDefault = parcelHelpers.interopDefault(_bookmark);
 var _styles = require("@mui/material/styles");
 function Copyright(props) {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
@@ -45808,7 +45807,6 @@ class MovieCard extends (0, _reactDefault.default).Component {
                 Authorization: `Bearer ${token}`
             }
         }).then((response)=>{
-            //Assigns the result to the state
             alert("This movie was added to the Favorites List");
         }).catch(function(error) {
             console.log(error);
@@ -45821,7 +45819,7 @@ class MovieCard extends (0, _reactDefault.default).Component {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cssBaselineDefault.default), {}, void 0, false, {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 62,
+                    lineNumber: 61,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault1.default), {
@@ -45834,7 +45832,8 @@ class MovieCard extends (0, _reactDefault.default).Component {
                         spacing: 2,
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
                             sx: {
-                                height: "100%",
+                                height: "auto",
+                                width: "200px",
                                 display: "flex",
                                 flexDirection: "column"
                             },
@@ -45846,51 +45845,65 @@ class MovieCard extends (0, _reactDefault.default).Component {
                                         src: movie.imgUrl
                                     }, void 0, false, {
                                         fileName: "src/components/movie-card/movie-card.jsx",
-                                        lineNumber: 67,
+                                        lineNumber: 66,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 66,
+                                    lineNumber: 65,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
-                                    className: "favorites-btn",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                                        variant: "dark",
-                                        value: movie._id,
-                                        onClick: (e)=>this.addFavorite(e, movie),
-                                        children: "Add to Favorites"
-                                    }, void 0, false, {
-                                        fileName: "src/components/movie-card/movie-card.jsx",
-                                        lineNumber: 70,
-                                        columnNumber: 17
-                                    }, this)
-                                }, void 0, false, {
+                                    className: "cards",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                            to: `/movies/${movie._id}`,
+                                            children: "Details"
+                                        }, void 0, false, {
+                                            fileName: "src/components/movie-card/movie-card.jsx",
+                                            lineNumber: 69,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                            size: "small",
+                                            value: movie._id,
+                                            onClick: (e)=>this.addFavorite(e, movie),
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bookmarkDefault.default), {}, void 0, false, {
+                                                fileName: "src/components/movie-card/movie-card.jsx",
+                                                lineNumber: 73,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/components/movie-card/movie-card.jsx",
+                                            lineNumber: 72,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 69,
+                                    lineNumber: 68,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 65,
+                            lineNumber: 64,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 64,
+                        lineNumber: 63,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 63,
+                    lineNumber: 62,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/movie-card/movie-card.jsx",
-            lineNumber: 61,
+            lineNumber: 60,
             columnNumber: 7
         }, this);
     }
@@ -45903,7 +45916,7 @@ $RefreshReg$(_c, "Copyright");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./movie-card.scss":"d6HH4","react":"21dqq","axios":"jo6P5","react-router-dom":"cHIiW","react-bootstrap/Card":"lAynp","react-bootstrap/Container":"hEdsw","@mui/material/Avatar":"a1E31","@mui/material/Button":"eFe0Q","@mui/material/CssBaseline":"YDHu9","@mui/material/Box":"gh88n","@mui/icons-material/LockOutlined":"9fx6t","@mui/material/Typography":"kbDYG","@mui/material/Container":"fPxWU","@mui/material/Grid":"8fbPl","@mui/material/styles":"eZWTQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"d6HH4":[function() {},{}],"lAynp":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./movie-card.scss":"d6HH4","react":"21dqq","axios":"jo6P5","react-router-dom":"cHIiW","react-bootstrap/Card":"lAynp","react-bootstrap/Container":"hEdsw","@mui/material/Button":"eFe0Q","@mui/material/CssBaseline":"YDHu9","@mui/material/Typography":"kbDYG","@mui/material/Container":"fPxWU","@mui/material/Grid":"8fbPl","@mui/material/styles":"eZWTQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@mui/icons-material/Bookmark":"2IQlm"}],"d6HH4":[function() {},{}],"lAynp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _extends = require("@babel/runtime/helpers/esm/extends");
@@ -46095,18 +46108,18 @@ CardImg.displayName = "CardImg";
 CardImg.defaultProps = defaultProps;
 exports.default = CardImg;
 
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a1E31":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eFe0Q":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>(0, _avatarDefault.default));
-parcelHelpers.export(exports, "avatarClasses", ()=>(0, _avatarClassesDefault.default));
-var _avatar = require("./Avatar");
-var _avatarDefault = parcelHelpers.interopDefault(_avatar);
-var _avatarClasses = require("./avatarClasses");
-var _avatarClassesDefault = parcelHelpers.interopDefault(_avatarClasses);
-parcelHelpers.exportAll(_avatarClasses, exports);
+parcelHelpers.export(exports, "default", ()=>(0, _buttonDefault.default));
+parcelHelpers.export(exports, "buttonClasses", ()=>(0, _buttonClassesDefault.default));
+var _button = require("./Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _buttonClasses = require("./buttonClasses");
+var _buttonClassesDefault = parcelHelpers.interopDefault(_buttonClasses);
+parcelHelpers.exportAll(_buttonClasses, exports);
 
-},{"./Avatar":"iXiFs","./avatarClasses":"g7bs2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iXiFs":[function(require,module,exports) {
+},{"./Button":"acnkq","./buttonClasses":"6OUZd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"acnkq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
@@ -46118,186 +46131,309 @@ var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _clsx = require("clsx");
 var _clsxDefault = parcelHelpers.interopDefault(_clsx);
+var _utils = require("@mui/utils");
 var _base = require("@mui/base");
+var _system = require("@mui/system");
 var _styled = require("../styles/styled");
 var _styledDefault = parcelHelpers.interopDefault(_styled);
 var _useThemeProps = require("../styles/useThemeProps");
 var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
-var _person = require("../internal/svg-icons/Person");
-var _personDefault = parcelHelpers.interopDefault(_person);
-var _avatarClasses = require("./avatarClasses");
+var _buttonBase = require("../ButtonBase");
+var _buttonBaseDefault = parcelHelpers.interopDefault(_buttonBase);
+var _capitalize = require("../utils/capitalize");
+var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
+var _buttonClasses = require("./buttonClasses");
+var _buttonClassesDefault = parcelHelpers.interopDefault(_buttonClasses);
+var _buttonGroupContext = require("../ButtonGroup/ButtonGroupContext");
+var _buttonGroupContextDefault = parcelHelpers.interopDefault(_buttonGroupContext);
 var _jsxRuntime = require("react/jsx-runtime");
 const _excluded = [
-    "alt",
     "children",
-    "className",
+    "color",
     "component",
-    "imgProps",
-    "sizes",
-    "src",
-    "srcSet",
+    "className",
+    "disabled",
+    "disableElevation",
+    "disableFocusRipple",
+    "endIcon",
+    "focusVisibleClassName",
+    "fullWidth",
+    "size",
+    "startIcon",
+    "type",
     "variant"
 ];
 const useUtilityClasses = (ownerState)=>{
-    const { classes , variant , colorDefault  } = ownerState;
+    const { color , disableElevation , fullWidth , size , variant , classes  } = ownerState;
     const slots = {
         root: [
             "root",
             variant,
-            colorDefault && "colorDefault"
+            `${variant}${(0, _capitalizeDefault.default)(color)}`,
+            `size${(0, _capitalizeDefault.default)(size)}`,
+            `${variant}Size${(0, _capitalizeDefault.default)(size)}`,
+            color === "inherit" && "colorInherit",
+            disableElevation && "disableElevation",
+            fullWidth && "fullWidth"
         ],
-        img: [
-            "img"
+        label: [
+            "label"
         ],
-        fallback: [
-            "fallback"
+        startIcon: [
+            "startIcon",
+            `iconSize${(0, _capitalizeDefault.default)(size)}`
+        ],
+        endIcon: [
+            "endIcon",
+            `iconSize${(0, _capitalizeDefault.default)(size)}`
         ]
     };
-    return (0, _base.unstable_composeClasses)(slots, (0, _avatarClasses.getAvatarUtilityClass), classes);
+    const composedClasses = (0, _base.unstable_composeClasses)(slots, (0, _buttonClasses.getButtonUtilityClass), classes);
+    return (0, _extendsDefault.default)({}, classes, composedClasses);
 };
-const AvatarRoot = (0, _styledDefault.default)("div", {
-    name: "MuiAvatar",
+const commonIconStyles = (ownerState)=>(0, _extendsDefault.default)({}, ownerState.size === "small" && {
+        "& > *:nth-of-type(1)": {
+            fontSize: 18
+        }
+    }, ownerState.size === "medium" && {
+        "& > *:nth-of-type(1)": {
+            fontSize: 20
+        }
+    }, ownerState.size === "large" && {
+        "& > *:nth-of-type(1)": {
+            fontSize: 22
+        }
+    });
+const ButtonRoot = (0, _styledDefault.default)((0, _buttonBaseDefault.default), {
+    shouldForwardProp: (prop)=>(0, _styled.rootShouldForwardProp)(prop) || prop === "classes",
+    name: "MuiButton",
     slot: "Root",
     overridesResolver: (props, styles)=>{
         const { ownerState  } = props;
         return [
             styles.root,
             styles[ownerState.variant],
-            ownerState.colorDefault && styles.colorDefault
+            styles[`${ownerState.variant}${(0, _capitalizeDefault.default)(ownerState.color)}`],
+            styles[`size${(0, _capitalizeDefault.default)(ownerState.size)}`],
+            styles[`${ownerState.variant}Size${(0, _capitalizeDefault.default)(ownerState.size)}`],
+            ownerState.color === "inherit" && styles.colorInherit,
+            ownerState.disableElevation && styles.disableElevation,
+            ownerState.fullWidth && styles.fullWidth
         ];
     }
-})(({ theme , ownerState  })=>(0, _extendsDefault.default)({
-        position: "relative",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexShrink: 0,
-        width: 40,
-        height: 40,
-        fontFamily: theme.typography.fontFamily,
-        fontSize: theme.typography.pxToRem(20),
-        lineHeight: 1,
-        borderRadius: "50%",
-        overflow: "hidden",
-        userSelect: "none"
-    }, ownerState.variant === "rounded" && {
-        borderRadius: (theme.vars || theme).shape.borderRadius
-    }, ownerState.variant === "square" && {
-        borderRadius: 0
-    }, ownerState.colorDefault && (0, _extendsDefault.default)({
-        color: (theme.vars || theme).palette.background.default
-    }, theme.vars ? {
-        backgroundColor: theme.vars.palette.Avatar.defaultBg
-    } : {
-        backgroundColor: theme.palette.mode === "light" ? theme.palette.grey[400] : theme.palette.grey[600]
-    })));
-const AvatarImg = (0, _styledDefault.default)("img", {
-    name: "MuiAvatar",
-    slot: "Img",
-    overridesResolver: (props, styles)=>styles.img
-})({
-    width: "100%",
-    height: "100%",
-    textAlign: "center",
-    // Handle non-square image. The property isn't supported by IE11.
-    objectFit: "cover",
-    // Hide alt text.
-    color: "transparent",
-    // Hide the image broken icon, only works on Chrome.
-    textIndent: 10000
-});
-const AvatarFallback = (0, _styledDefault.default)((0, _personDefault.default), {
-    name: "MuiAvatar",
-    slot: "Fallback",
-    overridesResolver: (props, styles)=>styles.fallback
-})({
-    width: "75%",
-    height: "75%"
-});
-function useLoaded({ crossOrigin , referrerPolicy , src , srcSet  }) {
-    const [loaded, setLoaded] = _react.useState(false);
-    _react.useEffect(()=>{
-        if (!src && !srcSet) return undefined;
-        setLoaded(false);
-        let active = true;
-        const image = new Image();
-        image.onload = ()=>{
-            if (!active) return;
-            setLoaded("loaded");
-        };
-        image.onerror = ()=>{
-            if (!active) return;
-            setLoaded("error");
-        };
-        image.crossOrigin = crossOrigin;
-        image.referrerPolicy = referrerPolicy;
-        image.src = src;
-        if (srcSet) image.srcset = srcSet;
-        return ()=>{
-            active = false;
-        };
-    }, [
-        crossOrigin,
-        referrerPolicy,
-        src,
-        srcSet
-    ]);
-    return loaded;
-}
-const Avatar = /*#__PURE__*/ _react.forwardRef(function Avatar(inProps, ref) {
-    const props = (0, _useThemePropsDefault.default)({
-        props: inProps,
-        name: "MuiAvatar"
+})(({ theme , ownerState  })=>{
+    var _theme$palette$getCon, _theme$palette;
+    return (0, _extendsDefault.default)({}, theme.typography.button, {
+        minWidth: 64,
+        padding: "6px 16px",
+        borderRadius: (theme.vars || theme).shape.borderRadius,
+        transition: theme.transitions.create([
+            "background-color",
+            "box-shadow",
+            "border-color",
+            "color"
+        ], {
+            duration: theme.transitions.duration.short
+        }),
+        "&:hover": (0, _extendsDefault.default)({
+            textDecoration: "none",
+            backgroundColor: theme.vars ? `rgba(${theme.vars.palette.text.primaryChannel} / ${theme.vars.palette.action.hoverOpacity})` : (0, _system.alpha)(theme.palette.text.primary, theme.palette.action.hoverOpacity),
+            // Reset on touch devices, it doesn't add specificity
+            "@media (hover: none)": {
+                backgroundColor: "transparent"
+            }
+        }, ownerState.variant === "text" && ownerState.color !== "inherit" && {
+            backgroundColor: theme.vars ? `rgba(${theme.vars.palette[ownerState.color].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : (0, _system.alpha)(theme.palette[ownerState.color].main, theme.palette.action.hoverOpacity),
+            // Reset on touch devices, it doesn't add specificity
+            "@media (hover: none)": {
+                backgroundColor: "transparent"
+            }
+        }, ownerState.variant === "outlined" && ownerState.color !== "inherit" && {
+            border: `1px solid ${(theme.vars || theme).palette[ownerState.color].main}`,
+            backgroundColor: theme.vars ? `rgba(${theme.vars.palette[ownerState.color].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : (0, _system.alpha)(theme.palette[ownerState.color].main, theme.palette.action.hoverOpacity),
+            // Reset on touch devices, it doesn't add specificity
+            "@media (hover: none)": {
+                backgroundColor: "transparent"
+            }
+        }, ownerState.variant === "contained" && {
+            backgroundColor: (theme.vars || theme).palette.grey.A100,
+            boxShadow: (theme.vars || theme).shadows[4],
+            // Reset on touch devices, it doesn't add specificity
+            "@media (hover: none)": {
+                boxShadow: (theme.vars || theme).shadows[2],
+                backgroundColor: (theme.vars || theme).palette.grey[300]
+            }
+        }, ownerState.variant === "contained" && ownerState.color !== "inherit" && {
+            backgroundColor: (theme.vars || theme).palette[ownerState.color].dark,
+            // Reset on touch devices, it doesn't add specificity
+            "@media (hover: none)": {
+                backgroundColor: (theme.vars || theme).palette[ownerState.color].main
+            }
+        }),
+        "&:active": (0, _extendsDefault.default)({}, ownerState.variant === "contained" && {
+            boxShadow: (theme.vars || theme).shadows[8]
+        }),
+        [`&.${(0, _buttonClassesDefault.default).focusVisible}`]: (0, _extendsDefault.default)({}, ownerState.variant === "contained" && {
+            boxShadow: (theme.vars || theme).shadows[6]
+        }),
+        [`&.${(0, _buttonClassesDefault.default).disabled}`]: (0, _extendsDefault.default)({
+            color: (theme.vars || theme).palette.action.disabled
+        }, ownerState.variant === "outlined" && {
+            border: `1px solid ${(theme.vars || theme).palette.action.disabledBackground}`
+        }, ownerState.variant === "outlined" && ownerState.color === "secondary" && {
+            border: `1px solid ${(theme.vars || theme).palette.action.disabled}`
+        }, ownerState.variant === "contained" && {
+            color: (theme.vars || theme).palette.action.disabled,
+            boxShadow: (theme.vars || theme).shadows[0],
+            backgroundColor: (theme.vars || theme).palette.action.disabledBackground
+        })
+    }, ownerState.variant === "text" && {
+        padding: "6px 8px"
+    }, ownerState.variant === "text" && ownerState.color !== "inherit" && {
+        color: (theme.vars || theme).palette[ownerState.color].main
+    }, ownerState.variant === "outlined" && {
+        padding: "5px 15px",
+        border: "1px solid currentColor"
+    }, ownerState.variant === "outlined" && ownerState.color !== "inherit" && {
+        color: (theme.vars || theme).palette[ownerState.color].main,
+        border: theme.vars ? `1px solid rgba(${theme.vars.palette[ownerState.color].mainChannel} / 0.5)` : `1px solid ${(0, _system.alpha)(theme.palette[ownerState.color].main, 0.5)}`
+    }, ownerState.variant === "contained" && {
+        color: theme.vars ? // this is safe because grey does not change between default light/dark mode
+        theme.vars.palette.text.primary : (_theme$palette$getCon = (_theme$palette = theme.palette).getContrastText) == null ? void 0 : _theme$palette$getCon.call(_theme$palette, theme.palette.grey[300]),
+        backgroundColor: (theme.vars || theme).palette.grey[300],
+        boxShadow: (theme.vars || theme).shadows[2]
+    }, ownerState.variant === "contained" && ownerState.color !== "inherit" && {
+        color: (theme.vars || theme).palette[ownerState.color].contrastText,
+        backgroundColor: (theme.vars || theme).palette[ownerState.color].main
+    }, ownerState.color === "inherit" && {
+        color: "inherit",
+        borderColor: "currentColor"
+    }, ownerState.size === "small" && ownerState.variant === "text" && {
+        padding: "4px 5px",
+        fontSize: theme.typography.pxToRem(13)
+    }, ownerState.size === "large" && ownerState.variant === "text" && {
+        padding: "8px 11px",
+        fontSize: theme.typography.pxToRem(15)
+    }, ownerState.size === "small" && ownerState.variant === "outlined" && {
+        padding: "3px 9px",
+        fontSize: theme.typography.pxToRem(13)
+    }, ownerState.size === "large" && ownerState.variant === "outlined" && {
+        padding: "7px 21px",
+        fontSize: theme.typography.pxToRem(15)
+    }, ownerState.size === "small" && ownerState.variant === "contained" && {
+        padding: "4px 10px",
+        fontSize: theme.typography.pxToRem(13)
+    }, ownerState.size === "large" && ownerState.variant === "contained" && {
+        padding: "8px 22px",
+        fontSize: theme.typography.pxToRem(15)
+    }, ownerState.fullWidth && {
+        width: "100%"
     });
-    const { alt , children: childrenProp , className , component ="div" , imgProps , sizes , src , srcSet , variant ="circular"  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
-    let children = null;
-    // Use a hook instead of onError on the img element to support server-side rendering.
-    const loaded = useLoaded((0, _extendsDefault.default)({}, imgProps, {
-        src,
-        srcSet
-    }));
-    const hasImg = src || srcSet;
-    const hasImgNotFailing = hasImg && loaded !== "error";
+}, ({ ownerState  })=>ownerState.disableElevation && {
+        boxShadow: "none",
+        "&:hover": {
+            boxShadow: "none"
+        },
+        [`&.${(0, _buttonClassesDefault.default).focusVisible}`]: {
+            boxShadow: "none"
+        },
+        "&:active": {
+            boxShadow: "none"
+        },
+        [`&.${(0, _buttonClassesDefault.default).disabled}`]: {
+            boxShadow: "none"
+        }
+    });
+const ButtonStartIcon = (0, _styledDefault.default)("span", {
+    name: "MuiButton",
+    slot: "StartIcon",
+    overridesResolver: (props, styles)=>{
+        const { ownerState  } = props;
+        return [
+            styles.startIcon,
+            styles[`iconSize${(0, _capitalizeDefault.default)(ownerState.size)}`]
+        ];
+    }
+})(({ ownerState  })=>(0, _extendsDefault.default)({
+        display: "inherit",
+        marginRight: 8,
+        marginLeft: -4
+    }, ownerState.size === "small" && {
+        marginLeft: -2
+    }, commonIconStyles(ownerState)));
+const ButtonEndIcon = (0, _styledDefault.default)("span", {
+    name: "MuiButton",
+    slot: "EndIcon",
+    overridesResolver: (props, styles)=>{
+        const { ownerState  } = props;
+        return [
+            styles.endIcon,
+            styles[`iconSize${(0, _capitalizeDefault.default)(ownerState.size)}`]
+        ];
+    }
+})(({ ownerState  })=>(0, _extendsDefault.default)({
+        display: "inherit",
+        marginRight: -4,
+        marginLeft: 8
+    }, ownerState.size === "small" && {
+        marginRight: -2
+    }, commonIconStyles(ownerState)));
+const Button = /*#__PURE__*/ _react.forwardRef(function Button(inProps, ref) {
+    // props priority: `inProps` > `contextProps` > `themeDefaultProps`
+    const contextProps = _react.useContext((0, _buttonGroupContextDefault.default));
+    const resolvedProps = (0, _utils.internal_resolveProps)(contextProps, inProps);
+    const props = (0, _useThemePropsDefault.default)({
+        props: resolvedProps,
+        name: "MuiButton"
+    });
+    const { children , color ="primary" , component ="button" , className , disabled =false , disableElevation =false , disableFocusRipple =false , endIcon: endIconProp , focusVisibleClassName , fullWidth =false , size ="medium" , startIcon: startIconProp , type , variant ="text"  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
     const ownerState = (0, _extendsDefault.default)({}, props, {
-        colorDefault: !hasImgNotFailing,
+        color,
         component,
+        disabled,
+        disableElevation,
+        disableFocusRipple,
+        fullWidth,
+        size,
+        type,
         variant
     });
     const classes = useUtilityClasses(ownerState);
-    if (hasImgNotFailing) children = /*#__PURE__*/ (0, _jsxRuntime.jsx)(AvatarImg, (0, _extendsDefault.default)({
-        alt: alt,
-        src: src,
-        srcSet: srcSet,
-        sizes: sizes,
+    const startIcon = startIconProp && /*#__PURE__*/ (0, _jsxRuntime.jsx)(ButtonStartIcon, {
+        className: classes.startIcon,
         ownerState: ownerState,
-        className: classes.img
-    }, imgProps));
-    else if (childrenProp != null) children = childrenProp;
-    else if (hasImg && alt) children = alt[0];
-    else children = /*#__PURE__*/ (0, _jsxRuntime.jsx)(AvatarFallback, {
-        className: classes.fallback
+        children: startIconProp
     });
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(AvatarRoot, (0, _extendsDefault.default)({
-        as: component,
+    const endIcon = endIconProp && /*#__PURE__*/ (0, _jsxRuntime.jsx)(ButtonEndIcon, {
+        className: classes.endIcon,
         ownerState: ownerState,
-        className: (0, _clsxDefault.default)(classes.root, className),
-        ref: ref
+        children: endIconProp
+    });
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)(ButtonRoot, (0, _extendsDefault.default)({
+        ownerState: ownerState,
+        className: (0, _clsxDefault.default)(contextProps.className, classes.root, className),
+        component: component,
+        disabled: disabled,
+        focusRipple: !disableFocusRipple,
+        focusVisibleClassName: (0, _clsxDefault.default)(classes.focusVisible, focusVisibleClassName),
+        ref: ref,
+        type: type
     }, other, {
-        children: children
+        classes: classes,
+        children: [
+            startIcon,
+            children,
+            endIcon
+        ]
     }));
 });
-Avatar.propTypes /* remove-proptypes */  = {
+Button.propTypes /* remove-proptypes */  = {
     // ----------------------------- Warning --------------------------------
     // | These PropTypes are generated from the TypeScript type definitions |
     // |     To update them edit the d.ts file and run "yarn proptypes"     |
     // ----------------------------------------------------------------------
     /**
-   * Used in combination with `src` or `srcSet` to
-   * provide an alt attribute for the rendered `img` element.
-   */ alt: (0, _propTypesDefault.default).string,
-    /**
-   * Used to render icon or text elements inside the Avatar if `src` is not set.
-   * This can be an element, or just a string.
+   * The content of the component.
    */ children: (0, _propTypesDefault.default).node,
     /**
    * Override or extend the styles applied to the component.
@@ -46306,23 +46442,74 @@ Avatar.propTypes /* remove-proptypes */  = {
    * @ignore
    */ className: (0, _propTypesDefault.default).string,
     /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
+   * @default 'primary'
+   */ color: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "inherit",
+            "primary",
+            "secondary",
+            "success",
+            "error",
+            "info",
+            "warning"
+        ]),
+        (0, _propTypesDefault.default).string
+    ]),
+    /**
    * The component used for the root node.
    * Either a string to use a HTML element or a component.
    */ component: (0, _propTypesDefault.default).elementType,
     /**
-   * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attributes) applied to the `img` element if the component is used to display an image.
-   * It can be used to listen for the loading error event.
-   */ imgProps: (0, _propTypesDefault.default).object,
+   * If `true`, the component is disabled.
+   * @default false
+   */ disabled: (0, _propTypesDefault.default).bool,
     /**
-   * The `sizes` attribute for the `img` element.
-   */ sizes: (0, _propTypesDefault.default).string,
+   * If `true`, no elevation is used.
+   * @default false
+   */ disableElevation: (0, _propTypesDefault.default).bool,
     /**
-   * The `src` attribute for the `img` element.
-   */ src: (0, _propTypesDefault.default).string,
+   * If `true`, the  keyboard focus ripple is disabled.
+   * @default false
+   */ disableFocusRipple: (0, _propTypesDefault.default).bool,
     /**
-   * The `srcSet` attribute for the `img` element.
-   * Use this attribute for responsive image display.
-   */ srcSet: (0, _propTypesDefault.default).string,
+   * If `true`, the ripple effect is disabled.
+   *
+   * ⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure
+   * to highlight the element by applying separate styles with the `.Mui-focusVisible` class.
+   * @default false
+   */ disableRipple: (0, _propTypesDefault.default).bool,
+    /**
+   * Element placed after the children.
+   */ endIcon: (0, _propTypesDefault.default).node,
+    /**
+   * @ignore
+   */ focusVisibleClassName: (0, _propTypesDefault.default).string,
+    /**
+   * If `true`, the button will take up the full width of its container.
+   * @default false
+   */ fullWidth: (0, _propTypesDefault.default).bool,
+    /**
+   * The URL to link to when the button is clicked.
+   * If defined, an `a` element will be used as the root node.
+   */ href: (0, _propTypesDefault.default).string,
+    /**
+   * The size of the component.
+   * `small` is equivalent to the dense button styling.
+   * @default 'medium'
+   */ size: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "small",
+            "medium",
+            "large"
+        ]),
+        (0, _propTypesDefault.default).string
+    ]),
+    /**
+   * Element placed before the children.
+   */ startIcon: (0, _propTypesDefault.default).node,
     /**
    * The system prop that allows defining system overrides as well as additional CSS styles.
    */ sx: (0, _propTypesDefault.default).oneOfType([
@@ -46335,20 +46522,30 @@ Avatar.propTypes /* remove-proptypes */  = {
         (0, _propTypesDefault.default).object
     ]),
     /**
-   * The shape of the avatar.
-   * @default 'circular'
+   * @ignore
+   */ type: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "button",
+            "reset",
+            "submit"
+        ]),
+        (0, _propTypesDefault.default).string
+    ]),
+    /**
+   * The variant to use.
+   * @default 'text'
    */ variant: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
         (0, _propTypesDefault.default).oneOf([
-            "circular",
-            "rounded",
-            "square"
+            "contained",
+            "outlined",
+            "text"
         ]),
         (0, _propTypesDefault.default).string
     ])
 };
-exports.default = Avatar;
+exports.default = Button;
 
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/base":"656dE","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../internal/svg-icons/Person":"9fLPT","./avatarClasses":"g7bs2","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"83C22":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/utils":"cttLn","@mui/base":"656dE","@mui/system":"Q0Zql","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../ButtonBase":"epS5U","../utils/capitalize":"kuBnp","./buttonClasses":"6OUZd","../ButtonGroup/ButtonGroupContext":"1ETaH","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"83C22":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "clsx", ()=>clsx);
@@ -46367,243 +46564,7 @@ function clsx() {
 }
 exports.default = clsx;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"656dE":[function(require,module,exports) {
-/** @license MUI v5.0.0-alpha.106
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "BadgeUnstyled", ()=>(0, _badgeUnstyledDefault.default));
-parcelHelpers.export(exports, "ButtonUnstyled", ()=>(0, _buttonUnstyledDefault.default));
-parcelHelpers.export(exports, "ClickAwayListener", ()=>(0, _clickAwayListenerDefault.default));
-parcelHelpers.export(exports, "unstable_composeClasses", ()=>(0, _composeClassesDefault.default));
-parcelHelpers.export(exports, "FocusTrap", ()=>(0, _focusTrapDefault.default));
-parcelHelpers.export(exports, "FormControlUnstyled", ()=>(0, _formControlUnstyledDefault.default));
-parcelHelpers.export(exports, "InputUnstyled", ()=>(0, _inputUnstyledDefault.default));
-parcelHelpers.export(exports, "MenuUnstyled", ()=>(0, _menuUnstyledDefault.default));
-parcelHelpers.export(exports, "MenuItemUnstyled", ()=>(0, _menuItemUnstyledDefault.default));
-parcelHelpers.export(exports, "ModalUnstyled", ()=>(0, _modalUnstyledDefault.default));
-parcelHelpers.export(exports, "MultiSelectUnstyled", ()=>(0, _multiSelectUnstyledDefault.default));
-parcelHelpers.export(exports, "NoSsr", ()=>(0, _noSsrDefault.default));
-parcelHelpers.export(exports, "OptionGroupUnstyled", ()=>(0, _optionGroupUnstyledDefault.default));
-parcelHelpers.export(exports, "OptionUnstyled", ()=>(0, _optionUnstyledDefault.default));
-parcelHelpers.export(exports, "PopperUnstyled", ()=>(0, _popperUnstyledDefault.default));
-parcelHelpers.export(exports, "Portal", ()=>(0, _portalDefault.default));
-parcelHelpers.export(exports, "SelectUnstyled", ()=>(0, _selectUnstyledDefault.default));
-parcelHelpers.export(exports, "SliderUnstyled", ()=>(0, _sliderUnstyledDefault.default));
-parcelHelpers.export(exports, "SnackbarUnstyled", ()=>(0, _snackbarUnstyledDefault.default));
-parcelHelpers.export(exports, "SwitchUnstyled", ()=>(0, _switchUnstyledDefault.default));
-parcelHelpers.export(exports, "TablePaginationUnstyled", ()=>(0, _tablePaginationUnstyledDefault.default));
-parcelHelpers.export(exports, "TabPanelUnstyled", ()=>(0, _tabPanelUnstyledDefault.default));
-parcelHelpers.export(exports, "TabsListUnstyled", ()=>(0, _tabsListUnstyledDefault.default));
-parcelHelpers.export(exports, "TabsUnstyled", ()=>(0, _tabsUnstyledDefault.default));
-parcelHelpers.export(exports, "TabUnstyled", ()=>(0, _tabUnstyledDefault.default));
-parcelHelpers.export(exports, "TextareaAutosize", ()=>(0, _textareaAutosizeDefault.default));
-var _utils = require("./utils");
-parcelHelpers.exportAll(_utils, exports);
-var _autocompleteUnstyled = require("./AutocompleteUnstyled");
-parcelHelpers.exportAll(_autocompleteUnstyled, exports);
-var _badgeUnstyled = require("./BadgeUnstyled");
-var _badgeUnstyledDefault = parcelHelpers.interopDefault(_badgeUnstyled);
-parcelHelpers.exportAll(_badgeUnstyled, exports);
-var _buttonUnstyled = require("./ButtonUnstyled");
-var _buttonUnstyledDefault = parcelHelpers.interopDefault(_buttonUnstyled);
-parcelHelpers.exportAll(_buttonUnstyled, exports);
-var _clickAwayListener = require("./ClickAwayListener");
-var _clickAwayListenerDefault = parcelHelpers.interopDefault(_clickAwayListener);
-var _composeClasses = require("./composeClasses");
-var _composeClassesDefault = parcelHelpers.interopDefault(_composeClasses);
-var _focusTrap = require("./FocusTrap");
-var _focusTrapDefault = parcelHelpers.interopDefault(_focusTrap);
-var _formControlUnstyled = require("./FormControlUnstyled");
-var _formControlUnstyledDefault = parcelHelpers.interopDefault(_formControlUnstyled);
-parcelHelpers.exportAll(_formControlUnstyled, exports);
-var _inputUnstyled = require("./InputUnstyled");
-var _inputUnstyledDefault = parcelHelpers.interopDefault(_inputUnstyled);
-parcelHelpers.exportAll(_inputUnstyled, exports);
-var _listboxUnstyled = require("./ListboxUnstyled");
-parcelHelpers.exportAll(_listboxUnstyled, exports);
-var _menuUnstyled = require("./MenuUnstyled");
-var _menuUnstyledDefault = parcelHelpers.interopDefault(_menuUnstyled);
-parcelHelpers.exportAll(_menuUnstyled, exports);
-var _menuItemUnstyled = require("./MenuItemUnstyled");
-var _menuItemUnstyledDefault = parcelHelpers.interopDefault(_menuItemUnstyled);
-parcelHelpers.exportAll(_menuItemUnstyled, exports);
-var _modalUnstyled = require("./ModalUnstyled");
-var _modalUnstyledDefault = parcelHelpers.interopDefault(_modalUnstyled);
-parcelHelpers.exportAll(_modalUnstyled, exports);
-var _multiSelectUnstyled = require("./MultiSelectUnstyled");
-var _multiSelectUnstyledDefault = parcelHelpers.interopDefault(_multiSelectUnstyled);
-parcelHelpers.exportAll(_multiSelectUnstyled, exports);
-var _noSsr = require("./NoSsr");
-var _noSsrDefault = parcelHelpers.interopDefault(_noSsr);
-var _optionGroupUnstyled = require("./OptionGroupUnstyled");
-var _optionGroupUnstyledDefault = parcelHelpers.interopDefault(_optionGroupUnstyled);
-parcelHelpers.exportAll(_optionGroupUnstyled, exports);
-var _optionUnstyled = require("./OptionUnstyled");
-var _optionUnstyledDefault = parcelHelpers.interopDefault(_optionUnstyled);
-parcelHelpers.exportAll(_optionUnstyled, exports);
-var _popperUnstyled = require("./PopperUnstyled");
-var _popperUnstyledDefault = parcelHelpers.interopDefault(_popperUnstyled);
-var _portal = require("./Portal");
-var _portalDefault = parcelHelpers.interopDefault(_portal);
-var _selectUnstyled = require("./SelectUnstyled");
-var _selectUnstyledDefault = parcelHelpers.interopDefault(_selectUnstyled);
-parcelHelpers.exportAll(_selectUnstyled, exports);
-var _sliderUnstyled = require("./SliderUnstyled");
-var _sliderUnstyledDefault = parcelHelpers.interopDefault(_sliderUnstyled);
-parcelHelpers.exportAll(_sliderUnstyled, exports);
-var _snackbarUnstyled = require("./SnackbarUnstyled");
-var _snackbarUnstyledDefault = parcelHelpers.interopDefault(_snackbarUnstyled);
-parcelHelpers.exportAll(_snackbarUnstyled, exports);
-var _switchUnstyled = require("./SwitchUnstyled");
-var _switchUnstyledDefault = parcelHelpers.interopDefault(_switchUnstyled);
-parcelHelpers.exportAll(_switchUnstyled, exports);
-var _tablePaginationUnstyled = require("./TablePaginationUnstyled");
-var _tablePaginationUnstyledDefault = parcelHelpers.interopDefault(_tablePaginationUnstyled);
-parcelHelpers.exportAll(_tablePaginationUnstyled, exports);
-var _tabPanelUnstyled = require("./TabPanelUnstyled");
-var _tabPanelUnstyledDefault = parcelHelpers.interopDefault(_tabPanelUnstyled);
-parcelHelpers.exportAll(_tabPanelUnstyled, exports);
-var _tabsListUnstyled = require("./TabsListUnstyled");
-var _tabsListUnstyledDefault = parcelHelpers.interopDefault(_tabsListUnstyled);
-parcelHelpers.exportAll(_tabsListUnstyled, exports);
-var _tabsUnstyled = require("./TabsUnstyled");
-var _tabsUnstyledDefault = parcelHelpers.interopDefault(_tabsUnstyled);
-parcelHelpers.exportAll(_tabsUnstyled, exports);
-var _tabUnstyled = require("./TabUnstyled");
-var _tabUnstyledDefault = parcelHelpers.interopDefault(_tabUnstyled);
-parcelHelpers.exportAll(_tabUnstyled, exports);
-var _textareaAutosize = require("./TextareaAutosize");
-var _textareaAutosizeDefault = parcelHelpers.interopDefault(_textareaAutosize);
-
-},{"./utils":"cgIce","./AutocompleteUnstyled":"d81em","./BadgeUnstyled":"2bbTN","./ButtonUnstyled":"jqfJm","./ClickAwayListener":"lOwtq","./composeClasses":"2T3xi","./FocusTrap":"eQ27B","./FormControlUnstyled":"9Sqv9","./InputUnstyled":"3nRPM","./ListboxUnstyled":"lqFWi","./MenuUnstyled":"gCNfC","./MenuItemUnstyled":"37fEE","./ModalUnstyled":"gyieE","./MultiSelectUnstyled":"7oc3N","./NoSsr":false,"./OptionGroupUnstyled":"29SBz","./OptionUnstyled":"lJtjp","./PopperUnstyled":"hxXeM","./Portal":"7L8QJ","./SelectUnstyled":"e7nPk","./SliderUnstyled":"edJYV","./SnackbarUnstyled":"hylMb","./SwitchUnstyled":"jWF6i","./TablePaginationUnstyled":"24IUN","./TabPanelUnstyled":"7v1F9","./TabsListUnstyled":"cGLIZ","./TabsUnstyled":"bCtat","./TabUnstyled":"g8FAI","./TextareaAutosize":false,"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cgIce":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "appendOwnerState", ()=>(0, _appendOwnerStateDefault.default));
-parcelHelpers.export(exports, "areArraysEqual", ()=>(0, _areArraysEqualDefault.default));
-parcelHelpers.export(exports, "extractEventHandlers", ()=>(0, _extractEventHandlersDefault.default));
-parcelHelpers.export(exports, "isHostComponent", ()=>(0, _isHostComponentDefault.default));
-parcelHelpers.export(exports, "resolveComponentProps", ()=>(0, _resolveComponentPropsDefault.default));
-parcelHelpers.export(exports, "useSlotProps", ()=>(0, _useSlotPropsDefault.default));
-parcelHelpers.export(exports, "mergeSlotProps", ()=>(0, _mergeSlotPropsDefault.default));
-var _appendOwnerState = require("./appendOwnerState");
-var _appendOwnerStateDefault = parcelHelpers.interopDefault(_appendOwnerState);
-var _areArraysEqual = require("./areArraysEqual");
-var _areArraysEqualDefault = parcelHelpers.interopDefault(_areArraysEqual);
-var _extractEventHandlers = require("./extractEventHandlers");
-var _extractEventHandlersDefault = parcelHelpers.interopDefault(_extractEventHandlers);
-var _isHostComponent = require("./isHostComponent");
-var _isHostComponentDefault = parcelHelpers.interopDefault(_isHostComponent);
-var _resolveComponentProps = require("./resolveComponentProps");
-var _resolveComponentPropsDefault = parcelHelpers.interopDefault(_resolveComponentProps);
-var _useSlotProps = require("./useSlotProps");
-var _useSlotPropsDefault = parcelHelpers.interopDefault(_useSlotProps);
-var _mergeSlotProps = require("./mergeSlotProps");
-var _mergeSlotPropsDefault = parcelHelpers.interopDefault(_mergeSlotProps);
-var _types = require("./types");
-parcelHelpers.exportAll(_types, exports);
-
-},{"./appendOwnerState":"hedlX","./areArraysEqual":"92wIQ","./extractEventHandlers":"iYj1L","./isHostComponent":"b3wck","./resolveComponentProps":"bdeRV","./useSlotProps":"5X0R6","./mergeSlotProps":"4QtyH","./types":"ez7qI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hedlX":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _isHostComponent = require("./isHostComponent");
-var _isHostComponentDefault = parcelHelpers.interopDefault(_isHostComponent);
-function appendOwnerState(elementType, otherProps, ownerState) {
-    if ((0, _isHostComponentDefault.default)(elementType)) return otherProps;
-    return (0, _extendsDefault.default)({}, otherProps, {
-        ownerState: (0, _extendsDefault.default)({}, otherProps.ownerState, ownerState)
-    });
-}
-exports.default = appendOwnerState;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","./isHostComponent":"b3wck","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"b3wck":[function(require,module,exports) {
-/**
- * Determines if a given element is a DOM element name (i.e. not a React component).
- */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function isHostComponent(element) {
-    return typeof element === "string";
-}
-exports.default = isHostComponent;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"92wIQ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function areArraysEqual(array1, array2, itemComparer = (a, b)=>a === b) {
-    return array1.length === array2.length && array1.every((value, index)=>itemComparer(value, array2[index]));
-}
-exports.default = areArraysEqual;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iYj1L":[function(require,module,exports) {
-/**
- * Extracts event handlers from a given object.
- * A prop is considered an event handler if it is a function and its name starts with `on`.
- *
- * @param object An object to extract event handlers from.
- * @param excludeKeys An array of keys to exclude from the returned object.
- */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function extractEventHandlers(object, excludeKeys = []) {
-    if (object === undefined) return {};
-    const result = {};
-    Object.keys(object).filter((prop)=>prop.match(/^on[A-Z]/) && typeof object[prop] === "function" && !excludeKeys.includes(prop)).forEach((prop)=>{
-        result[prop] = object[prop];
-    });
-    return result;
-}
-exports.default = extractEventHandlers;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bdeRV":[function(require,module,exports) {
-/**
- * If `componentProps` is a function, calls it with the provided `ownerState`.
- * Otherwise, just returns `componentProps`.
- */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function resolveComponentProps(componentProps, ownerState) {
-    if (typeof componentProps === "function") return componentProps(ownerState);
-    return componentProps;
-}
-exports.default = resolveComponentProps;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5X0R6":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _utils = require("@mui/utils");
-var _appendOwnerState = require("./appendOwnerState");
-var _appendOwnerStateDefault = parcelHelpers.interopDefault(_appendOwnerState);
-var _mergeSlotProps = require("./mergeSlotProps");
-var _mergeSlotPropsDefault = parcelHelpers.interopDefault(_mergeSlotProps);
-var _resolveComponentProps = require("./resolveComponentProps");
-var _resolveComponentPropsDefault = parcelHelpers.interopDefault(_resolveComponentProps);
-const _excluded = [
-    "elementType",
-    "externalSlotProps",
-    "ownerState"
-];
-function useSlotProps(parameters) {
-    var _parameters$additiona;
-    const { elementType , externalSlotProps , ownerState  } = parameters, rest = (0, _objectWithoutPropertiesLooseDefault.default)(parameters, _excluded);
-    const resolvedComponentsProps = (0, _resolveComponentPropsDefault.default)(externalSlotProps, ownerState);
-    const { props: mergedProps , internalRef  } = (0, _mergeSlotPropsDefault.default)((0, _extendsDefault.default)({}, rest, {
-        externalSlotProps: resolvedComponentsProps
-    }));
-    const ref = (0, _utils.unstable_useForkRef)(internalRef, resolvedComponentsProps == null ? void 0 : resolvedComponentsProps.ref, (_parameters$additiona = parameters.additionalProps) == null ? void 0 : _parameters$additiona.ref);
-    const props = (0, _appendOwnerStateDefault.default)(elementType, (0, _extendsDefault.default)({}, mergedProps, {
-        ref
-    }), ownerState);
-    return props;
-}
-exports.default = useSlotProps;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@mui/utils":"cttLn","./appendOwnerState":"hedlX","./mergeSlotProps":"4QtyH","./resolveComponentProps":"bdeRV","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cttLn":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cttLn":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "chainPropTypes", ()=>(0, _chainPropTypesDefault.default));
@@ -47721,7 +47682,243 @@ function generateUtilityClasses(componentName, slots, globalStatePrefix = "Mui")
 }
 exports.default = generateUtilityClasses;
 
-},{"../generateUtilityClass":"1t95M","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4QtyH":[function(require,module,exports) {
+},{"../generateUtilityClass":"1t95M","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"656dE":[function(require,module,exports) {
+/** @license MUI v5.0.0-alpha.106
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "BadgeUnstyled", ()=>(0, _badgeUnstyledDefault.default));
+parcelHelpers.export(exports, "ButtonUnstyled", ()=>(0, _buttonUnstyledDefault.default));
+parcelHelpers.export(exports, "ClickAwayListener", ()=>(0, _clickAwayListenerDefault.default));
+parcelHelpers.export(exports, "unstable_composeClasses", ()=>(0, _composeClassesDefault.default));
+parcelHelpers.export(exports, "FocusTrap", ()=>(0, _focusTrapDefault.default));
+parcelHelpers.export(exports, "FormControlUnstyled", ()=>(0, _formControlUnstyledDefault.default));
+parcelHelpers.export(exports, "InputUnstyled", ()=>(0, _inputUnstyledDefault.default));
+parcelHelpers.export(exports, "MenuUnstyled", ()=>(0, _menuUnstyledDefault.default));
+parcelHelpers.export(exports, "MenuItemUnstyled", ()=>(0, _menuItemUnstyledDefault.default));
+parcelHelpers.export(exports, "ModalUnstyled", ()=>(0, _modalUnstyledDefault.default));
+parcelHelpers.export(exports, "MultiSelectUnstyled", ()=>(0, _multiSelectUnstyledDefault.default));
+parcelHelpers.export(exports, "NoSsr", ()=>(0, _noSsrDefault.default));
+parcelHelpers.export(exports, "OptionGroupUnstyled", ()=>(0, _optionGroupUnstyledDefault.default));
+parcelHelpers.export(exports, "OptionUnstyled", ()=>(0, _optionUnstyledDefault.default));
+parcelHelpers.export(exports, "PopperUnstyled", ()=>(0, _popperUnstyledDefault.default));
+parcelHelpers.export(exports, "Portal", ()=>(0, _portalDefault.default));
+parcelHelpers.export(exports, "SelectUnstyled", ()=>(0, _selectUnstyledDefault.default));
+parcelHelpers.export(exports, "SliderUnstyled", ()=>(0, _sliderUnstyledDefault.default));
+parcelHelpers.export(exports, "SnackbarUnstyled", ()=>(0, _snackbarUnstyledDefault.default));
+parcelHelpers.export(exports, "SwitchUnstyled", ()=>(0, _switchUnstyledDefault.default));
+parcelHelpers.export(exports, "TablePaginationUnstyled", ()=>(0, _tablePaginationUnstyledDefault.default));
+parcelHelpers.export(exports, "TabPanelUnstyled", ()=>(0, _tabPanelUnstyledDefault.default));
+parcelHelpers.export(exports, "TabsListUnstyled", ()=>(0, _tabsListUnstyledDefault.default));
+parcelHelpers.export(exports, "TabsUnstyled", ()=>(0, _tabsUnstyledDefault.default));
+parcelHelpers.export(exports, "TabUnstyled", ()=>(0, _tabUnstyledDefault.default));
+parcelHelpers.export(exports, "TextareaAutosize", ()=>(0, _textareaAutosizeDefault.default));
+var _utils = require("./utils");
+parcelHelpers.exportAll(_utils, exports);
+var _autocompleteUnstyled = require("./AutocompleteUnstyled");
+parcelHelpers.exportAll(_autocompleteUnstyled, exports);
+var _badgeUnstyled = require("./BadgeUnstyled");
+var _badgeUnstyledDefault = parcelHelpers.interopDefault(_badgeUnstyled);
+parcelHelpers.exportAll(_badgeUnstyled, exports);
+var _buttonUnstyled = require("./ButtonUnstyled");
+var _buttonUnstyledDefault = parcelHelpers.interopDefault(_buttonUnstyled);
+parcelHelpers.exportAll(_buttonUnstyled, exports);
+var _clickAwayListener = require("./ClickAwayListener");
+var _clickAwayListenerDefault = parcelHelpers.interopDefault(_clickAwayListener);
+var _composeClasses = require("./composeClasses");
+var _composeClassesDefault = parcelHelpers.interopDefault(_composeClasses);
+var _focusTrap = require("./FocusTrap");
+var _focusTrapDefault = parcelHelpers.interopDefault(_focusTrap);
+var _formControlUnstyled = require("./FormControlUnstyled");
+var _formControlUnstyledDefault = parcelHelpers.interopDefault(_formControlUnstyled);
+parcelHelpers.exportAll(_formControlUnstyled, exports);
+var _inputUnstyled = require("./InputUnstyled");
+var _inputUnstyledDefault = parcelHelpers.interopDefault(_inputUnstyled);
+parcelHelpers.exportAll(_inputUnstyled, exports);
+var _listboxUnstyled = require("./ListboxUnstyled");
+parcelHelpers.exportAll(_listboxUnstyled, exports);
+var _menuUnstyled = require("./MenuUnstyled");
+var _menuUnstyledDefault = parcelHelpers.interopDefault(_menuUnstyled);
+parcelHelpers.exportAll(_menuUnstyled, exports);
+var _menuItemUnstyled = require("./MenuItemUnstyled");
+var _menuItemUnstyledDefault = parcelHelpers.interopDefault(_menuItemUnstyled);
+parcelHelpers.exportAll(_menuItemUnstyled, exports);
+var _modalUnstyled = require("./ModalUnstyled");
+var _modalUnstyledDefault = parcelHelpers.interopDefault(_modalUnstyled);
+parcelHelpers.exportAll(_modalUnstyled, exports);
+var _multiSelectUnstyled = require("./MultiSelectUnstyled");
+var _multiSelectUnstyledDefault = parcelHelpers.interopDefault(_multiSelectUnstyled);
+parcelHelpers.exportAll(_multiSelectUnstyled, exports);
+var _noSsr = require("./NoSsr");
+var _noSsrDefault = parcelHelpers.interopDefault(_noSsr);
+var _optionGroupUnstyled = require("./OptionGroupUnstyled");
+var _optionGroupUnstyledDefault = parcelHelpers.interopDefault(_optionGroupUnstyled);
+parcelHelpers.exportAll(_optionGroupUnstyled, exports);
+var _optionUnstyled = require("./OptionUnstyled");
+var _optionUnstyledDefault = parcelHelpers.interopDefault(_optionUnstyled);
+parcelHelpers.exportAll(_optionUnstyled, exports);
+var _popperUnstyled = require("./PopperUnstyled");
+var _popperUnstyledDefault = parcelHelpers.interopDefault(_popperUnstyled);
+var _portal = require("./Portal");
+var _portalDefault = parcelHelpers.interopDefault(_portal);
+var _selectUnstyled = require("./SelectUnstyled");
+var _selectUnstyledDefault = parcelHelpers.interopDefault(_selectUnstyled);
+parcelHelpers.exportAll(_selectUnstyled, exports);
+var _sliderUnstyled = require("./SliderUnstyled");
+var _sliderUnstyledDefault = parcelHelpers.interopDefault(_sliderUnstyled);
+parcelHelpers.exportAll(_sliderUnstyled, exports);
+var _snackbarUnstyled = require("./SnackbarUnstyled");
+var _snackbarUnstyledDefault = parcelHelpers.interopDefault(_snackbarUnstyled);
+parcelHelpers.exportAll(_snackbarUnstyled, exports);
+var _switchUnstyled = require("./SwitchUnstyled");
+var _switchUnstyledDefault = parcelHelpers.interopDefault(_switchUnstyled);
+parcelHelpers.exportAll(_switchUnstyled, exports);
+var _tablePaginationUnstyled = require("./TablePaginationUnstyled");
+var _tablePaginationUnstyledDefault = parcelHelpers.interopDefault(_tablePaginationUnstyled);
+parcelHelpers.exportAll(_tablePaginationUnstyled, exports);
+var _tabPanelUnstyled = require("./TabPanelUnstyled");
+var _tabPanelUnstyledDefault = parcelHelpers.interopDefault(_tabPanelUnstyled);
+parcelHelpers.exportAll(_tabPanelUnstyled, exports);
+var _tabsListUnstyled = require("./TabsListUnstyled");
+var _tabsListUnstyledDefault = parcelHelpers.interopDefault(_tabsListUnstyled);
+parcelHelpers.exportAll(_tabsListUnstyled, exports);
+var _tabsUnstyled = require("./TabsUnstyled");
+var _tabsUnstyledDefault = parcelHelpers.interopDefault(_tabsUnstyled);
+parcelHelpers.exportAll(_tabsUnstyled, exports);
+var _tabUnstyled = require("./TabUnstyled");
+var _tabUnstyledDefault = parcelHelpers.interopDefault(_tabUnstyled);
+parcelHelpers.exportAll(_tabUnstyled, exports);
+var _textareaAutosize = require("./TextareaAutosize");
+var _textareaAutosizeDefault = parcelHelpers.interopDefault(_textareaAutosize);
+
+},{"./utils":"cgIce","./AutocompleteUnstyled":"d81em","./BadgeUnstyled":"2bbTN","./ButtonUnstyled":"jqfJm","./ClickAwayListener":"lOwtq","./composeClasses":"2T3xi","./FocusTrap":"eQ27B","./FormControlUnstyled":"9Sqv9","./InputUnstyled":"3nRPM","./ListboxUnstyled":"lqFWi","./MenuUnstyled":"gCNfC","./MenuItemUnstyled":"37fEE","./ModalUnstyled":"gyieE","./MultiSelectUnstyled":"7oc3N","./NoSsr":false,"./OptionGroupUnstyled":"29SBz","./OptionUnstyled":"lJtjp","./PopperUnstyled":"hxXeM","./Portal":"7L8QJ","./SelectUnstyled":"e7nPk","./SliderUnstyled":"edJYV","./SnackbarUnstyled":"hylMb","./SwitchUnstyled":"jWF6i","./TablePaginationUnstyled":"24IUN","./TabPanelUnstyled":"7v1F9","./TabsListUnstyled":"cGLIZ","./TabsUnstyled":"bCtat","./TabUnstyled":"g8FAI","./TextareaAutosize":false,"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cgIce":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "appendOwnerState", ()=>(0, _appendOwnerStateDefault.default));
+parcelHelpers.export(exports, "areArraysEqual", ()=>(0, _areArraysEqualDefault.default));
+parcelHelpers.export(exports, "extractEventHandlers", ()=>(0, _extractEventHandlersDefault.default));
+parcelHelpers.export(exports, "isHostComponent", ()=>(0, _isHostComponentDefault.default));
+parcelHelpers.export(exports, "resolveComponentProps", ()=>(0, _resolveComponentPropsDefault.default));
+parcelHelpers.export(exports, "useSlotProps", ()=>(0, _useSlotPropsDefault.default));
+parcelHelpers.export(exports, "mergeSlotProps", ()=>(0, _mergeSlotPropsDefault.default));
+var _appendOwnerState = require("./appendOwnerState");
+var _appendOwnerStateDefault = parcelHelpers.interopDefault(_appendOwnerState);
+var _areArraysEqual = require("./areArraysEqual");
+var _areArraysEqualDefault = parcelHelpers.interopDefault(_areArraysEqual);
+var _extractEventHandlers = require("./extractEventHandlers");
+var _extractEventHandlersDefault = parcelHelpers.interopDefault(_extractEventHandlers);
+var _isHostComponent = require("./isHostComponent");
+var _isHostComponentDefault = parcelHelpers.interopDefault(_isHostComponent);
+var _resolveComponentProps = require("./resolveComponentProps");
+var _resolveComponentPropsDefault = parcelHelpers.interopDefault(_resolveComponentProps);
+var _useSlotProps = require("./useSlotProps");
+var _useSlotPropsDefault = parcelHelpers.interopDefault(_useSlotProps);
+var _mergeSlotProps = require("./mergeSlotProps");
+var _mergeSlotPropsDefault = parcelHelpers.interopDefault(_mergeSlotProps);
+var _types = require("./types");
+parcelHelpers.exportAll(_types, exports);
+
+},{"./appendOwnerState":"hedlX","./areArraysEqual":"92wIQ","./extractEventHandlers":"iYj1L","./isHostComponent":"b3wck","./resolveComponentProps":"bdeRV","./useSlotProps":"5X0R6","./mergeSlotProps":"4QtyH","./types":"ez7qI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hedlX":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _isHostComponent = require("./isHostComponent");
+var _isHostComponentDefault = parcelHelpers.interopDefault(_isHostComponent);
+function appendOwnerState(elementType, otherProps, ownerState) {
+    if ((0, _isHostComponentDefault.default)(elementType)) return otherProps;
+    return (0, _extendsDefault.default)({}, otherProps, {
+        ownerState: (0, _extendsDefault.default)({}, otherProps.ownerState, ownerState)
+    });
+}
+exports.default = appendOwnerState;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","./isHostComponent":"b3wck","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"b3wck":[function(require,module,exports) {
+/**
+ * Determines if a given element is a DOM element name (i.e. not a React component).
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function isHostComponent(element) {
+    return typeof element === "string";
+}
+exports.default = isHostComponent;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"92wIQ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function areArraysEqual(array1, array2, itemComparer = (a, b)=>a === b) {
+    return array1.length === array2.length && array1.every((value, index)=>itemComparer(value, array2[index]));
+}
+exports.default = areArraysEqual;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iYj1L":[function(require,module,exports) {
+/**
+ * Extracts event handlers from a given object.
+ * A prop is considered an event handler if it is a function and its name starts with `on`.
+ *
+ * @param object An object to extract event handlers from.
+ * @param excludeKeys An array of keys to exclude from the returned object.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function extractEventHandlers(object, excludeKeys = []) {
+    if (object === undefined) return {};
+    const result = {};
+    Object.keys(object).filter((prop)=>prop.match(/^on[A-Z]/) && typeof object[prop] === "function" && !excludeKeys.includes(prop)).forEach((prop)=>{
+        result[prop] = object[prop];
+    });
+    return result;
+}
+exports.default = extractEventHandlers;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bdeRV":[function(require,module,exports) {
+/**
+ * If `componentProps` is a function, calls it with the provided `ownerState`.
+ * Otherwise, just returns `componentProps`.
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function resolveComponentProps(componentProps, ownerState) {
+    if (typeof componentProps === "function") return componentProps(ownerState);
+    return componentProps;
+}
+exports.default = resolveComponentProps;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5X0R6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _utils = require("@mui/utils");
+var _appendOwnerState = require("./appendOwnerState");
+var _appendOwnerStateDefault = parcelHelpers.interopDefault(_appendOwnerState);
+var _mergeSlotProps = require("./mergeSlotProps");
+var _mergeSlotPropsDefault = parcelHelpers.interopDefault(_mergeSlotProps);
+var _resolveComponentProps = require("./resolveComponentProps");
+var _resolveComponentPropsDefault = parcelHelpers.interopDefault(_resolveComponentProps);
+const _excluded = [
+    "elementType",
+    "externalSlotProps",
+    "ownerState"
+];
+function useSlotProps(parameters) {
+    var _parameters$additiona;
+    const { elementType , externalSlotProps , ownerState  } = parameters, rest = (0, _objectWithoutPropertiesLooseDefault.default)(parameters, _excluded);
+    const resolvedComponentsProps = (0, _resolveComponentPropsDefault.default)(externalSlotProps, ownerState);
+    const { props: mergedProps , internalRef  } = (0, _mergeSlotPropsDefault.default)((0, _extendsDefault.default)({}, rest, {
+        externalSlotProps: resolvedComponentsProps
+    }));
+    const ref = (0, _utils.unstable_useForkRef)(internalRef, resolvedComponentsProps == null ? void 0 : resolvedComponentsProps.ref, (_parameters$additiona = parameters.additionalProps) == null ? void 0 : _parameters$additiona.ref);
+    const props = (0, _appendOwnerStateDefault.default)(elementType, (0, _extendsDefault.default)({}, mergedProps, {
+        ref
+    }), ownerState);
+    return props;
+}
+exports.default = useSlotProps;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@mui/utils":"cttLn","./appendOwnerState":"hedlX","./mergeSlotProps":"4QtyH","./resolveComponentProps":"bdeRV","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4QtyH":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _extends = require("@babel/runtime/helpers/esm/extends");
@@ -60323,23 +60520,7 @@ parcelHelpers.defineInteropFlag(exports);
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9NVzk":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "rootShouldForwardProp", ()=>rootShouldForwardProp);
-parcelHelpers.export(exports, "slotShouldForwardProp", ()=>slotShouldForwardProp);
-var _system = require("@mui/system");
-var _defaultTheme = require("./defaultTheme");
-var _defaultThemeDefault = parcelHelpers.interopDefault(_defaultTheme);
-const rootShouldForwardProp = (prop)=>(0, _system.shouldForwardProp)(prop) && prop !== "classes";
-const slotShouldForwardProp = (0, _system.shouldForwardProp);
-const styled = (0, _system.createStyled)({
-    defaultTheme: (0, _defaultThemeDefault.default),
-    rootShouldForwardProp
-});
-exports.default = styled;
-
-},{"@mui/system":"Q0Zql","./defaultTheme":"isygc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"Q0Zql":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"Q0Zql":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "css", ()=>(0, _styledEngine.css));
@@ -67027,7 +67208,23 @@ const stackClasses = (0, _utils.unstable_generateUtilityClasses)("MuiStack", [
 ]);
 exports.default = stackClasses;
 
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"isygc":[function(require,module,exports) {
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9NVzk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "rootShouldForwardProp", ()=>rootShouldForwardProp);
+parcelHelpers.export(exports, "slotShouldForwardProp", ()=>slotShouldForwardProp);
+var _system = require("@mui/system");
+var _defaultTheme = require("./defaultTheme");
+var _defaultThemeDefault = parcelHelpers.interopDefault(_defaultTheme);
+const rootShouldForwardProp = (prop)=>(0, _system.shouldForwardProp)(prop) && prop !== "classes";
+const slotShouldForwardProp = (0, _system.shouldForwardProp);
+const styled = (0, _system.createStyled)({
+    defaultTheme: (0, _defaultThemeDefault.default),
+    rootShouldForwardProp
+});
+exports.default = styled;
+
+},{"@mui/system":"Q0Zql","./defaultTheme":"isygc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"isygc":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _createTheme = require("./createTheme");
@@ -67848,754 +68045,7 @@ function useThemeProps({ props , name  }) {
 }
 exports.default = useThemeProps;
 
-},{"@mui/system":"Q0Zql","./defaultTheme":"isygc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9fLPT":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _createSvgIcon = require("../../utils/createSvgIcon");
-var _createSvgIconDefault = parcelHelpers.interopDefault(_createSvgIcon);
-/**
- * @ignore - internal component.
- */ var _jsxRuntime = require("react/jsx-runtime");
-exports.default = (0, _createSvgIconDefault.default)(/*#__PURE__*/ (0, _jsxRuntime.jsx)("path", {
-    d: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-}), "Person");
-
-},{"react":"21dqq","../../utils/createSvgIcon":"0EW1c","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"0EW1c":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _react = require("react");
-var _svgIcon = require("../SvgIcon");
-var _svgIconDefault = parcelHelpers.interopDefault(_svgIcon);
-/**
- * Private module reserved for @mui packages.
- */ var _jsxRuntime = require("react/jsx-runtime");
-function createSvgIcon(path, displayName) {
-    function Component(props, ref) {
-        return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _svgIconDefault.default), (0, _extendsDefault.default)({
-            "data-testid": `${displayName}Icon`,
-            ref: ref
-        }, props, {
-            children: path
-        }));
-    }
-    // Need to set `displayName` on the inner component for React.memo.
-    // React prior to 16.14 ignores `displayName` on the wrapper.
-    Component.displayName = `${displayName}Icon`;
-    Component.muiName = (0, _svgIconDefault.default).muiName;
-    return /*#__PURE__*/ _react.memo(/*#__PURE__*/ _react.forwardRef(Component));
-}
-exports.default = createSvgIcon;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","../SvgIcon":"7PzE1","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7PzE1":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>(0, _svgIconDefault.default));
-parcelHelpers.export(exports, "svgIconClasses", ()=>(0, _svgIconClassesDefault.default));
-var _svgIcon = require("./SvgIcon");
-var _svgIconDefault = parcelHelpers.interopDefault(_svgIcon);
-var _svgIconClasses = require("./svgIconClasses");
-var _svgIconClassesDefault = parcelHelpers.interopDefault(_svgIconClasses);
-parcelHelpers.exportAll(_svgIconClasses, exports);
-
-},{"./SvgIcon":"kIdWQ","./svgIconClasses":"j5Idz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kIdWQ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _react = require("react");
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _clsx = require("clsx");
-var _clsxDefault = parcelHelpers.interopDefault(_clsx);
-var _base = require("@mui/base");
-var _capitalize = require("../utils/capitalize");
-var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
-var _useThemeProps = require("../styles/useThemeProps");
-var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
-var _styled = require("../styles/styled");
-var _styledDefault = parcelHelpers.interopDefault(_styled);
-var _svgIconClasses = require("./svgIconClasses");
-var _jsxRuntime = require("react/jsx-runtime");
-const _excluded = [
-    "children",
-    "className",
-    "color",
-    "component",
-    "fontSize",
-    "htmlColor",
-    "inheritViewBox",
-    "titleAccess",
-    "viewBox"
-];
-const useUtilityClasses = (ownerState)=>{
-    const { color , fontSize , classes  } = ownerState;
-    const slots = {
-        root: [
-            "root",
-            color !== "inherit" && `color${(0, _capitalizeDefault.default)(color)}`,
-            `fontSize${(0, _capitalizeDefault.default)(fontSize)}`
-        ]
-    };
-    return (0, _base.unstable_composeClasses)(slots, (0, _svgIconClasses.getSvgIconUtilityClass), classes);
-};
-const SvgIconRoot = (0, _styledDefault.default)("svg", {
-    name: "MuiSvgIcon",
-    slot: "Root",
-    overridesResolver: (props, styles)=>{
-        const { ownerState  } = props;
-        return [
-            styles.root,
-            ownerState.color !== "inherit" && styles[`color${(0, _capitalizeDefault.default)(ownerState.color)}`],
-            styles[`fontSize${(0, _capitalizeDefault.default)(ownerState.fontSize)}`]
-        ];
-    }
-})(({ theme , ownerState  })=>{
-    var _theme$transitions, _theme$transitions$cr, _theme$transitions2, _theme$transitions2$d, _theme$typography, _theme$typography$pxT, _theme$typography2, _theme$typography2$px, _theme$typography3, _theme$typography3$px, _palette$ownerState$c, _palette, _palette$ownerState$c2, _palette2, _palette2$action, _palette3, _palette3$action;
-    return {
-        userSelect: "none",
-        width: "1em",
-        height: "1em",
-        display: "inline-block",
-        fill: "currentColor",
-        flexShrink: 0,
-        transition: (_theme$transitions = theme.transitions) == null ? void 0 : (_theme$transitions$cr = _theme$transitions.create) == null ? void 0 : _theme$transitions$cr.call(_theme$transitions, "fill", {
-            duration: (_theme$transitions2 = theme.transitions) == null ? void 0 : (_theme$transitions2$d = _theme$transitions2.duration) == null ? void 0 : _theme$transitions2$d.shorter
-        }),
-        fontSize: ({
-            inherit: "inherit",
-            small: ((_theme$typography = theme.typography) == null ? void 0 : (_theme$typography$pxT = _theme$typography.pxToRem) == null ? void 0 : _theme$typography$pxT.call(_theme$typography, 20)) || "1.25rem",
-            medium: ((_theme$typography2 = theme.typography) == null ? void 0 : (_theme$typography2$px = _theme$typography2.pxToRem) == null ? void 0 : _theme$typography2$px.call(_theme$typography2, 24)) || "1.5rem",
-            large: ((_theme$typography3 = theme.typography) == null ? void 0 : (_theme$typography3$px = _theme$typography3.pxToRem) == null ? void 0 : _theme$typography3$px.call(_theme$typography3, 35)) || "2.1875rem"
-        })[ownerState.fontSize],
-        // TODO v5 deprecate, v6 remove for sx
-        color: (_palette$ownerState$c = (_palette = (theme.vars || theme).palette) == null ? void 0 : (_palette$ownerState$c2 = _palette[ownerState.color]) == null ? void 0 : _palette$ownerState$c2.main) != null ? _palette$ownerState$c : ({
-            action: (_palette2 = (theme.vars || theme).palette) == null ? void 0 : (_palette2$action = _palette2.action) == null ? void 0 : _palette2$action.active,
-            disabled: (_palette3 = (theme.vars || theme).palette) == null ? void 0 : (_palette3$action = _palette3.action) == null ? void 0 : _palette3$action.disabled,
-            inherit: undefined
-        })[ownerState.color]
-    };
-});
-const SvgIcon = /*#__PURE__*/ _react.forwardRef(function SvgIcon(inProps, ref) {
-    const props = (0, _useThemePropsDefault.default)({
-        props: inProps,
-        name: "MuiSvgIcon"
-    });
-    const { children , className , color ="inherit" , component ="svg" , fontSize ="medium" , htmlColor , inheritViewBox =false , titleAccess , viewBox ="0 0 24 24"  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
-    const ownerState = (0, _extendsDefault.default)({}, props, {
-        color,
-        component,
-        fontSize,
-        instanceFontSize: inProps.fontSize,
-        inheritViewBox,
-        viewBox
-    });
-    const more = {};
-    if (!inheritViewBox) more.viewBox = viewBox;
-    const classes = useUtilityClasses(ownerState);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)(SvgIconRoot, (0, _extendsDefault.default)({
-        as: component,
-        className: (0, _clsxDefault.default)(classes.root, className),
-        focusable: "false",
-        color: htmlColor,
-        "aria-hidden": titleAccess ? undefined : true,
-        role: titleAccess ? "img" : undefined,
-        ref: ref
-    }, more, other, {
-        ownerState: ownerState,
-        children: [
-            children,
-            titleAccess ? /*#__PURE__*/ (0, _jsxRuntime.jsx)("title", {
-                children: titleAccess
-            }) : null
-        ]
-    }));
-});
-SvgIcon.propTypes /* remove-proptypes */  = {
-    // ----------------------------- Warning --------------------------------
-    // | These PropTypes are generated from the TypeScript type definitions |
-    // |     To update them edit the d.ts file and run "yarn proptypes"     |
-    // ----------------------------------------------------------------------
-    /**
-   * Node passed into the SVG element.
-   */ children: (0, _propTypesDefault.default).node,
-    /**
-   * Override or extend the styles applied to the component.
-   */ classes: (0, _propTypesDefault.default).object,
-    /**
-   * @ignore
-   */ className: (0, _propTypesDefault.default).string,
-    /**
-   * The color of the component.
-   * It supports both default and custom theme colors, which can be added as shown in the
-   * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
-   * You can use the `htmlColor` prop to apply a color attribute to the SVG element.
-   * @default 'inherit'
-   */ color: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
-        (0, _propTypesDefault.default).oneOf([
-            "inherit",
-            "action",
-            "disabled",
-            "primary",
-            "secondary",
-            "error",
-            "info",
-            "success",
-            "warning"
-        ]),
-        (0, _propTypesDefault.default).string
-    ]),
-    /**
-   * The component used for the root node.
-   * Either a string to use a HTML element or a component.
-   */ component: (0, _propTypesDefault.default).elementType,
-    /**
-   * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
-   * @default 'medium'
-   */ fontSize: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
-        (0, _propTypesDefault.default).oneOf([
-            "inherit",
-            "large",
-            "medium",
-            "small"
-        ]),
-        (0, _propTypesDefault.default).string
-    ]),
-    /**
-   * Applies a color attribute to the SVG element.
-   */ htmlColor: (0, _propTypesDefault.default).string,
-    /**
-   * If `true`, the root node will inherit the custom `component`'s viewBox and the `viewBox`
-   * prop will be ignored.
-   * Useful when you want to reference a custom `component` and have `SvgIcon` pass that
-   * `component`'s viewBox to the root node.
-   * @default false
-   */ inheritViewBox: (0, _propTypesDefault.default).bool,
-    /**
-   * The shape-rendering attribute. The behavior of the different options is described on the
-   * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering).
-   * If you are having issues with blurry icons you should investigate this prop.
-   */ shapeRendering: (0, _propTypesDefault.default).string,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, _propTypesDefault.default).oneOfType([
-        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
-            (0, _propTypesDefault.default).func,
-            (0, _propTypesDefault.default).object,
-            (0, _propTypesDefault.default).bool
-        ])),
-        (0, _propTypesDefault.default).func,
-        (0, _propTypesDefault.default).object
-    ]),
-    /**
-   * Provides a human-readable title for the element that contains it.
-   * https://www.w3.org/TR/SVG-access/#Equivalent
-   */ titleAccess: (0, _propTypesDefault.default).string,
-    /**
-   * Allows you to redefine what the coordinates without units mean inside an SVG element.
-   * For example, if the SVG element is 500 (width) by 200 (height),
-   * and you pass viewBox="0 0 50 20",
-   * this means that the coordinates inside the SVG will go from the top left corner (0,0)
-   * to bottom right (50,20) and each unit will be worth 10px.
-   * @default '0 0 24 24'
-   */ viewBox: (0, _propTypesDefault.default).string
-};
-SvgIcon.muiName = "SvgIcon";
-exports.default = SvgIcon;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/base":"656dE","../utils/capitalize":"kuBnp","../styles/useThemeProps":"1WXY3","../styles/styled":"9NVzk","./svgIconClasses":"j5Idz","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kuBnp":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_capitalize);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"j5Idz":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getSvgIconUtilityClass", ()=>getSvgIconUtilityClass);
-var _utils = require("@mui/utils");
-var _generateUtilityClass = require("../generateUtilityClass");
-var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
-function getSvgIconUtilityClass(slot) {
-    return (0, _generateUtilityClassDefault.default)("MuiSvgIcon", slot);
-}
-const svgIconClasses = (0, _utils.unstable_generateUtilityClasses)("MuiSvgIcon", [
-    "root",
-    "colorPrimary",
-    "colorSecondary",
-    "colorAction",
-    "colorError",
-    "colorDisabled",
-    "fontSizeInherit",
-    "fontSizeSmall",
-    "fontSizeMedium",
-    "fontSizeLarge"
-]);
-exports.default = svgIconClasses;
-
-},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"g7bs2":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getAvatarUtilityClass", ()=>getAvatarUtilityClass);
-var _utils = require("@mui/utils");
-var _generateUtilityClass = require("../generateUtilityClass");
-var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
-function getAvatarUtilityClass(slot) {
-    return (0, _generateUtilityClassDefault.default)("MuiAvatar", slot);
-}
-const avatarClasses = (0, _utils.unstable_generateUtilityClasses)("MuiAvatar", [
-    "root",
-    "colorDefault",
-    "circular",
-    "rounded",
-    "square",
-    "img",
-    "fallback"
-]);
-exports.default = avatarClasses;
-
-},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eFe0Q":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>(0, _buttonDefault.default));
-parcelHelpers.export(exports, "buttonClasses", ()=>(0, _buttonClassesDefault.default));
-var _button = require("./Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _buttonClasses = require("./buttonClasses");
-var _buttonClassesDefault = parcelHelpers.interopDefault(_buttonClasses);
-parcelHelpers.exportAll(_buttonClasses, exports);
-
-},{"./Button":"acnkq","./buttonClasses":"6OUZd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"acnkq":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _react = require("react");
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _clsx = require("clsx");
-var _clsxDefault = parcelHelpers.interopDefault(_clsx);
-var _utils = require("@mui/utils");
-var _base = require("@mui/base");
-var _system = require("@mui/system");
-var _styled = require("../styles/styled");
-var _styledDefault = parcelHelpers.interopDefault(_styled);
-var _useThemeProps = require("../styles/useThemeProps");
-var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
-var _buttonBase = require("../ButtonBase");
-var _buttonBaseDefault = parcelHelpers.interopDefault(_buttonBase);
-var _capitalize = require("../utils/capitalize");
-var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
-var _buttonClasses = require("./buttonClasses");
-var _buttonClassesDefault = parcelHelpers.interopDefault(_buttonClasses);
-var _buttonGroupContext = require("../ButtonGroup/ButtonGroupContext");
-var _buttonGroupContextDefault = parcelHelpers.interopDefault(_buttonGroupContext);
-var _jsxRuntime = require("react/jsx-runtime");
-const _excluded = [
-    "children",
-    "color",
-    "component",
-    "className",
-    "disabled",
-    "disableElevation",
-    "disableFocusRipple",
-    "endIcon",
-    "focusVisibleClassName",
-    "fullWidth",
-    "size",
-    "startIcon",
-    "type",
-    "variant"
-];
-const useUtilityClasses = (ownerState)=>{
-    const { color , disableElevation , fullWidth , size , variant , classes  } = ownerState;
-    const slots = {
-        root: [
-            "root",
-            variant,
-            `${variant}${(0, _capitalizeDefault.default)(color)}`,
-            `size${(0, _capitalizeDefault.default)(size)}`,
-            `${variant}Size${(0, _capitalizeDefault.default)(size)}`,
-            color === "inherit" && "colorInherit",
-            disableElevation && "disableElevation",
-            fullWidth && "fullWidth"
-        ],
-        label: [
-            "label"
-        ],
-        startIcon: [
-            "startIcon",
-            `iconSize${(0, _capitalizeDefault.default)(size)}`
-        ],
-        endIcon: [
-            "endIcon",
-            `iconSize${(0, _capitalizeDefault.default)(size)}`
-        ]
-    };
-    const composedClasses = (0, _base.unstable_composeClasses)(slots, (0, _buttonClasses.getButtonUtilityClass), classes);
-    return (0, _extendsDefault.default)({}, classes, composedClasses);
-};
-const commonIconStyles = (ownerState)=>(0, _extendsDefault.default)({}, ownerState.size === "small" && {
-        "& > *:nth-of-type(1)": {
-            fontSize: 18
-        }
-    }, ownerState.size === "medium" && {
-        "& > *:nth-of-type(1)": {
-            fontSize: 20
-        }
-    }, ownerState.size === "large" && {
-        "& > *:nth-of-type(1)": {
-            fontSize: 22
-        }
-    });
-const ButtonRoot = (0, _styledDefault.default)((0, _buttonBaseDefault.default), {
-    shouldForwardProp: (prop)=>(0, _styled.rootShouldForwardProp)(prop) || prop === "classes",
-    name: "MuiButton",
-    slot: "Root",
-    overridesResolver: (props, styles)=>{
-        const { ownerState  } = props;
-        return [
-            styles.root,
-            styles[ownerState.variant],
-            styles[`${ownerState.variant}${(0, _capitalizeDefault.default)(ownerState.color)}`],
-            styles[`size${(0, _capitalizeDefault.default)(ownerState.size)}`],
-            styles[`${ownerState.variant}Size${(0, _capitalizeDefault.default)(ownerState.size)}`],
-            ownerState.color === "inherit" && styles.colorInherit,
-            ownerState.disableElevation && styles.disableElevation,
-            ownerState.fullWidth && styles.fullWidth
-        ];
-    }
-})(({ theme , ownerState  })=>{
-    var _theme$palette$getCon, _theme$palette;
-    return (0, _extendsDefault.default)({}, theme.typography.button, {
-        minWidth: 64,
-        padding: "6px 16px",
-        borderRadius: (theme.vars || theme).shape.borderRadius,
-        transition: theme.transitions.create([
-            "background-color",
-            "box-shadow",
-            "border-color",
-            "color"
-        ], {
-            duration: theme.transitions.duration.short
-        }),
-        "&:hover": (0, _extendsDefault.default)({
-            textDecoration: "none",
-            backgroundColor: theme.vars ? `rgba(${theme.vars.palette.text.primaryChannel} / ${theme.vars.palette.action.hoverOpacity})` : (0, _system.alpha)(theme.palette.text.primary, theme.palette.action.hoverOpacity),
-            // Reset on touch devices, it doesn't add specificity
-            "@media (hover: none)": {
-                backgroundColor: "transparent"
-            }
-        }, ownerState.variant === "text" && ownerState.color !== "inherit" && {
-            backgroundColor: theme.vars ? `rgba(${theme.vars.palette[ownerState.color].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : (0, _system.alpha)(theme.palette[ownerState.color].main, theme.palette.action.hoverOpacity),
-            // Reset on touch devices, it doesn't add specificity
-            "@media (hover: none)": {
-                backgroundColor: "transparent"
-            }
-        }, ownerState.variant === "outlined" && ownerState.color !== "inherit" && {
-            border: `1px solid ${(theme.vars || theme).palette[ownerState.color].main}`,
-            backgroundColor: theme.vars ? `rgba(${theme.vars.palette[ownerState.color].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : (0, _system.alpha)(theme.palette[ownerState.color].main, theme.palette.action.hoverOpacity),
-            // Reset on touch devices, it doesn't add specificity
-            "@media (hover: none)": {
-                backgroundColor: "transparent"
-            }
-        }, ownerState.variant === "contained" && {
-            backgroundColor: (theme.vars || theme).palette.grey.A100,
-            boxShadow: (theme.vars || theme).shadows[4],
-            // Reset on touch devices, it doesn't add specificity
-            "@media (hover: none)": {
-                boxShadow: (theme.vars || theme).shadows[2],
-                backgroundColor: (theme.vars || theme).palette.grey[300]
-            }
-        }, ownerState.variant === "contained" && ownerState.color !== "inherit" && {
-            backgroundColor: (theme.vars || theme).palette[ownerState.color].dark,
-            // Reset on touch devices, it doesn't add specificity
-            "@media (hover: none)": {
-                backgroundColor: (theme.vars || theme).palette[ownerState.color].main
-            }
-        }),
-        "&:active": (0, _extendsDefault.default)({}, ownerState.variant === "contained" && {
-            boxShadow: (theme.vars || theme).shadows[8]
-        }),
-        [`&.${(0, _buttonClassesDefault.default).focusVisible}`]: (0, _extendsDefault.default)({}, ownerState.variant === "contained" && {
-            boxShadow: (theme.vars || theme).shadows[6]
-        }),
-        [`&.${(0, _buttonClassesDefault.default).disabled}`]: (0, _extendsDefault.default)({
-            color: (theme.vars || theme).palette.action.disabled
-        }, ownerState.variant === "outlined" && {
-            border: `1px solid ${(theme.vars || theme).palette.action.disabledBackground}`
-        }, ownerState.variant === "outlined" && ownerState.color === "secondary" && {
-            border: `1px solid ${(theme.vars || theme).palette.action.disabled}`
-        }, ownerState.variant === "contained" && {
-            color: (theme.vars || theme).palette.action.disabled,
-            boxShadow: (theme.vars || theme).shadows[0],
-            backgroundColor: (theme.vars || theme).palette.action.disabledBackground
-        })
-    }, ownerState.variant === "text" && {
-        padding: "6px 8px"
-    }, ownerState.variant === "text" && ownerState.color !== "inherit" && {
-        color: (theme.vars || theme).palette[ownerState.color].main
-    }, ownerState.variant === "outlined" && {
-        padding: "5px 15px",
-        border: "1px solid currentColor"
-    }, ownerState.variant === "outlined" && ownerState.color !== "inherit" && {
-        color: (theme.vars || theme).palette[ownerState.color].main,
-        border: theme.vars ? `1px solid rgba(${theme.vars.palette[ownerState.color].mainChannel} / 0.5)` : `1px solid ${(0, _system.alpha)(theme.palette[ownerState.color].main, 0.5)}`
-    }, ownerState.variant === "contained" && {
-        color: theme.vars ? // this is safe because grey does not change between default light/dark mode
-        theme.vars.palette.text.primary : (_theme$palette$getCon = (_theme$palette = theme.palette).getContrastText) == null ? void 0 : _theme$palette$getCon.call(_theme$palette, theme.palette.grey[300]),
-        backgroundColor: (theme.vars || theme).palette.grey[300],
-        boxShadow: (theme.vars || theme).shadows[2]
-    }, ownerState.variant === "contained" && ownerState.color !== "inherit" && {
-        color: (theme.vars || theme).palette[ownerState.color].contrastText,
-        backgroundColor: (theme.vars || theme).palette[ownerState.color].main
-    }, ownerState.color === "inherit" && {
-        color: "inherit",
-        borderColor: "currentColor"
-    }, ownerState.size === "small" && ownerState.variant === "text" && {
-        padding: "4px 5px",
-        fontSize: theme.typography.pxToRem(13)
-    }, ownerState.size === "large" && ownerState.variant === "text" && {
-        padding: "8px 11px",
-        fontSize: theme.typography.pxToRem(15)
-    }, ownerState.size === "small" && ownerState.variant === "outlined" && {
-        padding: "3px 9px",
-        fontSize: theme.typography.pxToRem(13)
-    }, ownerState.size === "large" && ownerState.variant === "outlined" && {
-        padding: "7px 21px",
-        fontSize: theme.typography.pxToRem(15)
-    }, ownerState.size === "small" && ownerState.variant === "contained" && {
-        padding: "4px 10px",
-        fontSize: theme.typography.pxToRem(13)
-    }, ownerState.size === "large" && ownerState.variant === "contained" && {
-        padding: "8px 22px",
-        fontSize: theme.typography.pxToRem(15)
-    }, ownerState.fullWidth && {
-        width: "100%"
-    });
-}, ({ ownerState  })=>ownerState.disableElevation && {
-        boxShadow: "none",
-        "&:hover": {
-            boxShadow: "none"
-        },
-        [`&.${(0, _buttonClassesDefault.default).focusVisible}`]: {
-            boxShadow: "none"
-        },
-        "&:active": {
-            boxShadow: "none"
-        },
-        [`&.${(0, _buttonClassesDefault.default).disabled}`]: {
-            boxShadow: "none"
-        }
-    });
-const ButtonStartIcon = (0, _styledDefault.default)("span", {
-    name: "MuiButton",
-    slot: "StartIcon",
-    overridesResolver: (props, styles)=>{
-        const { ownerState  } = props;
-        return [
-            styles.startIcon,
-            styles[`iconSize${(0, _capitalizeDefault.default)(ownerState.size)}`]
-        ];
-    }
-})(({ ownerState  })=>(0, _extendsDefault.default)({
-        display: "inherit",
-        marginRight: 8,
-        marginLeft: -4
-    }, ownerState.size === "small" && {
-        marginLeft: -2
-    }, commonIconStyles(ownerState)));
-const ButtonEndIcon = (0, _styledDefault.default)("span", {
-    name: "MuiButton",
-    slot: "EndIcon",
-    overridesResolver: (props, styles)=>{
-        const { ownerState  } = props;
-        return [
-            styles.endIcon,
-            styles[`iconSize${(0, _capitalizeDefault.default)(ownerState.size)}`]
-        ];
-    }
-})(({ ownerState  })=>(0, _extendsDefault.default)({
-        display: "inherit",
-        marginRight: -4,
-        marginLeft: 8
-    }, ownerState.size === "small" && {
-        marginRight: -2
-    }, commonIconStyles(ownerState)));
-const Button = /*#__PURE__*/ _react.forwardRef(function Button(inProps, ref) {
-    // props priority: `inProps` > `contextProps` > `themeDefaultProps`
-    const contextProps = _react.useContext((0, _buttonGroupContextDefault.default));
-    const resolvedProps = (0, _utils.internal_resolveProps)(contextProps, inProps);
-    const props = (0, _useThemePropsDefault.default)({
-        props: resolvedProps,
-        name: "MuiButton"
-    });
-    const { children , color ="primary" , component ="button" , className , disabled =false , disableElevation =false , disableFocusRipple =false , endIcon: endIconProp , focusVisibleClassName , fullWidth =false , size ="medium" , startIcon: startIconProp , type , variant ="text"  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
-    const ownerState = (0, _extendsDefault.default)({}, props, {
-        color,
-        component,
-        disabled,
-        disableElevation,
-        disableFocusRipple,
-        fullWidth,
-        size,
-        type,
-        variant
-    });
-    const classes = useUtilityClasses(ownerState);
-    const startIcon = startIconProp && /*#__PURE__*/ (0, _jsxRuntime.jsx)(ButtonStartIcon, {
-        className: classes.startIcon,
-        ownerState: ownerState,
-        children: startIconProp
-    });
-    const endIcon = endIconProp && /*#__PURE__*/ (0, _jsxRuntime.jsx)(ButtonEndIcon, {
-        className: classes.endIcon,
-        ownerState: ownerState,
-        children: endIconProp
-    });
-    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)(ButtonRoot, (0, _extendsDefault.default)({
-        ownerState: ownerState,
-        className: (0, _clsxDefault.default)(contextProps.className, classes.root, className),
-        component: component,
-        disabled: disabled,
-        focusRipple: !disableFocusRipple,
-        focusVisibleClassName: (0, _clsxDefault.default)(classes.focusVisible, focusVisibleClassName),
-        ref: ref,
-        type: type
-    }, other, {
-        classes: classes,
-        children: [
-            startIcon,
-            children,
-            endIcon
-        ]
-    }));
-});
-Button.propTypes /* remove-proptypes */  = {
-    // ----------------------------- Warning --------------------------------
-    // | These PropTypes are generated from the TypeScript type definitions |
-    // |     To update them edit the d.ts file and run "yarn proptypes"     |
-    // ----------------------------------------------------------------------
-    /**
-   * The content of the component.
-   */ children: (0, _propTypesDefault.default).node,
-    /**
-   * Override or extend the styles applied to the component.
-   */ classes: (0, _propTypesDefault.default).object,
-    /**
-   * @ignore
-   */ className: (0, _propTypesDefault.default).string,
-    /**
-   * The color of the component.
-   * It supports both default and custom theme colors, which can be added as shown in the
-   * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
-   * @default 'primary'
-   */ color: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
-        (0, _propTypesDefault.default).oneOf([
-            "inherit",
-            "primary",
-            "secondary",
-            "success",
-            "error",
-            "info",
-            "warning"
-        ]),
-        (0, _propTypesDefault.default).string
-    ]),
-    /**
-   * The component used for the root node.
-   * Either a string to use a HTML element or a component.
-   */ component: (0, _propTypesDefault.default).elementType,
-    /**
-   * If `true`, the component is disabled.
-   * @default false
-   */ disabled: (0, _propTypesDefault.default).bool,
-    /**
-   * If `true`, no elevation is used.
-   * @default false
-   */ disableElevation: (0, _propTypesDefault.default).bool,
-    /**
-   * If `true`, the  keyboard focus ripple is disabled.
-   * @default false
-   */ disableFocusRipple: (0, _propTypesDefault.default).bool,
-    /**
-   * If `true`, the ripple effect is disabled.
-   *
-   * ⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure
-   * to highlight the element by applying separate styles with the `.Mui-focusVisible` class.
-   * @default false
-   */ disableRipple: (0, _propTypesDefault.default).bool,
-    /**
-   * Element placed after the children.
-   */ endIcon: (0, _propTypesDefault.default).node,
-    /**
-   * @ignore
-   */ focusVisibleClassName: (0, _propTypesDefault.default).string,
-    /**
-   * If `true`, the button will take up the full width of its container.
-   * @default false
-   */ fullWidth: (0, _propTypesDefault.default).bool,
-    /**
-   * The URL to link to when the button is clicked.
-   * If defined, an `a` element will be used as the root node.
-   */ href: (0, _propTypesDefault.default).string,
-    /**
-   * The size of the component.
-   * `small` is equivalent to the dense button styling.
-   * @default 'medium'
-   */ size: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
-        (0, _propTypesDefault.default).oneOf([
-            "small",
-            "medium",
-            "large"
-        ]),
-        (0, _propTypesDefault.default).string
-    ]),
-    /**
-   * Element placed before the children.
-   */ startIcon: (0, _propTypesDefault.default).node,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, _propTypesDefault.default).oneOfType([
-        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
-            (0, _propTypesDefault.default).func,
-            (0, _propTypesDefault.default).object,
-            (0, _propTypesDefault.default).bool
-        ])),
-        (0, _propTypesDefault.default).func,
-        (0, _propTypesDefault.default).object
-    ]),
-    /**
-   * @ignore
-   */ type: (0, _propTypesDefault.default).oneOfType([
-        (0, _propTypesDefault.default).oneOf([
-            "button",
-            "reset",
-            "submit"
-        ]),
-        (0, _propTypesDefault.default).string
-    ]),
-    /**
-   * The variant to use.
-   * @default 'text'
-   */ variant: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
-        (0, _propTypesDefault.default).oneOf([
-            "contained",
-            "outlined",
-            "text"
-        ]),
-        (0, _propTypesDefault.default).string
-    ])
-};
-exports.default = Button;
-
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/utils":"cttLn","@mui/base":"656dE","@mui/system":"Q0Zql","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../ButtonBase":"epS5U","../utils/capitalize":"kuBnp","./buttonClasses":"6OUZd","../ButtonGroup/ButtonGroupContext":"1ETaH","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"epS5U":[function(require,module,exports) {
+},{"@mui/system":"Q0Zql","./defaultTheme":"isygc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"epS5U":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _buttonBaseDefault.default));
@@ -70369,7 +69819,13 @@ const buttonBaseClasses = (0, _utils.unstable_generateUtilityClasses)("MuiButton
 ]);
 exports.default = buttonBaseClasses;
 
-},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6OUZd":[function(require,module,exports) {
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kuBnp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_capitalize);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6OUZd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getButtonUtilityClass", ()=>getButtonUtilityClass);
@@ -70597,842 +70053,7 @@ GlobalStyles.propTypes /* remove-proptypes */  = {
 };
 exports.default = GlobalStyles;
 
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","@mui/system":"Q0Zql","../styles/defaultTheme":"isygc","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gh88n":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>(0, _boxDefault.default));
-var _box = require("./Box");
-var _boxDefault = parcelHelpers.interopDefault(_box);
-
-},{"./Box":"3Lklc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3Lklc":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _system = require("@mui/system");
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _className = require("../className");
-var _styles = require("../styles");
-const defaultTheme = (0, _styles.createTheme)();
-const Box = (0, _system.createBox)({
-    defaultTheme,
-    defaultClassName: "MuiBox-root",
-    generateClassName: (0, _className.unstable_ClassNameGenerator).generate
-});
-Box.propTypes /* remove-proptypes */  = {
-    // ----------------------------- Warning --------------------------------
-    // | These PropTypes are generated from the TypeScript type definitions |
-    // |     To update them edit the d.ts file and run "yarn proptypes"     |
-    // ----------------------------------------------------------------------
-    /**
-   * @ignore
-   */ children: (0, _propTypesDefault.default).node,
-    /**
-   * The component used for the root node.
-   * Either a string to use a HTML element or a component.
-   */ component: (0, _propTypesDefault.default).elementType,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, _propTypesDefault.default).oneOfType([
-        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
-            (0, _propTypesDefault.default).func,
-            (0, _propTypesDefault.default).object,
-            (0, _propTypesDefault.default).bool
-        ])),
-        (0, _propTypesDefault.default).func,
-        (0, _propTypesDefault.default).object
-    ])
-};
-exports.default = Box;
-
-},{"@mui/system":"Q0Zql","prop-types":"7wKI2","../className":"6ainf","../styles":"eZWTQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6ainf":[function(require,module,exports) {
-// eslint-disable-next-line import/prefer-default-export
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "unstable_ClassNameGenerator", ()=>(0, _utils.unstable_ClassNameGenerator));
-var _utils = require("@mui/utils");
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eZWTQ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "adaptV4Theme", ()=>(0, _adaptV4ThemeDefault.default));
-parcelHelpers.export(exports, "hexToRgb", ()=>(0, _system.hexToRgb));
-parcelHelpers.export(exports, "rgbToHex", ()=>(0, _system.rgbToHex));
-parcelHelpers.export(exports, "hslToRgb", ()=>(0, _system.hslToRgb));
-parcelHelpers.export(exports, "decomposeColor", ()=>(0, _system.decomposeColor));
-parcelHelpers.export(exports, "recomposeColor", ()=>(0, _system.recomposeColor));
-parcelHelpers.export(exports, "getContrastRatio", ()=>(0, _system.getContrastRatio));
-parcelHelpers.export(exports, "getLuminance", ()=>(0, _system.getLuminance));
-parcelHelpers.export(exports, "emphasize", ()=>(0, _system.emphasize));
-parcelHelpers.export(exports, "alpha", ()=>(0, _system.alpha));
-parcelHelpers.export(exports, "darken", ()=>(0, _system.darken));
-parcelHelpers.export(exports, "lighten", ()=>(0, _system.lighten));
-parcelHelpers.export(exports, "css", ()=>(0, _system.css));
-parcelHelpers.export(exports, "keyframes", ()=>(0, _system.keyframes));
-parcelHelpers.export(exports, "experimental_sx", ()=>(0, _system.experimental_sx));
-parcelHelpers.export(exports, "createTheme", ()=>(0, _createThemeDefault.default));
-parcelHelpers.export(exports, "createMuiTheme", ()=>(0, _createTheme.createMuiTheme));
-parcelHelpers.export(exports, "unstable_createMuiStrictModeTheme", ()=>(0, _createMuiStrictModeThemeDefault.default));
-parcelHelpers.export(exports, "createStyles", ()=>(0, _createStylesDefault.default));
-parcelHelpers.export(exports, "unstable_getUnit", ()=>(0, _cssUtils.getUnit));
-parcelHelpers.export(exports, "unstable_toUnitless", ()=>(0, _cssUtils.toUnitless));
-parcelHelpers.export(exports, "responsiveFontSizes", ()=>(0, _responsiveFontSizesDefault.default));
-parcelHelpers.export(exports, "duration", ()=>(0, _createTransitions.duration));
-parcelHelpers.export(exports, "easing", ()=>(0, _createTransitions.easing));
-parcelHelpers.export(exports, "useTheme", ()=>(0, _useThemeDefault.default));
-parcelHelpers.export(exports, "useThemeProps", ()=>(0, _useThemePropsDefault.default));
-parcelHelpers.export(exports, "styled", ()=>(0, _styledDefault.default));
-parcelHelpers.export(exports, "experimentalStyled", ()=>(0, _styledDefault.default));
-parcelHelpers.export(exports, "ThemeProvider", ()=>(0, _themeProviderDefault.default));
-parcelHelpers.export(exports, "StyledEngineProvider", ()=>(0, _system.StyledEngineProvider));
-// The legacy utilities from @mui/styles
-// These are just empty functions that throws when invoked
-parcelHelpers.export(exports, "makeStyles", ()=>(0, _makeStylesDefault.default));
-parcelHelpers.export(exports, "withStyles", ()=>(0, _withStylesDefault.default));
-parcelHelpers.export(exports, "withTheme", ()=>(0, _withThemeDefault.default));
-parcelHelpers.export(exports, "experimental_extendTheme", ()=>(0, _experimentalExtendThemeDefault.default));
-var _adaptV4Theme = require("./adaptV4Theme");
-var _adaptV4ThemeDefault = parcelHelpers.interopDefault(_adaptV4Theme);
-var _system = require("@mui/system");
-var _createTheme = require("./createTheme");
-var _createThemeDefault = parcelHelpers.interopDefault(_createTheme);
-var _createMuiStrictModeTheme = require("./createMuiStrictModeTheme");
-var _createMuiStrictModeThemeDefault = parcelHelpers.interopDefault(_createMuiStrictModeTheme);
-var _createStyles = require("./createStyles");
-var _createStylesDefault = parcelHelpers.interopDefault(_createStyles);
-var _cssUtils = require("./cssUtils");
-var _responsiveFontSizes = require("./responsiveFontSizes");
-var _responsiveFontSizesDefault = parcelHelpers.interopDefault(_responsiveFontSizes);
-var _createTransitions = require("./createTransitions");
-var _useTheme = require("./useTheme");
-var _useThemeDefault = parcelHelpers.interopDefault(_useTheme);
-var _useThemeProps = require("./useThemeProps");
-var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
-var _styled = require("./styled");
-var _styledDefault = parcelHelpers.interopDefault(_styled);
-var _themeProvider = require("./ThemeProvider");
-var _themeProviderDefault = parcelHelpers.interopDefault(_themeProvider);
-var _makeStyles = require("./makeStyles");
-var _makeStylesDefault = parcelHelpers.interopDefault(_makeStyles);
-var _withStyles = require("./withStyles");
-var _withStylesDefault = parcelHelpers.interopDefault(_withStyles);
-var _withTheme = require("./withTheme");
-var _withThemeDefault = parcelHelpers.interopDefault(_withTheme);
-var _cssVarsProvider = require("./CssVarsProvider");
-parcelHelpers.exportAll(_cssVarsProvider, exports);
-var _experimentalExtendTheme = require("./experimental_extendTheme");
-var _experimentalExtendThemeDefault = parcelHelpers.interopDefault(_experimentalExtendTheme);
-
-},{"./adaptV4Theme":false,"@mui/system":"Q0Zql","./createTheme":"GNebG","./createMuiStrictModeTheme":false,"./createStyles":false,"./cssUtils":false,"./responsiveFontSizes":false,"./createTransitions":"av8l7","./useTheme":"ge9MG","./useThemeProps":"1WXY3","./styled":"9NVzk","./ThemeProvider":"ewpwA","./makeStyles":false,"./withStyles":false,"./withTheme":false,"./CssVarsProvider":"km47z","./experimental_extendTheme":"jhDvR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ge9MG":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _system = require("@mui/system");
-var _defaultTheme = require("./defaultTheme");
-var _defaultThemeDefault = parcelHelpers.interopDefault(_defaultTheme);
-function useTheme() {
-    const theme = (0, _system.useTheme)((0, _defaultThemeDefault.default));
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    _react.useDebugValue(theme);
-    return theme;
-}
-exports.default = useTheme;
-
-},{"react":"21dqq","@mui/system":"Q0Zql","./defaultTheme":"isygc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ewpwA":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>(0, _system.ThemeProvider));
-var _system = require("@mui/system");
-
-},{"@mui/system":"Q0Zql","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km47z":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useColorScheme", ()=>useColorScheme);
-parcelHelpers.export(exports, "getInitColorSchemeScript", ()=>getInitColorSchemeScript);
-parcelHelpers.export(exports, "shouldSkipGeneratingVar", ()=>shouldSkipGeneratingVar);
-parcelHelpers.export(exports, "Experimental_CssVarsProvider", ()=>CssVarsProvider);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _system = require("@mui/system");
-var _experimentalExtendTheme = require("./experimental_extendTheme");
-var _experimentalExtendThemeDefault = parcelHelpers.interopDefault(_experimentalExtendTheme);
-var _createTypography = require("./createTypography");
-var _createTypographyDefault = parcelHelpers.interopDefault(_createTypography);
-var _excludeVariablesFromRoot = require("./excludeVariablesFromRoot");
-var _excludeVariablesFromRootDefault = parcelHelpers.interopDefault(_excludeVariablesFromRoot);
-const shouldSkipGeneratingVar = (keys)=>{
-    var _keys$;
-    return !!keys[0].match(/(typography|mixins|breakpoints|direction|transitions)/) || keys[0] === "palette" && !!((_keys$ = keys[1]) != null && _keys$.match(/(mode|contrastThreshold|tonalOffset)/));
-};
-const defaultTheme = (0, _experimentalExtendThemeDefault.default)();
-const { CssVarsProvider , useColorScheme , getInitColorSchemeScript  } = (0, _system.unstable_createCssVarsProvider)({
-    theme: defaultTheme,
-    attribute: "data-mui-color-scheme",
-    modeStorageKey: "mui-mode",
-    colorSchemeStorageKey: "mui-color-scheme",
-    defaultColorScheme: {
-        light: "light",
-        dark: "dark"
-    },
-    resolveTheme: (theme)=>{
-        const newTheme = (0, _extendsDefault.default)({}, theme, {
-            typography: (0, _createTypographyDefault.default)(theme.palette, theme.typography)
-        });
-        return newTheme;
-    },
-    shouldSkipGeneratingVar,
-    excludeVariablesFromRoot: (0, _excludeVariablesFromRootDefault.default)
-});
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@mui/system":"Q0Zql","./experimental_extendTheme":"jhDvR","./createTypography":"80aO7","./excludeVariablesFromRoot":"3QiJp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jhDvR":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "createGetCssVar", ()=>createGetCssVar);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _utils = require("@mui/utils");
-var _system = require("@mui/system");
-var _createTheme = require("./createTheme");
-var _createThemeDefault = parcelHelpers.interopDefault(_createTheme);
-var _paper = require("../Paper/Paper");
-const _excluded = [
-    "colorSchemes",
-    "cssVarPrefix"
-], _excluded2 = [
-    "palette"
-];
-const defaultDarkOverlays = [
-    ...Array(25)
-].map((_, index)=>{
-    if (index === 0) return undefined;
-    const overlay = (0, _paper.getOverlayAlpha)(index);
-    return `linear-gradient(rgba(255 255 255 / ${overlay}), rgba(255 255 255 / ${overlay}))`;
-});
-function assignNode(obj, keys) {
-    keys.forEach((k)=>{
-        if (!obj[k]) obj[k] = {};
-    });
-}
-function setColor(obj, key, defaultValue) {
-    obj[key] = obj[key] || defaultValue;
-}
-const createGetCssVar = (cssVarPrefix = "mui")=>(0, _system.unstable_createGetCssVar)(cssVarPrefix);
-function extendTheme(options = {}, ...args) {
-    var _colorSchemesInput$li, _colorSchemesInput$da, _colorSchemesInput$li2, _colorSchemesInput$li3, _colorSchemesInput$da2, _colorSchemesInput$da3;
-    const { colorSchemes: colorSchemesInput = {} , cssVarPrefix ="mui"  } = options, input = (0, _objectWithoutPropertiesLooseDefault.default)(options, _excluded);
-    const getCssVar = createGetCssVar(cssVarPrefix);
-    const _createThemeWithoutVa = (0, _createThemeDefault.default)((0, _extendsDefault.default)({}, input, colorSchemesInput.light && {
-        palette: (_colorSchemesInput$li = colorSchemesInput.light) == null ? void 0 : _colorSchemesInput$li.palette
-    })), { palette: lightPalette  } = _createThemeWithoutVa, muiTheme = (0, _objectWithoutPropertiesLooseDefault.default)(_createThemeWithoutVa, _excluded2);
-    const { palette: darkPalette  } = (0, _createThemeDefault.default)({
-        palette: (0, _extendsDefault.default)({
-            mode: "dark"
-        }, (_colorSchemesInput$da = colorSchemesInput.dark) == null ? void 0 : _colorSchemesInput$da.palette)
-    });
-    let theme = (0, _extendsDefault.default)({}, muiTheme, {
-        cssVarPrefix,
-        getCssVar,
-        colorSchemes: (0, _extendsDefault.default)({}, colorSchemesInput, {
-            light: (0, _extendsDefault.default)({}, colorSchemesInput.light, {
-                palette: lightPalette,
-                opacity: (0, _extendsDefault.default)({
-                    inputPlaceholder: 0.42,
-                    inputUnderline: 0.42,
-                    switchTrackDisabled: 0.12,
-                    switchTrack: 0.38
-                }, (_colorSchemesInput$li2 = colorSchemesInput.light) == null ? void 0 : _colorSchemesInput$li2.opacity),
-                overlays: ((_colorSchemesInput$li3 = colorSchemesInput.light) == null ? void 0 : _colorSchemesInput$li3.overlays) || []
-            }),
-            dark: (0, _extendsDefault.default)({}, colorSchemesInput.dark, {
-                palette: darkPalette,
-                opacity: (0, _extendsDefault.default)({
-                    inputPlaceholder: 0.5,
-                    inputUnderline: 0.7,
-                    switchTrackDisabled: 0.2,
-                    switchTrack: 0.3
-                }, (_colorSchemesInput$da2 = colorSchemesInput.dark) == null ? void 0 : _colorSchemesInput$da2.opacity),
-                overlays: ((_colorSchemesInput$da3 = colorSchemesInput.dark) == null ? void 0 : _colorSchemesInput$da3.overlays) || defaultDarkOverlays
-            })
-        })
-    });
-    Object.keys(theme.colorSchemes).forEach((key)=>{
-        const palette = theme.colorSchemes[key].palette;
-        // attach black & white channels to common node
-        if (key === "light") {
-            setColor(palette.common, "background", "#fff");
-            setColor(palette.common, "onBackground", "#000");
-        } else {
-            setColor(palette.common, "background", "#000");
-            setColor(palette.common, "onBackground", "#fff");
-        }
-        // assign component variables
-        assignNode(palette, [
-            "Alert",
-            "AppBar",
-            "Avatar",
-            "Chip",
-            "FilledInput",
-            "LinearProgress",
-            "Skeleton",
-            "Slider",
-            "SnackbarContent",
-            "SpeedDialAction",
-            "StepConnector",
-            "StepContent",
-            "Switch",
-            "TableCell",
-            "Tooltip"
-        ]);
-        if (key === "light") {
-            setColor(palette.Alert, "errorColor", (0, _system.darken)(palette.error.light, 0.6));
-            setColor(palette.Alert, "infoColor", (0, _system.darken)(palette.info.light, 0.6));
-            setColor(palette.Alert, "successColor", (0, _system.darken)(palette.success.light, 0.6));
-            setColor(palette.Alert, "warningColor", (0, _system.darken)(palette.warning.light, 0.6));
-            setColor(palette.Alert, "errorFilledBg", getCssVar("palette-error-main"));
-            setColor(palette.Alert, "infoFilledBg", getCssVar("palette-info-main"));
-            setColor(palette.Alert, "successFilledBg", getCssVar("palette-success-main"));
-            setColor(palette.Alert, "warningFilledBg", getCssVar("palette-warning-main"));
-            setColor(palette.Alert, "errorFilledColor", lightPalette.getContrastText(palette.error.main));
-            setColor(palette.Alert, "infoFilledColor", lightPalette.getContrastText(palette.info.main));
-            setColor(palette.Alert, "successFilledColor", lightPalette.getContrastText(palette.success.main));
-            setColor(palette.Alert, "warningFilledColor", lightPalette.getContrastText(palette.warning.main));
-            setColor(palette.Alert, "errorStandardBg", (0, _system.lighten)(palette.error.light, 0.9));
-            setColor(palette.Alert, "infoStandardBg", (0, _system.lighten)(palette.info.light, 0.9));
-            setColor(palette.Alert, "successStandardBg", (0, _system.lighten)(palette.success.light, 0.9));
-            setColor(palette.Alert, "warningStandardBg", (0, _system.lighten)(palette.warning.light, 0.9));
-            setColor(palette.Alert, "errorIconColor", getCssVar("palette-error-light"));
-            setColor(palette.Alert, "infoIconColor", getCssVar("palette-info-light"));
-            setColor(palette.Alert, "successIconColor", getCssVar("palette-success-light"));
-            setColor(palette.Alert, "warningIconColor", getCssVar("palette-warning-light"));
-            setColor(palette.AppBar, "defaultBg", getCssVar("palette-grey-100"));
-            setColor(palette.Avatar, "defaultBg", getCssVar("palette-grey-400"));
-            setColor(palette.Chip, "defaultBorder", getCssVar("palette-grey-400"));
-            setColor(palette.Chip, "defaultAvatarColor", getCssVar("palette-grey-700"));
-            setColor(palette.Chip, "defaultIconColor", getCssVar("palette-grey-700"));
-            setColor(palette.FilledInput, "bg", "rgba(0, 0, 0, 0.06)");
-            setColor(palette.FilledInput, "hoverBg", "rgba(0, 0, 0, 0.09)");
-            setColor(palette.FilledInput, "disabledBg", "rgba(0, 0, 0, 0.12)");
-            setColor(palette.LinearProgress, "primaryBg", (0, _system.lighten)(palette.primary.main, 0.62));
-            setColor(palette.LinearProgress, "secondaryBg", (0, _system.lighten)(palette.secondary.main, 0.62));
-            setColor(palette.LinearProgress, "errorBg", (0, _system.lighten)(palette.error.main, 0.62));
-            setColor(palette.LinearProgress, "infoBg", (0, _system.lighten)(palette.info.main, 0.62));
-            setColor(palette.LinearProgress, "successBg", (0, _system.lighten)(palette.success.main, 0.62));
-            setColor(palette.LinearProgress, "warningBg", (0, _system.lighten)(palette.warning.main, 0.62));
-            setColor(palette.Skeleton, "bg", `rgba(${getCssVar("palette-text-primaryChannel")} / 0.11)`);
-            setColor(palette.Slider, "primaryTrack", (0, _system.lighten)(palette.primary.main, 0.62));
-            setColor(palette.Slider, "secondaryTrack", (0, _system.lighten)(palette.secondary.main, 0.62));
-            setColor(palette.Slider, "errorTrack", (0, _system.lighten)(palette.error.main, 0.62));
-            setColor(palette.Slider, "infoTrack", (0, _system.lighten)(palette.info.main, 0.62));
-            setColor(palette.Slider, "successTrack", (0, _system.lighten)(palette.success.main, 0.62));
-            setColor(palette.Slider, "warningTrack", (0, _system.lighten)(palette.warning.main, 0.62));
-            const snackbarContentBackground = (0, _system.emphasize)(palette.background.default, 0.8);
-            setColor(palette.SnackbarContent, "bg", snackbarContentBackground);
-            setColor(palette.SnackbarContent, "color", lightPalette.getContrastText(snackbarContentBackground));
-            setColor(palette.SpeedDialAction, "fabHoverBg", (0, _system.emphasize)(palette.background.paper, 0.15));
-            setColor(palette.StepConnector, "border", getCssVar("palette-grey-400"));
-            setColor(palette.StepContent, "border", getCssVar("palette-grey-400"));
-            setColor(palette.Switch, "defaultColor", getCssVar("palette-common-white"));
-            setColor(palette.Switch, "defaultDisabledColor", getCssVar("palette-grey-100"));
-            setColor(palette.Switch, "primaryDisabledColor", (0, _system.lighten)(palette.primary.main, 0.62));
-            setColor(palette.Switch, "secondaryDisabledColor", (0, _system.lighten)(palette.secondary.main, 0.62));
-            setColor(palette.Switch, "errorDisabledColor", (0, _system.lighten)(palette.error.main, 0.62));
-            setColor(palette.Switch, "infoDisabledColor", (0, _system.lighten)(palette.info.main, 0.62));
-            setColor(palette.Switch, "successDisabledColor", (0, _system.lighten)(palette.success.main, 0.62));
-            setColor(palette.Switch, "warningDisabledColor", (0, _system.lighten)(palette.warning.main, 0.62));
-            setColor(palette.TableCell, "border", (0, _system.lighten)((0, _system.alpha)(palette.divider, 1), 0.88));
-            setColor(palette.Tooltip, "bg", (0, _system.alpha)(palette.grey[700], 0.92));
-        } else {
-            setColor(palette.Alert, "errorColor", (0, _system.lighten)(palette.error.light, 0.6));
-            setColor(palette.Alert, "infoColor", (0, _system.lighten)(palette.info.light, 0.6));
-            setColor(palette.Alert, "successColor", (0, _system.lighten)(palette.success.light, 0.6));
-            setColor(palette.Alert, "warningColor", (0, _system.lighten)(palette.warning.light, 0.6));
-            setColor(palette.Alert, "errorFilledBg", getCssVar("palette-error-dark"));
-            setColor(palette.Alert, "infoFilledBg", getCssVar("palette-info-dark"));
-            setColor(palette.Alert, "successFilledBg", getCssVar("palette-success-dark"));
-            setColor(palette.Alert, "warningFilledBg", getCssVar("palette-warning-dark"));
-            setColor(palette.Alert, "errorFilledColor", darkPalette.getContrastText(palette.error.dark));
-            setColor(palette.Alert, "infoFilledColor", darkPalette.getContrastText(palette.info.dark));
-            setColor(palette.Alert, "successFilledColor", darkPalette.getContrastText(palette.success.dark));
-            setColor(palette.Alert, "warningFilledColor", darkPalette.getContrastText(palette.warning.dark));
-            setColor(palette.Alert, "errorStandardBg", (0, _system.darken)(palette.error.light, 0.9));
-            setColor(palette.Alert, "infoStandardBg", (0, _system.darken)(palette.info.light, 0.9));
-            setColor(palette.Alert, "successStandardBg", (0, _system.darken)(palette.success.light, 0.9));
-            setColor(palette.Alert, "warningStandardBg", (0, _system.darken)(palette.warning.light, 0.9));
-            setColor(palette.Alert, "errorIconColor", getCssVar("palette-error-main"));
-            setColor(palette.Alert, "infoIconColor", getCssVar("palette-info-main"));
-            setColor(palette.Alert, "successIconColor", getCssVar("palette-success-main"));
-            setColor(palette.Alert, "warningIconColor", getCssVar("palette-warning-main"));
-            setColor(palette.AppBar, "defaultBg", getCssVar("palette-grey-900"));
-            setColor(palette.AppBar, "darkBg", getCssVar("palette-background-paper")); // specific for dark mode
-            setColor(palette.AppBar, "darkColor", getCssVar("palette-text-primary")); // specific for dark mode
-            setColor(palette.Avatar, "defaultBg", getCssVar("palette-grey-600"));
-            setColor(palette.Chip, "defaultBorder", getCssVar("palette-grey-700"));
-            setColor(palette.Chip, "defaultAvatarColor", getCssVar("palette-grey-300"));
-            setColor(palette.Chip, "defaultIconColor", getCssVar("palette-grey-300"));
-            setColor(palette.FilledInput, "bg", "rgba(255, 255, 255, 0.09)");
-            setColor(palette.FilledInput, "hoverBg", "rgba(255, 255, 255, 0.13)");
-            setColor(palette.FilledInput, "disabledBg", "rgba(255, 255, 255, 0.12)");
-            setColor(palette.LinearProgress, "primaryBg", (0, _system.darken)(palette.primary.main, 0.5));
-            setColor(palette.LinearProgress, "secondaryBg", (0, _system.darken)(palette.secondary.main, 0.5));
-            setColor(palette.LinearProgress, "errorBg", (0, _system.darken)(palette.error.main, 0.5));
-            setColor(palette.LinearProgress, "infoBg", (0, _system.darken)(palette.info.main, 0.5));
-            setColor(palette.LinearProgress, "successBg", (0, _system.darken)(palette.success.main, 0.5));
-            setColor(palette.LinearProgress, "warningBg", (0, _system.darken)(palette.warning.main, 0.5));
-            setColor(palette.Skeleton, "bg", `rgba(${getCssVar("palette-text-primaryChannel")} / 0.13)`);
-            setColor(palette.Slider, "primaryTrack", (0, _system.darken)(palette.primary.main, 0.5));
-            setColor(palette.Slider, "secondaryTrack", (0, _system.darken)(palette.secondary.main, 0.5));
-            setColor(palette.Slider, "errorTrack", (0, _system.darken)(palette.error.main, 0.5));
-            setColor(palette.Slider, "infoTrack", (0, _system.darken)(palette.info.main, 0.5));
-            setColor(palette.Slider, "successTrack", (0, _system.darken)(palette.success.main, 0.5));
-            setColor(palette.Slider, "warningTrack", (0, _system.darken)(palette.warning.main, 0.5));
-            const snackbarContentBackground1 = (0, _system.emphasize)(palette.background.default, 0.98);
-            setColor(palette.SnackbarContent, "bg", snackbarContentBackground1);
-            setColor(palette.SnackbarContent, "color", darkPalette.getContrastText(snackbarContentBackground1));
-            setColor(palette.SpeedDialAction, "fabHoverBg", (0, _system.emphasize)(palette.background.paper, 0.15));
-            setColor(palette.StepConnector, "border", getCssVar("palette-grey-600"));
-            setColor(palette.StepContent, "border", getCssVar("palette-grey-600"));
-            setColor(palette.Switch, "defaultColor", getCssVar("palette-grey-300"));
-            setColor(palette.Switch, "defaultDisabledColor", getCssVar("palette-grey-600"));
-            setColor(palette.Switch, "primaryDisabledColor", (0, _system.darken)(palette.primary.main, 0.55));
-            setColor(palette.Switch, "secondaryDisabledColor", (0, _system.darken)(palette.secondary.main, 0.55));
-            setColor(palette.Switch, "errorDisabledColor", (0, _system.darken)(palette.error.main, 0.55));
-            setColor(palette.Switch, "infoDisabledColor", (0, _system.darken)(palette.info.main, 0.55));
-            setColor(palette.Switch, "successDisabledColor", (0, _system.darken)(palette.success.main, 0.55));
-            setColor(palette.Switch, "warningDisabledColor", (0, _system.darken)(palette.warning.main, 0.55));
-            setColor(palette.TableCell, "border", (0, _system.darken)((0, _system.alpha)(palette.divider, 1), 0.68));
-            setColor(palette.Tooltip, "bg", (0, _system.alpha)(palette.grey[700], 0.92));
-        }
-        palette.background.defaultChannel = (0, _system.colorChannel)(palette.background.default); // MUI X - DataGrid needs this token.
-        palette.common.backgroundChannel = (0, _system.colorChannel)(palette.common.background);
-        palette.common.onBackgroundChannel = (0, _system.colorChannel)(palette.common.onBackground);
-        palette.dividerChannel = (0, _system.colorChannel)(palette.divider);
-        Object.keys(palette).forEach((color)=>{
-            const colors = palette[color];
-            // Color palettes: primary, secondary, error, info, success, and warning
-            if (colors.main) palette[color].mainChannel = (0, _system.colorChannel)(colors.main);
-            if (colors.light) palette[color].lightChannel = (0, _system.colorChannel)(colors.light);
-            if (colors.dark) palette[color].darkChannel = (0, _system.colorChannel)(colors.dark);
-            if (colors.contrastText) palette[color].contrastTextChannel = (0, _system.colorChannel)(colors.contrastText);
-            // Text colors: text.primary, text.secondary
-            if (colors.primary) palette[color].primaryChannel = (0, _system.colorChannel)(colors.primary);
-            if (colors.secondary) palette[color].secondaryChannel = (0, _system.colorChannel)(colors.secondary);
-            // Action colors: action.active, action.selected
-            if (colors.active) palette[color].activeChannel = (0, _system.colorChannel)(colors.active);
-            if (colors.selected) palette[color].selectedChannel = (0, _system.colorChannel)(colors.selected);
-        });
-    });
-    theme = args.reduce((acc, argument)=>(0, _utils.deepmerge)(acc, argument), theme);
-    return theme;
-}
-exports.default = extendTheme;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@mui/utils":"cttLn","@mui/system":"Q0Zql","./createTheme":"GNebG","../Paper/Paper":"5srYA","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5srYA":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getOverlayAlpha", ()=>getOverlayAlpha);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _react = require("react");
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _clsx = require("clsx");
-var _clsxDefault = parcelHelpers.interopDefault(_clsx);
-var _utils = require("@mui/utils");
-var _base = require("@mui/base");
-var _system = require("@mui/system");
-var _styled = require("../styles/styled");
-var _styledDefault = parcelHelpers.interopDefault(_styled);
-var _useThemeProps = require("../styles/useThemeProps");
-var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
-var _useTheme = require("../styles/useTheme");
-var _useThemeDefault = parcelHelpers.interopDefault(_useTheme);
-var _paperClasses = require("./paperClasses");
-// Inspired by https://github.com/material-components/material-components-ios/blob/bca36107405594d5b7b16265a5b0ed698f85a5ee/components/Elevation/src/UIColor%2BMaterialElevation.m#L61
-var _jsxRuntime = require("react/jsx-runtime");
-const _excluded = [
-    "className",
-    "component",
-    "elevation",
-    "square",
-    "variant"
-];
-const getOverlayAlpha = (elevation)=>{
-    let alphaValue;
-    if (elevation < 1) alphaValue = 5.11916 * elevation ** 2;
-    else alphaValue = 4.5 * Math.log(elevation + 1) + 2;
-    return (alphaValue / 100).toFixed(2);
-};
-const useUtilityClasses = (ownerState)=>{
-    const { square , elevation , variant , classes  } = ownerState;
-    const slots = {
-        root: [
-            "root",
-            variant,
-            !square && "rounded",
-            variant === "elevation" && `elevation${elevation}`
-        ]
-    };
-    return (0, _base.unstable_composeClasses)(slots, (0, _paperClasses.getPaperUtilityClass), classes);
-};
-const PaperRoot = (0, _styledDefault.default)("div", {
-    name: "MuiPaper",
-    slot: "Root",
-    overridesResolver: (props, styles)=>{
-        const { ownerState  } = props;
-        return [
-            styles.root,
-            styles[ownerState.variant],
-            !ownerState.square && styles.rounded,
-            ownerState.variant === "elevation" && styles[`elevation${ownerState.elevation}`]
-        ];
-    }
-})(({ theme , ownerState  })=>{
-    var _theme$vars$overlays;
-    return (0, _extendsDefault.default)({
-        backgroundColor: (theme.vars || theme).palette.background.paper,
-        color: (theme.vars || theme).palette.text.primary,
-        transition: theme.transitions.create("box-shadow")
-    }, !ownerState.square && {
-        borderRadius: theme.shape.borderRadius
-    }, ownerState.variant === "outlined" && {
-        border: `1px solid ${(theme.vars || theme).palette.divider}`
-    }, ownerState.variant === "elevation" && (0, _extendsDefault.default)({
-        boxShadow: (theme.vars || theme).shadows[ownerState.elevation]
-    }, !theme.vars && theme.palette.mode === "dark" && {
-        backgroundImage: `linear-gradient(${(0, _system.alpha)("#fff", getOverlayAlpha(ownerState.elevation))}, ${(0, _system.alpha)("#fff", getOverlayAlpha(ownerState.elevation))})`
-    }, theme.vars && {
-        backgroundImage: (_theme$vars$overlays = theme.vars.overlays) == null ? void 0 : _theme$vars$overlays[ownerState.elevation]
-    }));
-});
-const Paper = /*#__PURE__*/ _react.forwardRef(function Paper(inProps, ref) {
-    const props = (0, _useThemePropsDefault.default)({
-        props: inProps,
-        name: "MuiPaper"
-    });
-    const { className , component ="div" , elevation =1 , square =false , variant ="elevation"  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
-    const ownerState = (0, _extendsDefault.default)({}, props, {
-        component,
-        elevation,
-        square,
-        variant
-    });
-    const classes = useUtilityClasses(ownerState);
-    {
-        // eslint-disable-next-line react-hooks/rules-of-hooks
-        const theme = (0, _useThemeDefault.default)();
-        if (theme.shadows[elevation] === undefined) console.error([
-            `MUI: The elevation provided <Paper elevation={${elevation}}> is not available in the theme.`,
-            `Please make sure that \`theme.shadows[${elevation}]\` is defined.`
-        ].join("\n"));
-    }
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(PaperRoot, (0, _extendsDefault.default)({
-        as: component,
-        ownerState: ownerState,
-        className: (0, _clsxDefault.default)(classes.root, className),
-        ref: ref
-    }, other));
-});
-Paper.propTypes /* remove-proptypes */  = {
-    // ----------------------------- Warning --------------------------------
-    // | These PropTypes are generated from the TypeScript type definitions |
-    // |     To update them edit the d.ts file and run "yarn proptypes"     |
-    // ----------------------------------------------------------------------
-    /**
-   * The content of the component.
-   */ children: (0, _propTypesDefault.default).node,
-    /**
-   * Override or extend the styles applied to the component.
-   */ classes: (0, _propTypesDefault.default).object,
-    /**
-   * @ignore
-   */ className: (0, _propTypesDefault.default).string,
-    /**
-   * The component used for the root node.
-   * Either a string to use a HTML element or a component.
-   */ component: (0, _propTypesDefault.default).elementType,
-    /**
-   * Shadow depth, corresponds to `dp` in the spec.
-   * It accepts values between 0 and 24 inclusive.
-   * @default 1
-   */ elevation: (0, _utils.chainPropTypes)((0, _utils.integerPropType), (props)=>{
-        const { elevation , variant  } = props;
-        if (elevation > 0 && variant === "outlined") return new Error(`MUI: Combining \`elevation={${elevation}}\` with \`variant="${variant}"\` has no effect. Either use \`elevation={0}\` or use a different \`variant\`.`);
-        return null;
-    }),
-    /**
-   * If `true`, rounded corners are disabled.
-   * @default false
-   */ square: (0, _propTypesDefault.default).bool,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, _propTypesDefault.default).oneOfType([
-        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
-            (0, _propTypesDefault.default).func,
-            (0, _propTypesDefault.default).object,
-            (0, _propTypesDefault.default).bool
-        ])),
-        (0, _propTypesDefault.default).func,
-        (0, _propTypesDefault.default).object
-    ]),
-    /**
-   * The variant to use.
-   * @default 'elevation'
-   */ variant: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
-        (0, _propTypesDefault.default).oneOf([
-            "elevation",
-            "outlined"
-        ]),
-        (0, _propTypesDefault.default).string
-    ])
-};
-exports.default = Paper;
-
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/utils":"cttLn","@mui/base":"656dE","@mui/system":"Q0Zql","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../styles/useTheme":"ge9MG","./paperClasses":"gxMbh","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gxMbh":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getPaperUtilityClass", ()=>getPaperUtilityClass);
-var _utils = require("@mui/utils");
-var _generateUtilityClass = require("../generateUtilityClass");
-var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
-function getPaperUtilityClass(slot) {
-    return (0, _generateUtilityClassDefault.default)("MuiPaper", slot);
-}
-const paperClasses = (0, _utils.unstable_generateUtilityClasses)("MuiPaper", [
-    "root",
-    "rounded",
-    "outlined",
-    "elevation",
-    "elevation0",
-    "elevation1",
-    "elevation2",
-    "elevation3",
-    "elevation4",
-    "elevation5",
-    "elevation6",
-    "elevation7",
-    "elevation8",
-    "elevation9",
-    "elevation10",
-    "elevation11",
-    "elevation12",
-    "elevation13",
-    "elevation14",
-    "elevation15",
-    "elevation16",
-    "elevation17",
-    "elevation18",
-    "elevation19",
-    "elevation20",
-    "elevation21",
-    "elevation22",
-    "elevation23",
-    "elevation24"
-]);
-exports.default = paperClasses;
-
-},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3QiJp":[function(require,module,exports) {
-/**
- * @internal These variables should not appear in the :root stylesheet when the `defaultMode="dark"`
- */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-const excludeVariablesFromRoot = (cssVarPrefix)=>[
-        ...[
-            ...Array(24)
-        ].map((_, index)=>`--${cssVarPrefix ? `${cssVarPrefix}-` : ""}overlays-${index + 1}`),
-        `--${cssVarPrefix ? `${cssVarPrefix}-` : ""}palette-AppBar-darkBg`,
-        `--${cssVarPrefix ? `${cssVarPrefix}-` : ""}palette-AppBar-darkColor`
-    ];
-exports.default = excludeVariablesFromRoot;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9fx6t":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = void 0;
-var _createSvgIcon = _interopRequireDefault(require("./utils/createSvgIcon"));
-var _jsxRuntime = require("react/jsx-runtime");
-var _default = (0, _createSvgIcon.default)(/*#__PURE__*/ (0, _jsxRuntime.jsx)("path", {
-    d: "M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"
-}), "LockOutlined");
-exports.default = _default;
-
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","./utils/createSvgIcon":"lVV9C","react/jsx-runtime":"6AEwr"}],"7XM86":[function(require,module,exports) {
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        "default": obj
-    };
-}
-module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-},{}],"lVV9C":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-Object.defineProperty(exports, "default", {
-    enumerable: true,
-    get: function() {
-        return _utils.createSvgIcon;
-    }
-});
-var _utils = require("@mui/material/utils");
-
-},{"@mui/material/utils":"cEKZV"}],"cEKZV":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "capitalize", ()=>(0, _capitalizeDefault.default));
-parcelHelpers.export(exports, "createChainedFunction", ()=>(0, _createChainedFunctionDefault.default));
-parcelHelpers.export(exports, "createSvgIcon", ()=>(0, _createSvgIconDefault.default));
-parcelHelpers.export(exports, "debounce", ()=>(0, _debounceDefault.default));
-parcelHelpers.export(exports, "deprecatedPropType", ()=>(0, _deprecatedPropTypeDefault.default));
-parcelHelpers.export(exports, "isMuiElement", ()=>(0, _isMuiElementDefault.default));
-parcelHelpers.export(exports, "ownerDocument", ()=>(0, _ownerDocumentDefault.default));
-parcelHelpers.export(exports, "ownerWindow", ()=>(0, _ownerWindowDefault.default));
-parcelHelpers.export(exports, "requirePropFactory", ()=>(0, _requirePropFactoryDefault.default));
-parcelHelpers.export(exports, "setRef", ()=>(0, _setRefDefault.default));
-parcelHelpers.export(exports, "unstable_useEnhancedEffect", ()=>(0, _useEnhancedEffectDefault.default));
-parcelHelpers.export(exports, "unstable_useId", ()=>(0, _useIdDefault.default));
-parcelHelpers.export(exports, "unsupportedProp", ()=>(0, _unsupportedPropDefault.default));
-parcelHelpers.export(exports, "useControlled", ()=>(0, _useControlledDefault.default));
-parcelHelpers.export(exports, "useEventCallback", ()=>(0, _useEventCallbackDefault.default));
-parcelHelpers.export(exports, "useForkRef", ()=>(0, _useForkRefDefault.default));
-parcelHelpers.export(exports, "useIsFocusVisible", ()=>(0, _useIsFocusVisibleDefault.default));
-parcelHelpers.export(exports, "unstable_ClassNameGenerator", ()=>unstable_ClassNameGenerator);
-var _className = require("@mui/base/className");
-var _capitalize = require("./capitalize");
-var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
-var _createChainedFunction = require("./createChainedFunction");
-var _createChainedFunctionDefault = parcelHelpers.interopDefault(_createChainedFunction);
-var _createSvgIcon = require("./createSvgIcon");
-var _createSvgIconDefault = parcelHelpers.interopDefault(_createSvgIcon);
-var _debounce = require("./debounce");
-var _debounceDefault = parcelHelpers.interopDefault(_debounce);
-var _deprecatedPropType = require("./deprecatedPropType");
-var _deprecatedPropTypeDefault = parcelHelpers.interopDefault(_deprecatedPropType);
-var _isMuiElement = require("./isMuiElement");
-var _isMuiElementDefault = parcelHelpers.interopDefault(_isMuiElement);
-var _ownerDocument = require("./ownerDocument");
-var _ownerDocumentDefault = parcelHelpers.interopDefault(_ownerDocument);
-var _ownerWindow = require("./ownerWindow");
-var _ownerWindowDefault = parcelHelpers.interopDefault(_ownerWindow);
-var _requirePropFactory = require("./requirePropFactory");
-var _requirePropFactoryDefault = parcelHelpers.interopDefault(_requirePropFactory);
-var _setRef = require("./setRef");
-var _setRefDefault = parcelHelpers.interopDefault(_setRef);
-var _useEnhancedEffect = require("./useEnhancedEffect");
-var _useEnhancedEffectDefault = parcelHelpers.interopDefault(_useEnhancedEffect);
-var _useId = require("./useId");
-var _useIdDefault = parcelHelpers.interopDefault(_useId);
-var _unsupportedProp = require("./unsupportedProp");
-var _unsupportedPropDefault = parcelHelpers.interopDefault(_unsupportedProp);
-var _useControlled = require("./useControlled");
-var _useControlledDefault = parcelHelpers.interopDefault(_useControlled);
-var _useEventCallback = require("./useEventCallback");
-var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
-var _useForkRef = require("./useForkRef");
-var _useForkRefDefault = parcelHelpers.interopDefault(_useForkRef);
-var _useIsFocusVisible = require("./useIsFocusVisible");
-var _useIsFocusVisibleDefault = parcelHelpers.interopDefault(_useIsFocusVisible);
-const unstable_ClassNameGenerator = {
-    configure: (generator)=>{
-        console.warn([
-            "MUI: `ClassNameGenerator` import from `@mui/material/utils` is outdated and might cause unexpected issues.",
-            "",
-            "You should use `import { unstable_ClassNameGenerator } from '@mui/material/className'` instead",
-            "",
-            "The detail of the issue: https://github.com/mui/material-ui/issues/30011#issuecomment-1024993401",
-            "",
-            "The updated documentation: https://mui.com/guides/classname-generator/"
-        ].join("\n"));
-        (0, _className.unstable_ClassNameGenerator).configure(generator);
-    }
-};
-
-},{"@mui/base/className":"kRsty","./capitalize":"kuBnp","./createChainedFunction":"9XTIf","./createSvgIcon":"0EW1c","./debounce":"l9UTb","./deprecatedPropType":"3vOVK","./isMuiElement":"c2g1y","./ownerDocument":"e2HnU","./ownerWindow":"4nR1k","./requirePropFactory":"djqNS","./setRef":"lqi2l","./useEnhancedEffect":"cJjUN","./useId":"jqwYr","./unsupportedProp":"1sHyG","./useControlled":"HFhlg","./useEventCallback":"k9VLM","./useForkRef":"dOG5T","./useIsFocusVisible":"bKzlq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kRsty":[function(require,module,exports) {
-// eslint-disable-next-line import/prefer-default-export
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "unstable_ClassNameGenerator", ()=>(0, _utils.unstable_ClassNameGenerator));
-var _utils = require("@mui/utils");
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9XTIf":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_createChainedFunction);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l9UTb":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_debounce);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3vOVK":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_deprecatedPropType);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"c2g1y":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_isMuiElement);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e2HnU":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_ownerDocument);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4nR1k":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_ownerWindow);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"djqNS":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_requirePropFactory);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lqi2l":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_setRef);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cJjUN":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_useEnhancedEffect);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jqwYr":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_useId);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1sHyG":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_unsupportedProp);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"HFhlg":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_useControlled);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kbDYG":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","@mui/system":"Q0Zql","../styles/defaultTheme":"isygc","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kbDYG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _typographyDefault.default));
@@ -72408,7 +71029,28 @@ Grid.propTypes /* remove-proptypes */  = {
     });
 }exports.default = Grid;
 
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/system":"Q0Zql","@mui/base":"656dE","../utils/requirePropFactory":"djqNS","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../styles/useTheme":"ge9MG","./GridContext":"7G96g","./gridClasses":"8IGG3","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7G96g":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/system":"Q0Zql","@mui/base":"656dE","../utils/requirePropFactory":"djqNS","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../styles/useTheme":"ge9MG","./GridContext":"7G96g","./gridClasses":"8IGG3","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"djqNS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_requirePropFactory);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ge9MG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _system = require("@mui/system");
+var _defaultTheme = require("./defaultTheme");
+var _defaultThemeDefault = parcelHelpers.interopDefault(_defaultTheme);
+function useTheme() {
+    const theme = (0, _system.useTheme)((0, _defaultThemeDefault.default));
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    _react.useDebugValue(theme);
+    return theme;
+}
+exports.default = useTheme;
+
+},{"react":"21dqq","@mui/system":"Q0Zql","./defaultTheme":"isygc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7G96g":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -72488,7 +71130,588 @@ const gridClasses = (0, _utils.unstable_generateUtilityClasses)("MuiGrid", [
 ]);
 exports.default = gridClasses;
 
-},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eZWTQ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "adaptV4Theme", ()=>(0, _adaptV4ThemeDefault.default));
+parcelHelpers.export(exports, "hexToRgb", ()=>(0, _system.hexToRgb));
+parcelHelpers.export(exports, "rgbToHex", ()=>(0, _system.rgbToHex));
+parcelHelpers.export(exports, "hslToRgb", ()=>(0, _system.hslToRgb));
+parcelHelpers.export(exports, "decomposeColor", ()=>(0, _system.decomposeColor));
+parcelHelpers.export(exports, "recomposeColor", ()=>(0, _system.recomposeColor));
+parcelHelpers.export(exports, "getContrastRatio", ()=>(0, _system.getContrastRatio));
+parcelHelpers.export(exports, "getLuminance", ()=>(0, _system.getLuminance));
+parcelHelpers.export(exports, "emphasize", ()=>(0, _system.emphasize));
+parcelHelpers.export(exports, "alpha", ()=>(0, _system.alpha));
+parcelHelpers.export(exports, "darken", ()=>(0, _system.darken));
+parcelHelpers.export(exports, "lighten", ()=>(0, _system.lighten));
+parcelHelpers.export(exports, "css", ()=>(0, _system.css));
+parcelHelpers.export(exports, "keyframes", ()=>(0, _system.keyframes));
+parcelHelpers.export(exports, "experimental_sx", ()=>(0, _system.experimental_sx));
+parcelHelpers.export(exports, "createTheme", ()=>(0, _createThemeDefault.default));
+parcelHelpers.export(exports, "createMuiTheme", ()=>(0, _createTheme.createMuiTheme));
+parcelHelpers.export(exports, "unstable_createMuiStrictModeTheme", ()=>(0, _createMuiStrictModeThemeDefault.default));
+parcelHelpers.export(exports, "createStyles", ()=>(0, _createStylesDefault.default));
+parcelHelpers.export(exports, "unstable_getUnit", ()=>(0, _cssUtils.getUnit));
+parcelHelpers.export(exports, "unstable_toUnitless", ()=>(0, _cssUtils.toUnitless));
+parcelHelpers.export(exports, "responsiveFontSizes", ()=>(0, _responsiveFontSizesDefault.default));
+parcelHelpers.export(exports, "duration", ()=>(0, _createTransitions.duration));
+parcelHelpers.export(exports, "easing", ()=>(0, _createTransitions.easing));
+parcelHelpers.export(exports, "useTheme", ()=>(0, _useThemeDefault.default));
+parcelHelpers.export(exports, "useThemeProps", ()=>(0, _useThemePropsDefault.default));
+parcelHelpers.export(exports, "styled", ()=>(0, _styledDefault.default));
+parcelHelpers.export(exports, "experimentalStyled", ()=>(0, _styledDefault.default));
+parcelHelpers.export(exports, "ThemeProvider", ()=>(0, _themeProviderDefault.default));
+parcelHelpers.export(exports, "StyledEngineProvider", ()=>(0, _system.StyledEngineProvider));
+// The legacy utilities from @mui/styles
+// These are just empty functions that throws when invoked
+parcelHelpers.export(exports, "makeStyles", ()=>(0, _makeStylesDefault.default));
+parcelHelpers.export(exports, "withStyles", ()=>(0, _withStylesDefault.default));
+parcelHelpers.export(exports, "withTheme", ()=>(0, _withThemeDefault.default));
+parcelHelpers.export(exports, "experimental_extendTheme", ()=>(0, _experimentalExtendThemeDefault.default));
+var _adaptV4Theme = require("./adaptV4Theme");
+var _adaptV4ThemeDefault = parcelHelpers.interopDefault(_adaptV4Theme);
+var _system = require("@mui/system");
+var _createTheme = require("./createTheme");
+var _createThemeDefault = parcelHelpers.interopDefault(_createTheme);
+var _createMuiStrictModeTheme = require("./createMuiStrictModeTheme");
+var _createMuiStrictModeThemeDefault = parcelHelpers.interopDefault(_createMuiStrictModeTheme);
+var _createStyles = require("./createStyles");
+var _createStylesDefault = parcelHelpers.interopDefault(_createStyles);
+var _cssUtils = require("./cssUtils");
+var _responsiveFontSizes = require("./responsiveFontSizes");
+var _responsiveFontSizesDefault = parcelHelpers.interopDefault(_responsiveFontSizes);
+var _createTransitions = require("./createTransitions");
+var _useTheme = require("./useTheme");
+var _useThemeDefault = parcelHelpers.interopDefault(_useTheme);
+var _useThemeProps = require("./useThemeProps");
+var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
+var _styled = require("./styled");
+var _styledDefault = parcelHelpers.interopDefault(_styled);
+var _themeProvider = require("./ThemeProvider");
+var _themeProviderDefault = parcelHelpers.interopDefault(_themeProvider);
+var _makeStyles = require("./makeStyles");
+var _makeStylesDefault = parcelHelpers.interopDefault(_makeStyles);
+var _withStyles = require("./withStyles");
+var _withStylesDefault = parcelHelpers.interopDefault(_withStyles);
+var _withTheme = require("./withTheme");
+var _withThemeDefault = parcelHelpers.interopDefault(_withTheme);
+var _cssVarsProvider = require("./CssVarsProvider");
+parcelHelpers.exportAll(_cssVarsProvider, exports);
+var _experimentalExtendTheme = require("./experimental_extendTheme");
+var _experimentalExtendThemeDefault = parcelHelpers.interopDefault(_experimentalExtendTheme);
+
+},{"./adaptV4Theme":false,"@mui/system":"Q0Zql","./createTheme":"GNebG","./createMuiStrictModeTheme":false,"./createStyles":false,"./cssUtils":false,"./responsiveFontSizes":false,"./createTransitions":"av8l7","./useTheme":"ge9MG","./useThemeProps":"1WXY3","./styled":"9NVzk","./ThemeProvider":"ewpwA","./makeStyles":false,"./withStyles":false,"./withTheme":false,"./CssVarsProvider":"km47z","./experimental_extendTheme":"jhDvR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ewpwA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>(0, _system.ThemeProvider));
+var _system = require("@mui/system");
+
+},{"@mui/system":"Q0Zql","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km47z":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useColorScheme", ()=>useColorScheme);
+parcelHelpers.export(exports, "getInitColorSchemeScript", ()=>getInitColorSchemeScript);
+parcelHelpers.export(exports, "shouldSkipGeneratingVar", ()=>shouldSkipGeneratingVar);
+parcelHelpers.export(exports, "Experimental_CssVarsProvider", ()=>CssVarsProvider);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _system = require("@mui/system");
+var _experimentalExtendTheme = require("./experimental_extendTheme");
+var _experimentalExtendThemeDefault = parcelHelpers.interopDefault(_experimentalExtendTheme);
+var _createTypography = require("./createTypography");
+var _createTypographyDefault = parcelHelpers.interopDefault(_createTypography);
+var _excludeVariablesFromRoot = require("./excludeVariablesFromRoot");
+var _excludeVariablesFromRootDefault = parcelHelpers.interopDefault(_excludeVariablesFromRoot);
+const shouldSkipGeneratingVar = (keys)=>{
+    var _keys$;
+    return !!keys[0].match(/(typography|mixins|breakpoints|direction|transitions)/) || keys[0] === "palette" && !!((_keys$ = keys[1]) != null && _keys$.match(/(mode|contrastThreshold|tonalOffset)/));
+};
+const defaultTheme = (0, _experimentalExtendThemeDefault.default)();
+const { CssVarsProvider , useColorScheme , getInitColorSchemeScript  } = (0, _system.unstable_createCssVarsProvider)({
+    theme: defaultTheme,
+    attribute: "data-mui-color-scheme",
+    modeStorageKey: "mui-mode",
+    colorSchemeStorageKey: "mui-color-scheme",
+    defaultColorScheme: {
+        light: "light",
+        dark: "dark"
+    },
+    resolveTheme: (theme)=>{
+        const newTheme = (0, _extendsDefault.default)({}, theme, {
+            typography: (0, _createTypographyDefault.default)(theme.palette, theme.typography)
+        });
+        return newTheme;
+    },
+    shouldSkipGeneratingVar,
+    excludeVariablesFromRoot: (0, _excludeVariablesFromRootDefault.default)
+});
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@mui/system":"Q0Zql","./experimental_extendTheme":"jhDvR","./createTypography":"80aO7","./excludeVariablesFromRoot":"3QiJp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jhDvR":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createGetCssVar", ()=>createGetCssVar);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _utils = require("@mui/utils");
+var _system = require("@mui/system");
+var _createTheme = require("./createTheme");
+var _createThemeDefault = parcelHelpers.interopDefault(_createTheme);
+var _paper = require("../Paper/Paper");
+const _excluded = [
+    "colorSchemes",
+    "cssVarPrefix"
+], _excluded2 = [
+    "palette"
+];
+const defaultDarkOverlays = [
+    ...Array(25)
+].map((_, index)=>{
+    if (index === 0) return undefined;
+    const overlay = (0, _paper.getOverlayAlpha)(index);
+    return `linear-gradient(rgba(255 255 255 / ${overlay}), rgba(255 255 255 / ${overlay}))`;
+});
+function assignNode(obj, keys) {
+    keys.forEach((k)=>{
+        if (!obj[k]) obj[k] = {};
+    });
+}
+function setColor(obj, key, defaultValue) {
+    obj[key] = obj[key] || defaultValue;
+}
+const createGetCssVar = (cssVarPrefix = "mui")=>(0, _system.unstable_createGetCssVar)(cssVarPrefix);
+function extendTheme(options = {}, ...args) {
+    var _colorSchemesInput$li, _colorSchemesInput$da, _colorSchemesInput$li2, _colorSchemesInput$li3, _colorSchemesInput$da2, _colorSchemesInput$da3;
+    const { colorSchemes: colorSchemesInput = {} , cssVarPrefix ="mui"  } = options, input = (0, _objectWithoutPropertiesLooseDefault.default)(options, _excluded);
+    const getCssVar = createGetCssVar(cssVarPrefix);
+    const _createThemeWithoutVa = (0, _createThemeDefault.default)((0, _extendsDefault.default)({}, input, colorSchemesInput.light && {
+        palette: (_colorSchemesInput$li = colorSchemesInput.light) == null ? void 0 : _colorSchemesInput$li.palette
+    })), { palette: lightPalette  } = _createThemeWithoutVa, muiTheme = (0, _objectWithoutPropertiesLooseDefault.default)(_createThemeWithoutVa, _excluded2);
+    const { palette: darkPalette  } = (0, _createThemeDefault.default)({
+        palette: (0, _extendsDefault.default)({
+            mode: "dark"
+        }, (_colorSchemesInput$da = colorSchemesInput.dark) == null ? void 0 : _colorSchemesInput$da.palette)
+    });
+    let theme = (0, _extendsDefault.default)({}, muiTheme, {
+        cssVarPrefix,
+        getCssVar,
+        colorSchemes: (0, _extendsDefault.default)({}, colorSchemesInput, {
+            light: (0, _extendsDefault.default)({}, colorSchemesInput.light, {
+                palette: lightPalette,
+                opacity: (0, _extendsDefault.default)({
+                    inputPlaceholder: 0.42,
+                    inputUnderline: 0.42,
+                    switchTrackDisabled: 0.12,
+                    switchTrack: 0.38
+                }, (_colorSchemesInput$li2 = colorSchemesInput.light) == null ? void 0 : _colorSchemesInput$li2.opacity),
+                overlays: ((_colorSchemesInput$li3 = colorSchemesInput.light) == null ? void 0 : _colorSchemesInput$li3.overlays) || []
+            }),
+            dark: (0, _extendsDefault.default)({}, colorSchemesInput.dark, {
+                palette: darkPalette,
+                opacity: (0, _extendsDefault.default)({
+                    inputPlaceholder: 0.5,
+                    inputUnderline: 0.7,
+                    switchTrackDisabled: 0.2,
+                    switchTrack: 0.3
+                }, (_colorSchemesInput$da2 = colorSchemesInput.dark) == null ? void 0 : _colorSchemesInput$da2.opacity),
+                overlays: ((_colorSchemesInput$da3 = colorSchemesInput.dark) == null ? void 0 : _colorSchemesInput$da3.overlays) || defaultDarkOverlays
+            })
+        })
+    });
+    Object.keys(theme.colorSchemes).forEach((key)=>{
+        const palette = theme.colorSchemes[key].palette;
+        // attach black & white channels to common node
+        if (key === "light") {
+            setColor(palette.common, "background", "#fff");
+            setColor(palette.common, "onBackground", "#000");
+        } else {
+            setColor(palette.common, "background", "#000");
+            setColor(palette.common, "onBackground", "#fff");
+        }
+        // assign component variables
+        assignNode(palette, [
+            "Alert",
+            "AppBar",
+            "Avatar",
+            "Chip",
+            "FilledInput",
+            "LinearProgress",
+            "Skeleton",
+            "Slider",
+            "SnackbarContent",
+            "SpeedDialAction",
+            "StepConnector",
+            "StepContent",
+            "Switch",
+            "TableCell",
+            "Tooltip"
+        ]);
+        if (key === "light") {
+            setColor(palette.Alert, "errorColor", (0, _system.darken)(palette.error.light, 0.6));
+            setColor(palette.Alert, "infoColor", (0, _system.darken)(palette.info.light, 0.6));
+            setColor(palette.Alert, "successColor", (0, _system.darken)(palette.success.light, 0.6));
+            setColor(palette.Alert, "warningColor", (0, _system.darken)(palette.warning.light, 0.6));
+            setColor(palette.Alert, "errorFilledBg", getCssVar("palette-error-main"));
+            setColor(palette.Alert, "infoFilledBg", getCssVar("palette-info-main"));
+            setColor(palette.Alert, "successFilledBg", getCssVar("palette-success-main"));
+            setColor(palette.Alert, "warningFilledBg", getCssVar("palette-warning-main"));
+            setColor(palette.Alert, "errorFilledColor", lightPalette.getContrastText(palette.error.main));
+            setColor(palette.Alert, "infoFilledColor", lightPalette.getContrastText(palette.info.main));
+            setColor(palette.Alert, "successFilledColor", lightPalette.getContrastText(palette.success.main));
+            setColor(palette.Alert, "warningFilledColor", lightPalette.getContrastText(palette.warning.main));
+            setColor(palette.Alert, "errorStandardBg", (0, _system.lighten)(palette.error.light, 0.9));
+            setColor(palette.Alert, "infoStandardBg", (0, _system.lighten)(palette.info.light, 0.9));
+            setColor(palette.Alert, "successStandardBg", (0, _system.lighten)(palette.success.light, 0.9));
+            setColor(palette.Alert, "warningStandardBg", (0, _system.lighten)(palette.warning.light, 0.9));
+            setColor(palette.Alert, "errorIconColor", getCssVar("palette-error-light"));
+            setColor(palette.Alert, "infoIconColor", getCssVar("palette-info-light"));
+            setColor(palette.Alert, "successIconColor", getCssVar("palette-success-light"));
+            setColor(palette.Alert, "warningIconColor", getCssVar("palette-warning-light"));
+            setColor(palette.AppBar, "defaultBg", getCssVar("palette-grey-100"));
+            setColor(palette.Avatar, "defaultBg", getCssVar("palette-grey-400"));
+            setColor(palette.Chip, "defaultBorder", getCssVar("palette-grey-400"));
+            setColor(palette.Chip, "defaultAvatarColor", getCssVar("palette-grey-700"));
+            setColor(palette.Chip, "defaultIconColor", getCssVar("palette-grey-700"));
+            setColor(palette.FilledInput, "bg", "rgba(0, 0, 0, 0.06)");
+            setColor(palette.FilledInput, "hoverBg", "rgba(0, 0, 0, 0.09)");
+            setColor(palette.FilledInput, "disabledBg", "rgba(0, 0, 0, 0.12)");
+            setColor(palette.LinearProgress, "primaryBg", (0, _system.lighten)(palette.primary.main, 0.62));
+            setColor(palette.LinearProgress, "secondaryBg", (0, _system.lighten)(palette.secondary.main, 0.62));
+            setColor(palette.LinearProgress, "errorBg", (0, _system.lighten)(palette.error.main, 0.62));
+            setColor(palette.LinearProgress, "infoBg", (0, _system.lighten)(palette.info.main, 0.62));
+            setColor(palette.LinearProgress, "successBg", (0, _system.lighten)(palette.success.main, 0.62));
+            setColor(palette.LinearProgress, "warningBg", (0, _system.lighten)(palette.warning.main, 0.62));
+            setColor(palette.Skeleton, "bg", `rgba(${getCssVar("palette-text-primaryChannel")} / 0.11)`);
+            setColor(palette.Slider, "primaryTrack", (0, _system.lighten)(palette.primary.main, 0.62));
+            setColor(palette.Slider, "secondaryTrack", (0, _system.lighten)(palette.secondary.main, 0.62));
+            setColor(palette.Slider, "errorTrack", (0, _system.lighten)(palette.error.main, 0.62));
+            setColor(palette.Slider, "infoTrack", (0, _system.lighten)(palette.info.main, 0.62));
+            setColor(palette.Slider, "successTrack", (0, _system.lighten)(palette.success.main, 0.62));
+            setColor(palette.Slider, "warningTrack", (0, _system.lighten)(palette.warning.main, 0.62));
+            const snackbarContentBackground = (0, _system.emphasize)(palette.background.default, 0.8);
+            setColor(palette.SnackbarContent, "bg", snackbarContentBackground);
+            setColor(palette.SnackbarContent, "color", lightPalette.getContrastText(snackbarContentBackground));
+            setColor(palette.SpeedDialAction, "fabHoverBg", (0, _system.emphasize)(palette.background.paper, 0.15));
+            setColor(palette.StepConnector, "border", getCssVar("palette-grey-400"));
+            setColor(palette.StepContent, "border", getCssVar("palette-grey-400"));
+            setColor(palette.Switch, "defaultColor", getCssVar("palette-common-white"));
+            setColor(palette.Switch, "defaultDisabledColor", getCssVar("palette-grey-100"));
+            setColor(palette.Switch, "primaryDisabledColor", (0, _system.lighten)(palette.primary.main, 0.62));
+            setColor(palette.Switch, "secondaryDisabledColor", (0, _system.lighten)(palette.secondary.main, 0.62));
+            setColor(palette.Switch, "errorDisabledColor", (0, _system.lighten)(palette.error.main, 0.62));
+            setColor(palette.Switch, "infoDisabledColor", (0, _system.lighten)(palette.info.main, 0.62));
+            setColor(palette.Switch, "successDisabledColor", (0, _system.lighten)(palette.success.main, 0.62));
+            setColor(palette.Switch, "warningDisabledColor", (0, _system.lighten)(palette.warning.main, 0.62));
+            setColor(palette.TableCell, "border", (0, _system.lighten)((0, _system.alpha)(palette.divider, 1), 0.88));
+            setColor(palette.Tooltip, "bg", (0, _system.alpha)(palette.grey[700], 0.92));
+        } else {
+            setColor(palette.Alert, "errorColor", (0, _system.lighten)(palette.error.light, 0.6));
+            setColor(palette.Alert, "infoColor", (0, _system.lighten)(palette.info.light, 0.6));
+            setColor(palette.Alert, "successColor", (0, _system.lighten)(palette.success.light, 0.6));
+            setColor(palette.Alert, "warningColor", (0, _system.lighten)(palette.warning.light, 0.6));
+            setColor(palette.Alert, "errorFilledBg", getCssVar("palette-error-dark"));
+            setColor(palette.Alert, "infoFilledBg", getCssVar("palette-info-dark"));
+            setColor(palette.Alert, "successFilledBg", getCssVar("palette-success-dark"));
+            setColor(palette.Alert, "warningFilledBg", getCssVar("palette-warning-dark"));
+            setColor(palette.Alert, "errorFilledColor", darkPalette.getContrastText(palette.error.dark));
+            setColor(palette.Alert, "infoFilledColor", darkPalette.getContrastText(palette.info.dark));
+            setColor(palette.Alert, "successFilledColor", darkPalette.getContrastText(palette.success.dark));
+            setColor(palette.Alert, "warningFilledColor", darkPalette.getContrastText(palette.warning.dark));
+            setColor(palette.Alert, "errorStandardBg", (0, _system.darken)(palette.error.light, 0.9));
+            setColor(palette.Alert, "infoStandardBg", (0, _system.darken)(palette.info.light, 0.9));
+            setColor(palette.Alert, "successStandardBg", (0, _system.darken)(palette.success.light, 0.9));
+            setColor(palette.Alert, "warningStandardBg", (0, _system.darken)(palette.warning.light, 0.9));
+            setColor(palette.Alert, "errorIconColor", getCssVar("palette-error-main"));
+            setColor(palette.Alert, "infoIconColor", getCssVar("palette-info-main"));
+            setColor(palette.Alert, "successIconColor", getCssVar("palette-success-main"));
+            setColor(palette.Alert, "warningIconColor", getCssVar("palette-warning-main"));
+            setColor(palette.AppBar, "defaultBg", getCssVar("palette-grey-900"));
+            setColor(palette.AppBar, "darkBg", getCssVar("palette-background-paper")); // specific for dark mode
+            setColor(palette.AppBar, "darkColor", getCssVar("palette-text-primary")); // specific for dark mode
+            setColor(palette.Avatar, "defaultBg", getCssVar("palette-grey-600"));
+            setColor(palette.Chip, "defaultBorder", getCssVar("palette-grey-700"));
+            setColor(palette.Chip, "defaultAvatarColor", getCssVar("palette-grey-300"));
+            setColor(palette.Chip, "defaultIconColor", getCssVar("palette-grey-300"));
+            setColor(palette.FilledInput, "bg", "rgba(255, 255, 255, 0.09)");
+            setColor(palette.FilledInput, "hoverBg", "rgba(255, 255, 255, 0.13)");
+            setColor(palette.FilledInput, "disabledBg", "rgba(255, 255, 255, 0.12)");
+            setColor(palette.LinearProgress, "primaryBg", (0, _system.darken)(palette.primary.main, 0.5));
+            setColor(palette.LinearProgress, "secondaryBg", (0, _system.darken)(palette.secondary.main, 0.5));
+            setColor(palette.LinearProgress, "errorBg", (0, _system.darken)(palette.error.main, 0.5));
+            setColor(palette.LinearProgress, "infoBg", (0, _system.darken)(palette.info.main, 0.5));
+            setColor(palette.LinearProgress, "successBg", (0, _system.darken)(palette.success.main, 0.5));
+            setColor(palette.LinearProgress, "warningBg", (0, _system.darken)(palette.warning.main, 0.5));
+            setColor(palette.Skeleton, "bg", `rgba(${getCssVar("palette-text-primaryChannel")} / 0.13)`);
+            setColor(palette.Slider, "primaryTrack", (0, _system.darken)(palette.primary.main, 0.5));
+            setColor(palette.Slider, "secondaryTrack", (0, _system.darken)(palette.secondary.main, 0.5));
+            setColor(palette.Slider, "errorTrack", (0, _system.darken)(palette.error.main, 0.5));
+            setColor(palette.Slider, "infoTrack", (0, _system.darken)(palette.info.main, 0.5));
+            setColor(palette.Slider, "successTrack", (0, _system.darken)(palette.success.main, 0.5));
+            setColor(palette.Slider, "warningTrack", (0, _system.darken)(palette.warning.main, 0.5));
+            const snackbarContentBackground1 = (0, _system.emphasize)(palette.background.default, 0.98);
+            setColor(palette.SnackbarContent, "bg", snackbarContentBackground1);
+            setColor(palette.SnackbarContent, "color", darkPalette.getContrastText(snackbarContentBackground1));
+            setColor(palette.SpeedDialAction, "fabHoverBg", (0, _system.emphasize)(palette.background.paper, 0.15));
+            setColor(palette.StepConnector, "border", getCssVar("palette-grey-600"));
+            setColor(palette.StepContent, "border", getCssVar("palette-grey-600"));
+            setColor(palette.Switch, "defaultColor", getCssVar("palette-grey-300"));
+            setColor(palette.Switch, "defaultDisabledColor", getCssVar("palette-grey-600"));
+            setColor(palette.Switch, "primaryDisabledColor", (0, _system.darken)(palette.primary.main, 0.55));
+            setColor(palette.Switch, "secondaryDisabledColor", (0, _system.darken)(palette.secondary.main, 0.55));
+            setColor(palette.Switch, "errorDisabledColor", (0, _system.darken)(palette.error.main, 0.55));
+            setColor(palette.Switch, "infoDisabledColor", (0, _system.darken)(palette.info.main, 0.55));
+            setColor(palette.Switch, "successDisabledColor", (0, _system.darken)(palette.success.main, 0.55));
+            setColor(palette.Switch, "warningDisabledColor", (0, _system.darken)(palette.warning.main, 0.55));
+            setColor(palette.TableCell, "border", (0, _system.darken)((0, _system.alpha)(palette.divider, 1), 0.68));
+            setColor(palette.Tooltip, "bg", (0, _system.alpha)(palette.grey[700], 0.92));
+        }
+        palette.background.defaultChannel = (0, _system.colorChannel)(palette.background.default); // MUI X - DataGrid needs this token.
+        palette.common.backgroundChannel = (0, _system.colorChannel)(palette.common.background);
+        palette.common.onBackgroundChannel = (0, _system.colorChannel)(palette.common.onBackground);
+        palette.dividerChannel = (0, _system.colorChannel)(palette.divider);
+        Object.keys(palette).forEach((color)=>{
+            const colors = palette[color];
+            // Color palettes: primary, secondary, error, info, success, and warning
+            if (colors.main) palette[color].mainChannel = (0, _system.colorChannel)(colors.main);
+            if (colors.light) palette[color].lightChannel = (0, _system.colorChannel)(colors.light);
+            if (colors.dark) palette[color].darkChannel = (0, _system.colorChannel)(colors.dark);
+            if (colors.contrastText) palette[color].contrastTextChannel = (0, _system.colorChannel)(colors.contrastText);
+            // Text colors: text.primary, text.secondary
+            if (colors.primary) palette[color].primaryChannel = (0, _system.colorChannel)(colors.primary);
+            if (colors.secondary) palette[color].secondaryChannel = (0, _system.colorChannel)(colors.secondary);
+            // Action colors: action.active, action.selected
+            if (colors.active) palette[color].activeChannel = (0, _system.colorChannel)(colors.active);
+            if (colors.selected) palette[color].selectedChannel = (0, _system.colorChannel)(colors.selected);
+        });
+    });
+    theme = args.reduce((acc, argument)=>(0, _utils.deepmerge)(acc, argument), theme);
+    return theme;
+}
+exports.default = extendTheme;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@mui/utils":"cttLn","@mui/system":"Q0Zql","./createTheme":"GNebG","../Paper/Paper":"5srYA","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5srYA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getOverlayAlpha", ()=>getOverlayAlpha);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _react = require("react");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _clsx = require("clsx");
+var _clsxDefault = parcelHelpers.interopDefault(_clsx);
+var _utils = require("@mui/utils");
+var _base = require("@mui/base");
+var _system = require("@mui/system");
+var _styled = require("../styles/styled");
+var _styledDefault = parcelHelpers.interopDefault(_styled);
+var _useThemeProps = require("../styles/useThemeProps");
+var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
+var _useTheme = require("../styles/useTheme");
+var _useThemeDefault = parcelHelpers.interopDefault(_useTheme);
+var _paperClasses = require("./paperClasses");
+// Inspired by https://github.com/material-components/material-components-ios/blob/bca36107405594d5b7b16265a5b0ed698f85a5ee/components/Elevation/src/UIColor%2BMaterialElevation.m#L61
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "className",
+    "component",
+    "elevation",
+    "square",
+    "variant"
+];
+const getOverlayAlpha = (elevation)=>{
+    let alphaValue;
+    if (elevation < 1) alphaValue = 5.11916 * elevation ** 2;
+    else alphaValue = 4.5 * Math.log(elevation + 1) + 2;
+    return (alphaValue / 100).toFixed(2);
+};
+const useUtilityClasses = (ownerState)=>{
+    const { square , elevation , variant , classes  } = ownerState;
+    const slots = {
+        root: [
+            "root",
+            variant,
+            !square && "rounded",
+            variant === "elevation" && `elevation${elevation}`
+        ]
+    };
+    return (0, _base.unstable_composeClasses)(slots, (0, _paperClasses.getPaperUtilityClass), classes);
+};
+const PaperRoot = (0, _styledDefault.default)("div", {
+    name: "MuiPaper",
+    slot: "Root",
+    overridesResolver: (props, styles)=>{
+        const { ownerState  } = props;
+        return [
+            styles.root,
+            styles[ownerState.variant],
+            !ownerState.square && styles.rounded,
+            ownerState.variant === "elevation" && styles[`elevation${ownerState.elevation}`]
+        ];
+    }
+})(({ theme , ownerState  })=>{
+    var _theme$vars$overlays;
+    return (0, _extendsDefault.default)({
+        backgroundColor: (theme.vars || theme).palette.background.paper,
+        color: (theme.vars || theme).palette.text.primary,
+        transition: theme.transitions.create("box-shadow")
+    }, !ownerState.square && {
+        borderRadius: theme.shape.borderRadius
+    }, ownerState.variant === "outlined" && {
+        border: `1px solid ${(theme.vars || theme).palette.divider}`
+    }, ownerState.variant === "elevation" && (0, _extendsDefault.default)({
+        boxShadow: (theme.vars || theme).shadows[ownerState.elevation]
+    }, !theme.vars && theme.palette.mode === "dark" && {
+        backgroundImage: `linear-gradient(${(0, _system.alpha)("#fff", getOverlayAlpha(ownerState.elevation))}, ${(0, _system.alpha)("#fff", getOverlayAlpha(ownerState.elevation))})`
+    }, theme.vars && {
+        backgroundImage: (_theme$vars$overlays = theme.vars.overlays) == null ? void 0 : _theme$vars$overlays[ownerState.elevation]
+    }));
+});
+const Paper = /*#__PURE__*/ _react.forwardRef(function Paper(inProps, ref) {
+    const props = (0, _useThemePropsDefault.default)({
+        props: inProps,
+        name: "MuiPaper"
+    });
+    const { className , component ="div" , elevation =1 , square =false , variant ="elevation"  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
+    const ownerState = (0, _extendsDefault.default)({}, props, {
+        component,
+        elevation,
+        square,
+        variant
+    });
+    const classes = useUtilityClasses(ownerState);
+    {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const theme = (0, _useThemeDefault.default)();
+        if (theme.shadows[elevation] === undefined) console.error([
+            `MUI: The elevation provided <Paper elevation={${elevation}}> is not available in the theme.`,
+            `Please make sure that \`theme.shadows[${elevation}]\` is defined.`
+        ].join("\n"));
+    }
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(PaperRoot, (0, _extendsDefault.default)({
+        as: component,
+        ownerState: ownerState,
+        className: (0, _clsxDefault.default)(classes.root, className),
+        ref: ref
+    }, other));
+});
+Paper.propTypes /* remove-proptypes */  = {
+    // ----------------------------- Warning --------------------------------
+    // | These PropTypes are generated from the TypeScript type definitions |
+    // |     To update them edit the d.ts file and run "yarn proptypes"     |
+    // ----------------------------------------------------------------------
+    /**
+   * The content of the component.
+   */ children: (0, _propTypesDefault.default).node,
+    /**
+   * Override or extend the styles applied to the component.
+   */ classes: (0, _propTypesDefault.default).object,
+    /**
+   * @ignore
+   */ className: (0, _propTypesDefault.default).string,
+    /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */ component: (0, _propTypesDefault.default).elementType,
+    /**
+   * Shadow depth, corresponds to `dp` in the spec.
+   * It accepts values between 0 and 24 inclusive.
+   * @default 1
+   */ elevation: (0, _utils.chainPropTypes)((0, _utils.integerPropType), (props)=>{
+        const { elevation , variant  } = props;
+        if (elevation > 0 && variant === "outlined") return new Error(`MUI: Combining \`elevation={${elevation}}\` with \`variant="${variant}"\` has no effect. Either use \`elevation={0}\` or use a different \`variant\`.`);
+        return null;
+    }),
+    /**
+   * If `true`, rounded corners are disabled.
+   * @default false
+   */ square: (0, _propTypesDefault.default).bool,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).func,
+            (0, _propTypesDefault.default).object,
+            (0, _propTypesDefault.default).bool
+        ])),
+        (0, _propTypesDefault.default).func,
+        (0, _propTypesDefault.default).object
+    ]),
+    /**
+   * The variant to use.
+   * @default 'elevation'
+   */ variant: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "elevation",
+            "outlined"
+        ]),
+        (0, _propTypesDefault.default).string
+    ])
+};
+exports.default = Paper;
+
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/utils":"cttLn","@mui/base":"656dE","@mui/system":"Q0Zql","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../styles/useTheme":"ge9MG","./paperClasses":"gxMbh","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gxMbh":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getPaperUtilityClass", ()=>getPaperUtilityClass);
+var _utils = require("@mui/utils");
+var _generateUtilityClass = require("../generateUtilityClass");
+var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
+function getPaperUtilityClass(slot) {
+    return (0, _generateUtilityClassDefault.default)("MuiPaper", slot);
+}
+const paperClasses = (0, _utils.unstable_generateUtilityClasses)("MuiPaper", [
+    "root",
+    "rounded",
+    "outlined",
+    "elevation",
+    "elevation0",
+    "elevation1",
+    "elevation2",
+    "elevation3",
+    "elevation4",
+    "elevation5",
+    "elevation6",
+    "elevation7",
+    "elevation8",
+    "elevation9",
+    "elevation10",
+    "elevation11",
+    "elevation12",
+    "elevation13",
+    "elevation14",
+    "elevation15",
+    "elevation16",
+    "elevation17",
+    "elevation18",
+    "elevation19",
+    "elevation20",
+    "elevation21",
+    "elevation22",
+    "elevation23",
+    "elevation24"
+]);
+exports.default = paperClasses;
+
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3QiJp":[function(require,module,exports) {
+/**
+ * @internal These variables should not appear in the :root stylesheet when the `defaultMode="dark"`
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const excludeVariablesFromRoot = (cssVarPrefix)=>[
+        ...[
+            ...Array(24)
+        ].map((_, index)=>`--${cssVarPrefix ? `${cssVarPrefix}-` : ""}overlays-${index + 1}`),
+        `--${cssVarPrefix ? `${cssVarPrefix}-` : ""}palette-AppBar-darkBg`,
+        `--${cssVarPrefix ? `${cssVarPrefix}-` : ""}palette-AppBar-darkColor`
+    ];
+exports.default = excludeVariablesFromRoot;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
 "use strict";
 var Refresh = require("react-refresh/runtime");
 function debounce(func, delay) {
@@ -72622,7 +71845,456 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"react-refresh/runtime":"786KC"}],"gtTIg":[function(require,module,exports) {
+},{"react-refresh/runtime":"786KC"}],"2IQlm":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = void 0;
+var _createSvgIcon = _interopRequireDefault(require("./utils/createSvgIcon"));
+var _jsxRuntime = require("react/jsx-runtime");
+var _default = (0, _createSvgIcon.default)(/*#__PURE__*/ (0, _jsxRuntime.jsx)("path", {
+    d: "M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"
+}), "Bookmark");
+exports.default = _default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","./utils/createSvgIcon":"lVV9C","react/jsx-runtime":"6AEwr"}],"7XM86":[function(require,module,exports) {
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{}],"lVV9C":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "default", {
+    enumerable: true,
+    get: function() {
+        return _utils.createSvgIcon;
+    }
+});
+var _utils = require("@mui/material/utils");
+
+},{"@mui/material/utils":"cEKZV"}],"cEKZV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "capitalize", ()=>(0, _capitalizeDefault.default));
+parcelHelpers.export(exports, "createChainedFunction", ()=>(0, _createChainedFunctionDefault.default));
+parcelHelpers.export(exports, "createSvgIcon", ()=>(0, _createSvgIconDefault.default));
+parcelHelpers.export(exports, "debounce", ()=>(0, _debounceDefault.default));
+parcelHelpers.export(exports, "deprecatedPropType", ()=>(0, _deprecatedPropTypeDefault.default));
+parcelHelpers.export(exports, "isMuiElement", ()=>(0, _isMuiElementDefault.default));
+parcelHelpers.export(exports, "ownerDocument", ()=>(0, _ownerDocumentDefault.default));
+parcelHelpers.export(exports, "ownerWindow", ()=>(0, _ownerWindowDefault.default));
+parcelHelpers.export(exports, "requirePropFactory", ()=>(0, _requirePropFactoryDefault.default));
+parcelHelpers.export(exports, "setRef", ()=>(0, _setRefDefault.default));
+parcelHelpers.export(exports, "unstable_useEnhancedEffect", ()=>(0, _useEnhancedEffectDefault.default));
+parcelHelpers.export(exports, "unstable_useId", ()=>(0, _useIdDefault.default));
+parcelHelpers.export(exports, "unsupportedProp", ()=>(0, _unsupportedPropDefault.default));
+parcelHelpers.export(exports, "useControlled", ()=>(0, _useControlledDefault.default));
+parcelHelpers.export(exports, "useEventCallback", ()=>(0, _useEventCallbackDefault.default));
+parcelHelpers.export(exports, "useForkRef", ()=>(0, _useForkRefDefault.default));
+parcelHelpers.export(exports, "useIsFocusVisible", ()=>(0, _useIsFocusVisibleDefault.default));
+parcelHelpers.export(exports, "unstable_ClassNameGenerator", ()=>unstable_ClassNameGenerator);
+var _className = require("@mui/base/className");
+var _capitalize = require("./capitalize");
+var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
+var _createChainedFunction = require("./createChainedFunction");
+var _createChainedFunctionDefault = parcelHelpers.interopDefault(_createChainedFunction);
+var _createSvgIcon = require("./createSvgIcon");
+var _createSvgIconDefault = parcelHelpers.interopDefault(_createSvgIcon);
+var _debounce = require("./debounce");
+var _debounceDefault = parcelHelpers.interopDefault(_debounce);
+var _deprecatedPropType = require("./deprecatedPropType");
+var _deprecatedPropTypeDefault = parcelHelpers.interopDefault(_deprecatedPropType);
+var _isMuiElement = require("./isMuiElement");
+var _isMuiElementDefault = parcelHelpers.interopDefault(_isMuiElement);
+var _ownerDocument = require("./ownerDocument");
+var _ownerDocumentDefault = parcelHelpers.interopDefault(_ownerDocument);
+var _ownerWindow = require("./ownerWindow");
+var _ownerWindowDefault = parcelHelpers.interopDefault(_ownerWindow);
+var _requirePropFactory = require("./requirePropFactory");
+var _requirePropFactoryDefault = parcelHelpers.interopDefault(_requirePropFactory);
+var _setRef = require("./setRef");
+var _setRefDefault = parcelHelpers.interopDefault(_setRef);
+var _useEnhancedEffect = require("./useEnhancedEffect");
+var _useEnhancedEffectDefault = parcelHelpers.interopDefault(_useEnhancedEffect);
+var _useId = require("./useId");
+var _useIdDefault = parcelHelpers.interopDefault(_useId);
+var _unsupportedProp = require("./unsupportedProp");
+var _unsupportedPropDefault = parcelHelpers.interopDefault(_unsupportedProp);
+var _useControlled = require("./useControlled");
+var _useControlledDefault = parcelHelpers.interopDefault(_useControlled);
+var _useEventCallback = require("./useEventCallback");
+var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
+var _useForkRef = require("./useForkRef");
+var _useForkRefDefault = parcelHelpers.interopDefault(_useForkRef);
+var _useIsFocusVisible = require("./useIsFocusVisible");
+var _useIsFocusVisibleDefault = parcelHelpers.interopDefault(_useIsFocusVisible);
+const unstable_ClassNameGenerator = {
+    configure: (generator)=>{
+        console.warn([
+            "MUI: `ClassNameGenerator` import from `@mui/material/utils` is outdated and might cause unexpected issues.",
+            "",
+            "You should use `import { unstable_ClassNameGenerator } from '@mui/material/className'` instead",
+            "",
+            "The detail of the issue: https://github.com/mui/material-ui/issues/30011#issuecomment-1024993401",
+            "",
+            "The updated documentation: https://mui.com/guides/classname-generator/"
+        ].join("\n"));
+        (0, _className.unstable_ClassNameGenerator).configure(generator);
+    }
+};
+
+},{"@mui/base/className":"kRsty","./capitalize":"kuBnp","./createChainedFunction":"9XTIf","./createSvgIcon":"0EW1c","./debounce":"l9UTb","./deprecatedPropType":"3vOVK","./isMuiElement":"c2g1y","./ownerDocument":"e2HnU","./ownerWindow":"4nR1k","./requirePropFactory":"djqNS","./setRef":"lqi2l","./useEnhancedEffect":"cJjUN","./useId":"jqwYr","./unsupportedProp":"1sHyG","./useControlled":"HFhlg","./useEventCallback":"k9VLM","./useForkRef":"dOG5T","./useIsFocusVisible":"bKzlq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kRsty":[function(require,module,exports) {
+// eslint-disable-next-line import/prefer-default-export
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "unstable_ClassNameGenerator", ()=>(0, _utils.unstable_ClassNameGenerator));
+var _utils = require("@mui/utils");
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9XTIf":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_createChainedFunction);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"0EW1c":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _react = require("react");
+var _svgIcon = require("../SvgIcon");
+var _svgIconDefault = parcelHelpers.interopDefault(_svgIcon);
+/**
+ * Private module reserved for @mui packages.
+ */ var _jsxRuntime = require("react/jsx-runtime");
+function createSvgIcon(path, displayName) {
+    function Component(props, ref) {
+        return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _svgIconDefault.default), (0, _extendsDefault.default)({
+            "data-testid": `${displayName}Icon`,
+            ref: ref
+        }, props, {
+            children: path
+        }));
+    }
+    // Need to set `displayName` on the inner component for React.memo.
+    // React prior to 16.14 ignores `displayName` on the wrapper.
+    Component.displayName = `${displayName}Icon`;
+    Component.muiName = (0, _svgIconDefault.default).muiName;
+    return /*#__PURE__*/ _react.memo(/*#__PURE__*/ _react.forwardRef(Component));
+}
+exports.default = createSvgIcon;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","../SvgIcon":"7PzE1","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7PzE1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>(0, _svgIconDefault.default));
+parcelHelpers.export(exports, "svgIconClasses", ()=>(0, _svgIconClassesDefault.default));
+var _svgIcon = require("./SvgIcon");
+var _svgIconDefault = parcelHelpers.interopDefault(_svgIcon);
+var _svgIconClasses = require("./svgIconClasses");
+var _svgIconClassesDefault = parcelHelpers.interopDefault(_svgIconClasses);
+parcelHelpers.exportAll(_svgIconClasses, exports);
+
+},{"./SvgIcon":"kIdWQ","./svgIconClasses":"j5Idz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kIdWQ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _react = require("react");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _clsx = require("clsx");
+var _clsxDefault = parcelHelpers.interopDefault(_clsx);
+var _base = require("@mui/base");
+var _capitalize = require("../utils/capitalize");
+var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
+var _useThemeProps = require("../styles/useThemeProps");
+var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
+var _styled = require("../styles/styled");
+var _styledDefault = parcelHelpers.interopDefault(_styled);
+var _svgIconClasses = require("./svgIconClasses");
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "children",
+    "className",
+    "color",
+    "component",
+    "fontSize",
+    "htmlColor",
+    "inheritViewBox",
+    "titleAccess",
+    "viewBox"
+];
+const useUtilityClasses = (ownerState)=>{
+    const { color , fontSize , classes  } = ownerState;
+    const slots = {
+        root: [
+            "root",
+            color !== "inherit" && `color${(0, _capitalizeDefault.default)(color)}`,
+            `fontSize${(0, _capitalizeDefault.default)(fontSize)}`
+        ]
+    };
+    return (0, _base.unstable_composeClasses)(slots, (0, _svgIconClasses.getSvgIconUtilityClass), classes);
+};
+const SvgIconRoot = (0, _styledDefault.default)("svg", {
+    name: "MuiSvgIcon",
+    slot: "Root",
+    overridesResolver: (props, styles)=>{
+        const { ownerState  } = props;
+        return [
+            styles.root,
+            ownerState.color !== "inherit" && styles[`color${(0, _capitalizeDefault.default)(ownerState.color)}`],
+            styles[`fontSize${(0, _capitalizeDefault.default)(ownerState.fontSize)}`]
+        ];
+    }
+})(({ theme , ownerState  })=>{
+    var _theme$transitions, _theme$transitions$cr, _theme$transitions2, _theme$transitions2$d, _theme$typography, _theme$typography$pxT, _theme$typography2, _theme$typography2$px, _theme$typography3, _theme$typography3$px, _palette$ownerState$c, _palette, _palette$ownerState$c2, _palette2, _palette2$action, _palette3, _palette3$action;
+    return {
+        userSelect: "none",
+        width: "1em",
+        height: "1em",
+        display: "inline-block",
+        fill: "currentColor",
+        flexShrink: 0,
+        transition: (_theme$transitions = theme.transitions) == null ? void 0 : (_theme$transitions$cr = _theme$transitions.create) == null ? void 0 : _theme$transitions$cr.call(_theme$transitions, "fill", {
+            duration: (_theme$transitions2 = theme.transitions) == null ? void 0 : (_theme$transitions2$d = _theme$transitions2.duration) == null ? void 0 : _theme$transitions2$d.shorter
+        }),
+        fontSize: ({
+            inherit: "inherit",
+            small: ((_theme$typography = theme.typography) == null ? void 0 : (_theme$typography$pxT = _theme$typography.pxToRem) == null ? void 0 : _theme$typography$pxT.call(_theme$typography, 20)) || "1.25rem",
+            medium: ((_theme$typography2 = theme.typography) == null ? void 0 : (_theme$typography2$px = _theme$typography2.pxToRem) == null ? void 0 : _theme$typography2$px.call(_theme$typography2, 24)) || "1.5rem",
+            large: ((_theme$typography3 = theme.typography) == null ? void 0 : (_theme$typography3$px = _theme$typography3.pxToRem) == null ? void 0 : _theme$typography3$px.call(_theme$typography3, 35)) || "2.1875rem"
+        })[ownerState.fontSize],
+        // TODO v5 deprecate, v6 remove for sx
+        color: (_palette$ownerState$c = (_palette = (theme.vars || theme).palette) == null ? void 0 : (_palette$ownerState$c2 = _palette[ownerState.color]) == null ? void 0 : _palette$ownerState$c2.main) != null ? _palette$ownerState$c : ({
+            action: (_palette2 = (theme.vars || theme).palette) == null ? void 0 : (_palette2$action = _palette2.action) == null ? void 0 : _palette2$action.active,
+            disabled: (_palette3 = (theme.vars || theme).palette) == null ? void 0 : (_palette3$action = _palette3.action) == null ? void 0 : _palette3$action.disabled,
+            inherit: undefined
+        })[ownerState.color]
+    };
+});
+const SvgIcon = /*#__PURE__*/ _react.forwardRef(function SvgIcon(inProps, ref) {
+    const props = (0, _useThemePropsDefault.default)({
+        props: inProps,
+        name: "MuiSvgIcon"
+    });
+    const { children , className , color ="inherit" , component ="svg" , fontSize ="medium" , htmlColor , inheritViewBox =false , titleAccess , viewBox ="0 0 24 24"  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
+    const ownerState = (0, _extendsDefault.default)({}, props, {
+        color,
+        component,
+        fontSize,
+        instanceFontSize: inProps.fontSize,
+        inheritViewBox,
+        viewBox
+    });
+    const more = {};
+    if (!inheritViewBox) more.viewBox = viewBox;
+    const classes = useUtilityClasses(ownerState);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)(SvgIconRoot, (0, _extendsDefault.default)({
+        as: component,
+        className: (0, _clsxDefault.default)(classes.root, className),
+        focusable: "false",
+        color: htmlColor,
+        "aria-hidden": titleAccess ? undefined : true,
+        role: titleAccess ? "img" : undefined,
+        ref: ref
+    }, more, other, {
+        ownerState: ownerState,
+        children: [
+            children,
+            titleAccess ? /*#__PURE__*/ (0, _jsxRuntime.jsx)("title", {
+                children: titleAccess
+            }) : null
+        ]
+    }));
+});
+SvgIcon.propTypes /* remove-proptypes */  = {
+    // ----------------------------- Warning --------------------------------
+    // | These PropTypes are generated from the TypeScript type definitions |
+    // |     To update them edit the d.ts file and run "yarn proptypes"     |
+    // ----------------------------------------------------------------------
+    /**
+   * Node passed into the SVG element.
+   */ children: (0, _propTypesDefault.default).node,
+    /**
+   * Override or extend the styles applied to the component.
+   */ classes: (0, _propTypesDefault.default).object,
+    /**
+   * @ignore
+   */ className: (0, _propTypesDefault.default).string,
+    /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
+   * You can use the `htmlColor` prop to apply a color attribute to the SVG element.
+   * @default 'inherit'
+   */ color: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "inherit",
+            "action",
+            "disabled",
+            "primary",
+            "secondary",
+            "error",
+            "info",
+            "success",
+            "warning"
+        ]),
+        (0, _propTypesDefault.default).string
+    ]),
+    /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */ component: (0, _propTypesDefault.default).elementType,
+    /**
+   * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
+   * @default 'medium'
+   */ fontSize: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "inherit",
+            "large",
+            "medium",
+            "small"
+        ]),
+        (0, _propTypesDefault.default).string
+    ]),
+    /**
+   * Applies a color attribute to the SVG element.
+   */ htmlColor: (0, _propTypesDefault.default).string,
+    /**
+   * If `true`, the root node will inherit the custom `component`'s viewBox and the `viewBox`
+   * prop will be ignored.
+   * Useful when you want to reference a custom `component` and have `SvgIcon` pass that
+   * `component`'s viewBox to the root node.
+   * @default false
+   */ inheritViewBox: (0, _propTypesDefault.default).bool,
+    /**
+   * The shape-rendering attribute. The behavior of the different options is described on the
+   * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering).
+   * If you are having issues with blurry icons you should investigate this prop.
+   */ shapeRendering: (0, _propTypesDefault.default).string,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).func,
+            (0, _propTypesDefault.default).object,
+            (0, _propTypesDefault.default).bool
+        ])),
+        (0, _propTypesDefault.default).func,
+        (0, _propTypesDefault.default).object
+    ]),
+    /**
+   * Provides a human-readable title for the element that contains it.
+   * https://www.w3.org/TR/SVG-access/#Equivalent
+   */ titleAccess: (0, _propTypesDefault.default).string,
+    /**
+   * Allows you to redefine what the coordinates without units mean inside an SVG element.
+   * For example, if the SVG element is 500 (width) by 200 (height),
+   * and you pass viewBox="0 0 50 20",
+   * this means that the coordinates inside the SVG will go from the top left corner (0,0)
+   * to bottom right (50,20) and each unit will be worth 10px.
+   * @default '0 0 24 24'
+   */ viewBox: (0, _propTypesDefault.default).string
+};
+SvgIcon.muiName = "SvgIcon";
+exports.default = SvgIcon;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/base":"656dE","../utils/capitalize":"kuBnp","../styles/useThemeProps":"1WXY3","../styles/styled":"9NVzk","./svgIconClasses":"j5Idz","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"j5Idz":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getSvgIconUtilityClass", ()=>getSvgIconUtilityClass);
+var _utils = require("@mui/utils");
+var _generateUtilityClass = require("../generateUtilityClass");
+var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
+function getSvgIconUtilityClass(slot) {
+    return (0, _generateUtilityClassDefault.default)("MuiSvgIcon", slot);
+}
+const svgIconClasses = (0, _utils.unstable_generateUtilityClasses)("MuiSvgIcon", [
+    "root",
+    "colorPrimary",
+    "colorSecondary",
+    "colorAction",
+    "colorError",
+    "colorDisabled",
+    "fontSizeInherit",
+    "fontSizeSmall",
+    "fontSizeMedium",
+    "fontSizeLarge"
+]);
+exports.default = svgIconClasses;
+
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l9UTb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_debounce);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3vOVK":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_deprecatedPropType);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"c2g1y":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_isMuiElement);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e2HnU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_ownerDocument);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4nR1k":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_ownerWindow);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lqi2l":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_setRef);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cJjUN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_useEnhancedEffect);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jqwYr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_useId);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1sHyG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_unsupportedProp);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"HFhlg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_useControlled);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gtTIg":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$dea5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -73465,19 +73137,52 @@ try {
 //imports SCSS styles
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-//import { GenreView } from '../genre-view/genre-view';
 parcelHelpers.export(exports, "MovieView", ()=>MovieView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _movieViewScss = require("./movie-view.scss");
+//imports React components and libraries
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-//import { Link } from 'react-router-dom';
+//imports React Bootstrap components
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _badge = require("react-bootstrap/Badge");
 var _badgeDefault = parcelHelpers.interopDefault(_badge);
+//imports Material UI components
+var _link = require("@mui/material/Link");
+var _linkDefault = parcelHelpers.interopDefault(_link);
+var _typography = require("@mui/material/Typography");
+var _typographyDefault = parcelHelpers.interopDefault(_typography);
+function Copyright(props) {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
+        variant: "body2",
+        color: "text.secondary",
+        align: "center",
+        ...props,
+        children: [
+            "Copyright \xa9 ",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
+                color: "inherit",
+                href: "/",
+                children: "Movie App v1"
+            }, void 0, false, {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 20,
+                columnNumber: 7
+            }, this),
+            " ",
+            new Date().getFullYear(),
+            "."
+        ]
+    }, void 0, true, {
+        fileName: "src/components/movie-view/movie-view.jsx",
+        lineNumber: 18,
+        columnNumber: 5
+    }, this);
+}
+_c = Copyright;
 class MovieView extends (0, _reactDefault.default).Component {
     keypressCallback(event) {
         console.log(event.key);
@@ -73504,7 +73209,7 @@ class MovieView extends (0, _reactDefault.default).Component {
     removeFavorites() {
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).delete(`https://movies-api-21.herokuapp.com/users/${username}/delete-movies/${this.props.movie._id}`, {
+        (0, _axiosDefault.default).delete(`https://movie-api-22.onrender.com/users/${username}/delete-movies/${this.props.movie._id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -73525,12 +73230,12 @@ class MovieView extends (0, _reactDefault.default).Component {
                         src: movie.imgUrl
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 65,
+                        lineNumber: 81,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 64,
+                    lineNumber: 80,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -73544,17 +73249,17 @@ class MovieView extends (0, _reactDefault.default).Component {
                                     children: movie.Title
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 70,
+                                    lineNumber: 86,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 69,
+                                lineNumber: 85,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 68,
+                            lineNumber: 84,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -73567,12 +73272,12 @@ class MovieView extends (0, _reactDefault.default).Component {
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 74,
+                                lineNumber: 90,
                                 columnNumber: 11
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 73,
+                            lineNumber: 89,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -73585,18 +73290,18 @@ class MovieView extends (0, _reactDefault.default).Component {
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 77,
+                                lineNumber: 93,
                                 columnNumber: 11
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 76,
+                            lineNumber: 92,
                             columnNumber: 9
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 67,
+                    lineNumber: 83,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -73606,17 +73311,17 @@ class MovieView extends (0, _reactDefault.default).Component {
                         children: movie.Description
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 81,
+                        lineNumber: 97,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 80,
+                    lineNumber: 96,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 83,
+                    lineNumber: 99,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -73627,7 +73332,7 @@ class MovieView extends (0, _reactDefault.default).Component {
                     children: "Add to Favorites"
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 84,
+                    lineNumber: 100,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -73638,7 +73343,7 @@ class MovieView extends (0, _reactDefault.default).Component {
                     children: "Remove from Favorites"
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 87,
+                    lineNumber: 103,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -73649,24 +73354,36 @@ class MovieView extends (0, _reactDefault.default).Component {
                     children: "Back"
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 90,
+                    lineNumber: 106,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Copyright, {
+                    sx: {
+                        mt: 8,
+                        mb: 4
+                    }
+                }, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 107,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/movie-view/movie-view.jsx",
-            lineNumber: 63,
+            lineNumber: 79,
             columnNumber: 7
         }, this);
     }
 }
+var _c;
+$RefreshReg$(_c, "Copyright");
 
   $parcel$ReactRefreshHelpers$e9f6.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./movie-view.scss":"jnlR5","react":"21dqq","axios":"jo6P5","react-bootstrap/Button":"aPzUt","react-bootstrap/Badge":"eEyks","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jnlR5":[function() {},{}],"aPzUt":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./movie-view.scss":"jnlR5","react":"21dqq","axios":"jo6P5","react-bootstrap/Button":"aPzUt","react-bootstrap/Badge":"eEyks","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@mui/material/Link":"2FkZs","@mui/material/Typography":"kbDYG"}],"jnlR5":[function() {},{}],"aPzUt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _extends = require("@babel/runtime/helpers/esm/extends");
@@ -73840,296 +73557,7 @@ Badge.displayName = "Badge";
 Badge.defaultProps = defaultProps;
 exports.default = Badge;
 
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9YtA0":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$9fee.prelude(module);
-
-try {
-//imports SCSS styles 
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "LoginView", ()=>LoginView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _loginViewScss = require("./login-view.scss");
-//imports React and hooks
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-//import PropTypes from 'prop-types';
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _reactRedux = require("react-redux");
-var _form = require("react-bootstrap/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
-//imports Material UI components
-var _avatar = require("@mui/material/Avatar");
-var _avatarDefault = parcelHelpers.interopDefault(_avatar);
-var _button = require("@mui/material/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _cssBaseline = require("@mui/material/CssBaseline");
-var _cssBaselineDefault = parcelHelpers.interopDefault(_cssBaseline);
-var _link = require("@mui/material/Link");
-var _linkDefault = parcelHelpers.interopDefault(_link);
-var _box = require("@mui/material/Box");
-var _boxDefault = parcelHelpers.interopDefault(_box);
-var _lockOutlined = require("@mui/icons-material/LockOutlined");
-var _lockOutlinedDefault = parcelHelpers.interopDefault(_lockOutlined);
-var _typography = require("@mui/material/Typography");
-var _typographyDefault = parcelHelpers.interopDefault(_typography);
-var _container = require("@mui/material/Container");
-var _containerDefault = parcelHelpers.interopDefault(_container);
-var _styles = require("@mui/material/styles");
-var _s = $RefreshSig$();
-function Copyright(props) {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
-        variant: "body2",
-        color: "text.secondary",
-        align: "center",
-        ...props,
-        children: [
-            "Copyright \xa9 ",
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
-                color: "inherit",
-                href: "/",
-                children: "Movie App v1"
-            }, void 0, false, {
-                fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 27,
-                columnNumber: 7
-            }, this),
-            " ",
-            new Date().getFullYear(),
-            "."
-        ]
-    }, void 0, true, {
-        fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 25,
-        columnNumber: 5
-    }, this);
-}
-_c = Copyright;
-const theme = (0, _styles.createTheme)();
-function LoginView(props) {
-    _s();
-    const [username, registerUsername] = (0, _react.useState)("");
-    const [password, registerPassword] = (0, _react.useState)("");
-    const handleSubmit1 = (e)=>{
-        e.preventDefault(); // prevents the default refresh/change of the page from the handleSubmit() method
-        // Sends a request to the server for authentication
-        (0, _axiosDefault.default).post("https://movie-api-22.onrender.com/login", {
-            Username: username,
-            Password: password
-        }).then((response)=>{
-            const data = response.data;
-            props.onLoggedIn(data); // allows a user to be automatically logged in
-        }).catch((e)=>{
-            console.log("No such user");
-        });
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _styles.ThemeProvider), {
-        theme: theme,
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
-            component: "main",
-            maxWidth: "xs",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cssBaselineDefault.default), {}, void 0, false, {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 61,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
-                    sx: {
-                        marginTop: 8,
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center"
-                    },
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _avatarDefault.default), {
-                            sx: {
-                                m: 1,
-                                bgcolor: "secondary.main"
-                            },
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _lockOutlinedDefault.default), {}, void 0, false, {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 71,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 70,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
-                            component: "h1",
-                            variant: "h5",
-                            children: [
-                                "Sign in ",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 74,
-                                    columnNumber: 21
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 74,
-                                    columnNumber: 26
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 73,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
-                            component: "form",
-                            onSubmit: handleSubmit1,
-                            noValidate: true,
-                            sx: {
-                                mt: 1
-                            },
-                            className: "login",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
-                                    className: "justify-content-center",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                                            className: "mb-3",
-                                            controlId: "formUsername",
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                                                    children: "Username"
-                                                }, void 0, false, {
-                                                    fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 79,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                                                    required: true,
-                                                    type: "text",
-                                                    placeholder: "Enter your Username",
-                                                    value: username,
-                                                    onChange: (e)=>registerUsername(e.target.value)
-                                                }, void 0, false, {
-                                                    fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 80,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 78,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
-                                            className: "mb-3",
-                                            controlId: "formPassword",
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                                                    children: "Password"
-                                                }, void 0, false, {
-                                                    fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 83,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                                                    required: true,
-                                                    type: "password",
-                                                    placeholder: "Enter your Password",
-                                                    value: password,
-                                                    onChange: (e)=>registerPassword(e.target.value)
-                                                }, void 0, false, {
-                                                    fileName: "src/components/login-view/login-view.jsx",
-                                                    lineNumber: 84,
-                                                    columnNumber: 17
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 82,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                                            type: "submit",
-                                            fullWidth: true,
-                                            variant: "contained",
-                                            sx: {
-                                                mt: 3,
-                                                mb: 2
-                                            },
-                                            onClick: handleSubmit1,
-                                            children: "Log in"
-                                        }, void 0, false, {
-                                            fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 86,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 77,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
-                                    href: "/register",
-                                    variant: "body2",
-                                    children: "Don't have an account? Sign Up"
-                                }, void 0, false, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 96,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Copyright, {
-                                    sx: {
-                                        mt: 8,
-                                        mb: 4
-                                    }
-                                }, void 0, false, {
-                                    fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 99,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 76,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 62,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 60,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
-        fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 59,
-        columnNumber: 5
-    }, this);
-}
-_s(LoginView, "1/PUhFbagoiBqCBndjjCveMs8mQ=");
-_c1 = LoginView;
-const mapDispatchToProps = (dispatch)=>({
-        handleSubmit: (username, password)=>dispatch(handleSubmit(username, password))
-    });
-exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(LoginView);
-var _c, _c1;
-$RefreshReg$(_c, "Copyright");
-$RefreshReg$(_c1, "LoginView");
-
-  $parcel$ReactRefreshHelpers$9fee.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","./login-view.scss":"e57ax","react":"21dqq","axios":"jo6P5","react-redux":"bdVon","react-bootstrap/Form":"iBZ80","@mui/material/Avatar":"a1E31","@mui/material/Button":"eFe0Q","@mui/material/CssBaseline":"YDHu9","@mui/material/Link":"2FkZs","@mui/material/Box":"gh88n","@mui/icons-material/LockOutlined":"9fx6t","@mui/material/Typography":"kbDYG","@mui/material/Container":"fPxWU","@mui/material/styles":"eZWTQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"e57ax":[function() {},{}],"2FkZs":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2FkZs":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _linkDefault.default));
@@ -74420,7 +73848,651 @@ const getTextDecoration = ({ theme , ownerState  })=>{
 };
 exports.default = getTextDecoration;
 
-},{"@mui/system":"Q0Zql","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3U8r7":[function(require,module,exports) {
+},{"@mui/system":"Q0Zql","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9YtA0":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9fee.prelude(module);
+
+try {
+//imports SCSS styles 
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LoginView", ()=>LoginView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _loginViewScss = require("./login-view.scss");
+//imports React and hooks
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+//import PropTypes from 'prop-types';
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactRedux = require("react-redux");
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+//imports Material UI components
+var _avatar = require("@mui/material/Avatar");
+var _avatarDefault = parcelHelpers.interopDefault(_avatar);
+var _button = require("@mui/material/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _cssBaseline = require("@mui/material/CssBaseline");
+var _cssBaselineDefault = parcelHelpers.interopDefault(_cssBaseline);
+var _link = require("@mui/material/Link");
+var _linkDefault = parcelHelpers.interopDefault(_link);
+var _box = require("@mui/material/Box");
+var _boxDefault = parcelHelpers.interopDefault(_box);
+var _lockOutlined = require("@mui/icons-material/LockOutlined");
+var _lockOutlinedDefault = parcelHelpers.interopDefault(_lockOutlined);
+var _typography = require("@mui/material/Typography");
+var _typographyDefault = parcelHelpers.interopDefault(_typography);
+var _container = require("@mui/material/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _styles = require("@mui/material/styles");
+var _s = $RefreshSig$();
+function Copyright(props) {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
+        variant: "body2",
+        color: "text.secondary",
+        align: "center",
+        ...props,
+        children: [
+            "Copyright \xa9 ",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
+                color: "inherit",
+                href: "/",
+                children: "Movie App v1"
+            }, void 0, false, {
+                fileName: "src/components/login-view/login-view.jsx",
+                lineNumber: 27,
+                columnNumber: 7
+            }, this),
+            " ",
+            new Date().getFullYear(),
+            "."
+        ]
+    }, void 0, true, {
+        fileName: "src/components/login-view/login-view.jsx",
+        lineNumber: 25,
+        columnNumber: 5
+    }, this);
+}
+_c = Copyright;
+const theme = (0, _styles.createTheme)();
+function LoginView(props) {
+    _s();
+    const [username, registerUsername] = (0, _react.useState)("");
+    const [password, registerPassword] = (0, _react.useState)("");
+    const handleSubmit1 = (e)=>{
+        e.preventDefault(); // prevents the default refresh/change of the page from the handleSubmit() method
+        // Sends a request to the server for authentication
+        (0, _axiosDefault.default).post("https://movie-api-22.onrender.com/login", {
+            Username: username,
+            Password: password
+        }).then((response)=>{
+            const data = response.data;
+            props.onLoggedIn(data); // allows a user to be automatically logged in
+        }).catch((e)=>{
+            console.log("No such user");
+        });
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _styles.ThemeProvider), {
+        theme: theme,
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
+            component: "main",
+            maxWidth: "xs",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cssBaselineDefault.default), {}, void 0, false, {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 61,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
+                    sx: {
+                        marginTop: 8,
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center"
+                    },
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _avatarDefault.default), {
+                            sx: {
+                                m: 1,
+                                bgcolor: "secondary.main"
+                            },
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _lockOutlinedDefault.default), {}, void 0, false, {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 71,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 70,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
+                            component: "h1",
+                            variant: "h5",
+                            children: [
+                                "Sign in ",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 74,
+                                    columnNumber: 21
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 74,
+                                    columnNumber: 26
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 73,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
+                            component: "form",
+                            onSubmit: handleSubmit1,
+                            noValidate: true,
+                            sx: {
+                                mt: 1
+                            },
+                            className: "login",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
+                                    className: "justify-content-center",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                                            className: "mb-3",
+                                            controlId: "formUsername",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                                    children: "Username"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 79,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                                    required: true,
+                                                    type: "text",
+                                                    placeholder: "Enter your Username",
+                                                    value: username,
+                                                    onChange: (e)=>registerUsername(e.target.value)
+                                                }, void 0, false, {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 80,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 78,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
+                                            className: "mb-3",
+                                            controlId: "formPassword",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
+                                                    children: "Password"
+                                                }, void 0, false, {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 83,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
+                                                    required: true,
+                                                    type: "password",
+                                                    placeholder: "Enter your Password",
+                                                    value: password,
+                                                    onChange: (e)=>registerPassword(e.target.value)
+                                                }, void 0, false, {
+                                                    fileName: "src/components/login-view/login-view.jsx",
+                                                    lineNumber: 84,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 82,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                            type: "submit",
+                                            fullWidth: true,
+                                            variant: "contained",
+                                            sx: {
+                                                mt: 3,
+                                                mb: 2
+                                            },
+                                            onClick: handleSubmit1,
+                                            children: "Log in"
+                                        }, void 0, false, {
+                                            fileName: "src/components/login-view/login-view.jsx",
+                                            lineNumber: 86,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 77,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _linkDefault.default), {
+                                    href: "/register",
+                                    variant: "body2",
+                                    children: "Don't have an account? Sign Up"
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 96,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Copyright, {
+                                    sx: {
+                                        mt: 8,
+                                        mb: 4
+                                    }
+                                }, void 0, false, {
+                                    fileName: "src/components/login-view/login-view.jsx",
+                                    lineNumber: 99,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/login-view/login-view.jsx",
+                            lineNumber: 76,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 62,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/login-view/login-view.jsx",
+            lineNumber: 60,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "src/components/login-view/login-view.jsx",
+        lineNumber: 59,
+        columnNumber: 5
+    }, this);
+}
+_s(LoginView, "1/PUhFbagoiBqCBndjjCveMs8mQ=");
+_c1 = LoginView;
+const mapDispatchToProps = (dispatch)=>({
+        handleSubmit: (username, password)=>dispatch(handleSubmit(username, password))
+    });
+exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(LoginView);
+var _c, _c1;
+$RefreshReg$(_c, "Copyright");
+$RefreshReg$(_c1, "LoginView");
+
+  $parcel$ReactRefreshHelpers$9fee.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","./login-view.scss":"e57ax","react":"21dqq","axios":"jo6P5","react-redux":"bdVon","react-bootstrap/Form":"iBZ80","@mui/material/Avatar":"a1E31","@mui/material/Button":"eFe0Q","@mui/material/CssBaseline":"YDHu9","@mui/material/Link":"2FkZs","@mui/material/Box":"gh88n","@mui/icons-material/LockOutlined":"9fx6t","@mui/material/Typography":"kbDYG","@mui/material/Container":"fPxWU","@mui/material/styles":"eZWTQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"e57ax":[function() {},{}],"a1E31":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>(0, _avatarDefault.default));
+parcelHelpers.export(exports, "avatarClasses", ()=>(0, _avatarClassesDefault.default));
+var _avatar = require("./Avatar");
+var _avatarDefault = parcelHelpers.interopDefault(_avatar);
+var _avatarClasses = require("./avatarClasses");
+var _avatarClassesDefault = parcelHelpers.interopDefault(_avatarClasses);
+parcelHelpers.exportAll(_avatarClasses, exports);
+
+},{"./Avatar":"iXiFs","./avatarClasses":"g7bs2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iXiFs":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _react = require("react");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _clsx = require("clsx");
+var _clsxDefault = parcelHelpers.interopDefault(_clsx);
+var _base = require("@mui/base");
+var _styled = require("../styles/styled");
+var _styledDefault = parcelHelpers.interopDefault(_styled);
+var _useThemeProps = require("../styles/useThemeProps");
+var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
+var _person = require("../internal/svg-icons/Person");
+var _personDefault = parcelHelpers.interopDefault(_person);
+var _avatarClasses = require("./avatarClasses");
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "alt",
+    "children",
+    "className",
+    "component",
+    "imgProps",
+    "sizes",
+    "src",
+    "srcSet",
+    "variant"
+];
+const useUtilityClasses = (ownerState)=>{
+    const { classes , variant , colorDefault  } = ownerState;
+    const slots = {
+        root: [
+            "root",
+            variant,
+            colorDefault && "colorDefault"
+        ],
+        img: [
+            "img"
+        ],
+        fallback: [
+            "fallback"
+        ]
+    };
+    return (0, _base.unstable_composeClasses)(slots, (0, _avatarClasses.getAvatarUtilityClass), classes);
+};
+const AvatarRoot = (0, _styledDefault.default)("div", {
+    name: "MuiAvatar",
+    slot: "Root",
+    overridesResolver: (props, styles)=>{
+        const { ownerState  } = props;
+        return [
+            styles.root,
+            styles[ownerState.variant],
+            ownerState.colorDefault && styles.colorDefault
+        ];
+    }
+})(({ theme , ownerState  })=>(0, _extendsDefault.default)({
+        position: "relative",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexShrink: 0,
+        width: 40,
+        height: 40,
+        fontFamily: theme.typography.fontFamily,
+        fontSize: theme.typography.pxToRem(20),
+        lineHeight: 1,
+        borderRadius: "50%",
+        overflow: "hidden",
+        userSelect: "none"
+    }, ownerState.variant === "rounded" && {
+        borderRadius: (theme.vars || theme).shape.borderRadius
+    }, ownerState.variant === "square" && {
+        borderRadius: 0
+    }, ownerState.colorDefault && (0, _extendsDefault.default)({
+        color: (theme.vars || theme).palette.background.default
+    }, theme.vars ? {
+        backgroundColor: theme.vars.palette.Avatar.defaultBg
+    } : {
+        backgroundColor: theme.palette.mode === "light" ? theme.palette.grey[400] : theme.palette.grey[600]
+    })));
+const AvatarImg = (0, _styledDefault.default)("img", {
+    name: "MuiAvatar",
+    slot: "Img",
+    overridesResolver: (props, styles)=>styles.img
+})({
+    width: "100%",
+    height: "100%",
+    textAlign: "center",
+    // Handle non-square image. The property isn't supported by IE11.
+    objectFit: "cover",
+    // Hide alt text.
+    color: "transparent",
+    // Hide the image broken icon, only works on Chrome.
+    textIndent: 10000
+});
+const AvatarFallback = (0, _styledDefault.default)((0, _personDefault.default), {
+    name: "MuiAvatar",
+    slot: "Fallback",
+    overridesResolver: (props, styles)=>styles.fallback
+})({
+    width: "75%",
+    height: "75%"
+});
+function useLoaded({ crossOrigin , referrerPolicy , src , srcSet  }) {
+    const [loaded, setLoaded] = _react.useState(false);
+    _react.useEffect(()=>{
+        if (!src && !srcSet) return undefined;
+        setLoaded(false);
+        let active = true;
+        const image = new Image();
+        image.onload = ()=>{
+            if (!active) return;
+            setLoaded("loaded");
+        };
+        image.onerror = ()=>{
+            if (!active) return;
+            setLoaded("error");
+        };
+        image.crossOrigin = crossOrigin;
+        image.referrerPolicy = referrerPolicy;
+        image.src = src;
+        if (srcSet) image.srcset = srcSet;
+        return ()=>{
+            active = false;
+        };
+    }, [
+        crossOrigin,
+        referrerPolicy,
+        src,
+        srcSet
+    ]);
+    return loaded;
+}
+const Avatar = /*#__PURE__*/ _react.forwardRef(function Avatar(inProps, ref) {
+    const props = (0, _useThemePropsDefault.default)({
+        props: inProps,
+        name: "MuiAvatar"
+    });
+    const { alt , children: childrenProp , className , component ="div" , imgProps , sizes , src , srcSet , variant ="circular"  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
+    let children = null;
+    // Use a hook instead of onError on the img element to support server-side rendering.
+    const loaded = useLoaded((0, _extendsDefault.default)({}, imgProps, {
+        src,
+        srcSet
+    }));
+    const hasImg = src || srcSet;
+    const hasImgNotFailing = hasImg && loaded !== "error";
+    const ownerState = (0, _extendsDefault.default)({}, props, {
+        colorDefault: !hasImgNotFailing,
+        component,
+        variant
+    });
+    const classes = useUtilityClasses(ownerState);
+    if (hasImgNotFailing) children = /*#__PURE__*/ (0, _jsxRuntime.jsx)(AvatarImg, (0, _extendsDefault.default)({
+        alt: alt,
+        src: src,
+        srcSet: srcSet,
+        sizes: sizes,
+        ownerState: ownerState,
+        className: classes.img
+    }, imgProps));
+    else if (childrenProp != null) children = childrenProp;
+    else if (hasImg && alt) children = alt[0];
+    else children = /*#__PURE__*/ (0, _jsxRuntime.jsx)(AvatarFallback, {
+        className: classes.fallback
+    });
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(AvatarRoot, (0, _extendsDefault.default)({
+        as: component,
+        ownerState: ownerState,
+        className: (0, _clsxDefault.default)(classes.root, className),
+        ref: ref
+    }, other, {
+        children: children
+    }));
+});
+Avatar.propTypes /* remove-proptypes */  = {
+    // ----------------------------- Warning --------------------------------
+    // | These PropTypes are generated from the TypeScript type definitions |
+    // |     To update them edit the d.ts file and run "yarn proptypes"     |
+    // ----------------------------------------------------------------------
+    /**
+   * Used in combination with `src` or `srcSet` to
+   * provide an alt attribute for the rendered `img` element.
+   */ alt: (0, _propTypesDefault.default).string,
+    /**
+   * Used to render icon or text elements inside the Avatar if `src` is not set.
+   * This can be an element, or just a string.
+   */ children: (0, _propTypesDefault.default).node,
+    /**
+   * Override or extend the styles applied to the component.
+   */ classes: (0, _propTypesDefault.default).object,
+    /**
+   * @ignore
+   */ className: (0, _propTypesDefault.default).string,
+    /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */ component: (0, _propTypesDefault.default).elementType,
+    /**
+   * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attributes) applied to the `img` element if the component is used to display an image.
+   * It can be used to listen for the loading error event.
+   */ imgProps: (0, _propTypesDefault.default).object,
+    /**
+   * The `sizes` attribute for the `img` element.
+   */ sizes: (0, _propTypesDefault.default).string,
+    /**
+   * The `src` attribute for the `img` element.
+   */ src: (0, _propTypesDefault.default).string,
+    /**
+   * The `srcSet` attribute for the `img` element.
+   * Use this attribute for responsive image display.
+   */ srcSet: (0, _propTypesDefault.default).string,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).func,
+            (0, _propTypesDefault.default).object,
+            (0, _propTypesDefault.default).bool
+        ])),
+        (0, _propTypesDefault.default).func,
+        (0, _propTypesDefault.default).object
+    ]),
+    /**
+   * The shape of the avatar.
+   * @default 'circular'
+   */ variant: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "circular",
+            "rounded",
+            "square"
+        ]),
+        (0, _propTypesDefault.default).string
+    ])
+};
+exports.default = Avatar;
+
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/base":"656dE","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../internal/svg-icons/Person":"9fLPT","./avatarClasses":"g7bs2","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9fLPT":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _createSvgIcon = require("../../utils/createSvgIcon");
+var _createSvgIconDefault = parcelHelpers.interopDefault(_createSvgIcon);
+/**
+ * @ignore - internal component.
+ */ var _jsxRuntime = require("react/jsx-runtime");
+exports.default = (0, _createSvgIconDefault.default)(/*#__PURE__*/ (0, _jsxRuntime.jsx)("path", {
+    d: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+}), "Person");
+
+},{"react":"21dqq","../../utils/createSvgIcon":"0EW1c","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"g7bs2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getAvatarUtilityClass", ()=>getAvatarUtilityClass);
+var _utils = require("@mui/utils");
+var _generateUtilityClass = require("../generateUtilityClass");
+var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
+function getAvatarUtilityClass(slot) {
+    return (0, _generateUtilityClassDefault.default)("MuiAvatar", slot);
+}
+const avatarClasses = (0, _utils.unstable_generateUtilityClasses)("MuiAvatar", [
+    "root",
+    "colorDefault",
+    "circular",
+    "rounded",
+    "square",
+    "img",
+    "fallback"
+]);
+exports.default = avatarClasses;
+
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gh88n":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>(0, _boxDefault.default));
+var _box = require("./Box");
+var _boxDefault = parcelHelpers.interopDefault(_box);
+
+},{"./Box":"3Lklc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3Lklc":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _system = require("@mui/system");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _className = require("../className");
+var _styles = require("../styles");
+const defaultTheme = (0, _styles.createTheme)();
+const Box = (0, _system.createBox)({
+    defaultTheme,
+    defaultClassName: "MuiBox-root",
+    generateClassName: (0, _className.unstable_ClassNameGenerator).generate
+});
+Box.propTypes /* remove-proptypes */  = {
+    // ----------------------------- Warning --------------------------------
+    // | These PropTypes are generated from the TypeScript type definitions |
+    // |     To update them edit the d.ts file and run "yarn proptypes"     |
+    // ----------------------------------------------------------------------
+    /**
+   * @ignore
+   */ children: (0, _propTypesDefault.default).node,
+    /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */ component: (0, _propTypesDefault.default).elementType,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).func,
+            (0, _propTypesDefault.default).object,
+            (0, _propTypesDefault.default).bool
+        ])),
+        (0, _propTypesDefault.default).func,
+        (0, _propTypesDefault.default).object
+    ])
+};
+exports.default = Box;
+
+},{"@mui/system":"Q0Zql","prop-types":"7wKI2","../className":"6ainf","../styles":"eZWTQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6ainf":[function(require,module,exports) {
+// eslint-disable-next-line import/prefer-default-export
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "unstable_ClassNameGenerator", ()=>(0, _utils.unstable_ClassNameGenerator));
+var _utils = require("@mui/utils");
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9fx6t":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = void 0;
+var _createSvgIcon = _interopRequireDefault(require("./utils/createSvgIcon"));
+var _jsxRuntime = require("react/jsx-runtime");
+var _default = (0, _createSvgIcon.default)(/*#__PURE__*/ (0, _jsxRuntime.jsx)("path", {
+    d: "M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"
+}), "LockOutlined");
+exports.default = _default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","./utils/createSvgIcon":"lVV9C","react/jsx-runtime":"6AEwr"}],"3U8r7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$789c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -75129,7 +75201,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
             console.log(error);
         });
     }
-    removeFavouriteMovie(movie) {
+    removeFavoritesMovie(movie) {
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
         (0, _axiosDefault.default).delete(`https://movie-api-22.onrender.com/users/${username}/delete-movies/${movie._id}`, {
@@ -75143,20 +75215,20 @@ class ProfileView extends (0, _reactDefault.default).Component {
             console.log(error);
         });
     }
-    handleUpdateUser(e1, updateUsername, updatePassword, updateEmail, updateBirthdate) {
+    handleUpdateUser(e, updateUsername, updatePassword, updateEmail, updateBirthdate) {
         this.setState({
             validated: null
         });
-        const form = e1.currentTarget;
+        const form = e.currentTarget;
         if (form.checkValidity() === false) {
-            e1.preventDefault();
-            e1.stopPropagation();
+            e.preventDefault();
+            e.stopPropagation();
             this.setState({
                 validated: true
             });
             return;
         }
-        e1.preventDefault();
+        e.preventDefault();
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
         (0, _axiosDefault.default).put(`https://movie-api-22.onrender.com/users/${username}`, {
@@ -75196,8 +75268,8 @@ class ProfileView extends (0, _reactDefault.default).Component {
         this.Birthdate = input;
     }
     //Allows the users to delete their account
-    handleUserDeletion(e1) {
-        e1.preventDefault();
+    handleUserDeletion(e) {
+        e.preventDefault();
         const answer = windows.confirm("Do you want to delete the account? After account deletion recovery process of this user won't be possible.");
         if (answer) {
             const token = localStorage.getItem("token");
@@ -75211,8 +75283,8 @@ class ProfileView extends (0, _reactDefault.default).Component {
                 localStorage.removeItme("token");
                 alert("Your account has been deleted.");
                 windows.open("/", "_self");
-            }).catch((e1)=>{
-                console.log(e1);
+            }).catch((e)=>{
+                console.log(e);
             });
         }
     }
@@ -75272,7 +75344,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                             className: "profile-button remove-favorite-movie",
                                             variant: "danger",
                                             value: movie._id,
-                                            onClick: ()=>this.removeFavouriteMovie(e, movie),
+                                            onClick: (e)=>this.removeFavoritesMovie(e, movie),
                                             children: "Remove from Favorites"
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
@@ -75309,7 +75381,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                             noValidate: true,
                             validated: validated,
                             className: "update-form",
-                            onSubmit: (e1)=>this.handleUpdateUser(e1, this.Username, this.Password, this.Email, this.Birthdate),
+                            onSubmit: (e)=>this.handleUpdateUser(e, this.Username, this.Password, this.Email, this.Birthdate),
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
                                     controlId: "formUsername",
@@ -75325,7 +75397,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                                             type: "text",
                                             placeholder: "Change Username",
-                                            onChange: (e1)=>this.setUsername(e1.target.value)
+                                            onChange: (e)=>this.setUsername(e.target.value)
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 194,
@@ -75351,7 +75423,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                                             type: "password",
                                             placeholder: "Change Password",
-                                            onChange: (e1)=>this.setPassword(e1.target.value)
+                                            onChange: (e)=>this.setPassword(e.target.value)
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 199,
@@ -75377,7 +75449,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                                             type: "email",
                                             placeholder: "Change Email",
-                                            onChange: (e1)=>this.setEmail(e1.target.value)
+                                            onChange: (e)=>this.setEmail(e.target.value)
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 204,
@@ -75403,7 +75475,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                                             type: "date",
                                             placeholder: "Change Birthdate",
-                                            onChange: (e1)=>this.setBirthdate(e1.target.value)
+                                            onChange: (e)=>this.setBirthdate(e.target.value)
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 209,
@@ -75434,7 +75506,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                                         variant: "danger",
-                                        onClick: (e1)=>this.handleUserDeletion(e1),
+                                        onClick: (e)=>this.handleUserDeletion(e),
                                         children: "Delete Account"
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/profile-view.jsx",
