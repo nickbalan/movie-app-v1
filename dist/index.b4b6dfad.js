@@ -41834,7 +41834,7 @@ class MainView extends (0, _reactDefault.default).Component {
     }
     //Gets all the movies from external DB
     getMovies(token) {
-        (0, _axiosDefault.default).get("https://movie-api-22.onrender.com/movies", {
+        (0, _axiosDefault.default).get("https://movie-api-production-57fd.up.railway.app/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -45802,7 +45802,7 @@ class MovieCard extends (0, _reactDefault.default).Component {
     addFavorite() {
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).put(`https://movie-api-22.onrender.com/users/${username}/add-movies/${this.props.movie._id}`, {}, {
+        (0, _axiosDefault.default).put(`https://movie-api-production-57fd.up.railway.app/users/${username}/add-movies/${this.props.movie._id}`, {}, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -45916,7 +45916,7 @@ $RefreshReg$(_c, "Copyright");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./movie-card.scss":"d6HH4","react":"21dqq","axios":"jo6P5","react-router-dom":"cHIiW","react-bootstrap/Card":"lAynp","react-bootstrap/Container":"hEdsw","@mui/material/Button":"eFe0Q","@mui/material/CssBaseline":"YDHu9","@mui/material/Typography":"kbDYG","@mui/material/Container":"fPxWU","@mui/material/Grid":"8fbPl","@mui/material/styles":"eZWTQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@mui/icons-material/Bookmark":"2IQlm"}],"d6HH4":[function() {},{}],"lAynp":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./movie-card.scss":"d6HH4","react":"21dqq","axios":"jo6P5","react-router-dom":"cHIiW","react-bootstrap/Card":"lAynp","react-bootstrap/Container":"hEdsw","@mui/material/Button":"eFe0Q","@mui/material/CssBaseline":"YDHu9","@mui/material/Typography":"kbDYG","@mui/material/Container":"fPxWU","@mui/material/Grid":"8fbPl","@mui/icons-material/Bookmark":"2IQlm","@mui/material/styles":"eZWTQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"d6HH4":[function() {},{}],"lAynp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _extends = require("@babel/runtime/helpers/esm/extends");
@@ -71130,7 +71130,456 @@ const gridClasses = (0, _utils.unstable_generateUtilityClasses)("MuiGrid", [
 ]);
 exports.default = gridClasses;
 
-},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eZWTQ":[function(require,module,exports) {
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2IQlm":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = void 0;
+var _createSvgIcon = _interopRequireDefault(require("./utils/createSvgIcon"));
+var _jsxRuntime = require("react/jsx-runtime");
+var _default = (0, _createSvgIcon.default)(/*#__PURE__*/ (0, _jsxRuntime.jsx)("path", {
+    d: "M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"
+}), "Bookmark");
+exports.default = _default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","./utils/createSvgIcon":"lVV9C","react/jsx-runtime":"6AEwr"}],"7XM86":[function(require,module,exports) {
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{}],"lVV9C":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "default", {
+    enumerable: true,
+    get: function() {
+        return _utils.createSvgIcon;
+    }
+});
+var _utils = require("@mui/material/utils");
+
+},{"@mui/material/utils":"cEKZV"}],"cEKZV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "capitalize", ()=>(0, _capitalizeDefault.default));
+parcelHelpers.export(exports, "createChainedFunction", ()=>(0, _createChainedFunctionDefault.default));
+parcelHelpers.export(exports, "createSvgIcon", ()=>(0, _createSvgIconDefault.default));
+parcelHelpers.export(exports, "debounce", ()=>(0, _debounceDefault.default));
+parcelHelpers.export(exports, "deprecatedPropType", ()=>(0, _deprecatedPropTypeDefault.default));
+parcelHelpers.export(exports, "isMuiElement", ()=>(0, _isMuiElementDefault.default));
+parcelHelpers.export(exports, "ownerDocument", ()=>(0, _ownerDocumentDefault.default));
+parcelHelpers.export(exports, "ownerWindow", ()=>(0, _ownerWindowDefault.default));
+parcelHelpers.export(exports, "requirePropFactory", ()=>(0, _requirePropFactoryDefault.default));
+parcelHelpers.export(exports, "setRef", ()=>(0, _setRefDefault.default));
+parcelHelpers.export(exports, "unstable_useEnhancedEffect", ()=>(0, _useEnhancedEffectDefault.default));
+parcelHelpers.export(exports, "unstable_useId", ()=>(0, _useIdDefault.default));
+parcelHelpers.export(exports, "unsupportedProp", ()=>(0, _unsupportedPropDefault.default));
+parcelHelpers.export(exports, "useControlled", ()=>(0, _useControlledDefault.default));
+parcelHelpers.export(exports, "useEventCallback", ()=>(0, _useEventCallbackDefault.default));
+parcelHelpers.export(exports, "useForkRef", ()=>(0, _useForkRefDefault.default));
+parcelHelpers.export(exports, "useIsFocusVisible", ()=>(0, _useIsFocusVisibleDefault.default));
+parcelHelpers.export(exports, "unstable_ClassNameGenerator", ()=>unstable_ClassNameGenerator);
+var _className = require("@mui/base/className");
+var _capitalize = require("./capitalize");
+var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
+var _createChainedFunction = require("./createChainedFunction");
+var _createChainedFunctionDefault = parcelHelpers.interopDefault(_createChainedFunction);
+var _createSvgIcon = require("./createSvgIcon");
+var _createSvgIconDefault = parcelHelpers.interopDefault(_createSvgIcon);
+var _debounce = require("./debounce");
+var _debounceDefault = parcelHelpers.interopDefault(_debounce);
+var _deprecatedPropType = require("./deprecatedPropType");
+var _deprecatedPropTypeDefault = parcelHelpers.interopDefault(_deprecatedPropType);
+var _isMuiElement = require("./isMuiElement");
+var _isMuiElementDefault = parcelHelpers.interopDefault(_isMuiElement);
+var _ownerDocument = require("./ownerDocument");
+var _ownerDocumentDefault = parcelHelpers.interopDefault(_ownerDocument);
+var _ownerWindow = require("./ownerWindow");
+var _ownerWindowDefault = parcelHelpers.interopDefault(_ownerWindow);
+var _requirePropFactory = require("./requirePropFactory");
+var _requirePropFactoryDefault = parcelHelpers.interopDefault(_requirePropFactory);
+var _setRef = require("./setRef");
+var _setRefDefault = parcelHelpers.interopDefault(_setRef);
+var _useEnhancedEffect = require("./useEnhancedEffect");
+var _useEnhancedEffectDefault = parcelHelpers.interopDefault(_useEnhancedEffect);
+var _useId = require("./useId");
+var _useIdDefault = parcelHelpers.interopDefault(_useId);
+var _unsupportedProp = require("./unsupportedProp");
+var _unsupportedPropDefault = parcelHelpers.interopDefault(_unsupportedProp);
+var _useControlled = require("./useControlled");
+var _useControlledDefault = parcelHelpers.interopDefault(_useControlled);
+var _useEventCallback = require("./useEventCallback");
+var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
+var _useForkRef = require("./useForkRef");
+var _useForkRefDefault = parcelHelpers.interopDefault(_useForkRef);
+var _useIsFocusVisible = require("./useIsFocusVisible");
+var _useIsFocusVisibleDefault = parcelHelpers.interopDefault(_useIsFocusVisible);
+const unstable_ClassNameGenerator = {
+    configure: (generator)=>{
+        console.warn([
+            "MUI: `ClassNameGenerator` import from `@mui/material/utils` is outdated and might cause unexpected issues.",
+            "",
+            "You should use `import { unstable_ClassNameGenerator } from '@mui/material/className'` instead",
+            "",
+            "The detail of the issue: https://github.com/mui/material-ui/issues/30011#issuecomment-1024993401",
+            "",
+            "The updated documentation: https://mui.com/guides/classname-generator/"
+        ].join("\n"));
+        (0, _className.unstable_ClassNameGenerator).configure(generator);
+    }
+};
+
+},{"@mui/base/className":"kRsty","./capitalize":"kuBnp","./createChainedFunction":"9XTIf","./createSvgIcon":"0EW1c","./debounce":"l9UTb","./deprecatedPropType":"3vOVK","./isMuiElement":"c2g1y","./ownerDocument":"e2HnU","./ownerWindow":"4nR1k","./requirePropFactory":"djqNS","./setRef":"lqi2l","./useEnhancedEffect":"cJjUN","./useId":"jqwYr","./unsupportedProp":"1sHyG","./useControlled":"HFhlg","./useEventCallback":"k9VLM","./useForkRef":"dOG5T","./useIsFocusVisible":"bKzlq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kRsty":[function(require,module,exports) {
+// eslint-disable-next-line import/prefer-default-export
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "unstable_ClassNameGenerator", ()=>(0, _utils.unstable_ClassNameGenerator));
+var _utils = require("@mui/utils");
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9XTIf":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_createChainedFunction);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"0EW1c":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _react = require("react");
+var _svgIcon = require("../SvgIcon");
+var _svgIconDefault = parcelHelpers.interopDefault(_svgIcon);
+/**
+ * Private module reserved for @mui packages.
+ */ var _jsxRuntime = require("react/jsx-runtime");
+function createSvgIcon(path, displayName) {
+    function Component(props, ref) {
+        return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _svgIconDefault.default), (0, _extendsDefault.default)({
+            "data-testid": `${displayName}Icon`,
+            ref: ref
+        }, props, {
+            children: path
+        }));
+    }
+    // Need to set `displayName` on the inner component for React.memo.
+    // React prior to 16.14 ignores `displayName` on the wrapper.
+    Component.displayName = `${displayName}Icon`;
+    Component.muiName = (0, _svgIconDefault.default).muiName;
+    return /*#__PURE__*/ _react.memo(/*#__PURE__*/ _react.forwardRef(Component));
+}
+exports.default = createSvgIcon;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","../SvgIcon":"7PzE1","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7PzE1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>(0, _svgIconDefault.default));
+parcelHelpers.export(exports, "svgIconClasses", ()=>(0, _svgIconClassesDefault.default));
+var _svgIcon = require("./SvgIcon");
+var _svgIconDefault = parcelHelpers.interopDefault(_svgIcon);
+var _svgIconClasses = require("./svgIconClasses");
+var _svgIconClassesDefault = parcelHelpers.interopDefault(_svgIconClasses);
+parcelHelpers.exportAll(_svgIconClasses, exports);
+
+},{"./SvgIcon":"kIdWQ","./svgIconClasses":"j5Idz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kIdWQ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _react = require("react");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _clsx = require("clsx");
+var _clsxDefault = parcelHelpers.interopDefault(_clsx);
+var _base = require("@mui/base");
+var _capitalize = require("../utils/capitalize");
+var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
+var _useThemeProps = require("../styles/useThemeProps");
+var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
+var _styled = require("../styles/styled");
+var _styledDefault = parcelHelpers.interopDefault(_styled);
+var _svgIconClasses = require("./svgIconClasses");
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "children",
+    "className",
+    "color",
+    "component",
+    "fontSize",
+    "htmlColor",
+    "inheritViewBox",
+    "titleAccess",
+    "viewBox"
+];
+const useUtilityClasses = (ownerState)=>{
+    const { color , fontSize , classes  } = ownerState;
+    const slots = {
+        root: [
+            "root",
+            color !== "inherit" && `color${(0, _capitalizeDefault.default)(color)}`,
+            `fontSize${(0, _capitalizeDefault.default)(fontSize)}`
+        ]
+    };
+    return (0, _base.unstable_composeClasses)(slots, (0, _svgIconClasses.getSvgIconUtilityClass), classes);
+};
+const SvgIconRoot = (0, _styledDefault.default)("svg", {
+    name: "MuiSvgIcon",
+    slot: "Root",
+    overridesResolver: (props, styles)=>{
+        const { ownerState  } = props;
+        return [
+            styles.root,
+            ownerState.color !== "inherit" && styles[`color${(0, _capitalizeDefault.default)(ownerState.color)}`],
+            styles[`fontSize${(0, _capitalizeDefault.default)(ownerState.fontSize)}`]
+        ];
+    }
+})(({ theme , ownerState  })=>{
+    var _theme$transitions, _theme$transitions$cr, _theme$transitions2, _theme$transitions2$d, _theme$typography, _theme$typography$pxT, _theme$typography2, _theme$typography2$px, _theme$typography3, _theme$typography3$px, _palette$ownerState$c, _palette, _palette$ownerState$c2, _palette2, _palette2$action, _palette3, _palette3$action;
+    return {
+        userSelect: "none",
+        width: "1em",
+        height: "1em",
+        display: "inline-block",
+        fill: "currentColor",
+        flexShrink: 0,
+        transition: (_theme$transitions = theme.transitions) == null ? void 0 : (_theme$transitions$cr = _theme$transitions.create) == null ? void 0 : _theme$transitions$cr.call(_theme$transitions, "fill", {
+            duration: (_theme$transitions2 = theme.transitions) == null ? void 0 : (_theme$transitions2$d = _theme$transitions2.duration) == null ? void 0 : _theme$transitions2$d.shorter
+        }),
+        fontSize: ({
+            inherit: "inherit",
+            small: ((_theme$typography = theme.typography) == null ? void 0 : (_theme$typography$pxT = _theme$typography.pxToRem) == null ? void 0 : _theme$typography$pxT.call(_theme$typography, 20)) || "1.25rem",
+            medium: ((_theme$typography2 = theme.typography) == null ? void 0 : (_theme$typography2$px = _theme$typography2.pxToRem) == null ? void 0 : _theme$typography2$px.call(_theme$typography2, 24)) || "1.5rem",
+            large: ((_theme$typography3 = theme.typography) == null ? void 0 : (_theme$typography3$px = _theme$typography3.pxToRem) == null ? void 0 : _theme$typography3$px.call(_theme$typography3, 35)) || "2.1875rem"
+        })[ownerState.fontSize],
+        // TODO v5 deprecate, v6 remove for sx
+        color: (_palette$ownerState$c = (_palette = (theme.vars || theme).palette) == null ? void 0 : (_palette$ownerState$c2 = _palette[ownerState.color]) == null ? void 0 : _palette$ownerState$c2.main) != null ? _palette$ownerState$c : ({
+            action: (_palette2 = (theme.vars || theme).palette) == null ? void 0 : (_palette2$action = _palette2.action) == null ? void 0 : _palette2$action.active,
+            disabled: (_palette3 = (theme.vars || theme).palette) == null ? void 0 : (_palette3$action = _palette3.action) == null ? void 0 : _palette3$action.disabled,
+            inherit: undefined
+        })[ownerState.color]
+    };
+});
+const SvgIcon = /*#__PURE__*/ _react.forwardRef(function SvgIcon(inProps, ref) {
+    const props = (0, _useThemePropsDefault.default)({
+        props: inProps,
+        name: "MuiSvgIcon"
+    });
+    const { children , className , color ="inherit" , component ="svg" , fontSize ="medium" , htmlColor , inheritViewBox =false , titleAccess , viewBox ="0 0 24 24"  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
+    const ownerState = (0, _extendsDefault.default)({}, props, {
+        color,
+        component,
+        fontSize,
+        instanceFontSize: inProps.fontSize,
+        inheritViewBox,
+        viewBox
+    });
+    const more = {};
+    if (!inheritViewBox) more.viewBox = viewBox;
+    const classes = useUtilityClasses(ownerState);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)(SvgIconRoot, (0, _extendsDefault.default)({
+        as: component,
+        className: (0, _clsxDefault.default)(classes.root, className),
+        focusable: "false",
+        color: htmlColor,
+        "aria-hidden": titleAccess ? undefined : true,
+        role: titleAccess ? "img" : undefined,
+        ref: ref
+    }, more, other, {
+        ownerState: ownerState,
+        children: [
+            children,
+            titleAccess ? /*#__PURE__*/ (0, _jsxRuntime.jsx)("title", {
+                children: titleAccess
+            }) : null
+        ]
+    }));
+});
+SvgIcon.propTypes /* remove-proptypes */  = {
+    // ----------------------------- Warning --------------------------------
+    // | These PropTypes are generated from the TypeScript type definitions |
+    // |     To update them edit the d.ts file and run "yarn proptypes"     |
+    // ----------------------------------------------------------------------
+    /**
+   * Node passed into the SVG element.
+   */ children: (0, _propTypesDefault.default).node,
+    /**
+   * Override or extend the styles applied to the component.
+   */ classes: (0, _propTypesDefault.default).object,
+    /**
+   * @ignore
+   */ className: (0, _propTypesDefault.default).string,
+    /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
+   * You can use the `htmlColor` prop to apply a color attribute to the SVG element.
+   * @default 'inherit'
+   */ color: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "inherit",
+            "action",
+            "disabled",
+            "primary",
+            "secondary",
+            "error",
+            "info",
+            "success",
+            "warning"
+        ]),
+        (0, _propTypesDefault.default).string
+    ]),
+    /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */ component: (0, _propTypesDefault.default).elementType,
+    /**
+   * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
+   * @default 'medium'
+   */ fontSize: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "inherit",
+            "large",
+            "medium",
+            "small"
+        ]),
+        (0, _propTypesDefault.default).string
+    ]),
+    /**
+   * Applies a color attribute to the SVG element.
+   */ htmlColor: (0, _propTypesDefault.default).string,
+    /**
+   * If `true`, the root node will inherit the custom `component`'s viewBox and the `viewBox`
+   * prop will be ignored.
+   * Useful when you want to reference a custom `component` and have `SvgIcon` pass that
+   * `component`'s viewBox to the root node.
+   * @default false
+   */ inheritViewBox: (0, _propTypesDefault.default).bool,
+    /**
+   * The shape-rendering attribute. The behavior of the different options is described on the
+   * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering).
+   * If you are having issues with blurry icons you should investigate this prop.
+   */ shapeRendering: (0, _propTypesDefault.default).string,
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).func,
+            (0, _propTypesDefault.default).object,
+            (0, _propTypesDefault.default).bool
+        ])),
+        (0, _propTypesDefault.default).func,
+        (0, _propTypesDefault.default).object
+    ]),
+    /**
+   * Provides a human-readable title for the element that contains it.
+   * https://www.w3.org/TR/SVG-access/#Equivalent
+   */ titleAccess: (0, _propTypesDefault.default).string,
+    /**
+   * Allows you to redefine what the coordinates without units mean inside an SVG element.
+   * For example, if the SVG element is 500 (width) by 200 (height),
+   * and you pass viewBox="0 0 50 20",
+   * this means that the coordinates inside the SVG will go from the top left corner (0,0)
+   * to bottom right (50,20) and each unit will be worth 10px.
+   * @default '0 0 24 24'
+   */ viewBox: (0, _propTypesDefault.default).string
+};
+SvgIcon.muiName = "SvgIcon";
+exports.default = SvgIcon;
+
+},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/base":"656dE","../utils/capitalize":"kuBnp","../styles/useThemeProps":"1WXY3","../styles/styled":"9NVzk","./svgIconClasses":"j5Idz","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"j5Idz":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getSvgIconUtilityClass", ()=>getSvgIconUtilityClass);
+var _utils = require("@mui/utils");
+var _generateUtilityClass = require("../generateUtilityClass");
+var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
+function getSvgIconUtilityClass(slot) {
+    return (0, _generateUtilityClassDefault.default)("MuiSvgIcon", slot);
+}
+const svgIconClasses = (0, _utils.unstable_generateUtilityClasses)("MuiSvgIcon", [
+    "root",
+    "colorPrimary",
+    "colorSecondary",
+    "colorAction",
+    "colorError",
+    "colorDisabled",
+    "fontSizeInherit",
+    "fontSizeSmall",
+    "fontSizeMedium",
+    "fontSizeLarge"
+]);
+exports.default = svgIconClasses;
+
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l9UTb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_debounce);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3vOVK":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_deprecatedPropType);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"c2g1y":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_isMuiElement);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e2HnU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_ownerDocument);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4nR1k":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_ownerWindow);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lqi2l":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_setRef);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cJjUN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_useEnhancedEffect);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jqwYr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_useId);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1sHyG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_unsupportedProp);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"HFhlg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _utils = require("@mui/utils");
+exports.default = (0, _utils.unstable_useControlled);
+
+},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eZWTQ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "adaptV4Theme", ()=>(0, _adaptV4ThemeDefault.default));
@@ -71845,456 +72294,7 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"react-refresh/runtime":"786KC"}],"2IQlm":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = void 0;
-var _createSvgIcon = _interopRequireDefault(require("./utils/createSvgIcon"));
-var _jsxRuntime = require("react/jsx-runtime");
-var _default = (0, _createSvgIcon.default)(/*#__PURE__*/ (0, _jsxRuntime.jsx)("path", {
-    d: "M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"
-}), "Bookmark");
-exports.default = _default;
-
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","./utils/createSvgIcon":"lVV9C","react/jsx-runtime":"6AEwr"}],"7XM86":[function(require,module,exports) {
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        "default": obj
-    };
-}
-module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-},{}],"lVV9C":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-Object.defineProperty(exports, "default", {
-    enumerable: true,
-    get: function() {
-        return _utils.createSvgIcon;
-    }
-});
-var _utils = require("@mui/material/utils");
-
-},{"@mui/material/utils":"cEKZV"}],"cEKZV":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "capitalize", ()=>(0, _capitalizeDefault.default));
-parcelHelpers.export(exports, "createChainedFunction", ()=>(0, _createChainedFunctionDefault.default));
-parcelHelpers.export(exports, "createSvgIcon", ()=>(0, _createSvgIconDefault.default));
-parcelHelpers.export(exports, "debounce", ()=>(0, _debounceDefault.default));
-parcelHelpers.export(exports, "deprecatedPropType", ()=>(0, _deprecatedPropTypeDefault.default));
-parcelHelpers.export(exports, "isMuiElement", ()=>(0, _isMuiElementDefault.default));
-parcelHelpers.export(exports, "ownerDocument", ()=>(0, _ownerDocumentDefault.default));
-parcelHelpers.export(exports, "ownerWindow", ()=>(0, _ownerWindowDefault.default));
-parcelHelpers.export(exports, "requirePropFactory", ()=>(0, _requirePropFactoryDefault.default));
-parcelHelpers.export(exports, "setRef", ()=>(0, _setRefDefault.default));
-parcelHelpers.export(exports, "unstable_useEnhancedEffect", ()=>(0, _useEnhancedEffectDefault.default));
-parcelHelpers.export(exports, "unstable_useId", ()=>(0, _useIdDefault.default));
-parcelHelpers.export(exports, "unsupportedProp", ()=>(0, _unsupportedPropDefault.default));
-parcelHelpers.export(exports, "useControlled", ()=>(0, _useControlledDefault.default));
-parcelHelpers.export(exports, "useEventCallback", ()=>(0, _useEventCallbackDefault.default));
-parcelHelpers.export(exports, "useForkRef", ()=>(0, _useForkRefDefault.default));
-parcelHelpers.export(exports, "useIsFocusVisible", ()=>(0, _useIsFocusVisibleDefault.default));
-parcelHelpers.export(exports, "unstable_ClassNameGenerator", ()=>unstable_ClassNameGenerator);
-var _className = require("@mui/base/className");
-var _capitalize = require("./capitalize");
-var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
-var _createChainedFunction = require("./createChainedFunction");
-var _createChainedFunctionDefault = parcelHelpers.interopDefault(_createChainedFunction);
-var _createSvgIcon = require("./createSvgIcon");
-var _createSvgIconDefault = parcelHelpers.interopDefault(_createSvgIcon);
-var _debounce = require("./debounce");
-var _debounceDefault = parcelHelpers.interopDefault(_debounce);
-var _deprecatedPropType = require("./deprecatedPropType");
-var _deprecatedPropTypeDefault = parcelHelpers.interopDefault(_deprecatedPropType);
-var _isMuiElement = require("./isMuiElement");
-var _isMuiElementDefault = parcelHelpers.interopDefault(_isMuiElement);
-var _ownerDocument = require("./ownerDocument");
-var _ownerDocumentDefault = parcelHelpers.interopDefault(_ownerDocument);
-var _ownerWindow = require("./ownerWindow");
-var _ownerWindowDefault = parcelHelpers.interopDefault(_ownerWindow);
-var _requirePropFactory = require("./requirePropFactory");
-var _requirePropFactoryDefault = parcelHelpers.interopDefault(_requirePropFactory);
-var _setRef = require("./setRef");
-var _setRefDefault = parcelHelpers.interopDefault(_setRef);
-var _useEnhancedEffect = require("./useEnhancedEffect");
-var _useEnhancedEffectDefault = parcelHelpers.interopDefault(_useEnhancedEffect);
-var _useId = require("./useId");
-var _useIdDefault = parcelHelpers.interopDefault(_useId);
-var _unsupportedProp = require("./unsupportedProp");
-var _unsupportedPropDefault = parcelHelpers.interopDefault(_unsupportedProp);
-var _useControlled = require("./useControlled");
-var _useControlledDefault = parcelHelpers.interopDefault(_useControlled);
-var _useEventCallback = require("./useEventCallback");
-var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
-var _useForkRef = require("./useForkRef");
-var _useForkRefDefault = parcelHelpers.interopDefault(_useForkRef);
-var _useIsFocusVisible = require("./useIsFocusVisible");
-var _useIsFocusVisibleDefault = parcelHelpers.interopDefault(_useIsFocusVisible);
-const unstable_ClassNameGenerator = {
-    configure: (generator)=>{
-        console.warn([
-            "MUI: `ClassNameGenerator` import from `@mui/material/utils` is outdated and might cause unexpected issues.",
-            "",
-            "You should use `import { unstable_ClassNameGenerator } from '@mui/material/className'` instead",
-            "",
-            "The detail of the issue: https://github.com/mui/material-ui/issues/30011#issuecomment-1024993401",
-            "",
-            "The updated documentation: https://mui.com/guides/classname-generator/"
-        ].join("\n"));
-        (0, _className.unstable_ClassNameGenerator).configure(generator);
-    }
-};
-
-},{"@mui/base/className":"kRsty","./capitalize":"kuBnp","./createChainedFunction":"9XTIf","./createSvgIcon":"0EW1c","./debounce":"l9UTb","./deprecatedPropType":"3vOVK","./isMuiElement":"c2g1y","./ownerDocument":"e2HnU","./ownerWindow":"4nR1k","./requirePropFactory":"djqNS","./setRef":"lqi2l","./useEnhancedEffect":"cJjUN","./useId":"jqwYr","./unsupportedProp":"1sHyG","./useControlled":"HFhlg","./useEventCallback":"k9VLM","./useForkRef":"dOG5T","./useIsFocusVisible":"bKzlq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kRsty":[function(require,module,exports) {
-// eslint-disable-next-line import/prefer-default-export
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "unstable_ClassNameGenerator", ()=>(0, _utils.unstable_ClassNameGenerator));
-var _utils = require("@mui/utils");
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9XTIf":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_createChainedFunction);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"0EW1c":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _react = require("react");
-var _svgIcon = require("../SvgIcon");
-var _svgIconDefault = parcelHelpers.interopDefault(_svgIcon);
-/**
- * Private module reserved for @mui packages.
- */ var _jsxRuntime = require("react/jsx-runtime");
-function createSvgIcon(path, displayName) {
-    function Component(props, ref) {
-        return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _svgIconDefault.default), (0, _extendsDefault.default)({
-            "data-testid": `${displayName}Icon`,
-            ref: ref
-        }, props, {
-            children: path
-        }));
-    }
-    // Need to set `displayName` on the inner component for React.memo.
-    // React prior to 16.14 ignores `displayName` on the wrapper.
-    Component.displayName = `${displayName}Icon`;
-    Component.muiName = (0, _svgIconDefault.default).muiName;
-    return /*#__PURE__*/ _react.memo(/*#__PURE__*/ _react.forwardRef(Component));
-}
-exports.default = createSvgIcon;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","../SvgIcon":"7PzE1","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7PzE1":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>(0, _svgIconDefault.default));
-parcelHelpers.export(exports, "svgIconClasses", ()=>(0, _svgIconClassesDefault.default));
-var _svgIcon = require("./SvgIcon");
-var _svgIconDefault = parcelHelpers.interopDefault(_svgIcon);
-var _svgIconClasses = require("./svgIconClasses");
-var _svgIconClassesDefault = parcelHelpers.interopDefault(_svgIconClasses);
-parcelHelpers.exportAll(_svgIconClasses, exports);
-
-},{"./SvgIcon":"kIdWQ","./svgIconClasses":"j5Idz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kIdWQ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _react = require("react");
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _clsx = require("clsx");
-var _clsxDefault = parcelHelpers.interopDefault(_clsx);
-var _base = require("@mui/base");
-var _capitalize = require("../utils/capitalize");
-var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
-var _useThemeProps = require("../styles/useThemeProps");
-var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
-var _styled = require("../styles/styled");
-var _styledDefault = parcelHelpers.interopDefault(_styled);
-var _svgIconClasses = require("./svgIconClasses");
-var _jsxRuntime = require("react/jsx-runtime");
-const _excluded = [
-    "children",
-    "className",
-    "color",
-    "component",
-    "fontSize",
-    "htmlColor",
-    "inheritViewBox",
-    "titleAccess",
-    "viewBox"
-];
-const useUtilityClasses = (ownerState)=>{
-    const { color , fontSize , classes  } = ownerState;
-    const slots = {
-        root: [
-            "root",
-            color !== "inherit" && `color${(0, _capitalizeDefault.default)(color)}`,
-            `fontSize${(0, _capitalizeDefault.default)(fontSize)}`
-        ]
-    };
-    return (0, _base.unstable_composeClasses)(slots, (0, _svgIconClasses.getSvgIconUtilityClass), classes);
-};
-const SvgIconRoot = (0, _styledDefault.default)("svg", {
-    name: "MuiSvgIcon",
-    slot: "Root",
-    overridesResolver: (props, styles)=>{
-        const { ownerState  } = props;
-        return [
-            styles.root,
-            ownerState.color !== "inherit" && styles[`color${(0, _capitalizeDefault.default)(ownerState.color)}`],
-            styles[`fontSize${(0, _capitalizeDefault.default)(ownerState.fontSize)}`]
-        ];
-    }
-})(({ theme , ownerState  })=>{
-    var _theme$transitions, _theme$transitions$cr, _theme$transitions2, _theme$transitions2$d, _theme$typography, _theme$typography$pxT, _theme$typography2, _theme$typography2$px, _theme$typography3, _theme$typography3$px, _palette$ownerState$c, _palette, _palette$ownerState$c2, _palette2, _palette2$action, _palette3, _palette3$action;
-    return {
-        userSelect: "none",
-        width: "1em",
-        height: "1em",
-        display: "inline-block",
-        fill: "currentColor",
-        flexShrink: 0,
-        transition: (_theme$transitions = theme.transitions) == null ? void 0 : (_theme$transitions$cr = _theme$transitions.create) == null ? void 0 : _theme$transitions$cr.call(_theme$transitions, "fill", {
-            duration: (_theme$transitions2 = theme.transitions) == null ? void 0 : (_theme$transitions2$d = _theme$transitions2.duration) == null ? void 0 : _theme$transitions2$d.shorter
-        }),
-        fontSize: ({
-            inherit: "inherit",
-            small: ((_theme$typography = theme.typography) == null ? void 0 : (_theme$typography$pxT = _theme$typography.pxToRem) == null ? void 0 : _theme$typography$pxT.call(_theme$typography, 20)) || "1.25rem",
-            medium: ((_theme$typography2 = theme.typography) == null ? void 0 : (_theme$typography2$px = _theme$typography2.pxToRem) == null ? void 0 : _theme$typography2$px.call(_theme$typography2, 24)) || "1.5rem",
-            large: ((_theme$typography3 = theme.typography) == null ? void 0 : (_theme$typography3$px = _theme$typography3.pxToRem) == null ? void 0 : _theme$typography3$px.call(_theme$typography3, 35)) || "2.1875rem"
-        })[ownerState.fontSize],
-        // TODO v5 deprecate, v6 remove for sx
-        color: (_palette$ownerState$c = (_palette = (theme.vars || theme).palette) == null ? void 0 : (_palette$ownerState$c2 = _palette[ownerState.color]) == null ? void 0 : _palette$ownerState$c2.main) != null ? _palette$ownerState$c : ({
-            action: (_palette2 = (theme.vars || theme).palette) == null ? void 0 : (_palette2$action = _palette2.action) == null ? void 0 : _palette2$action.active,
-            disabled: (_palette3 = (theme.vars || theme).palette) == null ? void 0 : (_palette3$action = _palette3.action) == null ? void 0 : _palette3$action.disabled,
-            inherit: undefined
-        })[ownerState.color]
-    };
-});
-const SvgIcon = /*#__PURE__*/ _react.forwardRef(function SvgIcon(inProps, ref) {
-    const props = (0, _useThemePropsDefault.default)({
-        props: inProps,
-        name: "MuiSvgIcon"
-    });
-    const { children , className , color ="inherit" , component ="svg" , fontSize ="medium" , htmlColor , inheritViewBox =false , titleAccess , viewBox ="0 0 24 24"  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
-    const ownerState = (0, _extendsDefault.default)({}, props, {
-        color,
-        component,
-        fontSize,
-        instanceFontSize: inProps.fontSize,
-        inheritViewBox,
-        viewBox
-    });
-    const more = {};
-    if (!inheritViewBox) more.viewBox = viewBox;
-    const classes = useUtilityClasses(ownerState);
-    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)(SvgIconRoot, (0, _extendsDefault.default)({
-        as: component,
-        className: (0, _clsxDefault.default)(classes.root, className),
-        focusable: "false",
-        color: htmlColor,
-        "aria-hidden": titleAccess ? undefined : true,
-        role: titleAccess ? "img" : undefined,
-        ref: ref
-    }, more, other, {
-        ownerState: ownerState,
-        children: [
-            children,
-            titleAccess ? /*#__PURE__*/ (0, _jsxRuntime.jsx)("title", {
-                children: titleAccess
-            }) : null
-        ]
-    }));
-});
-SvgIcon.propTypes /* remove-proptypes */  = {
-    // ----------------------------- Warning --------------------------------
-    // | These PropTypes are generated from the TypeScript type definitions |
-    // |     To update them edit the d.ts file and run "yarn proptypes"     |
-    // ----------------------------------------------------------------------
-    /**
-   * Node passed into the SVG element.
-   */ children: (0, _propTypesDefault.default).node,
-    /**
-   * Override or extend the styles applied to the component.
-   */ classes: (0, _propTypesDefault.default).object,
-    /**
-   * @ignore
-   */ className: (0, _propTypesDefault.default).string,
-    /**
-   * The color of the component.
-   * It supports both default and custom theme colors, which can be added as shown in the
-   * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
-   * You can use the `htmlColor` prop to apply a color attribute to the SVG element.
-   * @default 'inherit'
-   */ color: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
-        (0, _propTypesDefault.default).oneOf([
-            "inherit",
-            "action",
-            "disabled",
-            "primary",
-            "secondary",
-            "error",
-            "info",
-            "success",
-            "warning"
-        ]),
-        (0, _propTypesDefault.default).string
-    ]),
-    /**
-   * The component used for the root node.
-   * Either a string to use a HTML element or a component.
-   */ component: (0, _propTypesDefault.default).elementType,
-    /**
-   * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
-   * @default 'medium'
-   */ fontSize: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
-        (0, _propTypesDefault.default).oneOf([
-            "inherit",
-            "large",
-            "medium",
-            "small"
-        ]),
-        (0, _propTypesDefault.default).string
-    ]),
-    /**
-   * Applies a color attribute to the SVG element.
-   */ htmlColor: (0, _propTypesDefault.default).string,
-    /**
-   * If `true`, the root node will inherit the custom `component`'s viewBox and the `viewBox`
-   * prop will be ignored.
-   * Useful when you want to reference a custom `component` and have `SvgIcon` pass that
-   * `component`'s viewBox to the root node.
-   * @default false
-   */ inheritViewBox: (0, _propTypesDefault.default).bool,
-    /**
-   * The shape-rendering attribute. The behavior of the different options is described on the
-   * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering).
-   * If you are having issues with blurry icons you should investigate this prop.
-   */ shapeRendering: (0, _propTypesDefault.default).string,
-    /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */ sx: (0, _propTypesDefault.default).oneOfType([
-        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
-            (0, _propTypesDefault.default).func,
-            (0, _propTypesDefault.default).object,
-            (0, _propTypesDefault.default).bool
-        ])),
-        (0, _propTypesDefault.default).func,
-        (0, _propTypesDefault.default).object
-    ]),
-    /**
-   * Provides a human-readable title for the element that contains it.
-   * https://www.w3.org/TR/SVG-access/#Equivalent
-   */ titleAccess: (0, _propTypesDefault.default).string,
-    /**
-   * Allows you to redefine what the coordinates without units mean inside an SVG element.
-   * For example, if the SVG element is 500 (width) by 200 (height),
-   * and you pass viewBox="0 0 50 20",
-   * this means that the coordinates inside the SVG will go from the top left corner (0,0)
-   * to bottom right (50,20) and each unit will be worth 10px.
-   * @default '0 0 24 24'
-   */ viewBox: (0, _propTypesDefault.default).string
-};
-SvgIcon.muiName = "SvgIcon";
-exports.default = SvgIcon;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/base":"656dE","../utils/capitalize":"kuBnp","../styles/useThemeProps":"1WXY3","../styles/styled":"9NVzk","./svgIconClasses":"j5Idz","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"j5Idz":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getSvgIconUtilityClass", ()=>getSvgIconUtilityClass);
-var _utils = require("@mui/utils");
-var _generateUtilityClass = require("../generateUtilityClass");
-var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
-function getSvgIconUtilityClass(slot) {
-    return (0, _generateUtilityClassDefault.default)("MuiSvgIcon", slot);
-}
-const svgIconClasses = (0, _utils.unstable_generateUtilityClasses)("MuiSvgIcon", [
-    "root",
-    "colorPrimary",
-    "colorSecondary",
-    "colorAction",
-    "colorError",
-    "colorDisabled",
-    "fontSizeInherit",
-    "fontSizeSmall",
-    "fontSizeMedium",
-    "fontSizeLarge"
-]);
-exports.default = svgIconClasses;
-
-},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l9UTb":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_debounce);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3vOVK":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_deprecatedPropType);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"c2g1y":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_isMuiElement);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e2HnU":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_ownerDocument);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4nR1k":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_ownerWindow);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lqi2l":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_setRef);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cJjUN":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_useEnhancedEffect);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jqwYr":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_useId);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1sHyG":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_unsupportedProp);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"HFhlg":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _utils = require("@mui/utils");
-exports.default = (0, _utils.unstable_useControlled);
-
-},{"@mui/utils":"cttLn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gtTIg":[function(require,module,exports) {
+},{"react-refresh/runtime":"786KC"}],"gtTIg":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$dea5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -73196,7 +73196,7 @@ class MovieView extends (0, _reactDefault.default).Component {
     addFavorite() {
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).put(`https://movie-api-22.onrender.com/users/${username}/add-movies/${this.props.movie._id}`, {}, {
+        (0, _axiosDefault.default).put(`https://movie-api-production-57fd.up.railway.app/users/${username}/add-movies/${this.props.movie._id}`, {}, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -73209,7 +73209,7 @@ class MovieView extends (0, _reactDefault.default).Component {
     removeFavorites() {
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).delete(`https://movie-api-22.onrender.com/users/${username}/delete-movies/${this.props.movie._id}`, {
+        (0, _axiosDefault.default).delete(`https://movie-api-production-57fd.up.railway.app/users/${username}/delete-movies/${this.props.movie._id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -73383,7 +73383,7 @@ $RefreshReg$(_c, "Copyright");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./movie-view.scss":"jnlR5","react":"21dqq","axios":"jo6P5","react-bootstrap/Button":"aPzUt","react-bootstrap/Badge":"eEyks","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@mui/material/Link":"2FkZs","@mui/material/Typography":"kbDYG"}],"jnlR5":[function() {},{}],"aPzUt":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./movie-view.scss":"jnlR5","react":"21dqq","axios":"jo6P5","react-bootstrap/Button":"aPzUt","react-bootstrap/Badge":"eEyks","@mui/material/Link":"2FkZs","@mui/material/Typography":"kbDYG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jnlR5":[function() {},{}],"aPzUt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _extends = require("@babel/runtime/helpers/esm/extends");
@@ -73925,7 +73925,7 @@ function LoginView(props) {
     const handleSubmit1 = (e)=>{
         e.preventDefault(); // prevents the default refresh/change of the page from the handleSubmit() method
         // Sends a request to the server for authentication
-        (0, _axiosDefault.default).post("https://movie-api-22.onrender.com/login", {
+        (0, _axiosDefault.default).post("https://movie-api-production-57fd.up.railway.app/login", {
             Username: username,
             Password: password
         }).then((response)=>{
@@ -74578,7 +74578,7 @@ function RegistrationView() {
     const handleRegister = (e)=>{
         e.preventDefault();
         let isValidated = validationForm();
-        if (isValidated) (0, _axiosDefault.default).post("https://movie-api-22.onrender.com/users", {
+        if (isValidated) (0, _axiosDefault.default).post("https://movie-api-production-57fd.up.railway.app/users", {
             Username: username,
             Password: password,
             Email: email,
@@ -75184,7 +75184,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
     //Gets user information by username
     getUser(token) {
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).get(`https://movie-api-22.onrender.com/users/${username}`, {
+        (0, _axiosDefault.default).get(`https://movie-api-production-57fd.up.railway.app/users/${username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -75201,10 +75201,10 @@ class ProfileView extends (0, _reactDefault.default).Component {
             console.log(error);
         });
     }
-    removeFavoritesMovie(movie) {
+    removeFavouriteMovie(movie) {
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).delete(`https://movie-api-22.onrender.com/users/${username}/delete-movies/${movie._id}`, {
+        (0, _axiosDefault.default).delete(`https://movie-api-production-57fd.up.railway.app/users/${username}/delete-movies/${movie._id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -75215,23 +75215,23 @@ class ProfileView extends (0, _reactDefault.default).Component {
             console.log(error);
         });
     }
-    handleUpdateUser(e, updateUsername, updatePassword, updateEmail, updateBirthdate) {
+    handleUpdateUser(e1, updateUsername, updatePassword, updateEmail, updateBirthdate) {
         this.setState({
             validated: null
         });
-        const form = e.currentTarget;
+        const form = e1.currentTarget;
         if (form.checkValidity() === false) {
-            e.preventDefault();
-            e.stopPropagation();
+            e1.preventDefault();
+            e1.stopPropagation();
             this.setState({
                 validated: true
             });
             return;
         }
-        e.preventDefault();
+        e1.preventDefault();
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).put(`https://movie-api-22.onrender.com/users/${username}`, {
+        (0, _axiosDefault.default).put(`https://movie-api-production-57fd.up.railway.app/users/${username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             },
@@ -75268,13 +75268,13 @@ class ProfileView extends (0, _reactDefault.default).Component {
         this.Birthdate = input;
     }
     //Allows the users to delete their account
-    handleUserDeletion(e) {
-        e.preventDefault();
+    handleUserDeletion(e1) {
+        e1.preventDefault();
         const answer = windows.confirm("Do you want to delete the account? After account deletion recovery process of this user won't be possible.");
         if (answer) {
             const token = localStorage.getItem("token");
             const username = localStorage.getItem("user");
-            (0, _axiosDefault.default).delete(`https://movie-api-22.onrender.com/users/${username}`, {
+            (0, _axiosDefault.default).delete(`https://movie-api-production-57fd.up.railway.app/users/${username}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -75283,8 +75283,8 @@ class ProfileView extends (0, _reactDefault.default).Component {
                 localStorage.removeItme("token");
                 alert("Your account has been deleted.");
                 windows.open("/", "_self");
-            }).catch((e)=>{
-                console.log(e);
+            }).catch((e1)=>{
+                console.log(e1);
             });
         }
     }
@@ -75344,7 +75344,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                             className: "profile-button remove-favorite-movie",
                                             variant: "danger",
                                             value: movie._id,
-                                            onClick: (e)=>this.removeFavoritesMovie(e, movie),
+                                            onClick: ()=>this.removeFavouriteMovie(e, movie),
                                             children: "Remove from Favorites"
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
@@ -75381,7 +75381,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                             noValidate: true,
                             validated: validated,
                             className: "update-form",
-                            onSubmit: (e)=>this.handleUpdateUser(e, this.Username, this.Password, this.Email, this.Birthdate),
+                            onSubmit: (e1)=>this.handleUpdateUser(e1, this.Username, this.Password, this.Email, this.Birthdate),
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
                                     controlId: "formUsername",
@@ -75397,7 +75397,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                                             type: "text",
                                             placeholder: "Change Username",
-                                            onChange: (e)=>this.setUsername(e.target.value)
+                                            onChange: (e1)=>this.setUsername(e1.target.value)
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 194,
@@ -75423,7 +75423,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                                             type: "password",
                                             placeholder: "Change Password",
-                                            onChange: (e)=>this.setPassword(e.target.value)
+                                            onChange: (e1)=>this.setPassword(e1.target.value)
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 199,
@@ -75449,7 +75449,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                                             type: "email",
                                             placeholder: "Change Email",
-                                            onChange: (e)=>this.setEmail(e.target.value)
+                                            onChange: (e1)=>this.setEmail(e1.target.value)
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 204,
@@ -75475,7 +75475,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                                             type: "date",
                                             placeholder: "Change Birthdate",
-                                            onChange: (e)=>this.setBirthdate(e.target.value)
+                                            onChange: (e1)=>this.setBirthdate(e1.target.value)
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
                                             lineNumber: 209,
@@ -75506,7 +75506,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                                         variant: "danger",
-                                        onClick: (e)=>this.handleUserDeletion(e),
+                                        onClick: (e1)=>this.handleUserDeletion(e1),
                                         children: "Delete Account"
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/profile-view.jsx",

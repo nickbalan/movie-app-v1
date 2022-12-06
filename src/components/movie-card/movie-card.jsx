@@ -42,7 +42,7 @@ export class MovieCard extends React.Component {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
 
-    axios.put(`https://movie-api-22.onrender.com/users/${username}/add-movies/${this.props.movie._id}`, {}, {
+    axios.put(`https://movie-api-production-57fd.up.railway.app/users/${username}/add-movies/${this.props.movie._id}`, {}, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
