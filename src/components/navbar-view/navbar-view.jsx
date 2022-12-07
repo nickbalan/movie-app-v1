@@ -7,6 +7,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import GlobalStyles from '@mui/material/GlobalStyles';
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
 
 export class NavBar extends React.Component {
   constructor() {
@@ -45,6 +47,9 @@ export class NavBar extends React.Component {
                 <Navbar.Toggle aria-controls='basic-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>
                   <Nav className='ml-auto'>
+                    <IconButton>
+                      <SearchIcon />
+                    </IconButton>
                     <Nav.Link as={Link} to={movies} className='link-text'>
                       Home
                     </Nav.Link>
