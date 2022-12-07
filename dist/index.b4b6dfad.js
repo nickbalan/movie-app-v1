@@ -79292,6 +79292,10 @@ var _cssBaseline = require("@mui/material/CssBaseline");
 var _cssBaselineDefault = parcelHelpers.interopDefault(_cssBaseline);
 var _globalStyles = require("@mui/material/GlobalStyles");
 var _globalStylesDefault = parcelHelpers.interopDefault(_globalStyles);
+var _iconButton = require("@mui/material/IconButton");
+var _iconButtonDefault = parcelHelpers.interopDefault(_iconButton);
+var _search = require("@mui/icons-material/Search");
+var _searchDefault = parcelHelpers.interopDefault(_search);
 class NavBar extends (0, _reactDefault.default).Component {
     constructor(){
         super();
@@ -79318,12 +79322,12 @@ class NavBar extends (0, _reactDefault.default).Component {
                     }
                 }, void 0, false, {
                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                    lineNumber: 31,
+                    lineNumber: 33,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cssBaselineDefault.default), {}, void 0, false, {
                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                    lineNumber: 32,
+                    lineNumber: 34,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appBarDefault.default), {
@@ -79348,7 +79352,7 @@ class NavBar extends (0, _reactDefault.default).Component {
                                 children: "Movie App v1"
                             }, void 0, false, {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 40,
+                                lineNumber: 42,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
@@ -79360,7 +79364,7 @@ class NavBar extends (0, _reactDefault.default).Component {
                                             "aria-controls": "basic-navbar-nav"
                                         }, void 0, false, {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 45,
+                                            lineNumber: 47,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Collapse, {
@@ -79368,6 +79372,17 @@ class NavBar extends (0, _reactDefault.default).Component {
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav), {
                                                 className: "ml-auto",
                                                 children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _iconButtonDefault.default), {
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _searchDefault.default), {}, void 0, false, {
+                                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                                            lineNumber: 51,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                                                        lineNumber: 50,
+                                                        columnNumber: 21
+                                                    }, this),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
                                                         as: (0, _reactRouterDom.Link),
                                                         to: movies,
@@ -79375,7 +79390,7 @@ class NavBar extends (0, _reactDefault.default).Component {
                                                         children: "Home"
                                                     }, void 0, false, {
                                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                                        lineNumber: 48,
+                                                        lineNumber: 53,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
@@ -79385,7 +79400,7 @@ class NavBar extends (0, _reactDefault.default).Component {
                                                         children: "Profile"
                                                     }, void 0, false, {
                                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                                        lineNumber: 51,
+                                                        lineNumber: 56,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
@@ -79393,46 +79408,46 @@ class NavBar extends (0, _reactDefault.default).Component {
                                                         children: "Log Out"
                                                     }, void 0, false, {
                                                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                                                        lineNumber: 54,
+                                                        lineNumber: 59,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                                lineNumber: 47,
+                                                lineNumber: 49,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 46,
+                                            lineNumber: 48,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 44,
+                                    lineNumber: 46,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                                lineNumber: 43,
+                                lineNumber: 45,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 39,
+                        lineNumber: 41,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                    lineNumber: 33,
+                    lineNumber: 35,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/navbar-view/navbar-view.jsx",
-            lineNumber: 30,
+            lineNumber: 32,
             columnNumber: 7
         }, this);
     }
@@ -79444,7 +79459,7 @@ exports.default = NavBar;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"cHIiW","react-bootstrap":"3AD9A","@mui/material/AppBar":"f8cnS","@mui/material/Toolbar":"dFZWN","@mui/material/Typography":"kbDYG","@mui/material/CssBaseline":"YDHu9","@mui/material/GlobalStyles":"cj3U5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3AD9A":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","@mui/material/AppBar":"f8cnS","@mui/material/Toolbar":"dFZWN","@mui/material/Typography":"kbDYG","@mui/material/CssBaseline":"YDHu9","@mui/material/GlobalStyles":"cj3U5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@mui/icons-material/Search":"b4Utn","@mui/material/IconButton":"lagJK","react-router-dom":"cHIiW"}],"3AD9A":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>(0, _accordionDefault.default));
@@ -81558,6 +81573,288 @@ const toolbarClasses = (0, _utils.unstable_generateUtilityClasses)("MuiToolbar",
     "dense"
 ]);
 exports.default = toolbarClasses;
+
+},{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"b4Utn":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = void 0;
+var _createSvgIcon = _interopRequireDefault(require("./utils/createSvgIcon"));
+var _jsxRuntime = require("react/jsx-runtime");
+var _default = (0, _createSvgIcon.default)(/*#__PURE__*/ (0, _jsxRuntime.jsx)("path", {
+    d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+}), "Search");
+exports.default = _default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","./utils/createSvgIcon":"lVV9C","react/jsx-runtime":"6AEwr"}],"lagJK":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>(0, _iconButtonDefault.default));
+parcelHelpers.export(exports, "iconButtonClasses", ()=>(0, _iconButtonClassesDefault.default));
+var _iconButton = require("./IconButton");
+var _iconButtonDefault = parcelHelpers.interopDefault(_iconButton);
+var _iconButtonClasses = require("./iconButtonClasses");
+var _iconButtonClassesDefault = parcelHelpers.interopDefault(_iconButtonClasses);
+parcelHelpers.exportAll(_iconButtonClasses, exports);
+
+},{"./IconButton":"hd8CZ","./iconButtonClasses":"4L2Wh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hd8CZ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _react = require("react");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _clsx = require("clsx");
+var _clsxDefault = parcelHelpers.interopDefault(_clsx);
+var _utils = require("@mui/utils");
+var _base = require("@mui/base");
+var _system = require("@mui/system");
+var _styled = require("../styles/styled");
+var _styledDefault = parcelHelpers.interopDefault(_styled);
+var _useThemeProps = require("../styles/useThemeProps");
+var _useThemePropsDefault = parcelHelpers.interopDefault(_useThemeProps);
+var _buttonBase = require("../ButtonBase");
+var _buttonBaseDefault = parcelHelpers.interopDefault(_buttonBase);
+var _capitalize = require("../utils/capitalize");
+var _capitalizeDefault = parcelHelpers.interopDefault(_capitalize);
+var _iconButtonClasses = require("./iconButtonClasses");
+var _iconButtonClassesDefault = parcelHelpers.interopDefault(_iconButtonClasses);
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "edge",
+    "children",
+    "className",
+    "color",
+    "disabled",
+    "disableFocusRipple",
+    "size"
+];
+const useUtilityClasses = (ownerState)=>{
+    const { classes , disabled , color , edge , size  } = ownerState;
+    const slots = {
+        root: [
+            "root",
+            disabled && "disabled",
+            color !== "default" && `color${(0, _capitalizeDefault.default)(color)}`,
+            edge && `edge${(0, _capitalizeDefault.default)(edge)}`,
+            `size${(0, _capitalizeDefault.default)(size)}`
+        ]
+    };
+    return (0, _base.unstable_composeClasses)(slots, (0, _iconButtonClasses.getIconButtonUtilityClass), classes);
+};
+const IconButtonRoot = (0, _styledDefault.default)((0, _buttonBaseDefault.default), {
+    name: "MuiIconButton",
+    slot: "Root",
+    overridesResolver: (props, styles)=>{
+        const { ownerState  } = props;
+        return [
+            styles.root,
+            ownerState.color !== "default" && styles[`color${(0, _capitalizeDefault.default)(ownerState.color)}`],
+            ownerState.edge && styles[`edge${(0, _capitalizeDefault.default)(ownerState.edge)}`],
+            styles[`size${(0, _capitalizeDefault.default)(ownerState.size)}`]
+        ];
+    }
+})(({ theme , ownerState  })=>(0, _extendsDefault.default)({
+        textAlign: "center",
+        flex: "0 0 auto",
+        fontSize: theme.typography.pxToRem(24),
+        padding: 8,
+        borderRadius: "50%",
+        overflow: "visible",
+        // Explicitly set the default value to solve a bug on IE11.
+        color: (theme.vars || theme).palette.action.active,
+        transition: theme.transitions.create("background-color", {
+            duration: theme.transitions.duration.shortest
+        })
+    }, !ownerState.disableRipple && {
+        "&:hover": {
+            backgroundColor: theme.vars ? `rgba(${theme.vars.palette.action.activeChannel} / ${theme.vars.palette.action.hoverOpacity})` : (0, _system.alpha)(theme.palette.action.active, theme.palette.action.hoverOpacity),
+            // Reset on touch devices, it doesn't add specificity
+            "@media (hover: none)": {
+                backgroundColor: "transparent"
+            }
+        }
+    }, ownerState.edge === "start" && {
+        marginLeft: ownerState.size === "small" ? -3 : -12
+    }, ownerState.edge === "end" && {
+        marginRight: ownerState.size === "small" ? -3 : -12
+    }), ({ theme , ownerState  })=>{
+    var _palette;
+    const palette = (_palette = (theme.vars || theme).palette) == null ? void 0 : _palette[ownerState.color];
+    return (0, _extendsDefault.default)({}, ownerState.color === "inherit" && {
+        color: "inherit"
+    }, ownerState.color !== "inherit" && ownerState.color !== "default" && (0, _extendsDefault.default)({
+        color: palette == null ? void 0 : palette.main
+    }, !ownerState.disableRipple && {
+        "&:hover": (0, _extendsDefault.default)({}, palette && {
+            backgroundColor: theme.vars ? `rgba(${palette.mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : (0, _system.alpha)(palette.main, theme.palette.action.hoverOpacity)
+        }, {
+            // Reset on touch devices, it doesn't add specificity
+            "@media (hover: none)": {
+                backgroundColor: "transparent"
+            }
+        })
+    }), ownerState.size === "small" && {
+        padding: 5,
+        fontSize: theme.typography.pxToRem(18)
+    }, ownerState.size === "large" && {
+        padding: 12,
+        fontSize: theme.typography.pxToRem(28)
+    }, {
+        [`&.${(0, _iconButtonClassesDefault.default).disabled}`]: {
+            backgroundColor: "transparent",
+            color: (theme.vars || theme).palette.action.disabled
+        }
+    });
+});
+/**
+ * Refer to the [Icons](/material-ui/icons/) section of the documentation
+ * regarding the available icon options.
+ */ const IconButton = /*#__PURE__*/ _react.forwardRef(function IconButton(inProps, ref) {
+    const props = (0, _useThemePropsDefault.default)({
+        props: inProps,
+        name: "MuiIconButton"
+    });
+    const { edge =false , children , className , color ="default" , disabled =false , disableFocusRipple =false , size ="medium"  } = props, other = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
+    const ownerState = (0, _extendsDefault.default)({}, props, {
+        edge,
+        color,
+        disabled,
+        disableFocusRipple,
+        size
+    });
+    const classes = useUtilityClasses(ownerState);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(IconButtonRoot, (0, _extendsDefault.default)({
+        className: (0, _clsxDefault.default)(classes.root, className),
+        centerRipple: true,
+        focusRipple: !disableFocusRipple,
+        disabled: disabled,
+        ref: ref,
+        ownerState: ownerState
+    }, other, {
+        children: children
+    }));
+});
+IconButton.propTypes /* remove-proptypes */  = {
+    // ----------------------------- Warning --------------------------------
+    // | These PropTypes are generated from the TypeScript type definitions |
+    // |     To update them edit the d.ts file and run "yarn proptypes"     |
+    // ----------------------------------------------------------------------
+    /**
+   * The icon to display.
+   */ children: (0, _utils.chainPropTypes)((0, _propTypesDefault.default).node, (props)=>{
+        const found = _react.Children.toArray(props.children).some((child)=>/*#__PURE__*/ _react.isValidElement(child) && child.props.onClick);
+        if (found) return new Error([
+            "MUI: You are providing an onClick event listener to a child of a button element.",
+            "Prefer applying it to the IconButton directly.",
+            "This guarantees that the whole <button> will be responsive to click events."
+        ].join("\n"));
+        return null;
+    }),
+    /**
+   * Override or extend the styles applied to the component.
+   */ classes: (0, _propTypesDefault.default).object,
+    /**
+   * @ignore
+   */ className: (0, _propTypesDefault.default).string,
+    /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#adding-new-colors).
+   * @default 'default'
+   */ color: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "inherit",
+            "default",
+            "primary",
+            "secondary",
+            "error",
+            "info",
+            "success",
+            "warning"
+        ]),
+        (0, _propTypesDefault.default).string
+    ]),
+    /**
+   * If `true`, the component is disabled.
+   * @default false
+   */ disabled: (0, _propTypesDefault.default).bool,
+    /**
+   * If `true`, the  keyboard focus ripple is disabled.
+   * @default false
+   */ disableFocusRipple: (0, _propTypesDefault.default).bool,
+    /**
+   * If `true`, the ripple effect is disabled.
+   *
+   * ⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure
+   * to highlight the element by applying separate styles with the `.Mui-focusVisible` class.
+   * @default false
+   */ disableRipple: (0, _propTypesDefault.default).bool,
+    /**
+   * If given, uses a negative margin to counteract the padding on one
+   * side (this is often helpful for aligning the left or right
+   * side of the icon with content above or below, without ruining the border
+   * size and shape).
+   * @default false
+   */ edge: (0, _propTypesDefault.default).oneOf([
+        "end",
+        "start",
+        false
+    ]),
+    /**
+   * The size of the component.
+   * `small` is equivalent to the dense button styling.
+   * @default 'medium'
+   */ size: (0, _propTypesDefault.default /* @typescript-to-proptypes-ignore */ ).oneOfType([
+        (0, _propTypesDefault.default).oneOf([
+            "small",
+            "medium",
+            "large"
+        ]),
+        (0, _propTypesDefault.default).string
+    ]),
+    /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */ sx: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).arrayOf((0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).func,
+            (0, _propTypesDefault.default).object,
+            (0, _propTypesDefault.default).bool
+        ])),
+        (0, _propTypesDefault.default).func,
+        (0, _propTypesDefault.default).object
+    ])
+};
+exports.default = IconButton;
+
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","react":"21dqq","prop-types":"7wKI2","clsx":"83C22","@mui/utils":"cttLn","@mui/base":"656dE","@mui/system":"Q0Zql","../styles/styled":"9NVzk","../styles/useThemeProps":"1WXY3","../ButtonBase":"epS5U","../utils/capitalize":"kuBnp","./iconButtonClasses":"4L2Wh","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4L2Wh":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getIconButtonUtilityClass", ()=>getIconButtonUtilityClass);
+var _utils = require("@mui/utils");
+var _generateUtilityClass = require("../generateUtilityClass");
+var _generateUtilityClassDefault = parcelHelpers.interopDefault(_generateUtilityClass);
+function getIconButtonUtilityClass(slot) {
+    return (0, _generateUtilityClassDefault.default)("MuiIconButton", slot);
+}
+const iconButtonClasses = (0, _utils.unstable_generateUtilityClasses)("MuiIconButton", [
+    "root",
+    "disabled",
+    "colorInherit",
+    "colorPrimary",
+    "colorSecondary",
+    "edgeStart",
+    "edgeEnd",
+    "sizeSmall",
+    "sizeMedium",
+    "sizeLarge"
+]);
+exports.default = iconButtonClasses;
 
 },{"@mui/utils":"cttLn","../generateUtilityClass":"czYmZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","jVvJi","d8Dch"], "d8Dch", "parcelRequire5c2f")
 
