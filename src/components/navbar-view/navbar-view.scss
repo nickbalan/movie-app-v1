@@ -1,3 +1,24 @@
 .navbar-div {
     font-family: 'Georgia', sans-serif;
 }
+
+.nav {
+    border-bottom: 4px solid black;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 24px 32px;
+  }
+  
+  nav a:hover {
+    background: black;
+    color: white;
+  }
