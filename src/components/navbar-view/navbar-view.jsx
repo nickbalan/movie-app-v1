@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
+import MovieIcon from '@material-ui/icons/Movie';
 import { Button } from '@mui/material';
 
 export class NavBar extends React.Component {
@@ -40,6 +40,9 @@ export class NavBar extends React.Component {
           sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
         >
           <Toolbar sx={{ flexWrap: 'wrap' }}>
+            <IconButton>
+              <MovieIcon />
+            </IconButton>
             <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
               Movie App v1
             </Typography>
@@ -54,9 +57,9 @@ export class NavBar extends React.Component {
                       </Nav.Link>
                     </Button>
                     <Button>
-                    <Nav.Link as={Link} to={profile}>
-                      Profile
-                    </Nav.Link>
+                      <Nav.Link as={Link} to={profile}>
+                        Profile
+                      </Nav.Link>
                     </Button>
                     <Button>
                       <Nav.Link onClick={this.onLoggedOut}>
