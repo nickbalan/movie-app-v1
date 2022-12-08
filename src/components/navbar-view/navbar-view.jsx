@@ -9,6 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
+import { Button } from '@mui/material';
 
 export class NavBar extends React.Component {
   constructor() {
@@ -46,19 +47,22 @@ export class NavBar extends React.Component {
               <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
                 <Navbar.Toggle aria-controls='basic-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>
-                  <Nav className='ml-auto'>
-                    <IconButton>
-                      <SearchIcon />
-                    </IconButton>
-                    <Nav.Link as={Link} to={movies} className='link-text'>
-                      Home
-                    </Nav.Link>
-                    <Nav.Link as={Link} to={profile} className='link-text'>
+                  <Nav className='ml-auto navigation'>
+                    <Button>
+                      <Nav.Link as={Link} to={movies} className="">
+                        Home
+                      </Nav.Link>
+                    </Button>
+                    <Button>
+                    <Nav.Link as={Link} to={profile}>
                       Profile
                     </Nav.Link>
-                    <Nav.Link onClick={this.onLoggedOut}>
-                      Log Out
-                    </Nav.Link>
+                    </Button>
+                    <Button>
+                      <Nav.Link onClick={this.onLoggedOut}>
+                        Log Out
+                      </Nav.Link>
+                    </Button>
                   </Nav>
                 </Navbar.Collapse>
               </Navbar >
