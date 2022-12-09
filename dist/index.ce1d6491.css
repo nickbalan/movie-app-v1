@@ -12,10 +12,19 @@ title {
 
 
 
+.favorite-btn, .movie-des, .genre-des, .movie-title, .director-des {
+  margin: 2px;
+  padding: 2px;
+}
 
+.center {
+  align-self: center;
+}
 
 .cards {
   align-self: center;
+  margin: 4px;
+  padding: 4px;
 }
 
 

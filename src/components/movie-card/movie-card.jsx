@@ -5,6 +5,8 @@ import './movie-card.scss';
 import React from 'react';
 import axios from 'axios';
 
+import Badge from 'react-bootstrap/Badge';
+
 //imports React Router components
 import { Link } from 'react-router-dom';
 
@@ -20,19 +22,6 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-function Copyright(props) {
-  return (
-    <Typography variant='body2' color='text.secondary' align='center' {...props}>
-      {'Copyright © '}
-      <Link color='inherit' href='/'>
-        Movie App v1
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const theme = createTheme();
 
@@ -62,14 +51,19 @@ export class MovieCard extends React.Component {
         <Container sx={{ py: 6 }} maxWidth='md'>
           <Grid container spacing={2}>
             <Card sx={{ height: 'auto', width: '200px', display: 'flex', flexDirection: 'column'}}>
+              <Badge className="badge badge-light">
+                <Typography variant='body2' color='text.secondary' align='cards'>
+                {movie.Title}
+                </Typography>
+              </Badge>
               <Link to={`/movies/${movie._id}`}>
                 <Card.Img variant='top' src={movie.imgUrl} />
               </Link>
-              <Card.Body className='cards'>
-                <Link to={`/movies/${movie._id}`}>
+              <Card.Body className='center'>
+                <Link className='cards' to={`/movies/${movie._id}`}>
                   Details
                 </Link> 
-                <Button size='small' value={movie._id} onClick={(e) => this.addFavorite(e, movie)}>
+                <Button className='cards' size='small' value={movie._id} onClick={(e) => this.addFavorite(e, movie)}>
                   <BookmarkIcon />
                 </Button>
               </Card.Body>

@@ -50,9 +50,9 @@ export class NavBar extends React.Component {
               <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
                 <Navbar.Toggle aria-controls='basic-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>
-                  <Nav className='ml-auto navigation'>
+                  <Nav className='ml-auto'>
                     <Button>
-                      <Nav.Link as={Link} to={movies} className="">
+                      <Nav.Link as={Link} to={movies}>
                         Home
                       </Nav.Link>
                     </Button>

@@ -86,24 +86,24 @@ export class MovieView extends React.Component {
               <span className='value'>{movie.Title}</span>
             </Badge>
           </h1>
-        <div className='movie-director'>
+        <div className='director-des'>
           <span className='value'>Director: {movie.Director[0]}</span>
         </div>
-        <div className='movie-genre'>
+        <div className='genre-des'>
           <span className='value'>Genre: {movie.Genre[0]}</span>
         </div>
         </div>
-        <div className='movie-description'>
+        <div className='movie-des'>
           <span className='value'>{movie.Description}</span>
         </div>
         <br/>
-        <Button variant='success' className='fav-button' value={movie._id} onClick={(e) => this.addFavorite(e, movie)}>
+        <Button variant='success' className='favorite-btn' value={movie._id} onClick={(e) => this.addFavorite(e, movie)}>
           Add to Favorites
         </Button>
-        <Button variant='success' className='fav-button' value={movie._id} onClick={(e) => this.removeFavorites(e, movie)}>
+        <Button variant='success' className='favorite-btn' value={movie._id} onClick={(e) => this.removeFavorites(e, movie)}>
           Remove from Favorites
         </Button>
-        <Button variant='primary' onClick={() => { onBackClick(null); }}>Back</Button>
+        <Button variant='primary' className='favorite-btn' onClick={() => { onBackClick(null); }}>Back</Button>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </div>
     );
