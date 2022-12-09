@@ -87,3 +87,4 @@ Nick Balan (18.03.2022 - now)
 
 ![Livescreen](src/img/Livescreen/Movie_App_v1_Livescreen_1.JPG)
 ![Livescreen](src/img/Livescreen/Movie_App_v1_Livescreen_2.JPG)
+![Livescreen](src/img/Livescreen/Movie_App_v1_Livescreen_3.JPG)
