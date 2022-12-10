@@ -61,7 +61,7 @@ export class ProfileView extends React.Component {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
 
-    axios.delete(`https://movie-api-production-57fd.up.railway.app/users/${username}/delete-movies/${movie._id}`, {
+    axios.delete(`https://movie-api-production-57fd.up.railway.app/users/${username}/delete-movies/${movie}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(() => {
@@ -174,8 +174,8 @@ export class ProfileView extends React.Component {
                   <CardDeck className='movie-card-deck' key={movie._id}>
                     <Card className='card-content favorites-item border-0' key={movie._id} style={{ width: 'auto' }}>
                       <Card.Img className='movie-card' variant='top' src={movie.imgUrl} />
-                      <Card.Title className='movie-card-title'>{movie.Title}</Card.Title>
-                      <Button size='sm' className='profile-button remove-favorite-movie' variant='danger' value={movie._id} onClick={() => this.removeFavouriteMovie(e, movie)}>
+                      <Card.Title>{movie.Title}</Card.Title>
+                      <Button size='sm' className='profile-button remove-favorite-movie' variant='danger' value={movie._id} onClick={() => this.removeFavouriteMovie(movie._id)}>
                         Remove from Favorites
                       </Button>
                     </Card>
@@ -205,8 +205,8 @@ export class ProfileView extends React.Component {
               </Form.Group>
 
               <Form.Group controlId='formBirthdate'>
-                <Form.Label className='form-label'>Birthdate</Form.Label>
-                <Form.Control type='date' placeholder='Change Birthdate' onChange={(e) => this.setBirthdate(e.target.value)} />
+                <Form.Label className='form-label'>Date of birth</Form.Label>
+                <Form.Control type='date' onChange={(e) => this.setBirthdate(e.target.value)} />
               </Form.Group>
 
               <Button variant='danger' type='submit'>
