@@ -5,6 +5,7 @@ import './movie-card.scss';
 import React from 'react';
 import axios from 'axios';
 
+//imports React Bootstrap components
 import Badge from 'react-bootstrap/Badge';
 
 //imports React Router components
@@ -52,7 +53,7 @@ export class MovieCard extends React.Component {
           <Grid container spacing={2}>
             <Card sx={{ height: 'auto', width: '200px', display: 'flex', flexDirection: 'column'}}>
               <Badge className="badge badge-light">
-                <Typography variant='body2' color='text.secondary' align='cards'>
+                <Typography variant='body2' color='text.secondary' align='center'>
                 {movie.Title}
                 </Typography>
               </Badge>
@@ -63,7 +64,12 @@ export class MovieCard extends React.Component {
                 <Link className='cards' to={`/movies/${movie._id}`}>
                   Details
                 </Link> 
-                <Button className='cards' size='small' value={movie._id} onClick={(e) => this.addFavorite(e, movie)}>
+                <Button 
+                  className='cards' 
+                  size='small' 
+                  value={movie._id} 
+                  onClick={(e) => this.addFavorite(e, movie)}
+                >
                   <BookmarkIcon />
                 </Button>
               </Card.Body>
