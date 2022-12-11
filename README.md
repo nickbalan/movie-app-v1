@@ -83,6 +83,10 @@ Nick Balan (18.03.2022 - now)
 - Displays favorite movies
 - Allows users to remove a movie from their list of favorites.
 
+## Live Demo
+
+Check out the [Movie App v1 - Live page](https://movie-app-v1-22.netlify.app/)
+
 ## Movie App v1 screenshot
 
 ![Livescreen](src/img/Livescreen/Movie_App_v1_Livescreen_1.JPG)
