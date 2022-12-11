@@ -87,7 +87,7 @@ Nick Balan (18.03.2022 - now)
 
 Check out the [Movie App v1 - Live page](https://movie-app-v1-22.netlify.app/)
 
-## Movie App v1 screenshot
+## Movie App v1 screenshots
 
 ![Livescreen](src/img/Livescreen/Movie_App_v1_Livescreen_1.JPG)
 ![Livescreen](src/img/Livescreen/Movie_App_v1_Livescreen_2.JPG)
