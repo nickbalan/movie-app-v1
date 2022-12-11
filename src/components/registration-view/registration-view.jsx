@@ -1,10 +1,14 @@
 //imports SCSS styles
 import './registration-view.scss';
 
+//imports React hooks and libraries
 import React, { useState } from 'react';
 import axios from 'axios';
 
+//imports React Router components
 import { Link } from 'react-router-dom';
+
+//imports React Bootstrap components
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -13,8 +17,6 @@ import Row from 'react-bootstrap/Row';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
@@ -37,7 +39,7 @@ export function RegistrationView() {
     return (
       <Typography variant='body2' color='text.secondary' align='center' {...props}>
         {'Copyright © '}
-        <Link color='inherit' href='/'>
+        <Link color='inherit' to={`/`}>
           Movie App v1
         </Link>{' '}
         {new Date().getFullYear()}
@@ -181,14 +183,10 @@ export function RegistrationView() {
               >
                 Sign Up
               </Button>
-              <Grid container justifyContent="flex-end">
-                <Grid item>
-                  <Link href='/' variant='body2'>
-                    {'Already have an account? Sign in'}
-                  </Link>
-                </Grid>
-              </Grid>
             </Form>
+            <Link to={`/`} variant='body2'>
+              {"Already have an account? Sign in"}
+            </Link>
             <Copyright sx={{ mt: 8, mb: 4 }} />
           </Box>
         </Box>

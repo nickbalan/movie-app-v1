@@ -1,19 +1,23 @@
 //imports SCSS styles 
 import './login-view.scss';
 
-//imports React and hooks
+//imports React hooks and libraries
 import React, { useState } from 'react';
-//import PropTypes from 'prop-types';
 import axios from 'axios';
+
+//imports React Redux components
 import { connect } from 'react-redux';
 
+//imports React Router components
+import { Link } from 'react-router-dom';
+
+//imports React Bootstrap components
 import Form from 'react-bootstrap/Form';
 
 //imports Material UI components
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
@@ -24,7 +28,7 @@ function Copyright(props) {
   return (
     <Typography variant='body2' color='text.secondary' align='center' {...props}>
       {'Copyright © '}
-      <Link color='inherit' href='/'>
+      <Link color='inherit' to={`/`}>
         Movie App v1
       </Link>{' '}
       {new Date().getFullYear()}
@@ -83,7 +87,7 @@ export function LoginView(props) {
                 <Form.Label>Password</Form.Label>
                 <Form.Control required type='password' placeholder='Enter your Password' value={password} onChange={e => registerPassword(e.target.value)} />
               </Form.Group>
-              <Button 
+              <Button
                 type='submit'
                 fullWidth
                 variant='contained'
@@ -91,9 +95,9 @@ export function LoginView(props) {
                 onClick={handleSubmit}
               >
                 Log in
-              </Button> 
+            </Button>
             </Form>
-            <Link href='/register' variant='body2'>
+            <Link to={`/register`} variant='body2'>
               {"Don't have an account? Sign Up"}
             </Link>
             <Copyright sx={{ mt: 8, mb: 4 }} />
