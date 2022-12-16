@@ -21,7 +21,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import BookmarkIcon from '@mui/icons-material/Bookmark';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme();
@@ -51,10 +51,18 @@ export class MovieCard extends React.Component {
         <CssBaseline />
         <Container sx={{ py: 6 }} maxWidth='md'>
           <Grid container spacing={2}>
-            <Card sx={{ height: 'auto', width: '200px', display: 'flex', flexDirection: 'column'}}>
+            <Card sx={{ 
+              height: 'auto', 
+              width: '200px', 
+              display: 'flex', 
+              flexDirection: 'column'}}>
               <Badge className="badge badge-light">
-                <Typography variant='body2' color='text.secondary' align='center'>
-                {movie.Title}
+                <Typography 
+                  variant='body2' 
+                  color='text.secondary' 
+                  align='center'
+                >
+                  {movie.Title}
                 </Typography>
               </Badge>
               <Link to={`/movies/${movie._id}`}>
@@ -62,7 +70,12 @@ export class MovieCard extends React.Component {
               </Link>
               <Card.Body className='center'>
                 <Link className='cards' to={`/movies/${movie._id}`}>
-                  Details
+                  <Button 
+                    variant='outlined' 
+                    size='medium'
+                  >
+                    Details
+                  </Button>
                 </Link> 
                 <Button 
                   className='cards' 
@@ -70,7 +83,7 @@ export class MovieCard extends React.Component {
                   value={movie._id} 
                   onClick={(e) => this.addFavorite(e, movie)}
                 >
-                  <BookmarkIcon />
+                  <FavoriteIcon color="secondary" />
                 </Button>
               </Card.Body>
             </Card> 
