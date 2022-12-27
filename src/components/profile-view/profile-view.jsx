@@ -8,17 +8,29 @@ import { connect } from 'react-redux';
 
 import { setUser, updateUser } from '../../actions/actions';
 
+//imports React Bootstrap components
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
+import Badge from 'react-bootstrap/Badge';
 
+//imports Material UI components
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme();
 
 export class ProfileView extends React.Component {
   constructor() {
     super()
-    //Sets initial state to null
     this.state = {
       favoriteMovies: [],
       Username: null,
@@ -163,66 +175,117 @@ export class ProfileView extends React.Component {
     let { movies } = this.props;
 
     return (
-      <Row className='profile-view'>
-        <Card className='profile-card'>
-          <h1>Your favotites movies</h1>
-          {favoriteMovies.length === 0 && <div className='text-center'>Empty</div>}
-          <div className='favorite-movies'>
-            {favoriteMovies.length > 0 && movies.map((movie) => {
-              if (movie._id === favoriteMovies.find((favMovies) => favMovies === movie._id)) {
-                return (
-                  <CardDeck className='movie-card-deck' key={movie._id}>
-                    <Card className='card-content favorites-item border-0' key={movie._id} style={{ width: 'auto' }}>
-                      <Card.Img className='movie-card' variant='top' src={movie.imgUrl} />
-                      <Card.Title>{movie.Title}</Card.Title>
-                      <Button size='sm' className='profile-button remove-favorite-movie' variant='danger' value={movie._id} onClick={() => this.removeFavouriteMovie(movie._id)}>
-                        Remove from Favorites
-                      </Button>
-                    </Card>
-                  </CardDeck>
-                );
-              }
-            })}
-          </div>
-
-          <h1 className='profile'>Update Profile</h1>
-          <Card.Body>
-            <Form noValidate validated={validated} className='update-form' onSubmit={(e) => this.handleUpdateUser(e, this.Username, this.Password, this.Email, this.Birthdate)}>
-
-              <Form.Group controlId='formUsername'>
-                <Form.Label className='form-label'>Username</Form.Label>
-                <Form.Control type='text' placeholder='Change Username' onChange={(e) => this.setUsername(e.target.value)} />
-              </Form.Group>
-
-              <Form.Group controlId='formPassword'>
-                <Form.Label className='form-label'>Password</Form.Label>
-                <Form.Control type='password' placeholder='Change Password' onChange={(e) => this.setPassword(e.target.value)} />
-              </Form.Group>
-
-              <Form.Group controlId='formEmail'>
-                <Form.Label className='form-label'>Email</Form.Label>
-                <Form.Control type='email' placeholder='Change Email' onChange={(e) => this.setEmail(e.target.value)} />
-              </Form.Group>
-
-              <Form.Group controlId='formBirthdate'>
-                <Form.Label className='form-label'>Date of birth</Form.Label>
-                <Form.Control type='date' onChange={(e) => this.setBirthdate(e.target.value)} />
-              </Form.Group>
-
-              <Button variant='danger' type='submit'>
-                Update
-              </Button>
-
-              <h3>Delete your account</h3>
-              <Card.Body>
-                <Button variant='danger' onClick={(e) => this.handleUserDeletion(e)}>
-                  Delete Account
-                </Button>
-              </Card.Body>
-            </Form>
-          </Card.Body>
-        </Card>
-      </Row>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Container disableGutters maxWidth='sm' component='main' sx={{ pt: 8, pb: 6 }}>
+          <Card>
+            <Card.Body>
+              <Typography
+                variant='h4'
+                align='center'
+                color='text.primary'
+                gutterBottom
+              >
+                Update Profile
+              </Typography>
+              <Form noValidate 
+                validated={validated} 
+                onSubmit={(e) => this.handleUpdateUser(e, this.Username, this.Password, this.Email, this.Birthdate)}
+              >
+                <Form.Group controlId='formUsername'>
+                  <Form.Label>Username</Form.Label>
+                  <Form.Control 
+                    type='text' 
+                    placeholder='Change Username' 
+                    onChange={(e) => this.setUsername(e.target.value)} />
+                </Form.Group>
+                <Form.Group controlId='formPassword'>
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control 
+                    type='password' 
+                    placeholder='Change Password' 
+                    onChange={(e) => this.setPassword(e.target.value)} />
+                </Form.Group>
+                <Form.Group controlId='formEmail'>
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control 
+                    type='email' 
+                    placeholder='Change Email' 
+                    onChange={(e) => this.setEmail(e.target.value)} />
+                </Form.Group>
+                <Form.Group controlId='formBirthdate'>
+                  <Form.Label>Date of birth</Form.Label>
+                  <Form.Control 
+                    type='date' 
+                    onChange={(e) => this.setBirthdate(e.target.value)} />
+                </Form.Group>
+                <Box sx={{ '& button': { m: 1 } }}>
+                  <Button 
+                    variant='outlined' 
+                    size='medium'
+                  >
+                    Update
+                  </Button>
+                  <Button 
+                    variant='outlined' 
+                    size='medium'
+                    onClick={(e) => this.handleUserDeletion(e)}
+                  >
+                    Delete Account
+                  </Button>
+                </Box>
+              </Form>
+            </Card.Body>
+          </Card>
+          </Container>
+          <Container disableGutters 
+            maxWidth='sm' 
+            component='main' 
+            sx={{ pt: 4, pb: 2 }}
+          >
+            <Typography
+              variant='h4'
+              align='center'
+              color='text.primary'
+              gutterBottom
+            >
+              My favorite movies
+            </Typography>
+          </Container>
+          <Container sx={{ py: 6 }} maxWidth='md'>
+            {favoriteMovies.length === 0 && 
+              <Typography
+              variant='h6'
+              align='center'
+              color='text.primary'
+              gutterBottom
+              >
+                Your favotites movies list is empty
+              </Typography>}
+              <Box sx={{ '& button': { m: 2 } }}>
+                <Grid container spacing={2}>
+                
+                {favoriteMovies.length > 0 && movies.map((movie) => {
+                  if (movie._id === favoriteMovies.find((favMovies) => favMovies === movie._id)) {
+                    return (
+                        <Card sx={{ height: 'auto', width: '200px', display: 'flex', flexDirection: 'column'}}>
+                          <Card.Img className='movie-card' variant='top' src={movie.imgUrl} />
+                          <Card.Title align='center'>{movie.Title}</Card.Title>
+                          <Button variant='outlined' size='sm' className='profile-button remove-favorite-movie' value={movie._id} onClick={() => this.removeFavouriteMovie(movie._id)}>
+                            Remove from Favorites
+                          </Button>
+                        </Card>
+                    );
+                  }
+                })}
+                
+                </Grid>
+              </Box>
+          </Container>
+          
+          
+          
+      </ThemeProvider>  
     )
   }
 }
